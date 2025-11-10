@@ -321,7 +321,6 @@ headerStyle.textContent = `
     .header.scrolled {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     }
     
     .mobile-menu-toggle.active span:nth-child(1) {
@@ -350,7 +349,6 @@ headerStyle.textContent = `
             background: white;
             flex-direction: column;
             padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             z-index: 999;
         }
         
