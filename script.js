@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initMobileMenu();
   initContactForm();
   initImageGallery();
-  initTestimonialCarousel();
   initCounterAnimations();
   initParallaxEffects();
   initLanguageSwitcher();
@@ -173,89 +172,6 @@ function createLightbox(src, alt) {
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-    `;
-  document.head.appendChild(style);
-}
-
-// Testimonial carousel functionality
-function initTestimonialCarousel() {
-  const carousel = document.querySelector(".testimonials-carousel");
-  if (!carousel) return;
-
-  let currentIndex = 0;
-  const cards = carousel.querySelectorAll(".testimonial-card");
-  const totalCards = cards.length;
-
-  // Create navigation dots
-  const dotsContainer = document.createElement("div");
-  dotsContainer.className = "carousel-dots";
-
-  for (let i = 0; i < totalCards; i++) {
-    const dot = document.createElement("span");
-    dot.className = "dot";
-    if (i === 0) dot.classList.add("active");
-    dot.addEventListener("click", () => goToSlide(i));
-    dotsContainer.appendChild(dot);
-  }
-
-  carousel.parentNode.appendChild(dotsContainer);
-
-  function goToSlide(index) {
-    cards.forEach((card, i) => {
-      card.style.transform = `translateX(${(i - index) * 100}%)`;
-      card.style.opacity = i === index ? "1" : "0.7";
-    });
-
-    document.querySelectorAll(".dot").forEach((dot, i) => {
-      dot.classList.toggle("active", i === index);
-    });
-
-    currentIndex = index;
-  }
-
-  // Auto-advance carousel
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalCards;
-    goToSlide(currentIndex);
-  }, 5000);
-
-  // Add carousel styles
-  const style = document.createElement("style");
-  style.textContent = `
-        .testimonials-carousel {
-            position: relative;
-            overflow: hidden;
-        }
-        .testimonial-card {
-            transition: all 0.5s ease;
-        }
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 2rem;
-        }
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ccc;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .dot.active {
-            background: #ff6b9d;
-            transform: scale(1.2);
-        }
-        @media (max-width: 768px) {
-            .testimonials-carousel {
-                display: block;
-            }
-            .testimonial-card {
-                transform: none !important;
-                opacity: 1 !important;
-            }
         }
     `;
   document.head.appendChild(style);
