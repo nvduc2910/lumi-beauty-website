@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lumi Beauty - Phun Môi Mày Đẹp Tự Nhiên</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="icons/logo.svg" alt="Lumi Beauty" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#services" data-translate="beauty_services">Dịch vụ làm đẹp</a></li>
+                        <li><a href="#blog" data-translate="beauty_guide">Cẩm nang làm đẹp</a></li>
+                        <li><a href="#testimonials" data-translate="offers">Cảm nhận khách hàng</a></li>
+                        <li><a href="#footer" data-translate="contact">Liên hệ</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-primary" data-translate="book_now">ĐẶT LỊCH NGAY</button>
+                    <div class="language-dropdown">
+                        <button class="lang-dropdown-btn" id="langDropdownBtn">
+                            <span class="lang-code">VN</span>
+                            <img src="icons/arrow-down.svg" alt="Dropdown" class="dropdown-arrow">
+                        </button>
+                        <div class="lang-dropdown-menu" id="langDropdownMenu">
+                            <button class="lang-option active" data-lang="vi">
+                                <span class="lang-name">Tiếng Việt</span>
+                            </button>
+                            <button class="lang-option" data-lang="en">
+                                <span class="lang-name">English</span>
+                            </button>
+                            <button class="lang-option" data-lang="ko">
+                                <span class="lang-name">한국어</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">
+                        <span class="title-main" data-translate="main_title">PHUN MÔI MÀY</span>
+                        <span class="title-script" data-translate="natural_beauty"><span class="title-script-part">Đẹp</span> <span class="title-script-bold">TỰ NHIÊN</span></span>
+                        <span class="title-tagline" data-translate="enhance_features">Tôn nét riêng của bạn</span>
+                    </h2>
+                    <p class="hero-description" data-translate="hero_description">
+                        Lumi Beauty chuyên về phun môi mày với công nghệ hiện đại, 
+                        đảm bảo kết quả tự nhiên và bền đẹp. Chúng tôi cam kết mang đến 
+                        cho bạn vẻ đẹp hoàn hảo với quy trình chuẩn y khoa.
+                    </p>
+                    <button class="btn btn-primary btn-large" data-translate="contact_now">LIÊN HỆ NGAY</button>
+                </div>
+                <div class="hero-right">
+                    <div class="main-image">
+                        <img src="icons/hero-right.png" alt="Beauty treatment">
+                    </div>
+                </div>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label" data-translate="years_experience">năm kinh nghiệm</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label" data-translate="potential_customers">khách hàng tiềm năng</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">60+</span>
+                    <span class="stat-label" data-translate="five_star_reviews">đánh giá 5* từ khách hàng</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label" data-translate="certifications">giấy chứng chỉ hành nghề</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="help-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="how_can_help">Xin chào! Lumi Beauty có thể giúp được gì cho bạn?</h2>
+            <div class="help-options">
+                <div class="help-option">
+                    <div class="help-icon">📅</div>
+                    <h3 data-translate="book_appointment">Đặt lịch hẹn hôm nay</h3>
+                    <button class="btn btn-primary" data-translate="want_to_book">TÔI MUỐN ĐẶT LỊCH HẸN</button>
+                </div>
+                <div class="help-option">
+                    <div class="help-icon">📞</div>
+                    <h3 data-translate="contact_us">Liên hệ</h3>
+                    <button class="btn btn-primary" data-translate="need_consultation">TÔI CẦN TƯ VẤN</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title" data-translate="our_services">Dịch Vụ Của Lumi Beauty</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 data-translate="lip_tattoo_title">Phun Môi Tự Nhiên - Tự Nhiên Như Không Phun</h3>
+                    <ul class="benefits">
+                        <li data-translate="lip_tattoo_benefit1">✓ Màu môi chuẩn đẹp từ 1-3 năm</li>
+                        <li data-translate="lip_tattoo_benefit2">✓ Giúp môi đều màu, giảm thâm sạm</li>
+                        <li data-translate="lip_tattoo_benefit3">✓ Tiết kiệm thời gian trang điểm mỗi ngày</li>
+                    </ul>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop" alt="Lip tattoo before/after">
+                    </div>
+                    <button class="btn btn-outline" data-translate="discover_more">KHÁM PHÁ THÊM</button>
+                </div>
+                <div class="service-card">
+                    <h3 data-translate="eyebrow_tattoo_title">Phun Mày Tự Nhiên – Nét Đẹp Hài Hòa, Thần Thái Rạng Ngời</h3>
+                    <ul class="benefits">
+                        <li data-translate="eyebrow_tattoo_benefit1">✓ Không đau, không sưng</li>
+                        <li data-translate="eyebrow_tattoo_benefit2">✓ Lên màu đều, bền 2-3 năm</li>
+                        <li data-translate="eyebrow_tattoo_benefit3">✓ Dáng mày được đo tỉ lệ vàng gương mặt</li>
+                    </ul>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=300&fit=crop" alt="Eyebrow tattoo before/after">
+                    </div>
+                    <button class="btn btn-outline" data-translate="discover_more">KHÁM PHÁ THÊM</button>
+                </div>
+                <div class="service-card">
+                    <h3 data-translate="lip_removal_title">Khử Thâm Môi – Trả Lại Sắc Môi Tươi Hồng Tự Nhiên</h3>
+                    <ul class="benefits">
+                        <li data-translate="lip_removal_benefit1">✓ Loại bỏ thâm sạm hiệu quả</li>
+                        <li data-translate="lip_removal_benefit2">✓ Màu môi tự nhiên, tươi sáng</li>
+                        <li data-translate="lip_removal_benefit3">✓ An toàn tuyệt đối cho da môi</li>
+                    </ul>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=300&fit=crop" alt="Lip treatment before/after">
+                    </div>
+                    <button class="btn btn-outline" data-translate="discover_more">KHÁM PHÁ THÊM</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Vì Sao Hàng Ngàn Khách Hàng Tin Chọn Lumi Beauty?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Quy Trình Chuẩn Y Khoa</h3>
+                    <p>Không Đau, Không Sưng, Hồi Màu Nhanh</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👩‍⚕️</div>
+                    <h3>Kỹ Thuật Viên Tay Nghề Cao</h3>
+                    <p>Tận Tâm Trong Từng Đường Nét</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Bảo Hành & Dặm Miễn Phí</h3>
+                    <p>Cam Kết Hài Lòng Tuyệt Đối</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💎</div>
+                    <h3>Mực Phun Hữu Cơ Cao Cấp</h3>
+                    <p>Màu Chuẩn, Bền, An Toàn Tuyệt Đối</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Đừng ngần ngại - để lại số điện thoại, chúng tôi sẽ giúp bạn chọn dịch vụ phù hợp nhất với khuôn mặt của mình.</h2>
+                <form class="contact-form">
+                    <input type="tel" placeholder="Nhập số điện thoại của bạn" required>
+                    <button type="submit" class="btn btn-primary">GỬI ĐI</button>
+                </form>
+                <div class="paper-plane">✈️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Hình Ảnh Thực Tế</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=400&fit=crop" alt="Lip tattoo result">
+                    <div class="gallery-label">Phun xăm môi</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&h=400&fit=crop" alt="Eyebrow tattoo result">
+                    <div class="gallery-label">Phun mày</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=400&fit=crop" alt="Beauty treatment">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=300&fit=crop" alt="Lip treatment">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&h=300&fit=crop" alt="Eyebrow treatment">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=300&fit=crop" alt="Beauty session">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Đánh Giá Từ Khách Hàng</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial-card">
+                    <p>"Dịch vụ tuyệt vời! Môi của tôi trông tự nhiên và đẹp hơn rất nhiều. Nhân viên rất chuyên nghiệp và tận tâm."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop" alt="Customer">
+                        <div class="author-info">
+                            <span class="name">Nguyễn Thị Mai</span>
+                            <span class="age">25 tuổi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Rất hài lòng với kết quả phun mày. Dáng mày được thiết kế phù hợp với khuôn mặt, màu sắc tự nhiên."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop" alt="Customer">
+                        <div class="author-info">
+                            <span class="name">Trần Minh Anh</span>
+                            <span class="age">28 tuổi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Quy trình không đau như mong đợi. Sau khi phun môi, màu sắc lên đều và tự nhiên. Sẽ quay lại lần sau!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop" alt="Customer">
+                        <div class="author-info">
+                            <span class="name">Lê Thị Hoa</span>
+                            <span class="age">22 tuổi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2 class="section-title">Hiểu hơn về làm đẹp - phun xăm</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=250&fit=crop" alt="Lip tattoo process">
+                    <h3>Phun môi bao lâu lên màu đẹp tự nhiên?</h3>
+                    <a href="#" class="read-more">Xem thêm</a>
+                </article>
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=250&fit=crop" alt="Eyebrow care">
+                    <h3>Sau khi phun mày cần kiêng gì để có dáng đẹp và màu đều?</h3>
+                    <a href="#" class="read-more">Xem thêm</a>
+                </article>
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=250&fit=crop" alt="Beauty comparison">
+                    <h3>Phân biệt phun môi baby, collagen và ombre - nên chọn loại nào?</h3>
+                    <a href="#" class="read-more">Xem thêm</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">Lumi Beauty.</h3>
+                    <p class="footer-tagline">Phun xăm đẹp tự nhiên - Tôn nét riêng của bạn</p>
+                    <p class="footer-address">151 Trần Duy Hưng, Cầu Giấy, Hà Nội</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Dịch vụ</h4>
+                    <ul>
+                        <li>Phun xăm môi</li>
+                        <li>Phun xăm mày</li>
+                        <li>Khử thâm môi</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên hệ</h4>
+                    <p>0900067832</p>
+                    <p>TikTok: tiktok.com/lumibeauty98</p>
+                    <p>Facebook: facebook.com/lumibeauty98</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Tư vấn</h4>
+                    <div class="qr-code">
+                        <div class="qr-placeholder">QR Code</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Lumi Beauty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
