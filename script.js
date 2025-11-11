@@ -349,11 +349,14 @@ headerStyle.textContent = `
             background: white;
             flex-direction: column;
             padding: 2rem;
+            opacity: 0;
+            transform: translateY(-10px);
             z-index: 999;
         }
         
         .nav.active {
             display: flex;
+            animation: mobileNavSlide 0.3s ease forwards;
         }
         
         .nav-list {
@@ -366,6 +369,17 @@ headerStyle.textContent = `
             padding: 0.5rem 0;
             border-bottom: 1px solid #eee;
             display: block;
+        }
+
+        @keyframes mobileNavSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     }
 `;
