@@ -95,7 +95,9 @@ function initContactForm() {
 
 // Image gallery with lightbox effect
 function initImageGallery() {
-  const galleryItems = document.querySelectorAll(".gallery-item img");
+  const galleryItems = document.querySelectorAll(
+    ".gallery-item img, .feedback-track img"
+  );
 
   galleryItems.forEach((img) => {
     img.addEventListener("click", function () {
@@ -146,18 +148,22 @@ function createLightbox(src, alt) {
         }
         .lightbox-content {
             position: relative;
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 100%;
+            max-height: 100%;
+            padding: 40px;
         }
         .lightbox-content img {
-            width: 100%;
+            max-width: calc(100vw - 80px);
+            max-height: calc(100vh - 80px);
+            width: auto;
             height: auto;
             border-radius: 12px;
+            object-fit: contain;
         }
         .lightbox-close {
             position: absolute;
-            top: -40px;
-            right: 0;
+            top: 10px;
+            right: 10px;
             color: white;
             font-size: 30px;
             cursor: pointer;
