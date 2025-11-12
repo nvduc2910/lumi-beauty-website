@@ -216,7 +216,7 @@ function initBookingModal() {
 // Image gallery with lightbox effect
 function initImageGallery() {
   const galleryImages = Array.from(
-    document.querySelectorAll(".gallery-item img, .feedback-track img")
+    document.querySelectorAll(".gallery-item img, .feedback-item img")
   );
 
   if (!galleryImages.length) return;
