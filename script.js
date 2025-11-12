@@ -596,11 +596,12 @@ const translations = {
 
     // Help Section
     greeting: "Xin chào!",
-    how_can_help: "Lumi Beauty có thể giúp được gì cho bạn?",
+    how_can_help:
+      "Lumi Beauty có thể giới thiệu bản thân trong 1 phút được ko?",
     help_intro:
       "Lumi Beauty là địa chỉ phun xăm thẩm mỹ tại Đà Nẵng được nhiều khách hàng tin chọn nhờ phong cách 1-1 riêng tư và tận tâm.",
     help_quote:
-      "Chúng tôi tin rằng: “Mỗi gương mặt là một nét đẹp riêng cần được tôn lên một cách tinh tế và tự nhiên.”",
+      'Chúng tôi tin rằng: "Mỗi gương mặt là một nét đẹp riêng cần được tôn lên một cách tinh tế và tự nhiên."',
     help_commitment:
       "Vì vậy, Lumi luôn dành trọn thời gian để lắng nghe, tư vấn và thiết kế dáng môi – mày – mí phù hợp nhất với từng khách hàng. Với quy trình chuẩn y khoa, màu mực organic an toàn, Lumi Beauty cam kết mang lại vẻ đẹp tự nhiên, không sưng, không đau và bền màu theo thời gian.",
     book_description:
@@ -1088,11 +1089,11 @@ const translations = {
 
     // Help Section
     greeting: "Hello!",
-    how_can_help: "What can Lumi Beauty help you with?",
+    how_can_help: "Could Lumi Beauty introduce ourselves in just one minute?",
     help_intro:
       "Lumi Beauty is a trusted cosmetic tattoo studio in Da Nang, known for private one-on-one sessions and heartfelt care.",
     help_quote:
-      "We believe that “Every face is unique and deserves to be enhanced with subtle, natural detail.”",
+      'We believe that "Every face is unique and deserves to be enhanced with subtle, natural detail."',
     help_commitment:
       "That is why we devote our full time to listening, consulting, and designing lips, brows, and eyeliner that complement each client. With medical-grade protocols and safe organic pigments, Lumi Beauty delivers natural results with no swelling, minimal discomfort, and long-lasting color.",
     book_description:
@@ -1296,11 +1297,11 @@ const translations = {
 
     // Help Section
     greeting: "안녕하세요!",
-    how_can_help: "루미 뷰티가 어떻게 도와드릴까요?",
+    how_can_help: "루미 뷰티가 1분 안에 자신을 소개해도 될까요?",
     help_intro:
       "루미 뷰티는 다낭에서 1:1 프라이빗 상담과 세심한 케어로 사랑받는 반영구 전문 숍입니다.",
     help_quote:
-      "우리는 “모든 얼굴은 고유한 아름다움을 지니며, 섬세하고 자연스럽게 살려야 한다”고 믿습니다.",
+      '우리는 "모든 얼굴은 고유한 아름다움을 지니며, 섬세하고 자연스럽게 살려야 한다"고 믿습니다.',
     help_commitment:
       "그래서 고객 한 분 한 분의 이야기를 듣고 가장 잘 어울리는 입술·눈썹·아이라인을 설계합니다. 의료 표준 프로세스와 안전한 유기농 색소로 붓거나 아프지 않으며 오래 지속되는 자연스러운 결과를 약속드립니다.",
     book_description: "오늘 예약하여 상담을 받고 매력적인 혜택을 받으세요",
