@@ -1768,6 +1768,31 @@ p {
     color: #CE4B6E;
 }
 
+.footer-contact-link {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-contact-link:hover {
+    color: #CE4B6E;
+}
+
+.fanpage-embed {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(17, 17, 17, 0.18);
+}
+
+.fanpage-embed iframe {
+    display: block;
+    width: 100%;
+}
+
 .footer-bottom {
     border-top: 1px solid #444;
     padding-top: 1rem;

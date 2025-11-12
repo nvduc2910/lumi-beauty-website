@@ -79,16 +79,13 @@ function initContactForm() {
 
       if (phoneNumber) {
         // Show success message
-        showNotification(
-          "Cảm ơn bạn! Chúng tôi sẽ liên hệ lại sớm nhất có thể.",
-          "success"
-        );
+        showNotification(t("contact_form_success"), "success");
         phoneInput.value = "";
 
         // Here you would typically send the data to a server
         console.log("Phone number submitted:", phoneNumber);
       } else {
-        showNotification("Vui lòng nhập số điện thoại của bạn.", "error");
+        showNotification(t("contact_form_phone_required"), "error");
       }
     });
   }
@@ -186,7 +183,7 @@ function initBookingModal() {
       const formData = new FormData(form);
 
       try {
-        responseEl.textContent = "Đang gửi thông tin...";
+        responseEl.textContent = t("booking_sending");
         responseEl.classList.remove("error");
 
         const submission = await fetch(form.action, {
@@ -201,8 +198,7 @@ function initBookingModal() {
           throw new Error("Form submission failed");
         }
 
-        responseEl.textContent =
-          "Cảm ơn bạn! Lumi Beauty sẽ liên hệ lại trong thời gian sớm nhất.";
+        responseEl.textContent = t("booking_success");
         form.reset();
 
         setTimeout(() => {
@@ -210,8 +206,7 @@ function initBookingModal() {
         }, 2000);
       } catch (error) {
         console.error("Booking form submit error:", error);
-        responseEl.textContent =
-          "Gửi không thành công. Vui lòng thử lại hoặc liên hệ trực tiếp.";
+        responseEl.textContent = t("booking_error");
         responseEl.classList.add("error");
       }
     });
@@ -552,6 +547,13 @@ document.head.appendChild(loadingStyle);
 // Language switching functionality
 const translations = {
   vi: {
+    // General
+    page_title: "Lumi Beauty - Phun Xăm Thẩm Mỹ Đẹp Tự Nhiên Tại Đà Nẵng - Chuyên Phun Mày Môi Mí Chuyên Nghiệp",
+    close_modal: "Đóng",
+    floating_contact_zalo: "Chat Zalo",
+    floating_contact_facebook: "Chat Facebook",
+    floating_contact_tiktok: "TikTok",
+
     // Navigation
     beauty_services: "Dịch vụ làm đẹp",
     beauty_guide: "Cẩm nang làm đẹp",
@@ -560,15 +562,15 @@ const translations = {
     book_now: "ĐẶT LỊCH NGAY",
 
     // Hero Section
-    main_title: "PHUN MÔI MÀY",
+    main_title: "PHUN XĂM THẨM MỸ",
     natural_beauty: "Đẹp TỰ NHIÊN",
     enhance_features: "Tôn nét riêng của bạn",
     hero_description:
-      "Lumi Beauty chuyên về phun môi mày với công nghệ hiện đại, đảm bảo kết quả tự nhiên và bền đẹp. Chúng tôi cam kết mang đến cho bạn vẻ đẹp hoàn hảo với quy trình chuẩn y khoa.",
+      "Lumi Beauty chuyên về phun mày môi với công nghệ hiện đại và tay nghề cao, đảm bảo kết quả tự nhiên và bền đẹp. Chúng tôi cam kết mang đến cho bạn vẻ đẹp hoàn hảo với quy trình chuẩn y khoa.",
     contact_now: "LIÊN HỆ NGAY",
 
     // Feature Tags
-    no_pain: "KHÔNG ĐAU",
+    no_pain: "KHÔNG ĐAU RÁT",
     no_swelling: "KHÔNG SƯNG",
     no_diet: "KHÔNG CẦN KIÊNG",
 
@@ -592,8 +594,8 @@ const translations = {
 
     // Services
     our_services: "Dịch Vụ Của Lumi Beauty",
-    lip_tattoo_title: "Phun Môi Tự Nhiên - Tự Nhiên Như Không Phun",
-    lip_tattoo_benefit1: "Màu môi chuẩn đẹp từ 1-3 năm",
+    lip_tattoo_title: "Phun Môi Tự Nhiên",
+    lip_tattoo_benefit1: "Màu môi chuẩn đẹp từ 2-3 năm",
     lip_tattoo_benefit2: "Giúp môi đều màu, giảm thâm sạm",
     lip_tattoo_benefit3: "Tiết kiệm thời gian trang điểm mỗi ngày",
     eyebrow_tattoo_title:
@@ -618,11 +620,34 @@ const translations = {
     organic_pigments: "Mực Phun Hữu Cơ Cao Cấp",
     organic_pigments_desc: "Màu Chuẩn, Bền, An Toàn Tuyệt Đối",
 
+    // Contact Methods
+    contact_methods_title:
+      "Đừng ngần ngại - chọn cách liên lạc phù hợp nhất với bạn.",
+    contact_call_title: "Gọi điện trực tiếp",
+    contact_call_description: "Nhấn để kết nối ngay với chuyên gia Lumi Beauty",
+    contact_call_button: "GỌI NGAY",
+    contact_facebook_title: "Chat Facebook",
+    contact_facebook_description:
+      "Nhận tư vấn nhanh trên Messenger của Lumi Beauty",
+    contact_facebook_button: "MỞ MESSENGER",
+    contact_zalo_title: "Chat Zalo",
+    contact_zalo_description:
+      "Kết nối Zalo để được hỗ trợ và nhận ưu đãi riêng",
+    contact_zalo_button: "MỞ ZALO",
+    contact_email_title: "Gửi email",
+    contact_email_description:
+      "Để lại lời nhắn chi tiết, chúng tôi sẽ phản hồi trong 24h",
+    contact_email_button: "GỬI EMAIL",
+
     // Contact Form
     contact_form_title:
       "Đừng ngần ngại - để lại số điện thoại, chúng tôi sẽ giúp bạn chọn dịch vụ phù hợp nhất với khuôn mặt của mình.",
     phone_placeholder: "Nhập số điện thoại của bạn",
     send: "GỬI ĐI",
+    contact_form_success:
+      "Cảm ơn bạn! Chúng tôi sẽ liên hệ lại sớm nhất có thể.",
+    contact_form_error: "Đã xảy ra lỗi. Vui lòng thử lại.",
+    contact_form_phone_required: "Vui lòng nhập số điện thoại của bạn.",
 
     // Gallery
     real_images: "Hình Ảnh Thực Tế",
@@ -631,6 +656,7 @@ const translations = {
 
     // Testimonials
     customer_reviews: "Đánh Giá Từ Khách Hàng",
+    scroll_hint: "Vuốt ngang để xem thêm",
     testimonial1:
       "Dịch vụ tuyệt vời! Môi của tôi trông tự nhiên và đẹp hơn rất nhiều. Nhân viên rất chuyên nghiệp và tận tâm.",
     testimonial2:
@@ -655,10 +681,49 @@ const translations = {
     lip_removal_service: "Khử thâm môi",
     contact_title: "Liên hệ",
     consultation_title: "Tư vấn",
+    connect_with_us: "Kết nối với chúng tôi",
+    footer_line1: "💋 Chuyên phun xăm thẩm mỹ Mày - Môi - Mí tự nhiên",
+    footer_line2: "💋 Tư vấn và chăm sóc tận tâm",
+    footer_address_detail: "Võ Quý Huân, Khu Đô Thị FPT City, Da Nang, Vietnam",
+    footer_tiktok: "TikTok: @lumibeautyphunxam",
+    footer_facebook: "Facebook: facebook.com/profile.php?id=61579821760714",
+    facebook_iframe_title: "Trang Facebook Lumi Beauty",
+    footer_copyright: "© 2025 Lumi Beauty. All rights reserved.",
+
+    // Booking Modal
+    booking_title: "Đặt lịch hẹn ngay",
+    booking_description:
+      "Điền thông tin của bạn để Lumi Beauty liên hệ tư vấn trong thời gian sớm nhất.",
+    booking_name_label: "Họ và tên",
+    booking_name_placeholder: "Nguyễn Thị Ánh",
+    booking_phone_label: "Số điện thoại",
+    booking_phone_placeholder: "0900 067 832",
+    booking_service_label: "Dịch vụ quan tâm",
+    booking_service_option_lip: "Phun môi",
+    booking_service_option_eyebrow: "Phun mày",
+    booking_service_option_lip_removal: "Khử thâm môi",
+    booking_service_option_other: "Khác",
+    booking_time_label: "Thời gian mong muốn",
+    booking_notes_label: "Ghi chú thêm",
+    booking_notes_placeholder: "Chia sẻ nhu cầu hoặc câu hỏi của bạn",
+    booking_submit: "GỬI YÊU CẦU",
+    booking_sending: "Đang gửi thông tin...",
+    booking_success:
+      "Cảm ơn bạn! Lumi Beauty sẽ liên hệ lại trong thời gian sớm nhất.",
+    booking_error:
+      "Gửi không thành công. Vui lòng thử lại hoặc liên hệ trực tiếp.",
+
     copyright: "© 2023 Lumi Beauty. All rights reserved.",
   },
 
   en: {
+    // General
+    page_title: "Lumi Beauty - Natural Lip & Brow Tattoo",
+    close_modal: "Close",
+    floating_contact_zalo: "Chat on Zalo",
+    floating_contact_facebook: "Chat on Facebook",
+    floating_contact_tiktok: "TikTok",
+
     // Navigation
     beauty_services: "Beauty Services",
     beauty_guide: "Beauty Guide",
@@ -727,11 +792,34 @@ const translations = {
     organic_pigments: "Premium Organic Pigments",
     organic_pigments_desc: "Standard Color, Durable, Absolutely Safe",
 
+    // Contact Methods
+    contact_methods_title:
+      "Don't hesitate – choose the contact option that fits you best.",
+    contact_call_title: "Call us directly",
+    contact_call_description:
+      "Tap to connect instantly with a Lumi Beauty specialist",
+    contact_call_button: "CALL NOW",
+    contact_facebook_title: "Chat on Facebook",
+    contact_facebook_description: "Get quick advice via Lumi Beauty Messenger",
+    contact_facebook_button: "OPEN MESSENGER",
+    contact_zalo_title: "Chat on Zalo",
+    contact_zalo_description:
+      "Connect on Zalo for support and exclusive offers",
+    contact_zalo_button: "OPEN ZALO",
+    contact_email_title: "Send an email",
+    contact_email_description:
+      "Leave a detailed message and we'll reply within 24 hours",
+    contact_email_button: "SEND EMAIL",
+
     // Contact Form
     contact_form_title:
       "Don't hesitate - leave your phone number, we will help you choose the most suitable service for your face.",
     phone_placeholder: "Enter your phone number",
     send: "SEND",
+    contact_form_success:
+      "Thank you! We'll get back to you as soon as possible.",
+    contact_form_error: "Something went wrong. Please try again.",
+    contact_form_phone_required: "Please enter your phone number.",
 
     // Gallery
     real_images: "Real Images",
@@ -740,6 +828,7 @@ const translations = {
 
     // Testimonials
     customer_reviews: "Customer Reviews",
+    scroll_hint: "Swipe to see more",
     testimonial1:
       "Excellent service! My lips look natural and much more beautiful. The staff is very professional and dedicated.",
     testimonial2:
@@ -765,10 +854,48 @@ const translations = {
     lip_removal_service: "Lip Dark Spot Removal",
     contact_title: "Contact",
     consultation_title: "Consultation",
+    connect_with_us: "Connect with us",
+    footer_line1: "💋 Natural lip, brow, and eyeliner tattoo specialists",
+    footer_line2: "💋 Dedicated consultation and care",
+    footer_address_detail: "Vo Quy Huan, FPT City Urban Area, Da Nang, Vietnam",
+    footer_tiktok: "TikTok: @lumibeautyphunxam",
+    footer_facebook: "Facebook: facebook.com/profile.php?id=61579821760714",
+    facebook_iframe_title: "Lumi Beauty Facebook Page",
+    footer_copyright: "© 2025 Lumi Beauty. All rights reserved.",
+
+    // Booking Modal
+    booking_title: "Book an appointment now",
+    booking_description:
+      "Fill in your details so Lumi Beauty can contact you promptly.",
+    booking_name_label: "Full name",
+    booking_name_placeholder: "Anna Nguyen",
+    booking_phone_label: "Phone number",
+    booking_phone_placeholder: "0900 067 832",
+    booking_service_label: "Service of interest",
+    booking_service_option_lip: "Lip Tattoo",
+    booking_service_option_eyebrow: "Eyebrow Tattoo",
+    booking_service_option_lip_removal: "Lip Dark Spot Removal",
+    booking_service_option_other: "Other",
+    booking_time_label: "Preferred time",
+    booking_notes_label: "Additional notes",
+    booking_notes_placeholder: "Share your needs or questions",
+    booking_submit: "SEND REQUEST",
+    booking_sending: "Sending your information...",
+    booking_success: "Thank you! Lumi Beauty will contact you shortly.",
+    booking_error:
+      "Submission failed. Please try again or contact us directly.",
+
     copyright: "© 2023 Lumi Beauty. All rights reserved.",
   },
 
   ko: {
+    // General
+    page_title: "루미 뷰티 - 자연스러운 입술 & 눈썹 타투",
+    close_modal: "닫기",
+    floating_contact_zalo: "자লো 채팅",
+    floating_contact_facebook: "페이스북 채팅",
+    floating_contact_tiktok: "틱톡",
+
     // Navigation
     beauty_services: "뷰티 서비스",
     beauty_guide: "뷰티 가이드",
@@ -834,11 +961,31 @@ const translations = {
     organic_pigments: "프리미엄 유기 색소",
     organic_pigments_desc: "표준 색상, 내구성, 절대적으로 안전",
 
+    // Contact Methods
+    contact_methods_title:
+      "망설이지 마세요 - 가장 편한 연락 방법을 선택하세요.",
+    contact_call_title: "전화 상담",
+    contact_call_description: "루미 뷰티 전문가와 바로 연결하세요",
+    contact_call_button: "바로 전화하기",
+    contact_facebook_title: "페이스북 채팅",
+    contact_facebook_description: "루미 뷰티 메신저에서 빠르게 상담받으세요",
+    contact_facebook_button: "메신저 열기",
+    contact_zalo_title: "자লো 채팅",
+    contact_zalo_description: "자লো로 연결하여 지원과 특별 혜택을 받으세요",
+    contact_zalo_button: "자লো 열기",
+    contact_email_title: "이메일 보내기",
+    contact_email_description:
+      "상세한 메시지를 남겨주시면 24시간 이내에 답변드릴게요",
+    contact_email_button: "이메일 보내기",
+
     // Contact Form
     contact_form_title:
       "주저하지 마세요 - 전화번호를 남겨주시면 얼굴에 가장 적합한 서비스를 선택하는 데 도움을 드리겠습니다.",
     phone_placeholder: "전화번호를 입력하세요",
     send: "보내기",
+    contact_form_success: "감사합니다! 최대한 빠르게 연락드리겠습니다.",
+    contact_form_error: "오류가 발생했습니다. 다시 시도해 주세요.",
+    contact_form_phone_required: "전화번호를 입력해 주세요.",
 
     // Gallery
     real_images: "실제 이미지",
@@ -847,6 +994,7 @@ const translations = {
 
     // Testimonials
     customer_reviews: "고객 리뷰",
+    scroll_hint: "옆으로 밀어 더 보기",
     testimonial1:
       "훌륭한 서비스! 제 입술이 자연스럽고 훨씬 더 아름다워 보입니다. 직원들이 매우 전문적이고 헌신적입니다.",
     testimonial2:
@@ -871,20 +1019,76 @@ const translations = {
     lip_removal_service: "입술 어두운 반점 제거",
     contact_title: "연락처",
     consultation_title: "상담",
+    connect_with_us: "우리와 연결하세요",
+    footer_line1: "💋 자연스러운 입술·눈썹·아이라인 타투 전문",
+    footer_line2: "💋 정성 어린 상담과 케어",
+    footer_address_detail: "다낭 FPT 시티 도시 지역 보 꾸이 후안",
+    footer_tiktok: "틱톡: @lumibeautyphunxam",
+    footer_facebook: "페이스북: facebook.com/profile.php?id=61579821760714",
+    facebook_iframe_title: "루미 뷰티 페이스북 페이지",
+    footer_copyright: "© 2025 루미 뷰티. 모든 권리 보유.",
+
+    // Booking Modal
+    booking_title: "지금 예약하세요",
+    booking_description:
+      "정보를 입력해 주시면 루미 뷰티가 신속하게 연락드립니다.",
+    booking_name_label: "이름",
+    booking_name_placeholder: "김하늘",
+    booking_phone_label: "전화번호",
+    booking_phone_placeholder: "0900 067 832",
+    booking_service_label: "관심 있는 서비스",
+    booking_service_option_lip: "입술 타투",
+    booking_service_option_eyebrow: "눈썹 타투",
+    booking_service_option_lip_removal: "입술 어두운 반점 제거",
+    booking_service_option_other: "기타",
+    booking_time_label: "희망 시간",
+    booking_notes_label: "추가 메모",
+    booking_notes_placeholder: "필요 사항이나 질문을 공유해 주세요",
+    booking_submit: "요청 보내기",
+    booking_sending: "정보를 전송하고 있습니다...",
+    booking_success: "감사합니다! 곧 루미 뷰티에서 연락드리겠습니다.",
+    booking_error: "전송에 실패했습니다. 다시 시도하시거나 직접 연락해 주세요.",
+
     copyright: "© 2023 루미 뷰티. 모든 권리 보유.",
   },
 };
+
+const DEFAULT_LANGUAGE = "vi";
+let currentLanguage = (() => {
+  try {
+    const stored = localStorage.getItem("selectedLanguage");
+    if (stored && stored in translations) {
+      return stored;
+    }
+  } catch (error) {
+    console.warn("Unable to access stored language preference:", error);
+  }
+  return DEFAULT_LANGUAGE;
+})();
+
+function t(key) {
+  const fallbackDict = translations[DEFAULT_LANGUAGE] || {};
+  const activeDict = translations[currentLanguage] || fallbackDict;
+  return (
+    (activeDict && activeDict[key]) ||
+    (fallbackDict && fallbackDict[key]) ||
+    key
+  );
+}
 
 // Language switching functionality
 function initLanguageSwitcher() {
   const dropdownBtn = document.getElementById("langDropdownBtn");
   const dropdownMenu = document.getElementById("langDropdownMenu");
   const langOptions = document.querySelectorAll(".lang-option");
-  let currentLang = localStorage.getItem("selectedLanguage") || "vi";
 
-  // Set initial language
-  setLanguage(currentLang);
-  updateDropdownButton(currentLang);
+  setLanguage(currentLanguage);
+
+  if (!dropdownBtn || !dropdownMenu) {
+    return;
+  }
+
+  updateDropdownButton(currentLanguage);
 
   // Toggle dropdown
   dropdownBtn.addEventListener("click", function (e) {
@@ -905,8 +1109,14 @@ function initLanguageSwitcher() {
   langOptions.forEach((option) => {
     option.addEventListener("click", function () {
       const lang = this.getAttribute("data-lang");
+      if (!lang || lang === currentLanguage) {
+        dropdownMenu.classList.remove("active");
+        dropdownBtn.classList.remove("active");
+        return;
+      }
+
       setLanguage(lang);
-      updateDropdownButton(lang);
+      updateDropdownButton(currentLanguage);
 
       // Update active option
       langOptions.forEach((opt) => opt.classList.remove("active"));
@@ -915,16 +1125,16 @@ function initLanguageSwitcher() {
       // Close dropdown
       dropdownMenu.classList.remove("active");
       dropdownBtn.classList.remove("active");
-
-      // Save to localStorage
-      localStorage.setItem("selectedLanguage", lang);
     });
   });
 }
 
 function updateDropdownButton(lang) {
   const dropdownBtn = document.getElementById("langDropdownBtn");
+  if (!dropdownBtn) return;
+
   const codeSpan = dropdownBtn.querySelector(".lang-code");
+  if (!codeSpan) return;
 
   const langData = {
     vi: { code: "VN" },
@@ -938,36 +1148,79 @@ function updateDropdownButton(lang) {
 }
 
 function setLanguage(lang) {
+  const fallbackDict = translations[DEFAULT_LANGUAGE] || {};
+  const resolvedLang = translations[lang] ? lang : DEFAULT_LANGUAGE;
+  const activeDict = translations[resolvedLang] || fallbackDict;
+  currentLanguage = resolvedLang;
+
   const elements = document.querySelectorAll("[data-translate]");
 
   elements.forEach((element) => {
     const key = element.getAttribute("data-translate");
-    if (translations[lang] && translations[lang][key]) {
-      // Special handling for natural_beauty to preserve HTML structure
-      if (key === "natural_beauty") {
-        if (lang === "vi") {
-          element.innerHTML =
-            '<span class="title-script-part">Đẹp</span> <span class="title-script-bold">TỰ NHIÊN</span>';
-        } else if (lang === "en") {
-          element.innerHTML =
-            '<span class="title-script-part">Natural</span> <span class="title-script-bold">BEAUTY</span>';
-        } else if (lang === "ko") {
-          element.innerHTML =
-            '<span class="title-script-part">자연스러운</span> <span class="title-script-bold">아름다움</span>';
-        }
-      } else {
-        element.textContent = translations[lang][key];
+    if (!key) return;
+
+    let translation =
+      (activeDict && activeDict[key]) || (fallbackDict && fallbackDict[key]);
+    if (!translation) return;
+
+    // Special handling for natural_beauty to preserve HTML structure
+    if (key === "natural_beauty") {
+      if (resolvedLang === "vi") {
+        element.innerHTML =
+          '<span class="title-script-part">Đẹp</span> <span class="title-script-bold">TỰ NHIÊN</span>';
+      } else if (resolvedLang === "en") {
+        element.innerHTML =
+          '<span class="title-script-part">Natural</span> <span class="title-script-bold">BEAUTY</span>';
+      } else if (resolvedLang === "ko") {
+        element.innerHTML =
+          '<span class="title-script-part">자연스러운</span> <span class="title-script-bold">아름다움</span>';
       }
+      return;
+    }
+
+    const attrList = element.getAttribute("data-translate-attr");
+    if (attrList) {
+      attrList.split(",").forEach((attr) => {
+        const attrName = attr.trim();
+        if (!attrName) return;
+
+        if (attrName === "innerHTML") {
+          element.innerHTML = translation;
+        } else {
+          element.setAttribute(attrName, translation);
+        }
+      });
+
+      if (!element.hasAttribute("data-translate-text")) {
+        return;
+      }
+    }
+
+    if (element.hasAttribute("data-translate-html")) {
+      element.innerHTML = translation;
+    } else {
+      element.textContent = translation;
     }
   });
 
-  // Update HTML lang attribute
-  document.documentElement.lang = lang;
+  document.documentElement.lang = resolvedLang;
+  document.documentElement.dir = "ltr";
 
-  // Update page direction for Korean (if needed)
-  if (lang === "ko") {
-    document.documentElement.dir = "ltr";
-  } else {
-    document.documentElement.dir = "ltr";
+  const langOptions = document.querySelectorAll(".lang-option");
+  langOptions.forEach((option) => {
+    option.classList.toggle(
+      "active",
+      option.getAttribute("data-lang") === resolvedLang
+    );
+  });
+
+  if (translations[resolvedLang] && translations[resolvedLang].page_title) {
+    document.title = translations[resolvedLang].page_title;
+  }
+
+  try {
+    localStorage.setItem("selectedLanguage", resolvedLang);
+  } catch (error) {
+    console.warn("Unable to persist language preference:", error);
   }
 }
