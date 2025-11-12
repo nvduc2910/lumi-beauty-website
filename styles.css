@@ -818,7 +818,7 @@ p {
 }
 
 .help-media img {
-    width: min(100%, 420px);
+    width: min(100%, 520px);
     border-radius: 24px;
     box-shadow: 0 24px 48px rgba(17, 24, 39, 0.18);
     object-fit: cover;
@@ -831,7 +831,7 @@ p {
     }
 
     .help-media img {
-        width: min(100%, 340px);
+        width: min(100%, 380px);
     }
 }
 
