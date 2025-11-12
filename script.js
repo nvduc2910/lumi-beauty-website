@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initCounterAnimations();
   initParallaxEffects();
   initLanguageSwitcher();
+  initBlogScroller();
 });
 
 // Scroll-triggered animations
@@ -1927,4 +1928,52 @@ function setLanguage(lang) {
   } catch (error) {
     console.warn("Unable to persist language preference:", error);
   }
+}
+
+function initBlogScroller() {
+  const scrollContainer = document.querySelector("[data-blog-scroll]");
+  if (!scrollContainer) return;
+
+  const prevBtn = document.querySelector("[data-blog-prev]");
+  const nextBtn = document.querySelector("[data-blog-next]");
+
+  const scrollByAmount = () => {
+    const card = scrollContainer.querySelector(".blog-card");
+    return card ? card.offsetWidth + 24 : 320;
+  };
+
+  const scrollNext = () => {
+    scrollContainer.scrollBy({
+      left: scrollByAmount(),
+      behavior: "smooth",
+    });
+  };
+
+  const scrollPrev = () => {
+    scrollContainer.scrollBy({
+      left: -scrollByAmount(),
+      behavior: "smooth",
+    });
+  };
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", scrollNext);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", scrollPrev);
+  }
+
+  scrollContainer.addEventListener(
+    "wheel",
+    (event) => {
+      if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        event.preventDefault();
+        scrollContainer.scrollBy({
+          left: event.deltaY,
+        });
+      }
+    },
+    { passive: false }
+  );
 }
