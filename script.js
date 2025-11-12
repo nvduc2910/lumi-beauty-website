@@ -548,11 +548,25 @@ document.head.appendChild(loadingStyle);
 const translations = {
   vi: {
     // General
-    page_title: "Lumi Beauty - Phun Xăm Thẩm Mỹ Đẹp Tự Nhiên Tại Đà Nẵng - Chuyên Phun Mày Môi Mí Chuyên Nghiệp",
+    page_title:
+      "Lumi Beauty - Phun Xăm Thẩm Mỹ Đẹp Tự Nhiên Tại Đà Nẵng - Chuyên Phun Mày Môi Mí Chuyên Nghiệp",
     close_modal: "Đóng",
     floating_contact_zalo: "Chat Zalo",
     floating_contact_facebook: "Chat Facebook",
     floating_contact_tiktok: "TikTok",
+    meta_description:
+      "Lumi Beauty Đà Nẵng chuyên phun xăm thẩm mỹ mày, môi, mí chuẩn y khoa với công nghệ hiện đại, không đau rát và chăm sóc tận tâm.",
+    meta_keywords:
+      "phun xăm thẩm mỹ đà nẵng, phun môi đẹp, phun mày tự nhiên, Lumi Beauty",
+    og_title: "Lumi Beauty - Phun Xăm Thẩm Mỹ Đẹp Tự Nhiên Tại Đà Nẵng",
+    og_description:
+      "Trải nghiệm phun mày, phun môi, phun mí chuẩn y khoa tại Lumi Beauty Đà Nẵng - không đau rát, không sưng, màu đẹp lâu bền.",
+    twitter_title: "Lumi Beauty - Phun Xăm Thẩm Mỹ Đà Nẵng",
+    twitter_description:
+      "Lumi Beauty cung cấp dịch vụ phun mày, môi, mí hiện đại với đội ngũ chuyên viên tận tâm và kết quả tự nhiên bền đẹp.",
+    business_name: "Lumi Beauty",
+    business_description:
+      "Lumi Beauty Đà Nẵng cung cấp phun xăm thẩm mỹ mày, môi, mí chuẩn y khoa, không đau rát và dịch vụ chăm sóc khách hàng tận tâm.",
 
     // Navigation
     beauty_services: "Dịch vụ làm đẹp",
@@ -723,6 +737,19 @@ const translations = {
     floating_contact_zalo: "Chat on Zalo",
     floating_contact_facebook: "Chat on Facebook",
     floating_contact_tiktok: "TikTok",
+    meta_description:
+      "Lumi Beauty in Da Nang delivers premium lip, brow, and eyeliner tattoo services with medical-grade processes, gentle techniques, and devoted care.",
+    meta_keywords:
+      "lip tattoo da nang, eyebrow tattoo vietnam, permanent makeup, Lumi Beauty",
+    og_title: "Lumi Beauty - Natural Lip & Brow Tattoo in Da Nang",
+    og_description:
+      "Discover Lumi Beauty's gentle lip, brow, and eyeliner tattoo services in Da Nang. Medical-standard procedures, long-lasting color, and caring experts.",
+    twitter_title: "Lumi Beauty - Natural Permanent Makeup in Da Nang",
+    twitter_description:
+      "Experience natural lip and brow tattoos with Lumi Beauty's skilled artists in Da Nang, Vietnam.",
+    business_name: "Lumi Beauty",
+    business_description:
+      "Lumi Beauty in Da Nang specializes in natural-looking lip, brow, and eyeliner tattoos using medical-standard techniques and attentive aftercare.",
 
     // Navigation
     beauty_services: "Beauty Services",
@@ -895,6 +922,18 @@ const translations = {
     floating_contact_zalo: "자লো 채팅",
     floating_contact_facebook: "페이스북 채팅",
     floating_contact_tiktok: "틱톡",
+    meta_description:
+      "루미 뷰티 다낭은 의료 표준 절차로 입술, 눈썹, 아이라인 타투를 제공하며 통증과 붓기 없이 자연스러운 결과를 선사합니다.",
+    meta_keywords: "입술 타투 다낭, 눈썹 타투 베트남, 반영구 화장, 루미 뷰티",
+    og_title: "루미 뷰티 - 다낭 자연스러운 반영구 메이크업",
+    og_description:
+      "루미 뷰티에서 의료 표준 절차와 섬세한 케어로 자연스러운 입술·눈썹 타투를 경험하세요.",
+    twitter_title: "루미 뷰티 - 다낭 반영구 메이크업",
+    twitter_description:
+      "루미 뷰티 다낭은 통증 없이 오래 지속되는 입술, 눈썹 타투 서비스를 제공합니다.",
+    business_name: "루미 뷰티",
+    business_description:
+      "루미 뷰티 다낭은 의료 표준 절차와 세심한 케어로 자연스럽고 오래 지속되는 입술·눈썹 타투 서비스를 제공합니다.",
 
     // Navigation
     beauty_services: "뷰티 서비스",
@@ -1054,8 +1093,16 @@ const translations = {
 };
 
 const DEFAULT_LANGUAGE = "vi";
+const PREVIEW_IMAGE_PATH = "images/hero_thumbnail_seo.jpg";
+const FAVICON_PATH = "icons/fav_icon.png";
 let currentLanguage = (() => {
   try {
+    const urlParams = new URL(window.location.href).searchParams;
+    const queryLang = urlParams.get("lang");
+    if (queryLang && queryLang in translations) {
+      return queryLang;
+    }
+
     const stored = localStorage.getItem("selectedLanguage");
     if (stored && stored in translations) {
       return stored;
@@ -1066,14 +1113,161 @@ let currentLanguage = (() => {
   return DEFAULT_LANGUAGE;
 })();
 
+function getDictionary(lang) {
+  return translations[lang] || translations[DEFAULT_LANGUAGE] || {};
+}
+
+function getTranslation(lang, key) {
+  const dict = translations[lang];
+  if (dict && dict[key]) {
+    return dict[key];
+  }
+  const fallbackDict = translations[DEFAULT_LANGUAGE];
+  if (fallbackDict && fallbackDict[key]) {
+    return fallbackDict[key];
+  }
+  return key;
+}
+
 function t(key) {
-  const fallbackDict = translations[DEFAULT_LANGUAGE] || {};
-  const activeDict = translations[currentLanguage] || fallbackDict;
-  return (
-    (activeDict && activeDict[key]) ||
-    (fallbackDict && fallbackDict[key]) ||
-    key
-  );
+  return getTranslation(currentLanguage, key);
+}
+
+function getAbsoluteUrl(path) {
+  try {
+    return new URL(path, window.location.origin).href;
+  } catch (error) {
+    console.warn("Unable to resolve absolute url for:", path, error);
+    return path;
+  }
+}
+
+function buildLanguageUrl(lang) {
+  try {
+    const url = new URL(window.location.href);
+    if (lang === DEFAULT_LANGUAGE) {
+      url.searchParams.delete("lang");
+    } else {
+      url.searchParams.set("lang", lang);
+    }
+    url.hash = "";
+    return url.toString();
+  } catch (error) {
+    console.warn("Unable to build language url:", error);
+    return window.location.href;
+  }
+}
+
+function updateSeoLinks(lang) {
+  const canonical = document.getElementById("canonicalLink");
+  if (canonical) {
+    canonical.setAttribute("href", buildLanguageUrl(lang));
+  }
+
+  const hreflangLinks = document.querySelectorAll("[data-hreflang]");
+  hreflangLinks.forEach((link) => {
+    const target = link.getAttribute("data-hreflang");
+    const resolvedTarget = target === "x-default" ? DEFAULT_LANGUAGE : target;
+    link.setAttribute("href", buildLanguageUrl(resolvedTarget));
+  });
+
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+  if (ogUrl) {
+    ogUrl.setAttribute("content", buildLanguageUrl(lang));
+  }
+
+  const previewUrl = getAbsoluteUrl(PREVIEW_IMAGE_PATH);
+  const ogImage = document.querySelector('meta[property="og:image"]');
+  if (ogImage) {
+    ogImage.setAttribute("content", previewUrl);
+  }
+  const twitterImage = document.querySelector('meta[name="twitter:image"]');
+  if (twitterImage) {
+    twitterImage.setAttribute("content", previewUrl);
+  }
+
+  const faviconUrl = getAbsoluteUrl(FAVICON_PATH);
+  const favicon = document.querySelector('link[rel="icon"]');
+  if (favicon) {
+    favicon.setAttribute("href", faviconUrl);
+  }
+  const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+  if (appleIcon) {
+    appleIcon.setAttribute("href", faviconUrl);
+  }
+}
+
+function updateStructuredData(lang) {
+  const script = document.getElementById("structuredData");
+  if (!script) {
+    return;
+  }
+
+  const dict = getDictionary(lang);
+  const fallbackDict = getDictionary(DEFAULT_LANGUAGE);
+  const name =
+    dict.business_name || fallbackDict.business_name || "Lumi Beauty";
+  const description =
+    dict.business_description ||
+    fallbackDict.business_description ||
+    "Lumi Beauty beauty salon";
+  const address =
+    dict.footer_address_detail ||
+    fallbackDict.footer_address_detail ||
+    "Vo Quy Huan, FPT City Urban Area, Da Nang, Vietnam";
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    name,
+    description,
+    url: buildLanguageUrl(lang),
+    image: getAbsoluteUrl(PREVIEW_IMAGE_PATH),
+    telephone: "+84-364-759-261",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: address,
+      addressLocality: "Da Nang",
+      addressRegion: "Da Nang",
+      addressCountry: "VN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 16.0025,
+      longitude: 108.2636,
+    },
+    areaServed: "Da Nang, Vietnam",
+    sameAs: [
+      "https://www.facebook.com/profile.php?id=61579821760714",
+      "https://www.tiktok.com/@lumibeautyphunxam",
+      "https://zalo.me/84983087832",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+84-364-759-261",
+      contactType: "customer service",
+      availableLanguage: ["vi", "en", "ko"],
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "09:00",
+        closes: "20:00",
+      },
+    ],
+  };
+
+  script.textContent = JSON.stringify(data, null, 2);
 }
 
 // Language switching functionality
@@ -1217,6 +1411,18 @@ function setLanguage(lang) {
   if (translations[resolvedLang] && translations[resolvedLang].page_title) {
     document.title = translations[resolvedLang].page_title;
   }
+
+  try {
+    const langUrl = buildLanguageUrl(resolvedLang);
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, "", langUrl);
+    }
+  } catch (error) {
+    console.warn("Unable to update URL for language change:", error);
+  }
+
+  updateSeoLinks(resolvedLang);
+  updateStructuredData(resolvedLang);
 
   try {
     localStorage.setItem("selectedLanguage", resolvedLang);
