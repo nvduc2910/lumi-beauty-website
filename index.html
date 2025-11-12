@@ -26,7 +26,7 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <button class="btn btn-primary" data-translate="book_now">ĐẶT LỊCH NGAY</button>
+                    <button class="btn btn-primary" data-translate="book_now" data-action="open-booking">ĐẶT LỊCH NGAY</button>
                     <div class="language-dropdown">
                         <button class="lang-dropdown-btn" id="langDropdownBtn">
                             <span class="lang-code">VN</span>
@@ -120,7 +120,7 @@
                                 <p class="help-option-description" data-translate="book_description">Đặt lịch hẹn hôm nay để được tư vấn và nhận nhiều ưu đãi hấp dẫn</p>
                             </div>
                         </div>
-                        <button class="btn btn-primary" data-translate="want_to_book">TÔI MUỐN ĐẶT LỊCH HẸN</button>
+                        <button class="btn btn-primary" data-translate="want_to_book" data-action="open-booking">TÔI MUỐN ĐẶT LỊCH HẸN</button>
                     </div>
                     <div class="help-option">
                         <div class="help-option-body">
@@ -132,7 +132,7 @@
                                 <p class="help-option-description" data-translate="contact_description">Liên hệ với chúng tôi ngay nếu bạn có ý kiến phản hồi hoặc bất kỳ thắc mắc cần được tư vấn</p>
                             </div>
                         </div>
-                        <button class="btn btn-primary" data-translate="need_consultation">TÔI CẦN TƯ VẤN</button>
+                        <button class="btn btn-primary" data-translate="need_consultation" data-action="open-booking">TÔI CẦN TƯ VẤN</button>
                     </div>
                 </div>
             </div>
@@ -459,6 +459,49 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal" id="bookingModal" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+            <button class="modal-close" type="button" aria-label="Đóng" data-modal-close>&times;</button>
+            <div class="modal-header">
+                <h2 id="bookingModalTitle">Đặt lịch hẹn ngay</h2>
+                <p>Điền thông tin của bạn để Lumi Beauty liên hệ tư vấn trong thời gian sớm nhất.</p>
+            </div>
+            <form class="booking-form" action="https://formspree.io/f/xnnlqyok" method="POST">
+                <input type="hidden" name="form-name" value="booking-modal">
+                <div class="form-group">
+                    <label for="bookingName">Họ và tên</label>
+                    <input id="bookingName" name="name" type="text" placeholder="Nguyễn Thị Ánh" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingPhone">Số điện thoại</label>
+                    <input id="bookingPhone" name="phone" type="tel" inputmode="tel" placeholder="0900 067 832" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingService">Dịch vụ quan tâm</label>
+                    <select id="bookingService" name="service">
+                        <option value="Phun môi">Phun môi</option>
+                        <option value="Phun mày">Phun mày</option>
+                        <option value="Khử thâm môi">Khử thâm môi</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookingTime">Thời gian mong muốn</label>
+                    <input id="bookingTime" name="preferred_time" type="datetime-local">
+                </div>
+                <div class="form-group">
+                    <label for="bookingNotes">Ghi chú thêm</label>
+                    <textarea id="bookingNotes" name="notes" rows="3" placeholder="Chia sẻ nhu cầu hoặc câu hỏi của bạn"></textarea>
+                </div>
+                <div class="form-footer">
+                    <button class="btn btn-primary btn-full" type="submit">GỬI YÊU CẦU</button>
+                </div>
+                <p class="form-response" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

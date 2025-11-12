@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollAnimations();
   initMobileMenu();
   initContactForm();
+  initBookingModal();
   initImageGallery();
   initCounterAnimations();
   initParallaxEffects();
@@ -88,6 +89,130 @@ function initContactForm() {
         console.log("Phone number submitted:", phoneNumber);
       } else {
         showNotification("Vui lòng nhập số điện thoại của bạn.", "error");
+      }
+    });
+  }
+}
+
+// Booking modal handling
+function initBookingModal() {
+  const modal = document.getElementById("bookingModal");
+  if (!modal) return;
+
+  const openButtons = document.querySelectorAll('[data-action="open-booking"]');
+  const closeTriggers = modal.querySelectorAll("[data-modal-close]");
+  const body = document.body;
+  const form = modal.querySelector(".booking-form");
+  const responseEl = modal.querySelector(".form-response");
+
+  const openModal = () => {
+    if (modal.classList.contains("is-open")) return;
+    modal.classList.remove("is-closing");
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    body.classList.add("modal-open");
+
+    if (responseEl) {
+      responseEl.textContent = "";
+      responseEl.classList.remove("error");
+    }
+
+    const focusTarget = modal.querySelector("input, select, textarea, button");
+    if (focusTarget) {
+      setTimeout(() => focusTarget.focus(), 80);
+    }
+  };
+
+  const closeModal = (skipAnimation = false) => {
+    if (!modal.classList.contains("is-open")) return;
+
+    const finalizeClose = () => {
+      modal.classList.remove("is-open", "is-closing");
+      modal.setAttribute("aria-hidden", "true");
+      body.classList.remove("modal-open");
+      if (responseEl) {
+        responseEl.textContent = "";
+        responseEl.classList.remove("error");
+      }
+    };
+
+    if (skipAnimation) {
+      finalizeClose();
+      return;
+    }
+
+    if (modal.classList.contains("is-closing")) {
+      return;
+    }
+
+    modal.classList.add("is-closing");
+    const dialog = modal.querySelector(".modal-dialog");
+
+    if (dialog) {
+      dialog.addEventListener("animationend", finalizeClose, { once: true });
+    } else {
+      finalizeClose();
+    }
+  };
+
+  openButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      openModal();
+    });
+  });
+
+  closeTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      closeModal();
+    });
+  });
+
+  modal.addEventListener("click", (event) => {
+    if (event.target.classList.contains("modal-backdrop")) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+
+  if (form) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const formData = new FormData(form);
+
+      try {
+        responseEl.textContent = "Đang gửi thông tin...";
+        responseEl.classList.remove("error");
+
+        const submission = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (!submission.ok) {
+          throw new Error("Form submission failed");
+        }
+
+        responseEl.textContent =
+          "Cảm ơn bạn! Lumi Beauty sẽ liên hệ lại trong thời gian sớm nhất.";
+        form.reset();
+
+        setTimeout(() => {
+          closeModal();
+        }, 2000);
+      } catch (error) {
+        console.error("Booking form submit error:", error);
+        responseEl.textContent =
+          "Gửi không thành công. Vui lòng thử lại hoặc liên hệ trực tiếp.";
+        responseEl.classList.add("error");
       }
     });
   }
