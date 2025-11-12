@@ -563,7 +563,7 @@ const translations = {
       "Trải nghiệm phun mày, phun môi, phun mí chuẩn y khoa tại Lumi Beauty Đà Nẵng - không đau rát, không sưng, màu đẹp lâu bền.",
     twitter_title: "Lumi Beauty - Phun Xăm Thẩm Mỹ Đà Nẵng",
     twitter_description:
-      "Lumi Beauty cung cấp dịch vụ phun mày, môi, mí hiện đại với đội ngũ chuyên viên tận tâm và kết quả tự nhiên bền đẹp.",
+      "Lumi Beauty cung cấp dịch vụ phun mày, môi, mí hiện đại 1-1 tận tâm và kết quả tự nhiên bền đẹp.",
     business_name: "Lumi Beauty",
     business_description:
       "Lumi Beauty Đà Nẵng cung cấp phun xăm thẩm mỹ mày, môi, mí chuẩn y khoa, không đau rát và dịch vụ chăm sóc khách hàng tận tâm.",
@@ -580,7 +580,7 @@ const translations = {
     natural_beauty: "Đẹp TỰ NHIÊN",
     enhance_features: "Tôn nét riêng của bạn",
     hero_description:
-      "Lumi Beauty chuyên về phun mày môi với công nghệ hiện đại và tay nghề cao, đảm bảo kết quả tự nhiên và bền đẹp. Chúng tôi cam kết mang đến cho bạn vẻ đẹp hoàn hảo với quy trình chuẩn y khoa.",
+      "Lumi Beauty mang đến trải nghiệm phun xăm 1-1 chuyên biệt cho từng gương mặt, giúp bạn sở hữu đôi môi hồng hào, cặp mày thanh thoát và ánh nhìn tự nhiên. Mỗi khách hàng được chăm sóc riêng biệt bởi chuyên viên phun xăm có kinh nghiệm, đảm bảo kết quả tinh tế và hài hòa nhất.",
     contact_now: "LIÊN HỆ NGAY",
 
     // Feature Tags
@@ -597,6 +597,12 @@ const translations = {
     // Help Section
     greeting: "Xin chào!",
     how_can_help: "Lumi Beauty có thể giúp được gì cho bạn?",
+    help_intro:
+      "Lumi Beauty là địa chỉ phun xăm thẩm mỹ tại Đà Nẵng được nhiều khách hàng tin chọn nhờ phong cách 1-1 riêng tư và tận tâm.",
+    help_quote:
+      "Chúng tôi tin rằng: “Mỗi gương mặt là một nét đẹp riêng cần được tôn lên một cách tinh tế và tự nhiên.”",
+    help_commitment:
+      "Vì vậy, Lumi luôn dành trọn thời gian để lắng nghe, tư vấn và thiết kế dáng môi – mày – mí phù hợp nhất với từng khách hàng. Với quy trình chuẩn y khoa, màu mực organic an toàn, Lumi Beauty cam kết mang lại vẻ đẹp tự nhiên, không sưng, không đau và bền màu theo thời gian.",
     book_description:
       "Đặt lịch hẹn hôm nay để được tư vấn và nhận nhiều ưu đãi hấp dẫn",
     contact_description:
@@ -608,33 +614,336 @@ const translations = {
 
     // Services
     our_services: "Dịch Vụ Của Lumi Beauty",
-    lip_tattoo_title: "Phun Môi Tự Nhiên",
-    lip_tattoo_benefit1: "Màu môi chuẩn đẹp từ 2-3 năm",
-    lip_tattoo_benefit2: "Giúp môi đều màu, giảm thâm sạm",
-    lip_tattoo_benefit3: "Tiết kiệm thời gian trang điểm mỗi ngày",
-    eyebrow_tattoo_title:
-      "Phun Mày Tự Nhiên – Nét Đẹp Hài Hòa, Thần Thái Rạng Ngời",
-    eyebrow_tattoo_benefit1: "Không đau, không sưng",
-    eyebrow_tattoo_benefit2: "Lên màu đều, bền 2-3 năm",
-    eyebrow_tattoo_benefit3: "Dáng mày được đo tỉ lệ vàng gương mặt",
-    lip_removal_title: "Khử Thâm Môi – Trả Lại Sắc Môi Tươi Hồng Tự Nhiên",
-    lip_removal_benefit1: "Loại bỏ thâm sạm hiệu quả",
-    lip_removal_benefit2: "Màu môi tự nhiên, tươi sáng",
-    lip_removal_benefit3: "An toàn tuyệt đối cho da môi",
+    lip_tattoo_title: "Phun môi collagen / phun môi baby",
+    lip_tattoo_benefit1: "Giúp môi hồng hào, tươi tắn và căng mọng tự nhiên.",
+    lip_tattoo_benefit2:
+      "Kỹ thuật 1-1 với đầu kim siêu mảnh, giảm đau tối đa và lên màu chuẩn đẹp sau khi bong.",
+    lip_tattoo_benefit3: "Phù hợp cho môi khô, thâm hoặc nhạt màu.",
+    eyebrow_tattoo_title: "Phun mày shading / tán bột",
+    eyebrow_tattoo_benefit1:
+      "Tạo dáng mày hài hòa, mềm mại, tự nhiên, tôn nét thanh thoát của gương mặt.",
+    eyebrow_tattoo_benefit2:
+      "Kỹ thuật phun mày 1-1, đo tỉ lệ chuẩn theo khuôn mặt trước khi thực hiện.",
+    eyebrow_tattoo_benefit3: "Đảm bảo dáng mày cân đối, không thô cứng.",
+    eyeliner_tattoo_title: "Phun mí mở tròng",
+    eyeliner_tattoo_benefit1:
+      "Giúp đôi mắt to tròn, có chiều sâu và vẫn tự nhiên.",
+    eyeliner_tattoo_benefit2:
+      "Quy trình nhẹ nhàng, không đau, không cần can thiệp phẫu thuật.",
+    eyeliner_tattoo_benefit3:
+      "Phù hợp khách muốn làm đẹp nhưng giữ vẻ tự nhiên.",
+    lip_removal_title: "Khử thâm môi cho nam & nữ",
+    lip_removal_benefit1:
+      "Phục hồi sắc môi sáng hồng tự nhiên, đều màu và mềm mại.",
+    lip_removal_benefit2:
+      "Kỹ thuật khử thâm 1-1, an toàn, hiệu quả chỉ sau một liệu trình.",
+    lip_removal_benefit3:
+      "Giải pháp cho cả nam giới muốn cải thiện màu môi mà không bị đỏ giả.",
     discover_more: "KHÁM PHÁ THÊM",
+
+    // Service Detail - Lip Tattoo
+    lip_detail_page_title:
+      "Phun Môi Tự Nhiên Lumi Beauty - Tái sinh sắc môi chuẩn y khoa",
+    lip_detail_meta_description:
+      "Khám phá phun môi tự nhiên tại Lumi Beauty với công nghệ collagen baby lip, lên màu chuẩn sau 48h, bảo hành màu sắc 12 tháng và chế độ chăm sóc riêng biệt.",
+    lip_detail_badge: "Dịch vụ nổi bật",
+    lip_detail_hero_heading: "Phun Môi Tự Nhiên Lumi Beauty",
+    lip_detail_hero_subheading: "Sắc môi ửng hồng, căng mọng chỉ sau 48 giờ",
+    lip_detail_hero_paragraph1:
+      "Chúng tôi kết hợp kỹ thuật phun Collagen Baby Lip với phác đồ đo sắc tố riêng cho từng khách hàng. 100% mực hữu cơ nhập khẩu, không chì, không gây khô nứt và giữ màu chuẩn từ 18-36 tháng.",
+    lip_detail_hero_paragraph2:
+      "Liệu trình được thực hiện bởi chuyên viên có chứng chỉ y tế, quy trình chuẩn vô khuẩn, cam kết không đau rát, không sưng và hồi phục nhanh.",
+    lip_detail_hero_stat_label: "Khách hài lòng sau buổi dặm đầu tiên",
+    lip_detail_highlights_title: "Vì sao phun môi tại Lumi Beauty khác biệt?",
+    lip_detail_highlight1_title: "Công nghệ Collagen Baby Lip",
+    lip_detail_highlight1_desc:
+      "Hạt mực siêu mịn kết hợp serum collagen nội sinh giúp môi phục hồi nhanh, mềm mượt và căng bóng tự nhiên.",
+    lip_detail_highlight2_title: "Phác màu riêng cho từng sắc tố",
+    lip_detail_highlight2_desc:
+      "Đo sắc tố da, môi bằng máy phân tích để pha màu chuẩn, không bị lệch tông, không tái thâm sau khi bong.",
+    lip_detail_highlight3_title: "Không đau - Không sưng",
+    lip_detail_highlight3_desc:
+      "Gây tê y khoa ủ 2 lớp và kỹ thuật đi kim nano ôm sát bề mặt, đảm bảo khách ngủ trọn liệu trình, môi không bầm tím.",
+    lip_detail_highlight4_title: "Bảo hành 12 tháng",
+    lip_detail_highlight4_desc:
+      "Theo dõi sát sao sau liệu trình, miễn phí 1 lần dặm màu và tặng bộ chăm sóc tại nhà suốt 12 tháng.",
+    lip_detail_process_title: "Quy trình chuẩn y khoa trong 90 phút",
+    lip_detail_process_intro:
+      "Mỗi bước đều tuân thủ kiểm soát vô trùng, đảm bảo trải nghiệm nhẹ nhàng và kết quả chuẩn xác.",
+    lip_detail_process_step1_title: "Thăm khám & đo sắc tố",
+    lip_detail_process_step1_desc:
+      "Phân tích tình trạng môi, tông da, thói quen sinh hoạt để tư vấn dáng môi, màu phù hợp nhất.",
+    lip_detail_process_step2_title: "Vẽ phác thảo dáng môi chuẩn vàng",
+    lip_detail_process_step2_desc:
+      "Canh chỉnh tỷ lệ bằng thước đo chuyên dụng, tạo viền môi sắc nét nhưng vẫn mềm mại tự nhiên.",
+    lip_detail_process_step3_title: "Ủ tê đa tầng & sát khuẩn",
+    lip_detail_process_step3_desc:
+      "Sử dụng tê y khoa nhập khẩu, đảm bảo vô cảm hoàn toàn và sát khuẩn tuyệt đối trước khi thực hiện.",
+    lip_detail_process_step4_title: "Phun Collagen Baby Lip",
+    lip_detail_process_step4_desc:
+      "Đi kim nano theo chiều sợi collagen, tạo độ phủ đều màu, không tổn thương biểu bì và hạn chế bong tróc.",
+    lip_detail_process_step5_title: "Serum khóa màu & hướng dẫn chăm sóc",
+    lip_detail_process_step5_desc:
+      "Phủ serum khóa màu độc quyền, hướng dẫn chi tiết chăm sóc tại nhà và hẹn lịch dặm nếu cần.",
+    lip_detail_results_outcome_title: "Kết quả bạn nhận được",
+    lip_detail_results_outcome_item1:
+      "Môi ửng hồng sau 48 giờ, lên chuẩn màu sau 7 ngày.",
+    lip_detail_results_outcome_item2:
+      "Giảm tình trạng thâm bẩm sinh 60-80% ngay sau liệu trình.",
+    lip_detail_results_outcome_item3:
+      "Dáng môi căng đầy, khóe môi tươi tắn mà không cần son.",
+    lip_detail_results_aftercare_title: "Chăm sóc tại nhà đơn giản",
+    lip_detail_results_aftercare_item1:
+      "Thoa dưỡng môi độc quyền sáng - tối trong 7 ngày đầu.",
+    lip_detail_results_aftercare_item2:
+      "Tránh nước nóng, thực phẩm quá cay hoặc có màu đậm trong 3 ngày.",
+    lip_detail_results_aftercare_item3:
+      "Tái khám miễn phí sau 30 ngày để kiểm tra độ bền màu.",
+    lip_detail_pricing_title: "Bảng giá & gói ưu đãi",
+    lip_detail_pricing_intro:
+      "Cam kết không phát sinh chi phí, tặng kèm bộ chăm sóc và voucher dặm lại trong 12 tháng.",
+    lip_detail_pricing_option1_title: "Gói Phun Môi Baby Lip",
+    lip_detail_pricing_option1_item1: "Phun collagen baby lip chuẩn y khoa.",
+    lip_detail_pricing_option1_item2: "Tặng serum dưỡng ẩm 7 ngày.",
+    lip_detail_pricing_option1_item3: "Bảo hành 6 tháng.",
+    lip_detail_pricing_option2_badge: "Ưa chuộng nhất",
+    lip_detail_pricing_option2_title: "Gói Collagen Luxury",
+    lip_detail_pricing_option2_item1: "Phun mày môi phối màu theo tông da.",
+    lip_detail_pricing_option2_item2:
+      "Tặng bộ chăm sóc 14 ngày & serum khóa màu.",
+    lip_detail_pricing_option2_item3: "Miễn phí 1 lần dặm màu trong 12 tháng.",
+    lip_detail_pricing_option3_title: "Gói Xử Lý Thâm Nặng",
+    lip_detail_pricing_option3_item1:
+      "Kết hợp khử thâm và phun baby lip 2 buổi.",
+    lip_detail_pricing_option3_item2: "Theo dõi định kỳ 3 tháng/lần.",
+    lip_detail_pricing_option3_item3: "Tư vấn dinh dưỡng cải thiện sắc tố.",
+    lip_detail_pricing_note:
+      "Giá đã bao gồm bộ dụng cụ vô trùng dùng một lần và thuế VAT. Liên hệ để nhận ưu đãi theo nhóm.",
+    lip_detail_faq_title: "Câu hỏi thường gặp",
+    lip_detail_faq_q1: "Sau khi phun môi bao lâu thì bong?",
+    lip_detail_faq_a1:
+      "Thông thường từ 2-3 ngày lớp vảy mỏng bắt đầu bong nhẹ. Đến ngày thứ 7 môi lên màu chuẩn 90% và sẽ ổn định hoàn toàn sau 14 ngày.",
+    lip_detail_faq_q2: "Phun môi có đau hay bị sưng không?",
+    lip_detail_faq_a2:
+      "Nhờ ủ tê đa tầng và kỹ thuật đi kim nano, khách gần như không cảm giác đau. Môi chỉ hồng nhẹ và không sưng sau liệu trình.",
+    lip_detail_faq_q3: "Có cần kiêng cữ sau phun môi?",
+    lip_detail_faq_a3:
+      "Bạn chỉ cần tránh ăn đồ cay nóng, nước có màu đậm trong 3 ngày đầu và uống đủ nước. Lumi Beauty gửi kèm cẩm nang chăm sóc chi tiết cho từng khách.",
+    lip_detail_cta_title: "Sẵn sàng sở hữu sắc môi tươi trẻ?",
+    lip_detail_cta_desc:
+      "Đặt lịch ngay hôm nay để được chuyên gia Lumi Beauty đo tông màu và lên phác đồ chăm sóc riêng cho bạn.",
+
+    // Service Detail - Brow Tattoo
+    brow_detail_page_title:
+      "Phun Mày Tơ Ombre Lumi Beauty - Tạo khung mày hài hòa chuẩn gương mặt",
+    brow_detail_meta_description:
+      "Phun mày tơ ombre tại Lumi Beauty định hình tỉ lệ vàng, đi sợi nano, không sưng đau, bảo hành 18 tháng và chăm sóc riêng từng kiểu mày.",
+    brow_detail_badge: "Định hình chân mày",
+    brow_detail_hero_heading: "Phun Mày Tơ Ombre Lumi Beauty",
+    brow_detail_hero_subheading:
+      "Tạo khung mày hài hòa, nâng thần thái chuẩn tỉ lệ vàng",
+    brow_detail_hero_paragraph1:
+      "Dựa trên chuẩn vàng 1/3 khuôn mặt và cấu trúc xương hốc mắt, chúng tôi thiết kế dáng mày riêng cho từng khách. Kỹ thuật đi sợi nano kết hợp ombre giúp mày đậm ở đuôi, mềm ở đầu, hiệu ứng như kẻ chì hàng ngày.",
+    brow_detail_hero_paragraph2:
+      "Dụng cụ kim siêu mảnh 0.18mm, mực hữu cơ thuần châu Âu, an toàn với phụ nữ sau sinh từ 6 tháng. Bảo hành dáng và màu trong 18 tháng.",
+    brow_detail_hero_stat_label: "Khách không cần kẻ mày trong 18 tháng",
+    brow_detail_highlights_title: "Điểm khác biệt của phun mày Lumi Beauty",
+    brow_detail_highlight1_title: "Định hình tỉ lệ vàng 1/3",
+    brow_detail_highlight1_desc:
+      "Đo chiều cao trán, gò má, đuôi mắt để tạo form mày nâng thần sắc mà vẫn cân đối tự nhiên.",
+    brow_detail_highlight2_title: "Đi sợi nano vi điểm",
+    brow_detail_highlight2_desc:
+      "Phác thảo từng sợi theo chiều mọc thật, tạo hiệu ứng 3D đầy đặn mà không gây tổn thương chân mày cũ.",
+    brow_detail_highlight3_title: "Mực hữu cơ thuần lạnh",
+    brow_detail_highlight3_desc:
+      "Loại bỏ nguy cơ trổ đỏ - trổ xanh, màu ombre mịn chuyển sắc nhẹ nhàng, phù hợp cả da dầu.",
+    brow_detail_highlight4_title: "Chăm sóc trọn vòng đời",
+    brow_detail_highlight4_desc:
+      "Tặng gói điều chỉnh dáng sau 30 ngày và hỗ trợ dặm miễn phí nếu dáng lệch do phun cũ.",
+    brow_detail_process_title: "Quy trình thực hiện phun mày tơ ombre",
+    brow_detail_process_intro:
+      "Thời gian 75 phút, áp dụng chuẩn vô trùng quốc tế, phù hợp cả làn da nhạy cảm.",
+    brow_detail_process_step1_title: "Phân tích khuôn mặt",
+    brow_detail_process_step1_desc:
+      "Đo góc mắt - cánh mũi - đỉnh mày, xác định dáng phù hợp với phong cách cá nhân.",
+    brow_detail_process_step2_title: "Vẽ phác thảo 3 lớp",
+    brow_detail_process_step2_desc:
+      "Dùng bút chuyên dụng tạo form mày và cân chỉnh từng mm trước khi thực hiện.",
+    brow_detail_process_step3_title: "Ủ tê lạnh & khử trùng",
+    brow_detail_process_step3_desc:
+      "Ủ tê lạnh không gây bít lỗ chân lông, làm sạch vùng da mày bằng dung dịch dịu nhẹ.",
+    brow_detail_process_step4_title: "Đi sợi nano kết hợp ombre",
+    brow_detail_process_step4_desc:
+      "Đi vi kim từng sợi ở đầu mày, phủ ombre mịn ở thân và đuôi, đảm bảo mật độ tự nhiên.",
+    brow_detail_process_step5_title: "Khóa màu & hướng dẫn",
+    brow_detail_process_step5_desc:
+      "Phủ serum khóa màu, hướng dẫn chăm sóc tại nhà và đặt lịch tái khám sau 30 ngày.",
+    brow_detail_results_outcome_title: "Kết quả đạt được",
+    brow_detail_results_outcome_item1:
+      "Form mày chuẩn nét, đuôi sắc nhưng không cứng.",
+    brow_detail_results_outcome_item2:
+      "Hiệu ứng sợi tơ đan xen, nhìn gần vẫn tự nhiên.",
+    brow_detail_results_outcome_item3:
+      "Giữ màu 18-24 tháng, không trổ xanh đỏ.",
+    brow_detail_results_aftercare_title: "Chăm sóc sau phun",
+    brow_detail_results_aftercare_item1:
+      "Giữ vùng mày khô trong 48 giờ, lau nhẹ bằng nước muối sinh lý.",
+    brow_detail_results_aftercare_item2:
+      "Không tự ý cậy mày bong, để bong tự nhiên sau 5-7 ngày.",
+    brow_detail_results_aftercare_item3:
+      "Tránh nắng gắt, xông hơi trong 10 ngày đầu.",
+    brow_detail_pricing_title: "Gói dịch vụ & ưu đãi",
+    brow_detail_pricing_intro:
+      "Áp dụng giá niêm yết, tặng kèm cặp serum dưỡng mày và phiếu dặm miễn phí.",
+    brow_detail_pricing_option1_title: "Gói Phun Mày Ombre",
+    brow_detail_pricing_option1_item1:
+      "Tạo form mày cá nhân hóa, phủ ombre mềm mại.",
+    brow_detail_pricing_option1_item2: "Tặng serum dưỡng mày 7 ngày.",
+    brow_detail_pricing_option1_item3: "Bảo hành 12 tháng.",
+    brow_detail_pricing_option2_badge: "Được yêu thích",
+    brow_detail_pricing_option2_title: "Gói Đi Sợi Nano Mix Ombre",
+    brow_detail_pricing_option2_item1:
+      "Đi sợi nano đầu mày, ombre đuôi cho hiệu ứng makeup.",
+    brow_detail_pricing_option2_item2: "Theo dõi 2 lần trong 60 ngày.",
+    brow_detail_pricing_option2_item3: "Miễn phí dặm trong 18 tháng.",
+    brow_detail_pricing_option3_title: "Gói Tái Cấu Trúc Chân Mày",
+    brow_detail_pricing_option3_item1:
+      "Xử lý nền cũ trổ xanh đỏ, tạo dáng mới hoàn toàn.",
+    brow_detail_pricing_option3_item2: "Bao gồm 2 buổi chỉnh sửa chuyên sâu.",
+    brow_detail_pricing_option3_item3: "Hỗ trợ xóa laser nhẹ nếu cần.",
+    brow_detail_pricing_note:
+      "Giá đã gồm vật tư dùng một lần và thuế VAT. Nhóm từ 2 người giảm thêm 5%.",
+    brow_detail_faq_title: "Câu hỏi thường gặp",
+    brow_detail_faq_q1: "Sau phun mày có bị đậm quá không?",
+    brow_detail_faq_a1:
+      "Lumi Beauty luôn pha màu nhạt hơn 30% so với yêu cầu ban đầu. Sau bong 5-7 ngày màu sẽ lên đúng tông, không bị đậm mất tự nhiên.",
+    brow_detail_faq_q2: "Bao lâu thì cần dặm lại?",
+    brow_detail_faq_a2:
+      "Thông thường 18-24 tháng mới cần dặm. Riêng da dầu hoặc khách thường xuyên tiếp xúc nắng có thể cần sớm hơn và đã bao gồm trong bảo hành.",
+    brow_detail_faq_q3: "Có phù hợp với dáng mày đã phun trước đó?",
+    brow_detail_faq_a3:
+      "Chúng tôi đánh giá nền cũ trước khi thực hiện. Nếu mày trổ xanh đỏ sẽ xử lý nhẹ trước, sau đó tái cấu trúc để dáng mới mềm mại, không bị chồng chéo.",
+    brow_detail_cta_title: "Sẵn sàng nâng tầm thần thái?",
+    brow_detail_cta_desc:
+      "Đặt lịch ngay để được chuyên gia Lumi Beauty đo phác và tư vấn dáng mày hoàn hảo cho gương mặt bạn.",
+
+    // Service Detail - Lip Brightening
+    lip_removal_detail_page_title:
+      "Khử Thâm Môi Chuyên Sâu Lumi Beauty - Trả lại sắc môi tươi sáng",
+    lip_removal_detail_meta_description:
+      "Liệu trình khử thâm môi Lumi Beauty kết hợp laser lạnh và serum vitamin, cải thiện thâm bẩm sinh 70%, an toàn cho da nhạy cảm, bảo hành màu 12 tháng.",
+    lip_removal_detail_badge: "Xử lý thâm môi",
+    lip_removal_detail_hero_heading: "Khử Thâm Môi Chuyên Sâu Lumi Beauty",
+    lip_removal_detail_hero_subheading:
+      "Trả lại sắc môi tươi sáng, mềm mịn sau 14 ngày",
+    lip_removal_detail_hero_paragraph1:
+      "Liệu trình kết hợp laser lạnh thế hệ mới và serum vitamin C + B5 đậm đặc, phá hủy sắc tố thâm mà không gây bong tróc hay bỏng rát. Phù hợp với môi thâm do bẩm sinh, thâm do dùng son chì hoặc do nội tiết.",
+    lip_removal_detail_hero_paragraph2:
+      "Mỗi khách hàng được xây dựng phác đồ riêng gồm 1-2 buổi khử thâm và 1 buổi phun baby lip hoàn thiện, đảm bảo lên màu tự nhiên, lâu bền.",
+    lip_removal_detail_hero_stat_label: "Giảm sắc tố thâm sau buổi đầu tiên",
+    lip_removal_detail_highlights_title:
+      "Ưu điểm của liệu trình khử thâm Lumi Beauty",
+    lip_removal_detail_highlight1_title: "Công nghệ laser lạnh 650nm",
+    lip_removal_detail_highlight1_desc:
+      "Tác động chọn lọc lên sắc tố thâm, không gây bỏng nhiệt, không làm mỏng môi.",
+    lip_removal_detail_highlight2_title: "Serum vitamin độc quyền",
+    lip_removal_detail_highlight2_desc:
+      "Phục hồi biểu bì nhanh, cấp ẩm sâu và khóa ẩm giúp môi mềm mượt ngay sau liệu trình.",
+    lip_removal_detail_highlight3_title: "Phác đồ riêng từng mức độ",
+    lip_removal_detail_highlight3_desc:
+      "Tùy tình trạng bẩm sinh hay do thói quen, chuyên gia điều chỉnh năng lượng và số buổi phù hợp.",
+    lip_removal_detail_highlight4_title: "Kết hợp phun baby lip hoàn thiện",
+    lip_removal_detail_highlight4_desc:
+      "Sau khi khử thâm, môi được phủ màu baby lip giúp duy trì sắc hồng tươi ít nhất 18 tháng.",
+    lip_removal_detail_process_title: "Quy trình khử thâm môi an toàn",
+    lip_removal_detail_process_intro:
+      "Thời gian 60-75 phút/buổi, bao gồm khử thâm và chăm sóc phục hồi chuyên sâu.",
+    lip_removal_detail_process_step1_title: "Phân tích sắc tố",
+    lip_removal_detail_process_step1_desc:
+      "Soi da môi bằng đèn chuyên dụng, đánh giá mức độ thâm và nguyên nhân để chọn phác độ.",
+    lip_removal_detail_process_step2_title: "Tẩy da chết enzyme",
+    lip_removal_detail_process_step2_desc:
+      "Loại bỏ tế bào chết bằng enzyme papain dịu nhẹ, giúp sắc tố thâm lộ rõ và dễ xử lý.",
+    lip_removal_detail_process_step3_title: "Khử thâm bằng laser lạnh",
+    lip_removal_detail_process_step3_desc:
+      "Chiếu laser 650nm đúng điểm thâm, phá hủy melanin mà không ảnh hưởng mô xung quanh.",
+    lip_removal_detail_process_step4_title: "Ủ serum vitamin & mặt nạ phục hồi",
+    lip_removal_detail_process_step4_desc:
+      "Ủ serum vitamin C, E, B5 và đắp mặt nạ peptide giúp môi dịu ngay, giảm khô nứt.",
+    lip_removal_detail_process_step5_title: "Phủ màu baby lip (nếu cần)",
+    lip_removal_detail_process_step5_desc:
+      "Sau 7-10 ngày, tiến hành phun baby lip để hoàn thiện sắc môi hồng hào tự nhiên.",
+    lip_removal_detail_results_outcome_title: "Mức độ cải thiện",
+    lip_removal_detail_results_outcome_item1:
+      "Giảm 50-70% sắc tố thâm ngay buổi đầu với môi thâm do son.",
+    lip_removal_detail_results_outcome_item2:
+      "Môi bẩm sinh thâm cải thiện 30-40% sau 2 buổi, tiếp tục sáng dần sau 4 tuần.",
+    lip_removal_detail_results_outcome_item3:
+      "Kết hợp phun baby lip mang lại màu hồng tự nhiên, bền đẹp 18-24 tháng.",
+    lip_removal_detail_results_aftercare_title: "Chăm sóc sau liệu trình",
+    lip_removal_detail_results_aftercare_item1:
+      "Bôi dưỡng môi Lumi Care 3 lần/ngày trong 7 ngày đầu.",
+    lip_removal_detail_results_aftercare_item2:
+      "Uống đủ 2 lít nước, hạn chế cà phê, trà đậm trong 5 ngày.",
+    lip_removal_detail_results_aftercare_item3:
+      "Tránh nắng trực tiếp và son chứa chì trong 14 ngày.",
+    lip_removal_detail_pricing_title: "Gói liệu trình & chi phí",
+    lip_removal_detail_pricing_intro:
+      "Giá trọn gói, gồm sản phẩm chăm sóc tại nhà và theo dõi định kỳ.",
+    lip_removal_detail_pricing_option1_title: "Gói Khử Thâm Cơ Bản",
+    lip_removal_detail_pricing_option1_item1:
+      "1 buổi laser lạnh + 1 bộ dưỡng môi tại nhà.",
+    lip_removal_detail_pricing_option1_item2: "Theo dõi sau 14 ngày.",
+    lip_removal_detail_pricing_option1_item3:
+      "Phù hợp môi thâm nhẹ do dùng son.",
+    lip_removal_detail_pricing_option2_badge: "Phổ biến nhất",
+    lip_removal_detail_pricing_option2_title: "Gói Khử Thâm + Baby Lip",
+    lip_removal_detail_pricing_option2_item1:
+      "2 buổi khử thâm + 1 buổi phun baby lip.",
+    lip_removal_detail_pricing_option2_item2:
+      "Bộ dưỡng 14 ngày & serum khóa màu.",
+    lip_removal_detail_pricing_option2_item3: "Bảo hành màu 12 tháng.",
+    lip_removal_detail_pricing_option3_title: "Gói Xử Lý Thâm Nặng",
+    lip_removal_detail_pricing_option3_item1:
+      "3 buổi laser lạnh + chăm sóc chuyên sâu.",
+    lip_removal_detail_pricing_option3_item2:
+      "Tư vấn dinh dưỡng, bổ sung vitamin hỗ trợ cải thiện sắc tố.",
+    lip_removal_detail_pricing_option3_item3:
+      "Miễn phí 1 buổi phun baby lip hoàn thiện.",
+    lip_removal_detail_pricing_note:
+      "Tặng bộ dưỡng môi Lumi Care trị giá 390.000đ cho mọi gói. Khách quay lại được giảm 10%.",
+    lip_removal_detail_faq_title: "Câu hỏi thường gặp",
+    lip_removal_detail_faq_q1: "Khử thâm môi có đau không?",
+    lip_removal_detail_faq_a1:
+      "Liệu trình sử dụng laser lạnh với năng lượng thấp và ủ tê y khoa nên hầu như không đau, chỉ hơi ấm nhẹ trong 2-3 phút đầu.",
+    lip_removal_detail_faq_q2: "Bao lâu sau có thể phun màu?",
+    lip_removal_detail_faq_a2:
+      "Sau 7-10 ngày, khi môi hồi phục hoàn toàn và sắc thâm giảm rõ, chúng tôi sẽ phun baby lip để hoàn thiện màu.",
+    lip_removal_detail_faq_q3: "Khử thâm có làm môi bị khô không?",
+    lip_removal_detail_faq_a3:
+      "Sau liệu trình, môi được cấp ẩm sâu bằng serum và mặt nạ peptide nên không khô. Bạn chỉ cần dưỡng đều theo hướng dẫn.",
+    lip_removal_detail_cta_title: "Đánh thức sắc môi hồng tự nhiên",
+    lip_removal_detail_cta_desc:
+      "Đăng ký lịch ngay để được chuyên gia Lumi Beauty thăm khám và xây dựng phác đồ khử thâm dành riêng cho bạn.",
 
     // Why Choose Us
     why_choose_title: "Vì Sao Hàng Ngàn Khách Hàng Tin Chọn Lumi Beauty?",
-    medical_process: "Quy Trình Chuẩn Y Khoa",
-    medical_process_desc: "Không Đau, Không Sưng, Hồi Màu Nhanh",
-    skilled_technicians: "Kỹ Thuật Viên Tay Nghề Cao",
-    skilled_technicians_desc: "Tận Tâm Trong Từng Đường Nét",
-    warranty: "Bảo Hành & Dặm Miễn Phí",
-    warranty_desc: "Cam Kết Hài Lòng Tuyệt Đối",
-    organic_pigments: "Mực Phun Hữu Cơ Cao Cấp",
-    organic_pigments_desc: "Màu Chuẩn, Bền, An Toàn Tuyệt Đối",
+    feature_personalized_title: "Phun xăm 1-1 riêng biệt",
+    feature_personalized_desc:
+      "Mỗi khách hàng được phục vụ riêng, chuyên viên theo dõi trọn quy trình.",
+    feature_expert_title: "Chuyên viên tay nghề cao",
+    feature_expert_desc: "Được đào tạo bài bản, nhiều năm kinh nghiệm.",
+    feature_organic_title: "Mực organic an toàn",
+    feature_organic_desc: "Không gây sưng đau, không đổi màu theo thời gian.",
+    feature_space_title: "Không gian sạch & riêng tư",
+    feature_space_desc:
+      "Tạo cảm giác thư giãn, thoải mái trong suốt buổi làm đẹp.",
+    feature_feedback_title: "Hàng trăm khách hàng hài lòng",
+    feature_feedback_desc: "Feedback thật – kết quả thật.",
 
     // Contact Methods
+    contact_intro:
+      "✨ Bạn muốn sở hữu nét đẹp tự nhiên, tinh tế mà vẫn giữ được cá tính riêng? Hãy để Lumi Beauty đồng hành cùng bạn trong hành trình phun xăm thẩm mỹ 1-1 chuyên biệt.",
     contact_methods_title:
       "Đừng ngần ngại - chọn cách liên lạc phù hợp nhất với bạn.",
     contact_call_title: "Gọi điện trực tiếp",
@@ -780,6 +1089,12 @@ const translations = {
     // Help Section
     greeting: "Hello!",
     how_can_help: "What can Lumi Beauty help you with?",
+    help_intro:
+      "Lumi Beauty is a trusted cosmetic tattoo studio in Da Nang, known for private one-on-one sessions and heartfelt care.",
+    help_quote:
+      "We believe that “Every face is unique and deserves to be enhanced with subtle, natural detail.”",
+    help_commitment:
+      "That is why we devote our full time to listening, consulting, and designing lips, brows, and eyeliner that complement each client. With medical-grade protocols and safe organic pigments, Lumi Beauty delivers natural results with no swelling, minimal discomfort, and long-lasting color.",
     book_description:
       "Book an appointment today to get consultation and receive attractive offers",
     contact_description:
@@ -791,35 +1106,53 @@ const translations = {
 
     // Services
     our_services: "Our Services",
-    lip_tattoo_title: "Natural Lip Tattoo - Natural as if not done",
-    lip_tattoo_benefit1: "Standard beautiful lip color for 1-3 years",
-    lip_tattoo_benefit2: "Helps even lip color, reduces dark spots",
-    lip_tattoo_benefit3: "Saves daily makeup time",
-    eyebrow_tattoo_title:
-      "Natural Eyebrow Tattoo – Harmonious Beauty, Radiant Spirit",
-    eyebrow_tattoo_benefit1: "No pain, no swelling",
-    eyebrow_tattoo_benefit2: "Even color, lasts 2-3 years",
-    eyebrow_tattoo_benefit3:
-      "Eyebrow shape measured to golden ratio of the face",
-    lip_removal_title:
-      "Lip Dark Spot Removal – Restoring Natural Pink Lip Color",
-    lip_removal_benefit1: "Effectively removes dark spots",
-    lip_removal_benefit2: "Natural, bright lip color",
-    lip_removal_benefit3: "Absolutely safe for lip skin",
+    lip_tattoo_title: "Collagen Baby Lip Tattoo",
+    lip_tattoo_benefit1: "Boosts rosy, plump, naturally radiant lips.",
+    lip_tattoo_benefit2:
+      "One-on-one technique with ultra-fine needles for minimal discomfort and flawless color after healing.",
+    lip_tattoo_benefit3: "Ideal for dry, dark, or pale lips.",
+    eyebrow_tattoo_title: "Shading / Powder Brows",
+    eyebrow_tattoo_benefit1:
+      "Creates soft, natural brows that lift and refine facial contours.",
+    eyebrow_tattoo_benefit2:
+      "Personalized one-on-one mapping to your facial proportions before tattooing.",
+    eyebrow_tattoo_benefit3: "Balanced brow structure—never harsh or blocky.",
+    eyeliner_tattoo_title: "Lash-Line Enhancement",
+    eyeliner_tattoo_benefit1:
+      "Opens the eyes with subtle depth while keeping a natural look.",
+    eyeliner_tattoo_benefit2:
+      "Gentle, surgery-free process with virtually no pain.",
+    eyeliner_tattoo_benefit3:
+      "Perfect for clients seeking definition but retaining a bare-faced feel.",
+    lip_removal_title: "Lip Brightening for Men & Women",
+    lip_removal_benefit1:
+      "Restores an even, soft pink tone for smooth, hydrated lips.",
+    lip_removal_benefit2:
+      "One-on-one brightening protocol that delivers visible results in a single course.",
+    lip_removal_benefit3:
+      "Solutions tailored for men who want brighter lips without an artificial red tint.",
     discover_more: "DISCOVER MORE",
 
     // Why Choose Us
     why_choose_title: "Why Do Thousands of Customers Trust Lumi Beauty?",
-    medical_process: "Medical Standard Procedure",
-    medical_process_desc: "No Pain, No Swelling, Fast Color Recovery",
-    skilled_technicians: "Highly Skilled Technicians",
-    skilled_technicians_desc: "Dedicated in Every Stroke",
-    warranty: "Warranty & Free Touch-ups",
-    warranty_desc: "Absolute Satisfaction Guarantee",
-    organic_pigments: "Premium Organic Pigments",
-    organic_pigments_desc: "Standard Color, Durable, Absolutely Safe",
+    feature_personalized_title: "Private 1-on-1 Sessions",
+    feature_personalized_desc:
+      "Every guest receives a dedicated artist who follows the entire process.",
+    feature_expert_title: "Expert, Well-Trained Artists",
+    feature_expert_desc:
+      "Formally trained professionals with years of experience.",
+    feature_organic_title: "Safe Organic Pigments",
+    feature_organic_desc:
+      "No swelling, no discomfort, and no color shifting over time.",
+    feature_space_title: "Clean & Private Studio",
+    feature_space_desc:
+      "A relaxing, comfortable space from consultation to finish.",
+    feature_feedback_title: "Hundreds of Happy Clients",
+    feature_feedback_desc: "Authentic feedback and proven results.",
 
     // Contact Methods
+    contact_intro:
+      "✨ Want a refined, natural look that still feels like you? Let Lumi Beauty guide you through a personalized 1-on-1 permanent makeup experience.",
     contact_methods_title:
       "Don't hesitate – choose the contact option that fits you best.",
     contact_call_title: "Call us directly",
@@ -964,6 +1297,12 @@ const translations = {
     // Help Section
     greeting: "안녕하세요!",
     how_can_help: "루미 뷰티가 어떻게 도와드릴까요?",
+    help_intro:
+      "루미 뷰티는 다낭에서 1:1 프라이빗 상담과 세심한 케어로 사랑받는 반영구 전문 숍입니다.",
+    help_quote:
+      "우리는 “모든 얼굴은 고유한 아름다움을 지니며, 섬세하고 자연스럽게 살려야 한다”고 믿습니다.",
+    help_commitment:
+      "그래서 고객 한 분 한 분의 이야기를 듣고 가장 잘 어울리는 입술·눈썹·아이라인을 설계합니다. 의료 표준 프로세스와 안전한 유기농 색소로 붓거나 아프지 않으며 오래 지속되는 자연스러운 결과를 약속드립니다.",
     book_description: "오늘 예약하여 상담을 받고 매력적인 혜택을 받으세요",
     contact_description:
       "피드백이나 상담이 필요한 질문이 있으시면 즉시 연락해 주세요",
@@ -974,33 +1313,53 @@ const translations = {
 
     // Services
     our_services: "우리 서비스",
-    lip_tattoo_title: "자연스러운 입술 타투 - 타투하지 않은 것처럼 자연스럽게",
-    lip_tattoo_benefit1: "1-3년간 표준 아름다운 입술 색상",
-    lip_tattoo_benefit2: "입술 색상을 고르게 하고 어두운 반점을 줄입니다",
-    lip_tattoo_benefit3: "매일 메이크업 시간을 절약합니다",
-    eyebrow_tattoo_title:
-      "자연스러운 눈썹 타투 – 조화로운 아름다움, 빛나는 정신",
-    eyebrow_tattoo_benefit1: "통증 없음, 부종 없음",
-    eyebrow_tattoo_benefit2: "고른 색상, 2-3년 지속",
-    eyebrow_tattoo_benefit3: "얼굴의 황금 비율에 맞춰 측정된 눈썹 모양",
-    lip_removal_title: "입술 어두운 반점 제거 – 자연스러운 핑크 입술 색상 복원",
-    lip_removal_benefit1: "어두운 반점을 효과적으로 제거",
-    lip_removal_benefit2: "자연스럽고 밝은 입술 색상",
-    lip_removal_benefit3: "입술 피부에 절대적으로 안전",
+    lip_tattoo_title: "콜라겐 / 베이비 립 타투",
+    lip_tattoo_benefit1: "입술을 자연스럽고 생기 있게, 촉촉하게 연출합니다.",
+    lip_tattoo_benefit2:
+      "초미세 니들을 사용하는 1:1 맞춤 시술로 통증을 최소화하고, 벗겨진 후에도 선명한 컬러를 유지합니다.",
+    lip_tattoo_benefit3: "건조하거나 어둡고 옅은 입술에 적합한 솔루션입니다.",
+    eyebrow_tattoo_title: "쉐이딩 / 파우더 브로우",
+    eyebrow_tattoo_benefit1:
+      "부드럽고 자연스러운 눈썹 라인으로 얼굴을 더 세련되게 보완합니다.",
+    eyebrow_tattoo_benefit2:
+      "시술 전 얼굴 비율을 정밀 측정하여 1:1 맞춤으로 디자인합니다.",
+    eyebrow_tattoo_benefit3:
+      "자연스러운 균형감을 유지하며, 각지고 딱딱해 보이지 않습니다.",
+    eyeliner_tattoo_title: "미 오픈 아이라인",
+    eyeliner_tattoo_benefit1:
+      "눈을 또렷하고 깊이감 있게 만들어 주면서 자연스러운 분위기를 유지합니다.",
+    eyeliner_tattoo_benefit2:
+      "부드럽고 편안한 시술로, 통증과 수술적 개입 없이 진행됩니다.",
+    eyeliner_tattoo_benefit3:
+      "자연스러운 인상을 유지하면서 눈매를 또렷하게 하고 싶은 분들에게 추천합니다.",
+    lip_removal_title: "남녀 입술 톤 브라이트닝",
+    lip_removal_benefit1:
+      "밝고 균일한 핑크빛 입술로 회복시키고 촉촉한 질감을 유지합니다.",
+    lip_removal_benefit2:
+      "1:1 맞춤 기법으로 한 번의 코스 후에도 즉각적인 변화를 느낄 수 있습니다.",
+    lip_removal_benefit3:
+      "남성 고객도 자연스럽게 입술 톤을 개선할 수 있도록 설계된 솔루션입니다.",
     discover_more: "더 알아보기",
 
     // Why Choose Us
     why_choose_title: "수천 명의 고객이 루미 뷰티를 신뢰하는 이유는?",
-    medical_process: "의료 표준 절차",
-    medical_process_desc: "통증 없음, 부종 없음, 빠른 색상 회복",
-    skilled_technicians: "고도의 기술을 가진 기술자",
-    skilled_technicians_desc: "모든 획에 정성을 다합니다",
-    warranty: "보증 & 무료 터치업",
-    warranty_desc: "절대적인 만족 보장",
-    organic_pigments: "프리미엄 유기 색소",
-    organic_pigments_desc: "표준 색상, 내구성, 절대적으로 안전",
+    feature_personalized_title: "1:1 프라이빗 시술",
+    feature_personalized_desc:
+      "모든 고객을 전담 전문가가 처음부터 끝까지 케어합니다.",
+    feature_expert_title: "고숙련 전문 아티스트",
+    feature_expert_desc: "체계적인 교육과 다년간의 노하우를 보유한 팀.",
+    feature_organic_title: "안전한 유기농 색소",
+    feature_organic_desc:
+      "붓기와 통증을 줄이고, 시간이 지나도 색이 변하지 않습니다.",
+    feature_space_title: "청결하고 프라이빗한 공간",
+    feature_space_desc:
+      "상담부터 시술까지 편안하고 휴식 같은 경험을 제공합니다.",
+    feature_feedback_title: "수백 건의 만족 후기",
+    feature_feedback_desc: "실제 고객의 피드백과 눈에 보이는 결과.",
 
     // Contact Methods
+    contact_intro:
+      "✨ 자연스럽고 섬세한 아름다움과 당신만의 개성을 지키고 싶으신가요? 루미 뷰티와 함께 1:1 맞춤 반영구 여정을 시작해 보세요.",
     contact_methods_title:
       "망설이지 마세요 - 가장 편한 연락 방법을 선택하세요.",
     contact_call_title: "전화 상담",
@@ -1408,7 +1767,19 @@ function setLanguage(lang) {
     );
   });
 
-  if (translations[resolvedLang] && translations[resolvedLang].page_title) {
+  const customTitleEl = document.querySelector("title[data-translate]");
+  if (customTitleEl) {
+    const titleKey = customTitleEl.getAttribute("data-translate");
+    const translatedTitle =
+      (activeDict && activeDict[titleKey]) ||
+      (fallbackDict && fallbackDict[titleKey]);
+    if (translatedTitle) {
+      document.title = translatedTitle;
+    }
+  } else if (
+    translations[resolvedLang] &&
+    translations[resolvedLang].page_title
+  ) {
     document.title = translations[resolvedLang].page_title;
   }
 
