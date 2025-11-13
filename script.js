@@ -742,12 +742,12 @@ const translations = {
 
     // Services
     our_services: "Dịch Vụ Của Lumi Beauty",
-    lip_tattoo_title: "Phun môi collagen / phun môi baby",
+    lip_tattoo_title: "Phun môi collagen",
     lip_tattoo_benefit1: "Giúp môi hồng hào, tươi tắn và căng mọng tự nhiên.",
     lip_tattoo_benefit2:
       "Kỹ thuật 1-1 với đầu kim siêu mảnh, giảm đau tối đa và lên màu chuẩn đẹp sau khi bong.",
     lip_tattoo_benefit3: "Phù hợp cho môi khô, thâm hoặc nhạt màu.",
-    eyebrow_tattoo_title: "Phun mày shading / tán bột",
+    eyebrow_tattoo_title: "Phun mày shading",
     eyebrow_tattoo_benefit1:
       "Tạo dáng mày hài hòa, mềm mại, tự nhiên, tôn nét thanh thoát của gương mặt.",
     eyebrow_tattoo_benefit2:
@@ -1055,7 +1055,7 @@ const translations = {
       "Đăng ký lịch ngay để được chuyên gia Lumi Beauty thăm khám và xây dựng phác đồ khử thâm dành riêng cho bạn.",
 
     // Why Choose Us
-    why_choose_title: "Vì Sao Hàng Ngàn Khách Hàng Tin Chọn Lumi Beauty?",
+    why_choose_title: "Vì Sao Nhiều Khách Hàng Tin Chọn Lumi Beauty?",
     feature_personalized_title: "Phun xăm 1-1 riêng biệt",
     feature_personalized_desc:
       "Mỗi khách hàng được phục vụ riêng, chuyên viên theo dõi trọn quy trình.",
