@@ -1977,3 +1977,102 @@ function initBlogScroller() {
     { passive: false }
   );
 }
+
+// Lightbox functionality for before/after images
+(function () {
+  const lightbox = document.getElementById("imageLightbox");
+  if (!lightbox) return;
+
+  const lightboxImage = lightbox.querySelector(".lightbox-image");
+  const lightboxCurrent = lightbox.querySelector(".lightbox-current");
+  const lightboxTotal = lightbox.querySelector(".lightbox-total");
+  const closeButtons = lightbox.querySelectorAll("[data-lightbox-close]");
+  const prevButton = lightbox.querySelector("[data-lightbox-prev]");
+  const nextButton = lightbox.querySelector("[data-lightbox-next]");
+
+  let currentIndex = 0;
+  let images = [];
+
+  // Get all images from before-after section
+  function initLightbox() {
+    const beforeAfterItems = document.querySelectorAll(
+      ".before-after-item[data-lightbox-image]"
+    );
+    images = Array.from(beforeAfterItems).map((item) => {
+      const img = item.querySelector("img");
+      return {
+        src: img.src,
+        alt: img.alt,
+      };
+    });
+
+    if (images.length > 0) {
+      lightboxTotal.textContent = images.length;
+
+      // Add click handlers to images
+      beforeAfterItems.forEach((item, index) => {
+        item.addEventListener("click", () => openLightbox(index));
+      });
+    }
+  }
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightboxImage();
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  function updateLightboxImage() {
+    if (images[currentIndex]) {
+      lightboxImage.src = images[currentIndex].src;
+      lightboxImage.alt = images[currentIndex].alt;
+      lightboxCurrent.textContent = currentIndex + 1;
+    }
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateLightboxImage();
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateLightboxImage();
+  }
+
+  // Event listeners
+  closeButtons.forEach((btn) => {
+    btn.addEventListener("click", closeLightbox);
+  });
+
+  if (prevButton) prevButton.addEventListener("click", showPrev);
+  if (nextButton) nextButton.addEventListener("click", showNext);
+
+  // Keyboard navigation
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("active")) return;
+
+    if (e.key === "Escape") {
+      closeLightbox();
+    } else if (e.key === "ArrowLeft") {
+      showPrev();
+    } else if (e.key === "ArrowRight") {
+      showNext();
+    }
+  });
+
+  // Initialize on DOM ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initLightbox);
+  } else {
+    initLightbox();
+  }
+})();
