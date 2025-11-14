@@ -521,19 +521,45 @@ function initParallaxEffects() {
   const heroImage = document.querySelector(".main-image");
   const overlayItems = document.querySelectorAll(".overlay-item");
 
-  if (heroImage) {
-    window.addEventListener("scroll", () => {
-      const scrolled = window.pageYOffset;
-      const rate = scrolled * -0.5;
+  if (!heroImage) {
+    return;
+  }
 
-      heroImage.style.transform = `translateY(${rate}px)`;
+  let latestScrollY = window.pageYOffset;
+  let ticking = false;
 
+  const updateTransforms = () => {
+    const rate = latestScrollY * -0.5;
+    heroImage.style.transform = `translateY(${rate}px)`;
+
+    if (overlayItems.length) {
       overlayItems.forEach((item, index) => {
-        const itemRate = scrolled * (-0.3 - index * 0.1);
+        const itemRate = latestScrollY * (-0.3 - index * 0.1);
         item.style.transform = `translateY(${itemRate}px)`;
       });
-    });
-  }
+    }
+
+    ticking = false;
+  };
+
+  const requestTick = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateTransforms);
+      ticking = true;
+    }
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      latestScrollY = window.pageYOffset;
+      requestTick();
+    },
+    { passive: true }
+  );
+
+  // Initial paint
+  requestTick();
 }
 
 // Lazy load hero video for better performance
@@ -746,39 +772,6 @@ headerStyle.textContent = `
     }
 `;
 document.head.appendChild(headerStyle);
-
-// Loading animation
-window.addEventListener("load", () => {
-  document.body.classList.add("loaded");
-});
-
-// Add loading styles
-const loadingStyle = document.createElement("style");
-loadingStyle.textContent = `
-    body:not(.loaded) {
-        overflow: hidden;
-    }
-    
-    body:not(.loaded)::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: white;
-        z-index: 9999;
-        animation: fadeOut 0.5s ease 1s forwards;
-    }
-    
-    @keyframes fadeOut {
-        to {
-            opacity: 0;
-            visibility: hidden;
-        }
-    }
-`;
-document.head.appendChild(loadingStyle);
 
 // Language switching functionality
 const translations = {
