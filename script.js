@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize all animations and interactions
   initScrollAnimations();
   initMobileMenu();
+  initServicesDropdown();
   initContactForm();
   initBookingModal();
   initImageGallery();
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initParallaxEffects();
   initLanguageSwitcher();
   initBlogScroller();
+  initHeroVideo();
 });
 
 // Scroll-triggered animations
@@ -65,6 +67,49 @@ function initMobileMenu() {
       });
     });
   }
+}
+
+// Services dropdown functionality
+function initServicesDropdown() {
+  const dropdownItem = document.querySelector(".nav-item-dropdown");
+  const dropdownLink = document.querySelector(".nav-link-with-dropdown");
+  const dropdownMenu = document.querySelector(".nav-dropdown-menu");
+
+  if (!dropdownItem || !dropdownLink || !dropdownMenu) {
+    return;
+  }
+
+  // Toggle dropdown on click (for mobile/touch devices)
+  dropdownLink.addEventListener("click", function (e) {
+    // On mobile, prevent default and toggle dropdown
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      dropdownItem.classList.toggle("active");
+    }
+    // On desktop, allow default behavior (scroll to #services)
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!dropdownItem.contains(e.target)) {
+      dropdownItem.classList.remove("active");
+    }
+  });
+
+  // Close dropdown when clicking on a dropdown link
+  const dropdownLinks = dropdownMenu.querySelectorAll("a");
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      dropdownItem.classList.remove("active");
+      // Also close mobile menu if open
+      const nav = document.querySelector(".nav");
+      const mobileToggle = document.querySelector(".mobile-menu-toggle");
+      if (nav && mobileToggle) {
+        nav.classList.remove("active");
+        mobileToggle.classList.remove("active");
+      }
+    });
+  });
 }
 
 // Contact form handling
@@ -241,7 +286,7 @@ function openLightbox(images, startIndex = 0) {
   let currentIndex = startIndex;
 
   const lightbox = document.createElement("div");
-  lightbox.className = "lightbox";
+  lightbox.className = "lightbox active";
   lightbox.setAttribute("role", "dialog");
   lightbox.setAttribute("aria-modal", "true");
   lightbox.innerHTML = `
@@ -261,6 +306,7 @@ function openLightbox(images, startIndex = 0) {
     `;
 
   document.body.appendChild(lightbox);
+  document.body.style.overflow = "hidden";
 
   const imageEl = lightbox.querySelector(".lightbox-image");
   const closeBtn = lightbox.querySelector(".lightbox-close");
@@ -290,6 +336,7 @@ function openLightbox(images, startIndex = 0) {
     lightbox.removeEventListener("click", onBackdropClick);
     lightbox.removeEventListener("touchstart", onTouchStart);
     lightbox.removeEventListener("touchend", onTouchEnd);
+    document.body.style.overflow = "";
     document.body.removeChild(lightbox);
   };
 
@@ -487,6 +534,68 @@ function initParallaxEffects() {
       });
     });
   }
+}
+
+// Lazy load hero video for better performance
+function initHeroVideo() {
+  const heroVideo = document.querySelector(".hero-video");
+  if (!heroVideo) return;
+
+  // Use Intersection Observer to load video when it's about to enter viewport
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+
+          // Load the video source
+          video.load();
+
+          // Try to play the video (autoplay)
+          const playPromise = video.play();
+
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                // Video is playing
+                video.classList.add("video-loaded");
+              })
+              .catch((error) => {
+                // Autoplay was prevented, but video is loaded
+                console.log("Video autoplay prevented:", error);
+                video.classList.add("video-loaded");
+              });
+          }
+
+          // Stop observing once video starts loading
+          videoObserver.unobserve(video);
+        }
+      });
+    },
+    {
+      // Start loading when video is 200px away from viewport
+      rootMargin: "200px",
+      threshold: 0.01,
+    }
+  );
+
+  videoObserver.observe(heroVideo);
+
+  // Fallback: Load video after page is fully loaded if it hasn't loaded yet
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      if (!heroVideo.classList.contains("video-loaded")) {
+        heroVideo.load();
+        const playPromise = heroVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay prevented, but video is ready
+          });
+        }
+        heroVideo.classList.add("video-loaded");
+      }
+    }, 500);
+  });
 }
 
 // Notification system
@@ -696,8 +805,8 @@ const translations = {
       "Lumi Beauty Đà Nẵng cung cấp phun xăm thẩm mỹ mày, môi, mí chuẩn y khoa, không đau rát và dịch vụ chăm sóc khách hàng tận tâm.",
 
     // Navigation
-    beauty_services: "Dịch vụ làm đẹp",
-    beauty_guide: "Cẩm nang làm đẹp",
+    beauty_services: "Dịch vụ phun xăm",
+    beauty_guide: "Cẩm nang phun xăm",
     contact: "Liên hệ",
     offers: "Cảm nhận khách hàng",
     book_now: "ĐẶT LỊCH NGAY",
@@ -1189,8 +1298,8 @@ const translations = {
       "Lumi Beauty in Da Nang specializes in natural-looking lip, brow, and eyeliner tattoos using medical-standard techniques and attentive aftercare.",
 
     // Navigation
-    beauty_services: "Beauty Services",
-    beauty_guide: "Beauty Guide",
+    beauty_services: "Tattoo Services",
+    beauty_guide: "Tattoo Guide",
     contact: "Contact",
     offers: "Customer Reviews",
     book_now: "BOOK NOW",
@@ -1397,8 +1506,8 @@ const translations = {
       "루미 뷰티 다낭은 의료 표준 절차와 세심한 케어로 자연스럽고 오래 지속되는 입술·눈썹 타투 서비스를 제공합니다.",
 
     // Navigation
-    beauty_services: "뷰티 서비스",
-    beauty_guide: "뷰티 가이드",
+    beauty_services: "타투 서비스",
+    beauty_guide: "타투 가이드",
     contact: "연락처",
     offers: "고객 리뷰",
     book_now: "예약하기",
@@ -1880,7 +1989,18 @@ function setLanguage(lang) {
     if (element.hasAttribute("data-translate-html")) {
       element.innerHTML = translation;
     } else {
-      element.textContent = translation;
+      // For nav links with dropdown arrows, preserve the arrow
+      if (element.classList.contains("nav-link-with-dropdown")) {
+        const arrow = element.querySelector(".nav-dropdown-arrow");
+        if (arrow) {
+          element.innerHTML = `<span>${translation}</span>`;
+          element.appendChild(arrow);
+        } else {
+          element.innerHTML = `<span>${translation}</span>`;
+        }
+      } else {
+        element.textContent = translation;
+      }
     }
   });
 

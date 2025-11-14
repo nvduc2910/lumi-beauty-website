@@ -36,7 +36,7 @@
             <div class="header-content">
                 <div class="logo">
                     <a href="../index.html">
-                        <img src="../icons/logo.png" alt="Lumi Beauty" class="logo-img">
+                        <img src="../icons/logo.svg" alt="Lumi Beauty" class="logo-img">
                     </a>
                 </div>
                 <nav class="nav">
@@ -77,22 +77,20 @@
     </header>
 
     <main>
+        <!-- 1. Banner / Thumbnail dịch vụ -->
         <section class="service-detail-hero">
             <div class="container">
                 <div class="service-hero-inner">
                     <div class="service-hero-text">
                         <span class="service-hero-badge" data-translate="lip_removal_detail_badge">Xử lý thâm môi</span>
                         <h1 class="service-hero-title" data-translate="lip_removal_detail_hero_heading">Khử Thâm Môi Chuyên Sâu Lumi Beauty</h1>
-                        <p class="service-hero-subtitle" data-translate="lip_removal_detail_hero_subheading">Trả lại sắc môi tươi sáng, mềm mịn sau 14 ngày</p>
-                        <p data-translate="lip_removal_detail_hero_paragraph1">
-                            Liệu trình kết hợp laser lạnh thế hệ mới và serum vitamin C + B5 đậm đặc, phá hủy sắc tố thâm mà không gây bong tróc hay bỏng rát. 
-                            Phù hợp với môi thâm do bẩm sinh, thâm do dùng son chì hoặc do nội tiết.
-                        </p>
-                        <p data-translate="lip_removal_detail_hero_paragraph2">
-                            Mỗi khách hàng được xây dựng phác đồ riêng gồm 1-2 buổi khử thâm và 1 buổi phun baby lip hoàn thiện, đảm bảo lên màu tự nhiên, lâu bền.
-                        </p>
+                        <p class="service-hero-subtitle" data-translate="lip_removal_detail_hero_subheading">Mang lại đôi môi hồng hào, căng bóng tự nhiên chỉ sau 40 phút.</p>
                         <div class="service-hero-actions">
                             <button class="btn btn-primary btn-large" data-translate="book_now" data-action="open-booking">ĐẶT LỊCH NGAY</button>
+                            <a class="btn btn-outline btn-outline-arrow" href="tel:0364759261">
+                                <span>GỌI NGAY: 0364759261</span>
+                                <span class="btn-arrow" aria-hidden="true">→</span>
+                            </a>
                             <a class="btn btn-outline btn-outline-arrow" href="https://zalo.me/84983087832" target="_blank" rel="noreferrer noopener">
                                 <span data-translate="contact_zalo_button">MỞ ZALO</span>
                                 <span class="btn-arrow" aria-hidden="true">→</span>
@@ -101,170 +99,546 @@
                     </div>
                     <div class="service-hero-media">
                         <div class="service-hero-image">
-                            <img src="../icons/khu-tham-moi.png" alt="Môi sau khi khử thâm tại Lumi Beauty">
-                        </div>
-                        <div class="service-hero-stat">
-                            <span class="stat-number">70%</span>
-                            <span class="stat-label" data-translate="lip_removal_detail_hero_stat_label">Giảm sắc tố thâm sau buổi đầu tiên</span>
+                            <img src="../images/services/dich-vu-khu-tham.jpg" alt="Khử thâm môi tại Lumi Beauty">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="service-highlights">
+        <!-- 2. Giới thiệu dịch vụ (What & Why) -->
+        <section class="service-why-choose">
             <div class="container">
-                <h2 class="section-title" data-translate="lip_removal_detail_highlights_title">Ưu điểm của liệu trình khử thâm Lumi Beauty</h2>
-                <div class="highlight-grid">
-                    <article class="highlight-card">
-                        <h3 data-translate="lip_removal_detail_highlight1_title">Công nghệ laser lạnh 650nm</h3>
-                        <p data-translate="lip_removal_detail_highlight1_desc">Tác động chọn lọc lên sắc tố thâm, không gây bỏng nhiệt, không làm mỏng môi.</p>
+                <div class="why-choose-content" style="max-width: 900px; margin: 0 auto;">
+                    <div class="section-heading" style="margin-bottom: 32px;">
+                        <h2 class="section-title" data-translate="lip_brightening_intro_title">Dịch vụ khử thâm môi là gì?</h2>
+                        <p data-translate="lip_brightening_intro_what">
+                            Khử thâm môi là liệu trình sử dụng công nghệ laser lạnh 650nm kết hợp serum vitamin C + B5 đậm đặc để phá hủy sắc tố melanin gây thâm môi, 
+                            giúp đôi môi trở nên hồng hào, căng bóng tự nhiên mà không cần phẫu thuật hay can thiệp xâm lấn.
+                        </p>
+                    </div>
+                    <div style="margin-bottom: 40px;">
+                        <h3 data-translate="lip_brightening_intro_who_title" style="margin-bottom: 16px;">Phù hợp với ai?</h3>
+                        <ul class="benefits">
+                            <li>
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <img src="../icons/check.svg" alt="">
+                                </span>
+                                <span class="benefit-text" data-translate="lip_brightening_intro_who1">Môi thâm do bẩm sinh</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <img src="../icons/check.svg" alt="">
+                                </span>
+                                <span class="benefit-text" data-translate="lip_brightening_intro_who2">Môi thâm do dùng son có chì lâu ngày</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <img src="../icons/check.svg" alt="">
+                                </span>
+                                <span class="benefit-text" data-translate="lip_brightening_intro_who3">Môi thâm do thay đổi nội tiết tố</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <img src="../icons/check.svg" alt="">
+                                </span>
+                                <span class="benefit-text" data-translate="lip_brightening_intro_who4">Môi thiếu sức sống, kém sắc</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 40px;">
+                        <h3 data-translate="lip_brightening_intro_benefits_title" style="margin-bottom: 24px;">Lợi ích chính của dịch vụ</h3>
+                        <div class="why-choose-list">
+                            <article class="why-choose-item">
+                                <div class="why-choose-icon">
+                                    <img src="../icons/check.svg" alt="" aria-hidden="true">
+                                </div>
+                                <div class="why-choose-text">
+                                    <h3 data-translate="lip_brightening_benefit1_title">Môi hồng hào tự nhiên</h3>
+                                    <p data-translate="lip_brightening_benefit1_desc">Giảm 50-70% sắc tố thâm ngay buổi đầu, mang lại đôi môi hồng hào, căng bóng tự nhiên.</p>
+                                </div>
+                            </article>
+                            <article class="why-choose-item">
+                                <div class="why-choose-icon">
+                                    <img src="../icons/check.svg" alt="" aria-hidden="true">
+                                </div>
+                                <div class="why-choose-text">
+                                    <h3 data-translate="lip_brightening_benefit2_title">Không đau, không sưng</h3>
+                                    <p data-translate="lip_brightening_benefit2_desc">Công nghệ laser lạnh không gây bỏng nhiệt, ủ tê y khoa đảm bảo quy trình nhẹ nhàng, thoải mái.</p>
+                                </div>
+                            </article>
+                            <article class="why-choose-item">
+                                <div class="why-choose-icon">
+                                    <img src="../icons/check.svg" alt="" aria-hidden="true">
+                                </div>
+                                <div class="why-choose-text">
+                                    <h3 data-translate="lip_brightening_benefit3_title">An toàn tuyệt đối</h3>
+                                    <p data-translate="lip_brightening_benefit3_desc">Không làm mỏng môi, không ảnh hưởng đến cấu trúc tự nhiên của môi, phù hợp cả da nhạy cảm.</p>
+                                </div>
+                            </article>
+                            <article class="why-choose-item">
+                                <div class="why-choose-icon">
+                                    <img src="../icons/check.svg" alt="" aria-hidden="true">
+                                </div>
+                                <div class="why-choose-text">
+                                    <h3 data-translate="lip_brightening_benefit4_title">Kết quả lâu dài</h3>
+                                    <p data-translate="lip_brightening_benefit4_desc">Kết hợp phun baby lip giúp duy trì màu hồng tự nhiên, bền đẹp 18-24 tháng.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="commitment-box" style="margin-top: 32px; padding: 24px; background: #fff9f5; border-radius: 12px; border-left: 4px solid #f2c28a;">
+                        <h3 data-translate="lip_brightening_commitment_title" style="margin-bottom: 16px;">Cam kết tại Lumi Beauty</h3>
+                        <ul class="benefits">
+                            <li>
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <img src="../icons/check.svg" alt="">
+                                </span>
+                                <span class="benefit-text" data-translate="lip_brightening_commitment1">Phác đồ riêng cho từng mức độ thâm - không áp dụng chung</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <img src="../icons/check.svg" alt="">
+                                </span>
+                                <span class="benefit-text" data-translate="lip_brightening_commitment2">Chuyên gia giàu kinh nghiệm, đã xử lý hàng nghìn ca thâm môi</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <img src="../icons/check.svg" alt="">
+                                </span>
+                                <span class="benefit-text" data-translate="lip_brightening_commitment3">Theo dõi sát sao sau liệu trình, hỗ trợ 24/7</span>
+                            </li>
+                            <li>
+                                <span class="benefit-icon" aria-hidden="true">
+                                    <img src="../icons/check.svg" alt="">
+                                </span>
+                                <span class="benefit-text" data-translate="lip_brightening_commitment4">Bảo hành màu sắc 12 tháng, miễn phí dặm lại nếu cần</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Kết quả sau thực hiện -->
+        <section class="service-before-after">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title" data-translate="lip_brightening_results_title">Kết quả sau thực hiện</h2>
+                    <p data-translate="lip_brightening_results_intro">
+                        Sau liệu trình khử thâm môi tại Lumi Beauty, bạn sẽ thấy đôi môi cải thiện rõ rệt: giảm 50-70% sắc tố thâm ngay buổi đầu, 
+                        môi trở nên hồng hào, căng bóng tự nhiên. Kết hợp phun baby lip giúp duy trì màu hồng tươi đẹp trong 18-24 tháng.
+                    </p>
+                </div>
+                <div class="before-after-grid">
+                    <article class="before-after-item" data-lightbox-image="0">
+                        <div class="before-after-image">
+                            <img src="../images/gallary/542200041_122105595872994058_5047282946482949105_n.jpg" alt="Kết quả khử thâm môi trước và sau">
+                        </div>
                     </article>
-                    <article class="highlight-card">
-                        <h3 data-translate="lip_removal_detail_highlight2_title">Serum vitamin độc quyền</h3>
-                        <p data-translate="lip_removal_detail_highlight2_desc">Phục hồi biểu bì nhanh, cấp ẩm sâu và khóa ẩm giúp môi mềm mượt ngay sau liệu trình.</p>
+                    <article class="before-after-item" data-lightbox-image="1">
+                        <div class="before-after-image">
+                            <img src="../images/gallary/555736361_122110524116994058_1458613711333448170_n.jpg" alt="Kết quả khử thâm môi trước và sau">
+                        </div>
                     </article>
-                    <article class="highlight-card">
-                        <h3 data-translate="lip_removal_detail_highlight3_title">Phác đồ riêng từng mức độ</h3>
-                        <p data-translate="lip_removal_detail_highlight3_desc">Tùy tình trạng bẩm sinh hay do thói quen, chuyên gia điều chỉnh năng lượng và số buổi phù hợp.</p>
+                    <article class="before-after-item" data-lightbox-image="2">
+                        <div class="before-after-image">
+                            <img src="../images/gallary/556801732_122111075576994058_6966068728038867395_n.jpg" alt="Kết quả khử thâm môi trước và sau">
+                        </div>
                     </article>
-                    <article class="highlight-card">
-                        <h3 data-translate="lip_removal_detail_highlight4_title">Kết hợp phun baby lip hoàn thiện</h3>
-                        <p data-translate="lip_removal_detail_highlight4_desc">Sau khi khử thâm, môi được phủ màu baby lip giúp duy trì sắc hồng tươi ít nhất 18 tháng.</p>
+                    <article class="before-after-item" data-lightbox-image="3">
+                        <div class="before-after-image">
+                            <img src="../images/gallary/558051509_122111075570994058_2955488035380435075_n.jpg" alt="Kết quả khử thâm môi trước và sau">
+                        </div>
+                    </article>
+                    <article class="before-after-item" data-lightbox-image="4">
+                        <div class="before-after-image">
+                            <img src="../images/gallary/558099038_122112178088994058_9000120033581725505_n.jpg" alt="Kết quả khử thâm môi trước và sau">
+                        </div>
+                    </article>
+                    <article class="before-after-item" data-lightbox-image="5">
+                        <div class="before-after-image">
+                            <img src="../images/gallary/560766638_122113773572994058_607279414757319115_n.jpg" alt="Kết quả khử thâm môi trước và sau">
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- 4. Quy trình thực hiện (step-by-step) -->
         <section class="service-process">
             <div class="container">
                 <div class="section-heading">
-                    <h2 class="section-title" data-translate="lip_removal_detail_process_title">Quy trình khử thâm môi an toàn</h2>
-                    <p data-translate="lip_removal_detail_process_intro">Thời gian 60-75 phút/buổi, bao gồm khử thâm và chăm sóc phục hồi chuyên sâu.</p>
+                    <h2 class="section-title" data-translate="lip_brightening_process_title">Quy trình thực hiện khử thâm môi</h2>
+                    <p data-translate="lip_brightening_process_intro">Thời gian 40-60 phút/buổi, áp dụng chuẩn vô trùng quốc tế, đảm bảo an toàn tuyệt đối.</p>
                 </div>
                 <div class="process-steps">
                     <div class="process-step">
+                        <div class="process-image">
+                            <img src="../images/services/dich-vu-khu-tham.jpg" alt="Tư vấn dáng - màu">
+                        </div>
                         <span class="process-index">01</span>
-                        <h3 data-translate="lip_removal_detail_process_step1_title">Phân tích sắc tố</h3>
-                        <p data-translate="lip_removal_detail_process_step1_desc">Soi da môi bằng đèn chuyên dụng, đánh giá mức độ thâm và nguyên nhân để chọn phác độ.</p>
+                        <h3 data-translate="lip_brightening_process_step1_title">Tư vấn dáng - màu</h3>
+                        <p data-translate="lip_brightening_process_step1_desc">Chuyên gia phân tích tình trạng môi, tông da, thói quen sinh hoạt để tư vấn phác đồ phù hợp nhất.</p>
                     </div>
                     <div class="process-step">
+                        <div class="process-image">
+                            <img src="../images/services/dich-vu-khu-tham.jpg" alt="Kiểm tra tình trạng môi">
+                        </div>
                         <span class="process-index">02</span>
-                        <h3 data-translate="lip_removal_detail_process_step2_title">Tẩy da chết enzyme</h3>
-                        <p data-translate="lip_removal_detail_process_step2_desc">Loại bỏ tế bào chết bằng enzyme papain dịu nhẹ, giúp sắc tố thâm lộ rõ và dễ xử lý.</p>
+                        <h3 data-translate="lip_brightening_process_step2_title">Kiểm tra tình trạng môi</h3>
+                        <p data-translate="lip_brightening_process_step2_desc">Soi da môi bằng đèn chuyên dụng, đánh giá mức độ thâm, nguyên nhân và sức khỏe vùng môi.</p>
                     </div>
                     <div class="process-step">
+                        <div class="process-image">
+                            <img src="../images/services/dich-vu-khu-tham.jpg" alt="Ủ tê">
+                        </div>
                         <span class="process-index">03</span>
-                        <h3 data-translate="lip_removal_detail_process_step3_title">Khử thâm bằng laser lạnh</h3>
-                        <p data-translate="lip_removal_detail_process_step3_desc">Chiếu laser 650nm đúng điểm thâm, phá hủy melanin mà không ảnh hưởng mô xung quanh.</p>
+                        <h3 data-translate="lip_brightening_process_step3_title">Ủ tê</h3>
+                        <p data-translate="lip_brightening_process_step3_desc">Sử dụng tê y khoa nhập khẩu, ủ đa tầng đảm bảo vô cảm hoàn toàn, quy trình nhẹ nhàng.</p>
                     </div>
                     <div class="process-step">
+                        <div class="process-image">
+                            <img src="../images/services/dich-vu-khu-tham.jpg" alt="Vệ sinh - chuẩn bị dụng cụ">
+                        </div>
                         <span class="process-index">04</span>
-                        <h3 data-translate="lip_removal_detail_process_step4_title">Ủ serum vitamin & mặt nạ phục hồi</h3>
-                        <p data-translate="lip_removal_detail_process_step4_desc">Ủ serum vitamin C, E, B5 và đắp mặt nạ peptide giúp môi dịu ngay, giảm khô nứt.</p>
+                        <h3 data-translate="lip_brightening_process_step4_title">Vệ sinh - chuẩn bị dụng cụ</h3>
+                        <p data-translate="lip_brightening_process_step4_desc">Làm sạch vùng môi bằng dung dịch sát khuẩn, chuẩn bị dụng cụ vô trùng dùng một lần.</p>
                     </div>
                     <div class="process-step">
+                        <div class="process-image">
+                            <img src="../images/services/dich-vu-khu-tham.jpg" alt="Thực hiện khử thâm">
+                        </div>
                         <span class="process-index">05</span>
-                        <h3 data-translate="lip_removal_detail_process_step5_title">Phủ màu baby lip (nếu cần)</h3>
-                        <p data-translate="lip_removal_detail_process_step5_desc">Sau 7-10 ngày, tiến hành phun baby lip để hoàn thiện sắc môi hồng hào tự nhiên.</p>
+                        <h3 data-translate="lip_brightening_process_step5_title">Thực hiện khử thâm</h3>
+                        <p data-translate="lip_brightening_process_step5_desc">Chiếu laser 650nm đúng điểm thâm, phá hủy melanin. Sau đó ủ serum vitamin C, E, B5 và mặt nạ peptide.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-image">
+                            <img src="../images/services/dich-vu-khu-tham.jpg" alt="Kiểm tra - hoàn thiện">
+                        </div>
+                        <span class="process-index">06</span>
+                        <h3 data-translate="lip_brightening_process_step6_title">Kiểm tra - hoàn thiện</h3>
+                        <p data-translate="lip_brightening_process_step6_desc">Kiểm tra kết quả, đảm bảo môi hồng hào đều màu, không có điểm thâm sót lại.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-image">
+                            <img src="../images/services/dich-vu-khu-tham.jpg" alt="Hướng dẫn khách sau thực hiện">
+                        </div>
+                        <span class="process-index">07</span>
+                        <h3 data-translate="lip_brightening_process_step7_title">Hướng dẫn khách sau thực hiện</h3>
+                        <p data-translate="lip_brightening_process_step7_desc">Phát tặng bộ chăm sóc tại nhà và hướng dẫn chi tiết cách chăm sóc môi trong 7-14 ngày đầu.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="service-results">
+        <!-- 5. Ưu điểm nổi bật của kỹ thuật -->
+        <section class="service-highlights">
             <div class="container">
-                <div class="results-grid">
-                    <article class="result-card">
-                        <h3 data-translate="lip_removal_detail_results_outcome_title">Mức độ cải thiện</h3>
-                        <ul class="result-list">
-                            <li data-translate="lip_removal_detail_results_outcome_item1">Giảm 50-70% sắc tố thâm ngay buổi đầu với môi thâm do son.</li>
-                            <li data-translate="lip_removal_detail_results_outcome_item2">Môi bẩm sinh thâm cải thiện 30-40% sau 2 buổi, tiếp tục sáng dần sau 4 tuần.</li>
-                            <li data-translate="lip_removal_detail_results_outcome_item3">Kết hợp phun baby lip mang lại màu hồng tự nhiên, bền đẹp 18-24 tháng.</li>
-                        </ul>
+                <div class="section-heading">
+                    <h2 class="section-title" data-translate="lip_brightening_advantages_title">Ưu điểm nổi bật của kỹ thuật</h2>
+                    <p data-translate="lip_brightening_advantages_intro">Những điểm mạnh làm nên chất lượng dịch vụ khử thâm môi tại Lumi Beauty</p>
+                </div>
+                <div class="highlight-grid">
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_advantage1_title">Không sưng / ít đau</h3>
+                        <p data-translate="lip_brightening_advantage1_desc">Công nghệ laser lạnh 650nm không gây bỏng nhiệt, ủ tê y khoa đa tầng đảm bảo quy trình nhẹ nhàng, thoải mái.</p>
                     </article>
-                    <article class="result-card">
-                        <h3 data-translate="lip_removal_detail_results_aftercare_title">Chăm sóc sau liệu trình</h3>
-                        <ul class="result-list">
-                            <li data-translate="lip_removal_detail_results_aftercare_item1">Bôi dưỡng môi Lumi Care 3 lần/ngày trong 7 ngày đầu.</li>
-                            <li data-translate="lip_removal_detail_results_aftercare_item2">Uống đủ 2 lít nước, hạn chế cà phê, trà đậm trong 5 ngày.</li>
-                            <li data-translate="lip_removal_detail_results_aftercare_item3">Tránh nắng trực tiếp và son chứa chì trong 14 ngày.</li>
-                        </ul>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_advantage2_title">Lên màu chuẩn</h3>
+                        <p data-translate="lip_brightening_advantage2_desc">Kết hợp phun baby lip giúp môi lên màu hồng tự nhiên, chuẩn màu từ 90-100% sau 7-10 ngày.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_advantage3_title">Công nghệ mới</h3>
+                        <p data-translate="lip_brightening_advantage3_desc">Laser lạnh 650nm thế hệ mới, serum vitamin C + B5 đậm đặc, không làm mỏng môi hay ảnh hưởng cấu trúc.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_advantage4_title">Màu bền 18-24 tháng</h3>
+                        <p data-translate="lip_brightening_advantage4_desc">Kết quả duy trì lâu dài, màu hồng tự nhiên giữ bền đẹp trong 18-24 tháng với chăm sóc đúng cách.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_advantage5_title">An toàn tuyệt đối</h3>
+                        <p data-translate="lip_brightening_advantage5_desc">Quy trình vô trùng theo tiêu chuẩn quốc tế, dụng cụ dùng một lần, phù hợp cả da nhạy cảm.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_advantage6_title">Hồi phục nhanh</h3>
+                        <p data-translate="lip_brightening_advantage6_desc">Môi hồi phục nhanh sau 2-3 ngày, không ảnh hưởng sinh hoạt hàng ngày, có thể makeup sau 7 ngày.</p>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- 6. Bảng giá -->
         <section class="service-pricing">
             <div class="container">
                 <div class="section-heading">
-                    <h2 class="section-title" data-translate="lip_removal_detail_pricing_title">Gói liệu trình & chi phí</h2>
-                    <p data-translate="lip_removal_detail_pricing_intro">Giá trọn gói, gồm sản phẩm chăm sóc tại nhà và theo dõi định kỳ.</p>
+                    <h2 class="section-title" data-translate="lip_brightening_pricing_title">Bảng giá dịch vụ</h2>
+                    <p data-translate="lip_brightening_pricing_intro">Giá trọn gói, đã bao gồm sản phẩm chăm sóc tại nhà và theo dõi định kỳ.</p>
                 </div>
-                <div class="pricing-grid">
-                    <article class="pricing-card">
-                        <h3 data-translate="lip_removal_detail_pricing_option1_title">Gói Khử Thâm Cơ Bản</h3>
-                        <p class="pricing-price">3.200.000đ</p>
+                <div class="pricing-grid pricing-grid--single">
+                    <article class="pricing-card pricing-card--single">
+                        <h3 data-translate="lip_brightening_pricing_main_title">Khử Thâm Môi Chuyên Sâu</h3>
+                        <p class="pricing-price">Từ 3.200.000đ - 6.500.000đ</p>
+                        <p class="pricing-subtitle" data-translate="lip_brightening_pricing_subtitle">Giá phụ thuộc vào mức độ thâm và số buổi điều trị</p>
                         <ul>
-                            <li data-translate="lip_removal_detail_pricing_option1_item1">1 buổi laser lạnh + 1 bộ dưỡng môi tại nhà.</li>
-                            <li data-translate="lip_removal_detail_pricing_option1_item2">Theo dõi sau 14 ngày.</li>
-                            <li data-translate="lip_removal_detail_pricing_option1_item3">Phù hợp môi thâm nhẹ do dùng son.</li>
+                            <li data-translate="lip_brightening_pricing_item1">1-3 buổi laser lạnh 650nm</li>
+                            <li data-translate="lip_brightening_pricing_item2">Bộ dưỡng môi Lumi Care tại nhà</li>
+                            <li data-translate="lip_brightening_pricing_item3">Theo dõi và hỗ trợ 24/7</li>
+                            <li data-translate="lip_brightening_pricing_item4">Tặng 1 buổi phun baby lip (gói combo)</li>
+                            <li data-translate="lip_brightening_pricing_item5">Bảo hành màu sắc 12 tháng</li>
                         </ul>
-                    </article>
-                    <article class="pricing-card pricing-card--featured">
-                        <span class="pricing-badge" data-translate="lip_removal_detail_pricing_option2_badge">Phổ biến nhất</span>
-                        <h3 data-translate="lip_removal_detail_pricing_option2_title">Gói Khử Thâm + Baby Lip</h3>
-                        <p class="pricing-price">4.800.000đ</p>
-                        <ul>
-                            <li data-translate="lip_removal_detail_pricing_option2_item1">2 buổi khử thâm + 1 buổi phun baby lip.</li>
-                            <li data-translate="lip_removal_detail_pricing_option2_item2">Bộ dưỡng 14 ngày & serum khóa màu.</li>
-                            <li data-translate="lip_removal_detail_pricing_option2_item3">Bảo hành màu 12 tháng.</li>
-                        </ul>
-                    </article>
-                    <article class="pricing-card">
-                        <h3 data-translate="lip_removal_detail_pricing_option3_title">Gói Xử Lý Thâm Nặng</h3>
-                        <p class="pricing-price">6.500.000đ</p>
-                        <ul>
-                            <li data-translate="lip_removal_detail_pricing_option3_item1">3 buổi laser lạnh + chăm sóc chuyên sâu.</li>
-                            <li data-translate="lip_removal_detail_pricing_option3_item2">Tư vấn dinh dưỡng, bổ sung vitamin hỗ trợ cải thiện sắc tố.</li>
-                            <li data-translate="lip_removal_detail_pricing_option3_item3">Miễn phí 1 buổi phun baby lip hoàn thiện.</li>
-                        </ul>
+                        <div class="pricing-button">
+                            <button class="btn btn-primary btn-large" data-translate="contact_free_button" data-action="open-booking">Liên hệ ngay miễn phí</button>
+                        </div>
                     </article>
                 </div>
                 <div class="pricing-note">
-                    <p data-translate="lip_removal_detail_pricing_note">Tặng bộ dưỡng môi Lumi Care trị giá 390.000đ cho mọi gói. Khách quay lại được giảm 10%.</p>
+                    <p data-translate="lip_brightening_pricing_note">Giá đã bao gồm thuế VAT và dụng cụ vô trùng. Tặng bộ dưỡng môi Lumi Care trị giá 390.000đ cho mọi gói. Khách quay lại được giảm 10%.</p>
                 </div>
             </div>
         </section>
 
+        <!-- 7. Chế độ bảo hành -->
+        <section class="service-commitment">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title" data-translate="lip_brightening_warranty_title">Chế độ bảo hành</h2>
+                    <p data-translate="lip_brightening_warranty_intro">Cam kết của Lumi Beauty đối với khách hàng</p>
+                </div>
+                <div class="commitment-grid">
+                    <article class="commitment-card">
+                        <div class="commitment-icon">
+                            <img src="../icons/check.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-translate="lip_brightening_warranty1_title">Bảo hành 12 tháng</h3>
+                        <p data-translate="lip_brightening_warranty1_desc">Bảo hành màu sắc và kết quả trong 12 tháng kể từ ngày hoàn thành liệu trình.</p>
+                    </article>
+                    <article class="commitment-card">
+                        <div class="commitment-icon">
+                            <img src="../icons/check.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-translate="lip_brightening_warranty2_title">Miễn phí dặm lại</h3>
+                        <p data-translate="lip_brightening_warranty2_desc">Miễn phí 1 lần dặm lại nếu màu chưa đạt chuẩn hoặc cần điều chỉnh trong thời gian bảo hành.</p>
+                    </article>
+                    <article class="commitment-card">
+                        <div class="commitment-icon">
+                            <img src="../icons/check.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-translate="lip_brightening_warranty3_title">Theo dõi sát sao</h3>
+                        <p data-translate="lip_brightening_warranty3_desc">Theo dõi tình trạng sau liệu trình, tư vấn chăm sóc và đặt lịch tái khám miễn phí sau 14-30 ngày.</p>
+                    </article>
+                    <article class="commitment-card">
+                        <div class="commitment-icon">
+                            <img src="../icons/check.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3 data-translate="lip_brightening_warranty4_title">Hỗ trợ 24/7</h3>
+                        <p data-translate="lip_brightening_warranty4_desc">Luôn sẵn sàng hỗ trợ và tư vấn khách hàng qua điện thoại, Zalo, Facebook mọi lúc mọi nơi.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Lưu ý trước khi làm -->
+        <section class="service-precautions">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 class="section-title" data-translate="lip_brightening_precautions_title">Lưu ý trước khi làm</h2>
+                    <p data-translate="lip_brightening_precautions_intro">Những điều cần lưu ý để đảm bảo quy trình diễn ra an toàn và hiệu quả</p>
+                </div>
+                <div class="highlight-grid">
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_precaution1_title">Tránh uống cà phê 6 tiếng</h3>
+                        <p data-translate="lip_brightening_precaution1_desc">Không uống cà phê, trà đậm, rượu bia trong vòng 6 tiếng trước khi thực hiện để tránh ảnh hưởng đến quá trình tê.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_precaution2_title">Tránh dùng thuốc Aspirin</h3>
+                        <p data-translate="lip_brightening_precaution2_desc">Không dùng Aspirin, thuốc chống đông máu trong 7 ngày trước khi thực hiện để tránh chảy máu nhiều.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_precaution3_title">Không làm khi đang sốt/cảm</h3>
+                        <p data-translate="lip_brightening_precaution3_desc">Hoãn lịch hẹn nếu đang sốt, cảm cúm, nhiễm trùng vùng môi hoặc đang điều trị bệnh cấp tính.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_precaution4_title">Thông báo tiền sử bệnh</h3>
+                        <p data-translate="lip_brightening_precaution4_desc">Thông báo cho chuyên gia nếu có tiền sử dị ứng, bệnh ngoài da, đang mang thai hoặc cho con bú.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_precaution5_title">Không làm đẹp môi 7 ngày</h3>
+                        <p data-translate="lip_brightening_precaution5_desc">Không xăm môi, phun môi, tẩy trắng môi trong ít nhất 7 ngày trước khi khử thâm.</p>
+                    </article>
+                    <article class="highlight-card">
+                        <h3 data-translate="lip_brightening_precaution6_title">Uống đủ nước</h3>
+                        <p data-translate="lip_brightening_precaution6_desc">Uống đủ 2 lít nước mỗi ngày trong 3 ngày trước khi thực hiện để môi được cấp ẩm tốt nhất.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Chăm sóc sau phun (Aftercare) -->
+        <section class="service-aftercare" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="section-heading" style="margin-bottom: 48px;">
+                    <h2 class="section-title" data-translate="lip_brightening_aftercare_title">Chăm sóc sau phun (Aftercare)</h2>
+                    <p data-translate="lip_brightening_aftercare_intro">Hướng dẫn chi tiết cách chăm sóc môi sau liệu trình khử thâm</p>
+                </div>
+                <div class="aftercare-timeline" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 48px;">
+                    <article class="timeline-item">
+                        <span class="timeline-day">24h đầu</span>
+                        <h3 data-translate="lip_brightening_aftercare_day1_title">Giai đoạn quan trọng nhất</h3>
+                        <ul class="result-list">
+                            <li data-translate="lip_brightening_aftercare_day1_item1">Không rửa mặt bằng nước, chỉ lau nhẹ bằng khăn ướt</li>
+                            <li data-translate="lip_brightening_aftercare_day1_item2">Bôi dưỡng môi Lumi Care mỗi 2-3 giờ/lần</li>
+                            <li data-translate="lip_brightening_aftercare_day1_item3">Tránh nói chuyện nhiều, không chạm tay vào môi</li>
+                            <li data-translate="lip_brightening_aftercare_day1_item4">Uống nước bằng ống hút, tránh thức ăn cay nóng</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-day">3 ngày đầu</span>
+                        <h3 data-translate="lip_brightening_aftercare_day3_title">Duy trì chăm sóc</h3>
+                        <ul class="result-list">
+                            <li data-translate="lip_brightening_aftercare_day3_item1">Bôi dưỡng môi 3-4 lần/ngày, giữ môi luôn ẩm</li>
+                            <li data-translate="lip_brightening_aftercare_day3_item2">Không đánh răng bằng kem đánh răng có flouride</li>
+                            <li data-translate="lip_brightening_aftercare_day3_item3">Tránh nắng trực tiếp, che chắn khi ra ngoài</li>
+                            <li data-translate="lip_brightening_aftercare_day3_item4">Không bóc vảy nếu có, để tự nhiên bong</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-day">7 ngày đầu</span>
+                        <h3 data-translate="lip_brightening_aftercare_day7_title">Tiếp tục chăm sóc</h3>
+                        <ul class="result-list">
+                            <li data-translate="lip_brightening_aftercare_day7_item1">Bôi dưỡng môi 2-3 lần/ngày</li>
+                            <li data-translate="lip_brightening_aftercare_day7_item2">Có thể dùng son dưỡng không màu sau 7 ngày</li>
+                            <li data-translate="lip_brightening_aftercare_day7_item3">Tránh son có chì, son lâu trôi trong 14 ngày</li>
+                            <li data-translate="lip_brightening_aftercare_day7_item4">Uống đủ nước, ăn nhiều rau củ quả</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-item">
+                        <span class="timeline-day">14-30 ngày</span>
+                        <h3 data-translate="lip_brightening_aftercare_day14_title">Lên màu ổn định</h3>
+                        <ul class="result-list">
+                            <li data-translate="lip_brightening_aftercare_day14_item1">Màu bắt đầu lên lại và ổn định dần</li>
+                            <li data-translate="lip_brightening_aftercare_day14_item2">Tiếp tục dưỡng môi hàng ngày để duy trì độ ẩm</li>
+                            <li data-translate="lip_brightening_aftercare_day14_item3">Tránh nắng, bôi kem chống nắng môi nếu cần</li>
+                            <li data-translate="lip_brightening_aftercare_day14_item4">Tái khám sau 30 ngày để đánh giá kết quả</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="aftercare-note" style="padding: 32px; background: #fff9f5; border-radius: 12px; border-left: 4px solid #f2c28a;">
+                    <h3 data-translate="lip_brightening_aftercare_note_title" style="margin-bottom: 20px; font-size: 20px;">Những điều cần kiêng</h3>
+                    <ul class="benefits" style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 12px;">
+                            <span class="benefit-icon" aria-hidden="true" style="color: #e74c3c; font-weight: bold;">✗</span>
+                            <span class="benefit-text" data-translate="lip_brightening_aftercare_avoid1">Không ăn đồ cay nóng, chua trong 7 ngày đầu</span>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <span class="benefit-icon" aria-hidden="true" style="color: #e74c3c; font-weight: bold;">✗</span>
+                            <span class="benefit-text" data-translate="lip_brightening_aftercare_avoid2">Không hôn, không dùng chung dụng cụ ăn uống</span>
+                        </li>
+                        <li style="margin-bottom: 12px;">
+                            <span class="benefit-icon" aria-hidden="true" style="color: #e74c3c; font-weight: bold;">✗</span>
+                            <span class="benefit-text" data-translate="lip_brightening_aftercare_avoid3">Không tắm nước nóng, xông hơi trong 7 ngày</span>
+                        </li>
+                        <li style="margin-bottom: 0;">
+                            <span class="benefit-icon" aria-hidden="true" style="color: #e74c3c; font-weight: bold;">✗</span>
+                            <span class="benefit-text" data-translate="lip_brightening_aftercare_avoid4">Không bóc vảy, không chà xát môi</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Câu hỏi thường gặp (FAQ) -->
         <section class="service-faq">
             <div class="container">
-                <h2 class="section-title" data-translate="lip_removal_detail_faq_title">Câu hỏi thường gặp</h2>
+                <h2 class="section-title" data-translate="lip_brightening_faq_title">Câu hỏi thường gặp</h2>
                 <div class="faq-list">
                     <article class="faq-item">
-                        <h3 data-translate="lip_removal_detail_faq_q1">Khử thâm môi có đau không?</h3>
-                        <p data-translate="lip_removal_detail_faq_a1">Liệu trình sử dụng laser lạnh với năng lượng thấp và ủ tê y khoa nên hầu như không đau, chỉ hơi ấm nhẹ trong 2-3 phút đầu.</p>
+                        <h3 data-translate="lip_brightening_faq_q1">Làm có đau không?</h3>
+                        <p data-translate="lip_brightening_faq_a1">Liệu trình sử dụng laser lạnh 650nm với năng lượng thấp và ủ tê y khoa đa tầng nên hầu như không đau. Một số khách có thể cảm thấy hơi ấm nhẹ trong 2-3 phút đầu, nhưng hoàn toàn chịu được.</p>
                     </article>
                     <article class="faq-item">
-                        <h3 data-translate="lip_removal_detail_faq_q2">Bao lâu sau có thể phun màu?</h3>
-                        <p data-translate="lip_removal_detail_faq_a2">Sau 7-10 ngày, khi môi hồi phục hoàn toàn và sắc thâm giảm rõ, chúng tôi sẽ phun baby lip để hoàn thiện màu.</p>
+                        <h3 data-translate="lip_brightening_faq_q2">Bao lâu thì bong?</h3>
+                        <p data-translate="lip_brightening_faq_a2">Thông thường từ 2-3 ngày lớp vảy mỏng bắt đầu bong nhẹ. Đến ngày thứ 7 môi lên màu chuẩn 90% và sẽ ổn định hoàn toàn sau 14 ngày. Không được tự ý bóc vảy, để tự nhiên bong.</p>
                     </article>
                     <article class="faq-item">
-                        <h3 data-translate="lip_removal_detail_faq_q3">Khử thâm có làm môi bị khô không?</h3>
-                        <p data-translate="lip_removal_detail_faq_a3">Sau liệu trình, môi được cấp ẩm sâu bằng serum và mặt nạ peptide nên không khô. Bạn chỉ cần dưỡng đều theo hướng dẫn.</p>
+                        <h3 data-translate="lip_brightening_faq_q3">Có cần kiêng nước không?</h3>
+                        <p data-translate="lip_brightening_faq_a3">Trong 24h đầu không rửa mặt bằng nước, chỉ lau nhẹ bằng khăn ướt. Sau 24h có thể rửa mặt bình thường nhưng tránh chà xát vùng môi. Tránh tắm nước nóng, xông hơi trong 7 ngày đầu.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 data-translate="lip_brightening_faq_q4">Màu giữ được bao lâu?</h3>
+                        <p data-translate="lip_brightening_faq_a4">Kết hợp phun baby lip, màu hồng tự nhiên giữ bền đẹp trong 18-24 tháng với chăm sóc đúng cách. Riêng da dầu hoặc khách thường xuyên tiếp xúc nắng có thể cần dặm lại sớm hơn.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 data-translate="lip_brightening_faq_q5">Nam làm có hợp không?</h3>
+                        <p data-translate="lip_brightening_faq_a5">Có, dịch vụ khử thâm môi phù hợp với cả nam và nữ. Chúng tôi sẽ điều chỉnh màu sắc và mức độ khử thâm phù hợp với giới tính và nhu cầu của từng khách hàng.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 data-translate="lip_brightening_faq_q6">Lỡ bị thâm nặng có cải thiện hết không?</h3>
+                        <p data-translate="lip_brightening_faq_a6">Với môi thâm do dùng son, cải thiện 50-70% ngay buổi đầu. Môi bẩm sinh thâm cần 2-3 buổi, cải thiện 30-40% sau 2 buổi và tiếp tục sáng dần sau 4 tuần. Kết hợp phun baby lip giúp hoàn thiện màu hồng tự nhiên.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 data-translate="lip_brightening_faq_q7">Khử thâm có làm môi bị khô không?</h3>
+                        <p data-translate="lip_brightening_faq_a7">Không, sau liệu trình môi được cấp ẩm sâu bằng serum vitamin C, E, B5 và mặt nạ peptide nên không khô. Bạn chỉ cần dưỡng môi đều đặn theo hướng dẫn của chuyên gia.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 data-translate="lip_brightening_faq_q8">Bao lâu sau có thể phun màu?</h3>
+                        <p data-translate="lip_brightening_faq_a8">Sau 7-10 ngày, khi môi hồi phục hoàn toàn và sắc thâm giảm rõ, chúng tôi sẽ phun baby lip để hoàn thiện sắc môi hồng hào tự nhiên và duy trì lâu dài.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 data-translate="lip_brightening_faq_q9">Có cần kiêng ăn gì không?</h3>
+                        <p data-translate="lip_brightening_faq_a9">Trong 7 ngày đầu, tránh ăn đồ cay nóng, chua, mặn. Uống nước bằng ống hút, tránh thức ăn quá nóng. Uống đủ 2 lít nước mỗi ngày, hạn chế cà phê, trà đậm trong 5 ngày đầu.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h3 data-translate="lip_brightening_faq_q10">Có thể makeup ngay sau khử thâm không?</h3>
+                        <p data-translate="lip_brightening_faq_a10">Sau 7 ngày có thể dùng son dưỡng không màu. Tránh son có chì, son lâu trôi trong 14 ngày đầu. Sau 14 ngày có thể makeup bình thường nhưng nên chọn son không có chì.</p>
                     </article>
                 </div>
             </div>
         </section>
 
+        <!-- 11. Lời khuyên của chuyên gia -->
+        <section class="service-expert-advice">
+            <div class="container">
+                <div class="expert-advice-card" style="padding: 48px; background: linear-gradient(135deg, #fff9f5 0%, #fff0e6 100%); border-radius: 16px; text-align: center;">
+                    <h2 class="section-title" data-translate="lip_brightening_expert_title">Lời khuyên của chuyên gia</h2>
+                    <div class="expert-content" style="max-width: 800px; margin: 0 auto;">
+                        <p data-translate="lip_brightening_expert_advice1" style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">
+                            Khử thâm môi là một quy trình an toàn và hiệu quả khi được thực hiện bởi chuyên gia giàu kinh nghiệm với công nghệ hiện đại. 
+                            Tại Lumi Beauty, chúng tôi sử dụng công nghệ laser lạnh 650nm kết hợp serum vitamin đậm đặc để đảm bảo kết quả tốt nhất.
+                        </p>
+                        <p data-translate="lip_brightening_expert_advice2" style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">
+                            Điều quan trọng nhất là tuân thủ đúng hướng dẫn chăm sóc sau liệu trình. Chăm sóc đúng cách sẽ giúp môi lên màu chuẩn, 
+                            hồi phục nhanh và duy trì kết quả lâu dài. Chúng tôi luôn theo dõi sát sao và hỗ trợ khách hàng 24/7 để đảm bảo kết quả tốt nhất.
+                        </p>
+                        <p data-translate="lip_brightening_expert_advice3" style="font-size: 18px; line-height: 1.8; margin-bottom: 24px;">
+                            Mỗi khách hàng có tình trạng môi khác nhau, vì vậy chúng tôi sẽ xây dựng phác đồ riêng cho từng người. 
+                            Hãy để chúng tôi giúp bạn có đôi môi hồng hào, căng bóng tự nhiên mà bạn mong muốn.
+                        </p>
+                        <p data-translate="lip_brightening_expert_signature" style="font-weight: 600; margin-top: 32px;">
+                            — Chuyên gia Lumi Beauty
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. CTA (kêu gọi hành động) rõ ràng -->
         <section class="service-cta">
             <div class="container">
                 <div class="cta-card">
-                    <h2 data-translate="lip_removal_detail_cta_title">Đánh thức sắc môi hồng tự nhiên</h2>
-                    <p data-translate="lip_removal_detail_cta_desc">Đăng ký lịch ngay để được chuyên gia Lumi Beauty thăm khám và xây dựng phác đồ khử thâm dành riêng cho bạn.</p>
-                    <div class="cta-actions">
+                    <h2 data-translate="lip_brightening_cta_title">Sẵn sàng đánh thức sắc môi hồng tự nhiên?</h2>
+                    <p data-translate="lip_brightening_cta_desc">Đặt lịch ngay hôm nay để được chuyên gia Lumi Beauty thăm khám và xây dựng phác đồ khử thâm dành riêng cho bạn.</p>
+                    <div class="cta-info" style="margin: 32px 0; padding: 24px; background: rgba(255,255,255,0.1); border-radius: 12px;">
+                        <p style="margin-bottom: 16px; font-weight: 600;">📍 Địa chỉ spa:</p>
+                        <p style="margin-bottom: 24px; font-size: 18px;">Võ Quý Huân, Khu Đô Thị FPT City, Da Nang, Vietnam</p>
+                        <p style="margin-bottom: 16px; font-weight: 600;">📞 Hotline:</p>
+                        <p style="margin-bottom: 24px; font-size: 18px;"><a href="tel:0364759261" style="color: inherit; text-decoration: underline;">0364759261</a></p>
+                    </div>
+                    <div class="cta-actions" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
                         <button class="btn btn-primary btn-large" data-translate="book_now" data-action="open-booking">ĐẶT LỊCH NGAY</button>
-                        <a class="btn btn-outline" href="tel:0364759261">0364759261</a>
+                        <a class="btn btn-outline btn-large" href="tel:0364759261">GỌI HOTLINE</a>
+                        <a class="btn btn-outline btn-large" href="https://zalo.me/84983087832" target="_blank" rel="noreferrer">CHAT ZALO</a>
                     </div>
                 </div>
             </div>

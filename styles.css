@@ -589,6 +589,74 @@ p {
     color: var(--primary-pink);
 }
 
+.nav-item-dropdown {
+    position: relative;
+}
+
+.nav-link-with-dropdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-dropdown-arrow {
+    width: 12px;
+    height: 12px;
+    transition: var(--transition);
+    filter: brightness(0) saturate(100%) invert(26%) sepia(25%) saturate(1122%) hue-rotate(133deg) brightness(90%) contrast(90%);
+}
+
+.nav-item-dropdown:hover .nav-dropdown-arrow,
+.nav-item-dropdown.active .nav-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    border: 1px solid #e9ecef;
+    border-radius: var(--border-radius);
+    min-width: 220px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: var(--transition);
+    margin-top: 8px;
+    list-style: none;
+    padding: 8px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item-dropdown:hover .nav-dropdown-menu,
+.nav-item-dropdown.active .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown-menu li {
+    margin: 0;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 400;
+    text-transform: none;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.nav-dropdown-menu a:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-pink);
+}
+
 .header-actions {
     display: flex;
     align-items: center;
@@ -712,6 +780,34 @@ p {
         padding: 6px 10px;
         font-size: 0.8rem;
         /* min-width: 70px; */
+    }
+    
+    .nav-item-dropdown {
+        position: relative;
+    }
+    
+    .nav-dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        margin-top: 0;
+        margin-left: 1rem;
+        border: none;
+        box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .nav-item-dropdown.active .nav-dropdown-menu {
+        max-height: 500px;
+        margin-top: 0.5rem;
+    }
+    
+    .nav-dropdown-menu a {
+        padding: 10px 16px;
+        font-size: 0.9rem;
     }
     
     .lang-dropdown-menu {
@@ -839,6 +935,14 @@ p {
     width: 100%;
     display: block;
     border-radius: 26px;
+}
+
+.hero-video {
+    transition: opacity 0.3s ease;
+}
+
+.hero-video:not(.video-loaded) {
+    opacity: 0.8;
 }
 
 .main-image img {
@@ -2365,6 +2469,11 @@ body.service-detail--lip-removal {
     padding: 40px 0;
 }
 
+.service-standards,
+.service-brow-shapes {
+    padding: 40px 0;
+}
+
 .highlight-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -2386,15 +2495,46 @@ body.service-detail--lip-removal {
     box-shadow: 0 24px 48px rgba(17, 24, 39, 0.12);
 }
 
+.highlight-card:has(.highlight-image) {
+    padding: 0;
+    overflow: hidden;
+}
+
+.highlight-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--service-accent-soft);
+}
+
+.highlight-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover .highlight-image img {
+    transform: scale(1.05);
+}
+
 .highlight-card h3 {
     font-size: 20px;
     margin-bottom: 12px;
     color: #111827;
 }
 
+.highlight-card:has(.highlight-image) h3 {
+    margin: 20px 20px 12px;
+}
+
 .highlight-card p {
     color: #4b5563;
     line-height: 1.6;
+}
+
+.highlight-card:has(.highlight-image) p {
+    margin: 0 20px 20px;
 }
 
 .section-heading {
@@ -2609,6 +2749,11 @@ body.service-detail--lip-removal {
     font-size: 28px;
     font-weight: 700;
     color: var(--service-accent-text);
+}
+
+.pricing-price--range {
+    font-size: 32px;
+    margin: 16px 0 8px;
 }
 
 .pricing-note {
@@ -3282,6 +3427,8 @@ body.service-detail--lip-removal {
     }
 
     .service-highlights,
+    .service-standards,
+    .service-brow-shapes,
     .service-process,
     .service-results,
     .service-pricing,
