@@ -877,8 +877,16 @@ const translations = {
     lip_detail_meta_description:
       "Khám phá phun môi tự nhiên tại Lumi Beauty với công nghệ collagen baby lip, lên màu chuẩn sau 48h, bảo hành màu sắc 12 tháng và chế độ chăm sóc riêng biệt.",
     lip_detail_badge: "Dịch vụ nổi bật",
-    lip_detail_hero_heading: "Phun Môi Tự Nhiên Lumi Beauty",
+    lip_detail_hero_heading: "Phun Môi Collagen Lumi Beauty",
     lip_detail_hero_subheading: "Sắc môi ửng hồng, căng mọng chỉ sau 48 giờ",
+    lip_detail_hero_highlight1:
+      "Giảm thâm và cải thiện sắc môi rõ rệt chỉ sau một liệu trình",
+    lip_detail_hero_highlight2:
+      "Màu môi trong trẻo, mềm mịn, không viền – không bị đậm hay bệt",
+    lip_detail_hero_highlight3:
+      "Cảm giác nhẹ nhàng, hầu như không đau – hồi phục nhanh sau 1–2 ngày",
+    lip_detail_hero_highlight4:
+      "Màu giữ bền 18–36 tháng, lên sắc chuẩn và không phai loang",
     lip_detail_hero_paragraph1:
       "Chúng tôi kết hợp kỹ thuật phun Collagen Baby Lip với phác đồ đo sắc tố riêng cho từng khách hàng. 100% mực hữu cơ nhập khẩu, không chì, không gây khô nứt và giữ màu chuẩn từ 18-36 tháng.",
     lip_detail_hero_paragraph2:
@@ -900,21 +908,31 @@ const translations = {
     lip_detail_process_title: "Quy trình chuẩn y khoa trong 90 phút",
     lip_detail_process_intro:
       "Mỗi bước đều tuân thủ kiểm soát vô trùng, đảm bảo trải nghiệm nhẹ nhàng và kết quả chuẩn xác.",
-    lip_detail_process_step1_title: "Thăm khám & đo sắc tố",
+    lip_detail_process_step1_title: "Thăm khám & tư vấn cá nhân",
     lip_detail_process_step1_desc:
-      "Phân tích tình trạng môi, tông da, thói quen sinh hoạt để tư vấn dáng môi, màu phù hợp nhất.",
-    lip_detail_process_step2_title: "Vẽ phác thảo dáng môi chuẩn vàng",
+      "Chuyên viên đánh giá tình trạng môi, sắc tố da và mong muốn của khách để lựa chọn tone màu và kỹ thuật phù hợp.",
+    lip_detail_process_step2_title: "Vệ sinh & ủ tê an toàn",
     lip_detail_process_step2_desc:
-      "Canh chỉnh tỷ lệ bằng thước đo chuyên dụng, tạo viền môi sắc nét nhưng vẫn mềm mại tự nhiên.",
-    lip_detail_process_step3_title: "Ủ tê đa tầng & sát khuẩn",
+      "Làm sạch môi và vùng quanh, ủ tê chuyên dụng để đảm bảo quá trình phun môi nhẹ nhàng, không đau.",
+    lip_detail_process_step3_title: "Pha màu và chuẩn bị dụng cụ",
     lip_detail_process_step3_desc:
-      "Sử dụng tê y khoa nhập khẩu, đảm bảo vô cảm hoàn toàn và sát khuẩn tuyệt đối trước khi thực hiện.",
-    lip_detail_process_step4_title: "Phun Collagen Baby Lip",
+      "Mực hữu cơ được pha theo tone cá nhân, dụng cụ vô trùng chuẩn y khoa, đảm bảo an toàn tuyệt đối.",
+    lip_detail_process_step4_title: "Phun môi bằng máy PMU chuyên dụng",
     lip_detail_process_step4_desc:
-      "Đi kim nano theo chiều sợi collagen, tạo độ phủ đều màu, không tổn thương biểu bì và hạn chế bong tróc.",
-    lip_detail_process_step5_title: "Serum khóa màu & hướng dẫn chăm sóc",
+      "Kỹ thuật Collagen giúp môi lên màu chuẩn, mềm mịn, không viền và căng mọng tự nhiên.",
+    lip_detail_process_step5_title: "Dưỡng môi và hoàn tất",
     lip_detail_process_step5_desc:
-      "Phủ serum khóa màu độc quyền, hướng dẫn chi tiết chăm sóc tại nhà và hẹn lịch dặm nếu cần.",
+      "Bôi dưỡng bằng tinh chất collagen, kiểm tra lại kết quả, hướng dẫn chăm sóc tại nhà để màu lên đều và bền lâu.",
+    lip_detail_process_step6_title: "Chăm sóc & hỗ trợ sau liệu trình",
+    lip_detail_process_step6_desc:
+      "Hướng dẫn chi tiết cách chăm sóc môi, hỗ trợ dặm màu nếu cần, đảm bảo kết quả lâu dài và môi luôn mềm mượt.",
+    process_step1_alt: "Thăm khám & tư vấn cá nhân",
+    process_step2_alt: "Vệ sinh & ủ tê an toàn",
+    process_step3_alt: "Pha màu và chuẩn bị dụng cụ",
+    process_step4_alt: "Phun môi bằng máy PMU chuyên dụng",
+    process_step5_alt: "Dưỡng môi và hoàn tất",
+    process_step6_alt: "Chăm sóc & hỗ trợ sau liệu trình",
+    why_choose_image_alt: "Phun Môi Collagen tại Lumi Beauty",
     lip_detail_results_outcome_title: "Kết quả bạn nhận được",
     lip_detail_results_outcome_item1:
       "Môi ửng hồng sau 48 giờ, lên chuẩn màu sau 7 ngày.",
@@ -929,9 +947,19 @@ const translations = {
       "Tránh nước nóng, thực phẩm quá cay hoặc có màu đậm trong 3 ngày.",
     lip_detail_results_aftercare_item3:
       "Tái khám miễn phí sau 30 ngày để kiểm tra độ bền màu.",
-    lip_detail_pricing_title: "Bảng giá & gói ưu đãi",
+    lip_detail_pricing_title: "Bảng giá & gói ưu đãi Phun Môi Collagen",
     lip_detail_pricing_intro:
-      "Cam kết không phát sinh chi phí, tặng kèm bộ chăm sóc và voucher dặm lại trong 12 tháng.",
+      "Giá từ 2.000.000đ – 3.000.000đ, tùy thuộc vào loại môi và tình trạng cụ thể của bạn.",
+    lip_detail_pricing_title_main: "Phun Môi Collagen",
+    lip_detail_pricing_subtitle:
+      "Giá phụ thuộc vào tình trạng môi và màu sắc lựa chọn",
+    lip_detail_pricing_item1:
+      "Kỹ thuật Collagen chuẩn y khoa – lên màu tự nhiên, mềm mịn",
+    lip_detail_pricing_item2:
+      "Mỗi khách được chăm sóc 1-1 trong không gian riêng tư",
+    lip_detail_pricing_item3: "Miễn phí 1 lần dặm màu trong 04 tháng",
+    lip_detail_pricing_item5:
+      "100% mực hữu cơ nhập khẩu, không chì, an toàn cho mọi loại môi",
     lip_detail_pricing_option1_title: "Gói Phun Môi Baby Lip",
     lip_detail_pricing_option1_item1: "Phun collagen baby lip chuẩn y khoa.",
     lip_detail_pricing_option1_item2: "Tặng serum dưỡng ẩm 7 ngày.",
@@ -948,17 +976,79 @@ const translations = {
     lip_detail_pricing_option3_item2: "Theo dõi định kỳ 3 tháng/lần.",
     lip_detail_pricing_option3_item3: "Tư vấn dinh dưỡng cải thiện sắc tố.",
     lip_detail_pricing_note:
-      "Giá đã bao gồm bộ dụng cụ vô trùng dùng một lần và thuế VAT. Liên hệ để nhận ưu đãi theo nhóm.",
+      "Giá đã bao gồm bộ dụng cụ vô trùng dùng một lần và thuế VAT. Giá cụ thể phụ thuộc vào tình trạng môi và màu sắc lựa chọn. Liên hệ để nhận ưu đãi nhóm hoặc chương trình khuyến mãi hiện hành.",
     lip_detail_faq_title: "Câu hỏi thường gặp",
-    lip_detail_faq_q1: "Sau khi phun môi bao lâu thì bong?",
+    lip_detail_faq_q1: "Phun môi collagen có đau không?",
     lip_detail_faq_a1:
-      "Thông thường từ 2-3 ngày lớp vảy mỏng bắt đầu bong nhẹ. Đến ngày thứ 7 môi lên màu chuẩn 90% và sẽ ổn định hoàn toàn sau 14 ngày.",
-    lip_detail_faq_q2: "Phun môi có đau hay bị sưng không?",
+      "Quy trình sử dụng ủ tê chuyên dụng, kỹ thuật nhẹ nhàng, hầu như không đau và ít sưng.",
+    lip_detail_faq_q2: "Màu môi sẽ giữ được bao lâu?",
     lip_detail_faq_a2:
-      "Nhờ ủ tê đa tầng và kỹ thuật đi kim nano, khách gần như không cảm giác đau. Môi chỉ hồng nhẹ và không sưng sau liệu trình.",
-    lip_detail_faq_q3: "Có cần kiêng cữ sau phun môi?",
+      "Màu lên chuẩn và giữ bền từ 18–36 tháng tùy cơ địa, bạn sẽ có môi hồng tự nhiên lâu dài.",
+    lip_detail_faq_q3: "Bao lâu thì môi hồi phục hoàn toàn?",
     lip_detail_faq_a3:
-      "Bạn chỉ cần tránh ăn đồ cay nóng, nước có màu đậm trong 3 ngày đầu và uống đủ nước. Lumi Beauty gửi kèm cẩm nang chăm sóc chi tiết cho từng khách.",
+      "Thông thường 1–2 ngày đầu môi hơi sưng nhẹ, sau 5–7 ngày màu ổn định, môi mềm mịn và tự nhiên.",
+    lip_detail_faq_q4: "Tôi có cần nghỉ dưỡng sau liệu trình không?",
+    lip_detail_faq_a4:
+      "Không cần nghỉ dưỡng, bạn có thể sinh hoạt bình thường. Chỉ cần theo hướng dẫn chăm sóc môi để màu lên đẹp nhất.",
+    lip_detail_faq_q5: "Tôi có thể chọn tone màu riêng không?",
+    lip_detail_faq_a5:
+      "Chắc chắn, chuyên viên sẽ tư vấn tone phù hợp với làn da và mong muốn, đảm bảo màu lên tự nhiên.",
+    lip_detail_faq_q6: "Nếu môi phai màu hoặc cần chỉnh sửa thì sao?",
+    lip_detail_faq_a6:
+      "Bạn được miễn phí 1 lần dặm màu trong 04 tháng, đảm bảo môi luôn đẹp và đều màu.",
+    lip_problems_title: "Các vấn đề của môi",
+    lip_problems_intro:
+      "Những vấn đề phổ biến về môi mà chúng tôi có thể giải quyết",
+    lip_problem1_title: "Môi thâm, xỉn màu",
+    lip_problem1_desc:
+      "Môi tối màu khiến khuôn mặt thiếu sức sống và bạn luôn phải dùng son để che khuyết điểm.",
+    lip_problem1_alt: "Môi thâm, xỉn màu",
+    lip_problem2_title: "Màu môi không đều",
+    lip_problem2_desc:
+      "Một số vùng môi đậm, một số vùng nhạt khiến việc trang điểm khó và màu môi thiếu hài hòa.",
+    lip_problem2_alt: "Màu môi không đều",
+    lip_problem4_title: "Môi lệch, viền môi không cân xứng",
+    lip_problem4_desc:
+      "Môi không đều hai bên khiến nụ cười thiếu hài hòa và làm mất tự tin khi giao tiếp.",
+    lip_problem4_alt: "Môi lệch, viền môi không cân xứng",
+    lip_problem5_title: "Môi xuống tông theo thời gian",
+    lip_problem5_desc:
+      "Dù chăm sóc kỹ, màu môi vẫn phai và mất sức sống sau một thời gian, cần giải pháp lâu dài.",
+    lip_problem5_alt: "Môi xuống tông theo thời gian",
+    why_choose_title: "Vì sao nhiều khách hàng chọn phun môi tại Lumi Beauty",
+    why_choose_item1_title: "Phun môi 1-1 – Chuyên viên 7+ năm kinh nghiệm",
+    why_choose_item1_desc:
+      "Tại Lumi Beauty, mỗi khách hàng được chăm sóc riêng tư, 1-1 bởi chuyên viên phun môi với 7 năm kinh nghiệm, đảm bảo đôi môi lên màu tinh tế, hài hòa và phù hợp từng gương mặt.",
+    why_choose_item2_title: "Công nghệ Collagen",
+    why_choose_item2_desc:
+      "Kỹ thuật tiên tiến giúp môi lên màu tự nhiên, mềm mịn và căng mọng, giảm thâm hiệu quả.",
+    why_choose_item3_title: "Mực hữu cơ nhập khẩu, an toàn tuyệt đối",
+    why_choose_item3_desc:
+      "100% mực hữu cơ không chì, không gây kích ứng, phù hợp với mọi loại da và môi nhạy cảm.",
+    why_choose_item4_title: "Quy trình nhẹ nhàng, không đau, hồi phục nhanh",
+    why_choose_item4_desc:
+      "Phun môi bằng máy PMU chuyên dụng, giảm sưng đau tối đa, phục hồi chỉ sau 1–2 ngày.",
+    why_choose_item5_title: "Kết quả bền màu lâu dài",
+    why_choose_item5_desc:
+      "Màu môi ổn định 18–36 tháng, lên đúng tone và giữ được hiệu ứng tự nhiên theo thời gian.",
+    why_choose_item6_title: "Chăm sóc tận tình, bảo hành sau liệu trình",
+    why_choose_item6_desc:
+      "Hướng dẫn chăm sóc chi tiết, hỗ trợ dặm màu miễn phí để bạn luôn sở hữu đôi môi hoàn hảo.",
+    service_commitment_title: "Cam kết dịch vụ",
+    service_commitment_intro:
+      "Lumi Beauty cam kết mang đến cho bạn dịch vụ tốt nhất với những đảm bảo rõ ràng",
+    commitment1_title: "An toàn tuyệt đối",
+    commitment1_desc:
+      "Quy trình chuẩn y khoa, dụng cụ vô trùng, mực hữu cơ nhập khẩu, bảo vệ sức khỏe môi của bạn.",
+    commitment2_title: "Kết quả tự nhiên – bền màu",
+    commitment2_desc:
+      "Phun môi lên màu chuẩn, mềm mịn, giữ được 18–36 tháng, hài hòa với gương mặt.",
+    commitment3_title: "Chăm sóc tận tâm, 1-1",
+    commitment3_desc:
+      "Mỗi khách hàng được tư vấn và chăm sóc riêng, hướng dẫn chi tiết sau liệu trình để môi luôn đẹp.",
+    commitment4_title: "Bảo hành & hỗ trợ dặm màu",
+    commitment4_desc:
+      "Hỗ trợ dặm màu 1 lần miễn phí nếu cần, đảm bảo đôi môi hoàn hảo như cam kết ban đầu.",
     lip_detail_cta_title: "Sẵn sàng sở hữu sắc môi tươi trẻ?",
     lip_detail_cta_desc:
       "Đặt lịch ngay hôm nay để được chuyên gia Lumi Beauty đo tông màu và lên phác đồ chăm sóc riêng cho bạn.",
@@ -1191,6 +1281,7 @@ const translations = {
     contact_email_description:
       "Để lại lời nhắn chi tiết, chúng tôi sẽ phản hồi trong 24h",
     contact_email_button: "GỬI EMAIL",
+    contact_free_button: "Liên hệ tư vấn miễn phí",
 
     // Contact Form
     contact_form_title:
