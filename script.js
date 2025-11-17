@@ -873,9 +873,9 @@ const translations = {
 
     // Service Detail - Lip Tattoo
     lip_detail_page_title:
-      "Phun Môi Tự Nhiên Lumi Beauty - Tái sinh sắc môi chuẩn y khoa",
+      "Phun Môi Collagen Đà Nẵng - Lumi Beauty | Kỹ Thuật Chuẩn Y Khoa",
     lip_detail_meta_description:
-      "Khám phá phun môi tự nhiên tại Lumi Beauty với công nghệ collagen baby lip, lên màu chuẩn sau 48h, bảo hành màu sắc 12 tháng và chế độ chăm sóc riêng biệt.",
+      "Phun môi collagen tại Lumi Beauty Đà Nẵng: kỹ thuật chuẩn y khoa, 1-1 chuyên viên 7+ năm kinh nghiệm, màu giữ bền 18-36 tháng, hồi phục nhanh 1-2 ngày. Mực hữu cơ nhập khẩu, bảo hành 04 tháng.",
     lip_detail_badge: "Dịch vụ nổi bật",
     lip_detail_hero_heading: "Phun Môi Collagen Lumi Beauty",
     lip_detail_hero_subheading: "Sắc môi ửng hồng, căng mọng chỉ sau 48 giờ",
@@ -1052,6 +1052,26 @@ const translations = {
     lip_detail_cta_title: "Sẵn sàng sở hữu sắc môi tươi trẻ?",
     lip_detail_cta_desc:
       "Đặt lịch ngay hôm nay để được chuyên gia Lumi Beauty đo tông màu và lên phác đồ chăm sóc riêng cho bạn.",
+    color_development_title: "Quy trình lên màu",
+    color_development_intro: "Quá trình phục hồi và lên màu sau khi phun môi",
+    timeline_day1_title: "Môi vừa phun xong",
+    timeline_day1_desc:
+      "Môi hơi căng do tổn thương và thuốc tê, cảm giác nhẹ rát là bình thường.",
+    timeline_day2_title: "Môi khô và chuẩn bị bong",
+    timeline_day2_desc:
+      "Môi bắt đầu khô, cần dùng dưỡng tái tạo để hỗ trợ quá trình bong tự nhiên.",
+    timeline_day3_title: "Môi bong nhẹ, màu chưa đều",
+    timeline_day3_desc:
+      "Lớp bong hoàn toàn, màu nhẹ, viền đậm, lòng môi nhạt. Trong thời gian này, cần dưỡng thường xuyên và kiêng cẩn thận.",
+    timeline_day10_title: "Màu môi ổn định dần",
+    timeline_day10_desc:
+      "Màu có thể sậm hoặc nhạt tùy cơ địa và cách chăm sóc. Đây là giai đoạn bình thường, không cần lo lắng. Thoa dưỡng đều đặn.",
+    timeline_day30_title: "Môi tươi tắn, căng mịn",
+    timeline_day30_desc:
+      "Màu môi bắt đầu đều, môi căng mịn hơn. Tiếp tục thoa dưỡng thường xuyên.",
+    timeline_day50_title: "Màu ổn định hoàn toàn",
+    timeline_day50_desc:
+      "Màu môi ổn định, khách hàng có thể dặm lại nếu màu chưa đạt như mong muốn.",
 
     // Service Detail - Brow Tattoo
     brow_detail_page_title:
@@ -1330,7 +1350,7 @@ const translations = {
     footer_line2: "💋 Tư vấn và chăm sóc tận tâm",
     footer_address_detail: "Võ Quý Huân, Khu Đô Thị FPT City, Da Nang, Vietnam",
     footer_tiktok: "TikTok: @lumibeautyphunxam",
-    footer_facebook: "Facebook: facebook.com/profile.php?id=61579821760714",
+    footer_facebook: "Facebook: facebook.com/lumibeautypmubrowlip",
     facebook_iframe_title: "Trang Facebook Lumi Beauty",
     footer_copyright: "© 2025 Lumi Beauty. All rights reserved.",
 
@@ -1540,7 +1560,7 @@ const translations = {
     footer_line2: "💋 Dedicated consultation and care",
     footer_address_detail: "Vo Quy Huan, FPT City Urban Area, Da Nang, Vietnam",
     footer_tiktok: "TikTok: @lumibeautyphunxam",
-    footer_facebook: "Facebook: facebook.com/profile.php?id=61579821760714",
+    footer_facebook: "Facebook: facebook.com/lumibeautypmubrowlip",
     facebook_iframe_title: "Lumi Beauty Facebook Page",
     footer_copyright: "© 2025 Lumi Beauty. All rights reserved.",
 
@@ -1565,6 +1585,170 @@ const translations = {
     booking_success: "Thank you! Lumi Beauty will contact you shortly.",
     booking_error:
       "Submission failed. Please try again or contact us directly.",
+    contact_free_button: "Contact for free consultation",
+
+    // Service Detail - Lip Tattoo
+    lip_detail_page_title:
+      "Collagen Lip PMU Da Nang - Lumi Beauty | Medical-Grade Technique",
+    lip_detail_meta_description:
+      "Collagen lip PMU at Lumi Beauty Da Nang: medical-grade technique, 1-on-1 with 7+ years experienced specialist, color lasts 18-36 months, fast recovery 1-2 days. Imported organic ink, 4-month warranty.",
+    lip_detail_hero_heading: "Collagen Lip PMU Lumi Beauty",
+    lip_detail_hero_subheading: "Rosy, plump lips in just 48 hours",
+    lip_detail_hero_highlight1:
+      "Visible dark spot reduction and lip tone improvement after one session",
+    lip_detail_hero_highlight2:
+      "Clear, soft lip color, no harsh edges – no darkening or smudging",
+    lip_detail_hero_highlight3:
+      "Gentle experience, virtually painless – quick recovery in 1–2 days",
+    lip_detail_hero_highlight4:
+      "Color lasts 18–36 months, true tone development without fading",
+    lip_problems_title: "Common Lip Issues",
+    lip_problems_intro: "Common lip problems we can solve",
+    lip_problem1_title: "Dark, dull lips",
+    lip_problem1_desc:
+      "Dark lips make the face lack vitality and you always need lipstick to cover imperfections.",
+    lip_problem1_alt: "Dark, dull lips",
+    lip_problem2_title: "Uneven lip color",
+    lip_problem2_desc:
+      "Some areas are dark, some are light, making makeup difficult and lip color lack harmony.",
+    lip_problem2_alt: "Uneven lip color",
+    lip_problem4_title: "Asymmetric lips, uneven lip line",
+    lip_problem4_alt: "Asymmetric lips, uneven lip line",
+    lip_problem4_desc:
+      "Uneven lips on both sides make the smile lack harmony and reduce confidence in communication.",
+    lip_problem5_title: "Lip color fades over time",
+    lip_problem5_desc:
+      "Despite careful care, lip color still fades and loses vitality over time, requiring a long-term solution.",
+    lip_problem5_alt: "Lip color fades over time",
+    why_choose_title: "Why many customers choose lip PMU at Lumi Beauty",
+    why_choose_item1_title:
+      "1-on-1 Lip PMU – Specialist with 7+ years experience",
+    why_choose_item1_desc:
+      "At Lumi Beauty, each customer receives private, 1-on-1 care from a lip PMU specialist with 7 years of experience, ensuring lips develop subtle, harmonious color that suits each face.",
+    why_choose_item2_title: "Collagen Technology",
+    why_choose_item2_desc:
+      "Advanced technique helps lips develop natural color, soft and plump, effectively reducing dark spots.",
+    why_choose_item3_title: "Imported organic ink, absolutely safe",
+    why_choose_item3_desc:
+      "100% lead-free organic ink, non-irritating, suitable for all skin types and sensitive lips.",
+    why_choose_item4_title: "Gentle process, no pain, fast recovery",
+    why_choose_item4_desc:
+      "PMU machine lip tattooing, maximum pain and swelling reduction, recovery in just 1–2 days.",
+    why_choose_item5_title: "Long-lasting color results",
+    why_choose_item5_desc:
+      "Lip color stable for 18–36 months, develops correct tone and maintains natural effect over time.",
+    why_choose_item6_title: "Caring service, post-treatment warranty",
+    why_choose_item6_desc:
+      "Detailed care instructions, free color touch-up support so you always have perfect lips.",
+    why_choose_image_alt: "Collagen Lip PMU at Lumi Beauty",
+    service_commitment_title: "Service Commitment",
+    service_commitment_intro:
+      "Lumi Beauty commits to bringing you the best service with clear guarantees",
+    commitment1_title: "Absolute safety",
+    commitment1_desc:
+      "Medical-grade process, sterile tools, imported organic ink, protecting your lip health.",
+    commitment2_title: "Natural results – long-lasting color",
+    commitment2_desc:
+      "Lip PMU develops true color, soft and smooth, lasts 18–36 months, harmonizes with the face.",
+    commitment3_title: "Caring service, 1-on-1",
+    commitment3_desc:
+      "Each customer receives private consultation and care, detailed post-treatment guidance so lips always look beautiful.",
+    commitment4_title: "Warranty & color touch-up support",
+    commitment4_desc:
+      "Free 1-time color touch-up if needed, ensuring perfect lips as initially promised.",
+    lip_detail_process_title: "Medical-grade process in 90 minutes",
+    lip_detail_process_intro:
+      "Each step follows sterile control, ensuring gentle experience and accurate results.",
+    lip_detail_process_step1_title: "Consultation & personal assessment",
+    lip_detail_process_step1_desc:
+      "Specialist evaluates lip condition, skin tone and client's wishes to select suitable color tone and technique.",
+    lip_detail_process_step2_title: "Cleansing & safe numbing",
+    lip_detail_process_step2_desc:
+      "Clean lips and surrounding area, apply professional numbing to ensure gentle, painless lip PMU process.",
+    lip_detail_process_step3_title: "Color mixing & tool preparation",
+    lip_detail_process_step3_desc:
+      "Organic ink mixed to personal tone, sterile medical-grade tools, ensuring absolute safety.",
+    lip_detail_process_step4_title: "Lip PMU with professional PMU machine",
+    lip_detail_process_step4_desc:
+      "Collagen technique helps lips develop true color, soft and smooth, no edges and naturally plump.",
+    lip_detail_process_step5_title: "Lip care & completion",
+    lip_detail_process_step5_desc:
+      "Apply collagen essence, check results, guide home care for even and long-lasting color.",
+    lip_detail_process_step6_title: "Care & post-treatment support",
+    lip_detail_process_step6_desc:
+      "Detailed lip care instructions, color touch-up support if needed, ensuring long-term results and always soft lips.",
+    process_step1_alt: "Consultation & personal assessment",
+    process_step2_alt: "Cleansing & safe numbing",
+    process_step3_alt: "Color mixing & tool preparation",
+    process_step4_alt: "Lip PMU with professional PMU machine",
+    process_step5_alt: "Lip care & completion",
+    process_step6_alt: "Care & post-treatment support",
+    color_development_title: "Color development process",
+    color_development_intro: "Recovery and color development after lip PMU",
+    timeline_day1_title: "Just after lip PMU",
+    timeline_day1_desc:
+      "Lips slightly tight due to trauma and numbing, mild burning sensation is normal.",
+    timeline_day2_title: "Lips dry and preparing to peel",
+    timeline_day2_desc:
+      "Lips begin to dry, need to use restorative care to support natural peeling process.",
+    timeline_day3_title: "Lips peel lightly, color not even",
+    timeline_day3_desc:
+      "Peeling layer completely, light color, dark edges, light inner lips. During this time, need regular care and careful restrictions.",
+    timeline_day10_title: "Lip color gradually stabilizes",
+    timeline_day10_desc:
+      "Color may be darker or lighter depending on body type and care method. This is a normal stage, no need to worry. Apply care regularly.",
+    timeline_day30_title: "Fresh, smooth lips",
+    timeline_day30_desc:
+      "Lip color begins to even out, lips become smoother. Continue to apply care regularly.",
+    timeline_day50_title: "Color completely stable",
+    timeline_day50_desc:
+      "Lip color is stable, customers can get touch-up if color hasn't reached desired level.",
+    before_after_title: "Before and after images",
+    before_after_intro: "Real results from Lumi Beauty customers",
+    before_after_alt1: "Lip PMU results before and after",
+    before_after_alt2: "Lip PMU results before and after",
+    before_after_alt3: "Lip PMU results before and after",
+    before_after_alt4: "Lip PMU results before and after",
+    before_after_alt5: "Lip PMU results before and after",
+    before_after_alt6: "Lip PMU results before and after",
+    lip_detail_pricing_title:
+      "Pricing & Promotional Packages - Collagen Lip PMU",
+    lip_detail_pricing_intro:
+      "Price from 2,000,000đ – 3,000,000đ, depending on lip type and your specific condition.",
+    lip_detail_pricing_title_main: "Collagen Lip PMU",
+    lip_detail_pricing_subtitle:
+      "Price depends on lip condition and color choice",
+    lip_detail_pricing_item1:
+      "Medical-grade Collagen technique – natural color development, soft and smooth",
+    lip_detail_pricing_item2:
+      "Each client receives 1-on-1 care in private space",
+    lip_detail_pricing_item3: "Free 1-time color touch-up within 04 months",
+    lip_detail_pricing_item5:
+      "100% imported organic ink, lead-free, safe for all lip types",
+    lip_detail_pricing_note:
+      "Price includes one-time sterile tool kit and VAT. Specific price depends on lip condition and color choice. Contact for group offers or current promotions.",
+    lip_detail_faq_title: "Frequently Asked Questions",
+    lip_detail_faq_q1: "Does collagen lip PMU hurt?",
+    lip_detail_faq_a1:
+      "Process uses professional numbing, gentle technique, virtually painless and minimal swelling.",
+    lip_detail_faq_q2: "How long will lip color last?",
+    lip_detail_faq_a2:
+      "Color develops true and lasts 18–36 months depending on body type, you'll have naturally rosy lips long-term.",
+    lip_detail_faq_q3: "How long until lips fully recover?",
+    lip_detail_faq_a3:
+      "Usually 1–2 days initially lips slightly swollen, after 5–7 days color stabilizes, lips soft and natural.",
+    lip_detail_faq_q4: "Do I need rest after treatment?",
+    lip_detail_faq_a4:
+      "No rest needed, you can live normally. Just follow lip care instructions for best color development.",
+    lip_detail_faq_q5: "Can I choose my own color tone?",
+    lip_detail_faq_a5:
+      "Absolutely, specialist will consult tone suitable for skin tone and wishes, ensuring natural color development.",
+    lip_detail_faq_q6: "What if lip color fades or needs adjustment?",
+    lip_detail_faq_a6:
+      "You get free 1-time color touch-up within 04 months, ensuring lips always look beautiful and even.",
+    lip_detail_cta_title: "Ready to own fresh, youthful lips?",
+    lip_detail_cta_desc:
+      "Book today to have Lumi Beauty specialist measure your tone and create a personalized care plan for you.",
 
     copyright: "© 2023 Lumi Beauty. All rights reserved.",
   },
@@ -1743,7 +1927,7 @@ const translations = {
     footer_line2: "💋 정성 어린 상담과 케어",
     footer_address_detail: "다낭 FPT 시티 도시 지역 보 꾸이 후안",
     footer_tiktok: "틱톡: @lumibeautyphunxam",
-    footer_facebook: "페이스북: facebook.com/profile.php?id=61579821760714",
+    footer_facebook: "페이스북: facebook.com/lumibeautypmubrowlip",
     facebook_iframe_title: "루미 뷰티 페이스북 페이지",
     footer_copyright: "© 2025 루미 뷰티. 모든 권리 보유.",
 
@@ -1767,6 +1951,165 @@ const translations = {
     booking_sending: "정보를 전송하고 있습니다...",
     booking_success: "감사합니다! 곧 루미 뷰티에서 연락드리겠습니다.",
     booking_error: "전송에 실패했습니다. 다시 시도하시거나 직접 연락해 주세요.",
+    contact_free_button: "무료 상담 문의",
+
+    // Service Detail - Lip Tattoo
+    lip_detail_page_title: "콜라겐 립 반영구 다낭 - 루미 뷰티 | 의료 표준 기법",
+    lip_detail_meta_description:
+      "루미 뷰티 다낭 콜라겐 립 반영구: 의료 표준 기법, 7년 이상 경력 전문가 1:1 시술, 색상 지속 18-36개월, 빠른 회복 1-2일. 수입 유기농 잉크, 4개월 보증.",
+    lip_detail_hero_heading: "콜라겐 립 반영구 루미 뷰티",
+    lip_detail_hero_subheading: "48시간 만에 생기 있는 촉촉한 입술",
+    lip_detail_hero_highlight1:
+      "한 번의 시술 후 어두운 반점 감소 및 입술 톤 개선 효과",
+    lip_detail_hero_highlight2:
+      "맑고 부드러운 입술 색상, 거친 가장자리 없음 – 어둡거나 번지지 않음",
+    lip_detail_hero_highlight3:
+      "부드러운 경험, 거의 통증 없음 – 1–2일 내 빠른 회복",
+    lip_detail_hero_highlight4:
+      "색상 지속 18–36개월, 정확한 톤 발색 및 퇴색 없음",
+    lip_problems_title: "입술의 문제점",
+    lip_problems_intro: "우리가 해결할 수 있는 일반적인 입술 문제",
+    lip_problem1_title: "어둡고 칙칙한 입술",
+    lip_problem1_desc:
+      "어두운 입술은 얼굴에 생기를 없게 만들고 항상 립스틱으로 결점을 가려야 합니다.",
+    lip_problem1_alt: "어둡고 칙칙한 입술",
+    lip_problem2_title: "고르지 않은 입술 색상",
+    lip_problem2_desc:
+      "일부 영역은 어둡고 일부는 밝아서 메이크업이 어렵고 입술 색상이 조화롭지 않습니다.",
+    lip_problem2_alt: "고르지 않은 입술 색상",
+    lip_problem4_title: "비대칭 입술, 고르지 않은 입술 라인",
+    lip_problem4_alt: "비대칭 입술, 고르지 않은 입술 라인",
+    lip_problem4_desc:
+      "양쪽이 고르지 않은 입술은 미소를 조화롭지 않게 만들고 소통 시 자신감을 떨어뜨립니다.",
+    lip_problem5_title: "시간이 지나면서 입술 색상 퇴색",
+    lip_problem5_desc:
+      "신중하게 관리해도 입술 색상은 시간이 지나면서 퇴색하고 생기를 잃어 장기적인 해결책이 필요합니다.",
+    lip_problem5_alt: "시간이 지나면서 입술 색상 퇴색",
+    why_choose_title: "많은 고객이 루미 뷰티에서 립 반영구를 선택하는 이유",
+    why_choose_item1_title: "1:1 립 반영구 – 7년 이상 경력 전문가",
+    why_choose_item1_desc:
+      "루미 뷰티에서는 각 고객이 7년 경력의 립 반영구 전문가로부터 프라이빗 1:1 케어를 받아, 각 얼굴에 맞는 섬세하고 조화로운 색상 발색을 보장합니다.",
+    why_choose_item2_title: "콜라겐 기술",
+    why_choose_item2_desc:
+      "첨단 기법으로 입술이 자연스러운 색상을 발색하고 부드럽고 촉촉하며 어두운 반점을 효과적으로 감소시킵니다.",
+    why_choose_item3_title: "수입 유기농 잉크, 절대 안전",
+    why_choose_item3_desc:
+      "100% 무연 유기농 잉크, 자극 없음, 모든 피부 타입과 민감한 입술에 적합합니다.",
+    why_choose_item4_title: "부드러운 과정, 통증 없음, 빠른 회복",
+    why_choose_item4_desc:
+      "반영구 기계 립 타투, 통증 및 붓기 최대 감소, 단 1–2일 내 회복.",
+    why_choose_item5_title: "오래 지속되는 색상 결과",
+    why_choose_item5_desc:
+      "입술 색상 18–36개월 안정, 정확한 톤 발색 및 시간이 지나도 자연스러운 효과 유지.",
+    why_choose_item6_title: "정성스러운 서비스, 시술 후 보증",
+    why_choose_item6_desc:
+      "상세한 케어 지침, 무료 색상 보정 지원으로 항상 완벽한 입술을 유지할 수 있습니다.",
+    why_choose_image_alt: "루미 뷰티 콜라겐 립 반영구",
+    service_commitment_title: "서비스 약속",
+    service_commitment_intro:
+      "루미 뷰티는 명확한 보장과 함께 최고의 서비스를 제공하겠다고 약속합니다",
+    commitment1_title: "절대 안전",
+    commitment1_desc:
+      "의료 표준 프로세스, 멸균 도구, 수입 유기농 잉크, 입술 건강 보호.",
+    commitment2_title: "자연스러운 결과 – 오래 지속되는 색상",
+    commitment2_desc:
+      "립 반영구는 정확한 색상 발색, 부드럽고 매끄러움, 18–36개월 지속, 얼굴과 조화.",
+    commitment3_title: "정성스러운 서비스, 1:1",
+    commitment3_desc:
+      "각 고객은 프라이빗 상담 및 케어를 받으며, 시술 후 상세한 지침으로 입술이 항상 아름답게 유지됩니다.",
+    commitment4_title: "보증 및 색상 보정 지원",
+    commitment4_desc:
+      "필요 시 무료 1회 색상 보정, 처음 약속한 대로 완벽한 입술 보장.",
+    lip_detail_process_title: "90분 내 의료 표준 프로세스",
+    lip_detail_process_intro:
+      "각 단계는 멸균 관리 준수, 부드러운 경험과 정확한 결과 보장.",
+    lip_detail_process_step1_title: "상담 및 개인 평가",
+    lip_detail_process_step1_desc:
+      "전문가가 입술 상태, 피부 톤 및 고객의 희망을 평가하여 적합한 색상 톤과 기법을 선택합니다.",
+    lip_detail_process_step2_title: "청소 및 안전한 마취",
+    lip_detail_process_step2_desc:
+      "입술 및 주변 영역 청소, 전문 마취 적용으로 부드럽고 통증 없는 립 반영구 과정 보장.",
+    lip_detail_process_step3_title: "색상 혼합 및 도구 준비",
+    lip_detail_process_step3_desc:
+      "개인 톤에 맞춘 유기농 잉크, 멸균 의료 표준 도구, 절대 안전 보장.",
+    lip_detail_process_step4_title: "전문 반영구 기계로 립 반영구",
+    lip_detail_process_step4_desc:
+      "콜라겐 기법으로 입술이 정확한 색상을 발색하고 부드럽고 매끄러우며 가장자리 없이 자연스럽게 촉촉합니다.",
+    lip_detail_process_step5_title: "입술 케어 및 완료",
+    lip_detail_process_step5_desc:
+      "콜라겐 에센스 적용, 결과 확인, 고르고 오래 지속되는 색상을 위한 홈 케어 안내.",
+    lip_detail_process_step6_title: "케어 및 시술 후 지원",
+    lip_detail_process_step6_desc:
+      "상세한 입술 케어 지침, 필요 시 색상 보정 지원, 장기적인 결과 및 항상 부드러운 입술 보장.",
+    process_step1_alt: "상담 및 개인 평가",
+    process_step2_alt: "청소 및 안전한 마취",
+    process_step3_alt: "색상 혼합 및 도구 준비",
+    process_step4_alt: "전문 반영구 기계로 립 반영구",
+    process_step5_alt: "입술 케어 및 완료",
+    process_step6_alt: "케어 및 시술 후 지원",
+    color_development_title: "색상 발색 과정",
+    color_development_intro: "립 반영구 후 회복 및 색상 발색",
+    timeline_day1_title: "립 반영구 직후",
+    timeline_day1_desc:
+      "외상 및 마취로 인해 입술이 약간 당기고 가벼운 작열감은 정상입니다.",
+    timeline_day2_title: "입술 건조 및 벗겨짐 준비",
+    timeline_day2_desc:
+      "입술이 건조하기 시작하며, 자연스러운 벗겨짐 과정을 지원하기 위해 재생 케어를 사용해야 합니다.",
+    timeline_day3_title: "입술 가볍게 벗겨짐, 색상 고르지 않음",
+    timeline_day3_desc:
+      "벗겨짐 층 완전히, 밝은 색상, 어두운 가장자리, 밝은 내부 입술. 이 기간 동안 정기적인 케어와 신중한 제한이 필요합니다.",
+    timeline_day10_title: "입술 색상 점진적으로 안정화",
+    timeline_day10_desc:
+      "색상은 체질과 케어 방법에 따라 더 어둡거나 밝을 수 있습니다. 이것은 정상적인 단계이므로 걱정할 필요가 없습니다. 정기적으로 케어를 적용하세요.",
+    timeline_day30_title: "신선하고 매끄러운 입술",
+    timeline_day30_desc:
+      "입술 색상이 고르게 되기 시작하고 입술이 더 매끄러워집니다. 정기적으로 케어를 계속 적용하세요.",
+    timeline_day50_title: "색상 완전히 안정화",
+    timeline_day50_desc:
+      "입술 색상이 안정적이며, 색상이 원하는 수준에 도달하지 않은 경우 고객은 보정을 받을 수 있습니다.",
+    before_after_title: "시술 전후 이미지",
+    before_after_intro: "루미 뷰티 고객의 실제 결과",
+    before_after_alt1: "립 반영구 결과 시술 전후",
+    before_after_alt2: "립 반영구 결과 시술 전후",
+    before_after_alt3: "립 반영구 결과 시술 전후",
+    before_after_alt4: "립 반영구 결과 시술 전후",
+    before_after_alt5: "립 반영구 결과 시술 전후",
+    before_after_alt6: "립 반영구 결과 시술 전후",
+    lip_detail_pricing_title: "가격 및 프로모션 패키지 - 콜라겐 립 반영구",
+    lip_detail_pricing_intro:
+      "입술 타입 및 특정 상태에 따라 2,000,000đ – 3,000,000đ부터.",
+    lip_detail_pricing_title_main: "콜라겐 립 반영구",
+    lip_detail_pricing_subtitle: "가격은 입술 상태 및 색상 선택에 따라 다름",
+    lip_detail_pricing_item1:
+      "의료 표준 콜라겐 기법 – 자연스러운 색상 발색, 부드럽고 매끄러움",
+    lip_detail_pricing_item2: "각 고객은 프라이빗 공간에서 1:1 케어를 받습니다",
+    lip_detail_pricing_item3: "04개월 내 무료 1회 색상 보정",
+    lip_detail_pricing_item5:
+      "100% 수입 유기농 잉크, 무연, 모든 입술 타입에 안전",
+    lip_detail_pricing_note:
+      "가격에는 일회용 멸균 도구 키트 및 VAT가 포함됩니다. 구체적인 가격은 입술 상태 및 색상 선택에 따라 다릅니다. 그룹 혜택 또는 현재 프로모션은 문의하세요.",
+    lip_detail_faq_title: "자주 묻는 질문",
+    lip_detail_faq_q1: "콜라겐 립 반영구는 아픈가요?",
+    lip_detail_faq_a1:
+      "프로세스는 전문 마취 사용, 부드러운 기법, 거의 통증 없음 및 최소 붓기.",
+    lip_detail_faq_q2: "입술 색상은 얼마나 지속되나요?",
+    lip_detail_faq_a2:
+      "색상은 체질에 따라 정확하게 발색되고 18–36개월 지속되며, 장기적으로 자연스럽게 장밋빛 입술을 갖게 됩니다.",
+    lip_detail_faq_q3: "입술이 완전히 회복되기까지 얼마나 걸리나요?",
+    lip_detail_faq_a3:
+      "일반적으로 처음 1–2일 동안 입술이 약간 부어오르고, 5–7일 후 색상이 안정화되고 입술이 부드럽고 자연스러워집니다.",
+    lip_detail_faq_q4: "시술 후 휴식이 필요한가요?",
+    lip_detail_faq_a4:
+      "휴식이 필요 없으며 정상적으로 생활할 수 있습니다. 최고의 색상 발색을 위해 입술 케어 지침을 따르기만 하면 됩니다.",
+    lip_detail_faq_q5: "자신만의 색상 톤을 선택할 수 있나요?",
+    lip_detail_faq_a5:
+      "물론입니다, 전문가가 피부 톤과 희망에 맞는 톤을 상담하여 자연스러운 색상 발색을 보장합니다.",
+    lip_detail_faq_q6: "입술 색상이 퇴색하거나 조정이 필요한 경우는?",
+    lip_detail_faq_a6:
+      "04개월 내 무료 1회 색상 보정을 받을 수 있어 입술이 항상 아름답고 고르게 유지됩니다.",
+    lip_detail_cta_title: "신선하고 젊은 입술을 갖고 싶으신가요?",
+    lip_detail_cta_desc:
+      "오늘 예약하여 루미 뷰티 전문가가 톤을 측정하고 개인 맞춤 케어 계획을 수립해 드립니다.",
 
     copyright: "© 2023 루미 뷰티. 모든 권리 보유.",
   },
@@ -1919,9 +2262,9 @@ function updateStructuredData(lang) {
     },
     areaServed: "Da Nang, Vietnam",
     sameAs: [
-      "https://www.facebook.com/profile.php?id=61579821760714",
+      "https://www.facebook.com/lumibeautypmubrowlip",
       "https://www.tiktok.com/@lumibeautyphunxam",
-      "https://zalo.me/84983087832",
+      "https://zalo.me/84364759261",
     ],
     contactPoint: {
       "@type": "ContactPoint",
