@@ -800,6 +800,29 @@
         </div>
     </div>
 
+    <!-- Zalo Contact Modal -->
+    <div class="modal" id="zaloContactModal" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="zaloModalTitle">
+            <button class="modal-close" type="button" aria-label="Đóng" data-modal-close data-translate="close_modal" data-translate-attr="aria-label">&times;</button>
+            <div class="modal-header">
+                <h2 id="zaloModalTitle" data-translate="zalo_contact_modal_title">Liên hệ trực tiếp với chúng tôi</h2>
+                <p data-translate="zalo_contact_modal_desc" data-zalo-service-desc>Bạn đang quan tâm tới dịch vụ {service}. Vui lòng liên hệ với chúng tôi qua Zalo để được tư vấn chi tiết.</p>
+            </div>
+            <div class="zalo-contact-content" style="padding: 24px; text-align: center;">
+                <div style="margin-bottom: 32px;">
+                    <img src="../icons/zalo.svg" alt="Zalo" style="width: 80px; height: 80px; margin: 0 auto 24px; display: block;">
+                    <p style="font-size: 18px; font-weight: 600; margin-bottom: 8px;" data-translate="zalo_contact_phone_label">Số điện thoại Zalo:</p>
+                    <p style="font-size: 24px; font-weight: 700; color: #0068ff; margin-bottom: 24px;">0364759261</p>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://zalo.me/84364759261" class="btn btn-primary btn-large" target="_blank" rel="noreferrer" data-translate="zalo_contact_open_button">MỞ ZALO NGAY</a>
+                    <button class="btn btn-outline btn-large" data-modal-close data-translate="close_modal">ĐÓNG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="../script.js"></script>
 </body>
 </html>

@@ -1,5 +1,150 @@
 // Smooth scrolling and animations for Lumi Beauty website
 
+// Zalo Contact Modal handling
+function initZaloContactModal() {
+  const modal = document.getElementById("zaloContactModal");
+  if (!modal) return;
+
+  const openLinks = document.querySelectorAll("[data-open-zalo-modal]");
+  const closeTriggers = modal.querySelectorAll("[data-modal-close]");
+  const body = document.body;
+  const descElement = modal.querySelector("[data-zalo-service-desc]");
+  let currentServiceKey = null;
+
+  // Service name mapping
+  const serviceMap = {
+    vi: {
+      "eyebrow-tattoo": "phun mày",
+      "eyeliner-tattoo": "phun mí mở tròng",
+      "lip-brightening": "khử thâm môi",
+    },
+    en: {
+      "eyebrow-tattoo": "eyebrow PMU",
+      "eyeliner-tattoo": "eyeliner PMU",
+      "lip-brightening": "lip brightening",
+    },
+    ko: {
+      "eyebrow-tattoo": "눈썹 반영구",
+      "eyeliner-tattoo": "아이라인 반영구",
+      "lip-brightening": "입술 톤 브라이트닝",
+    },
+  };
+
+  const getServiceKey = (href) => {
+    const url = href || "";
+
+    if (url.includes("eyebrow-tattoo")) {
+      return "eyebrow-tattoo";
+    } else if (url.includes("eyeliner-tattoo")) {
+      return "eyeliner-tattoo";
+    } else if (url.includes("lip-brightening")) {
+      return "lip-brightening";
+    }
+
+    return null;
+  };
+
+  const updateModalDescription = (serviceKey) => {
+    if (!descElement || !serviceKey) return;
+
+    currentServiceKey = serviceKey;
+    const serviceName =
+      serviceMap[currentLanguage] && serviceMap[currentLanguage][serviceKey]
+        ? serviceMap[currentLanguage][serviceKey]
+        : null;
+
+    if (!serviceName) return;
+
+    const dict = getDictionary(currentLanguage);
+    let desc =
+      dict.zalo_contact_modal_desc ||
+      "Bạn đang quan tâm tới dịch vụ {service}. Vui lòng liên hệ với chúng tôi qua Zalo để được tư vấn chi tiết.";
+    desc = desc.replace("{service}", serviceName);
+    descElement.textContent = desc;
+  };
+
+  const openModal = (event, linkElement) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    // Detect service name from the link
+    const href = linkElement
+      ? linkElement.getAttribute("href") || linkElement.textContent.trim()
+      : null;
+    const serviceKey = getServiceKey(href);
+
+    // Update modal description with service name
+    if (serviceKey) {
+      updateModalDescription(serviceKey);
+    }
+
+    if (modal.classList.contains("is-open")) return;
+    modal.classList.remove("is-closing");
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    body.classList.add("modal-open");
+
+    const focusTarget = modal.querySelector("a, button");
+    if (focusTarget) {
+      setTimeout(() => focusTarget.focus(), 80);
+    }
+  };
+
+  const closeModal = (skipAnimation = false) => {
+    if (!modal.classList.contains("is-open")) return;
+
+    const finalizeClose = () => {
+      modal.classList.remove("is-open", "is-closing");
+      modal.setAttribute("aria-hidden", "true");
+      body.classList.remove("modal-open");
+    };
+
+    if (skipAnimation) {
+      finalizeClose();
+      return;
+    }
+
+    if (modal.classList.contains("is-closing")) {
+      return;
+    }
+
+    modal.classList.add("is-closing");
+    const dialog = modal.querySelector(".modal-dialog");
+
+    if (dialog) {
+      dialog.addEventListener("animationend", finalizeClose, { once: true });
+    } else {
+      finalizeClose();
+    }
+  };
+
+  openLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      openModal(event, link);
+    });
+  });
+
+  closeTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      closeModal();
+    });
+  });
+
+  modal.addEventListener("click", (event) => {
+    if (event.target.classList.contains("modal-backdrop")) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize all animations and interactions
   initScrollAnimations();
@@ -7,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initServicesDropdown();
   initContactForm();
   initBookingModal();
+  initZaloContactModal();
   initImageGallery();
   initCounterAnimations();
   initParallaxEffects();
@@ -1303,6 +1449,13 @@ const translations = {
     contact_email_button: "GỬI EMAIL",
     contact_free_button: "Liên hệ tư vấn miễn phí",
 
+    // Zalo Contact Modal
+    zalo_contact_modal_title: "Liên hệ trực tiếp với chúng tôi",
+    zalo_contact_modal_desc:
+      "Bạn đang quan tâm tới dịch vụ {service}. Vui lòng liên hệ với chúng tôi qua Zalo để được tư vấn chi tiết.",
+    zalo_contact_phone_label: "Số điện thoại Zalo:",
+    zalo_contact_open_button: "MỞ ZALO NGAY",
+
     // Contact Form
     contact_form_title:
       "Đừng ngần ngại - để lại số điện thoại, chúng tôi sẽ giúp bạn chọn dịch vụ phù hợp nhất với khuôn mặt của mình.",
@@ -1511,6 +1664,13 @@ const translations = {
     contact_email_description:
       "Leave a detailed message and we'll reply within 24 hours",
     contact_email_button: "SEND EMAIL",
+
+    // Zalo Contact Modal
+    zalo_contact_modal_title: "Contact us directly",
+    zalo_contact_modal_desc:
+      "You are interested in {service} service. Please contact us via Zalo for detailed consultation.",
+    zalo_contact_phone_label: "Zalo Phone Number:",
+    zalo_contact_open_button: "OPEN ZALO NOW",
 
     // Contact Form
     contact_form_title:
@@ -1880,6 +2040,13 @@ const translations = {
     contact_email_description:
       "상세한 메시지를 남겨주시면 24시간 이내에 답변드릴게요",
     contact_email_button: "이메일 보내기",
+
+    // Zalo Contact Modal
+    zalo_contact_modal_title: "직접 연락하기",
+    zalo_contact_modal_desc:
+      "{service} 서비스에 관심이 있으시군요. 자세한 상담을 위해 자로로 연락해 주세요.",
+    zalo_contact_phone_label: "자로 전화번호:",
+    zalo_contact_open_button: "지금 자로 열기",
 
     // Contact Form
     contact_form_title:
@@ -2411,6 +2578,47 @@ function setLanguage(lang) {
       if (!element.hasAttribute("data-translate-text")) {
         return;
       }
+    }
+
+    // Special handling for zalo contact modal description
+    if (
+      key === "zalo_contact_modal_desc" &&
+      element.hasAttribute("data-zalo-service-desc")
+    ) {
+      const zaloModal = document.getElementById("zaloContactModal");
+      if (zaloModal) {
+        // Get stored service key from the modal's closure
+        const serviceKey = zaloModal.dataset.currentServiceKey;
+        if (serviceKey) {
+          // Update with service name
+          const serviceMap = {
+            vi: {
+              "eyebrow-tattoo": "phun mày",
+              "eyeliner-tattoo": "phun mí mở tròng",
+              "lip-brightening": "khử thâm môi",
+            },
+            en: {
+              "eyebrow-tattoo": "eyebrow PMU",
+              "eyeliner-tattoo": "eyeliner PMU",
+              "lip-brightening": "lip brightening",
+            },
+            ko: {
+              "eyebrow-tattoo": "눈썹 반영구",
+              "eyeliner-tattoo": "아이라인 반영구",
+              "lip-brightening": "입술 톤 브라이트닝",
+            },
+          };
+          const serviceName =
+            serviceMap[resolvedLang] && serviceMap[resolvedLang][serviceKey]
+              ? serviceMap[resolvedLang][serviceKey]
+              : null;
+          if (serviceName) {
+            translation = translation.replace("{service}", serviceName);
+          }
+        }
+      }
+      element.textContent = translation;
+      return;
     }
 
     if (element.hasAttribute("data-translate-html")) {

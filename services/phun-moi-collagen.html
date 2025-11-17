@@ -550,17 +550,17 @@
                             </a>
                         </li>
                         <li>
-                            <a href="eyebrow-tattoo.html" data-translate="eyebrow_service">
+                            <a href="eyebrow-tattoo.html" data-translate="eyebrow_service" data-open-zalo-modal>
                                 Phun xăm mày
                             </a>
                         </li>
                         <li>
-                            <a href="lip-brightening.html" data-translate="lip_removal_service">
+                            <a href="lip-brightening.html" data-translate="lip_removal_service" data-open-zalo-modal>
                                 Khử thâm môi
                             </a>
                         </li>
                         <li>
-                            <a href="eyeliner-tattoo.html" data-translate="eyeliner_service">
+                            <a href="eyeliner-tattoo.html" data-translate="eyeliner_service" data-open-zalo-modal>
                                 Phun mí mở tròng
                             </a>
                         </li>
@@ -652,6 +652,29 @@
         </div>
         <div class="lightbox-counter">
             <span class="lightbox-current">1</span> / <span class="lightbox-total">6</span>
+        </div>
+    </div>
+
+    <!-- Zalo Contact Modal -->
+    <div class="modal" id="zaloContactModal" aria-hidden="true">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="zaloModalTitle">
+            <button class="modal-close" type="button" aria-label="Đóng" data-modal-close data-translate="close_modal" data-translate-attr="aria-label">&times;</button>
+            <div class="modal-header">
+                <h2 id="zaloModalTitle" data-translate="zalo_contact_modal_title">Liên hệ trực tiếp với chúng tôi</h2>
+                <p data-translate="zalo_contact_modal_desc">Dịch vụ này đang được hoàn thiện. Vui lòng liên hệ với chúng tôi qua Zalo để được tư vấn chi tiết.</p>
+            </div>
+            <div class="zalo-contact-content" style="padding: 24px; text-align: center;">
+                <div style="margin-bottom: 32px;">
+                    <img src="../icons/zalo.svg" alt="Zalo" style="width: 80px; height: 80px; margin: 0 auto 24px; display: block;">
+                    <p style="font-size: 18px; font-weight: 600; margin-bottom: 8px;" data-translate="zalo_contact_phone_label">Số điện thoại Zalo:</p>
+                    <p style="font-size: 24px; font-weight: 700; color: #0068ff; margin-bottom: 24px;">0364759261</p>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://zalo.me/84364759261" class="btn btn-primary btn-large" target="_blank" rel="noreferrer" data-translate="zalo_contact_open_button">MỞ ZALO NGAY</a>
+                    <button class="btn btn-outline btn-large" data-modal-close data-translate="close_modal">ĐÓNG</button>
+                </div>
+            </div>
         </div>
     </div>
 
