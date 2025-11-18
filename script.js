@@ -2283,7 +2283,7 @@ const translations = {
 };
 
 const DEFAULT_LANGUAGE = "vi";
-const PREVIEW_IMAGE_PATH = "images/hero_thumbnail_seo.jpg";
+const PREVIEW_IMAGE_PATH = "images/lumi-preview-link.jpg";
 const FAVICON_PATH = "icons/fav_icon.png";
 let currentLanguage = (() => {
   try {
