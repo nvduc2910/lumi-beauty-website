@@ -663,6 +663,10 @@ p {
     gap: 1rem;
 }
 
+.header-actions .btn {
+    margin-left: 0.5rem;
+}
+
 .language-dropdown {
     position: relative;
     display: inline-block;
