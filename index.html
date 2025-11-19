@@ -14,6 +14,7 @@
     <link rel="alternate" hreflang="x-default" data-hreflang="x-default" href="/">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/fav_icon.png">
     <link rel="apple-touch-icon" href="icons/fav_icon.png">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <meta property="og:type" content="website">
     <meta property="og:title" data-translate="og_title" data-translate-attr="content" content="Lumi Beauty - Phun Xăm Thẩm Mỹ Đẹp Tự Nhiên Tại Đà Nẵng">
     <meta property="og:description" data-translate="og_description" data-translate-attr="content" content="Lumi Beauty Da Nang chuyên phun xăm mày môi chuẩn y khoa, không đau rát, không sưng và chăm sóc tận tâm.">
@@ -31,6 +32,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script type="application/ld+json" id="structuredData"></script>
+    <script type="application/ld+json" id="navigationData">
+    {
+      "@context": "https://schema.org",
+      "@type": "SiteNavigationElement",
+      "name": "Main Navigation",
+      "url": "https://lumibeauty.studio/",
+      "hasPart": [
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Phun môi collagen",
+          "url": "https://lumibeauty.studio/services/phun-moi-collagen.html"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Phun mày shading",
+          "url": "https://lumibeauty.studio/#services"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Khử thâm môi cho nam nữ",
+          "url": "https://lumibeauty.studio/#services"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Phun mí mở tròng",
+          "url": "https://lumibeauty.studio/#services"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Liên hệ",
+          "url": "https://lumibeauty.studio/#footer"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -49,14 +85,14 @@
                             </a>
                             <ul class="nav-dropdown-menu">
                                 <li><a href="services/phun-moi-collagen.html">Phun môi collagen</a></li>
-                                <li><a href="services/eyebrow-tattoo.html" data-open-zalo-modal>Phun mày shading</a></li>
-                                <li><a href="services/eyeliner-tattoo.html" data-open-zalo-modal>Phun mí mở tròng</a></li>
-                                <li><a href="services/lip-brightening.html" data-open-zalo-modal>Khử thâm môi nam nữ</a></li>
+                                <li><a href="#services">Phun mày shading</a></li>
+                                <li><a href="#services">Phun mí mở tròng</a></li>
+                                <li><a href="#services">Khử thâm môi cho nam nữ</a></li>
                             </ul>
                         </li>
                         <li><a href="#blog" data-translate="beauty_guide">Cẩm nang phun xăm</a></li>
                         <li><a href="#testimonials" data-translate="offers">Cảm nhận khách hàng</a></li>
-                        <li><a href="#footer" data-translate="contact">Liên hệ</a></li>
+                        <li><a href="#footer" data-translate="contact" title="Liên hệ Lumi Beauty">Liên hệ</a></li>
                     </ul>
                 </nav>
                 <div class="header-actions">
@@ -230,7 +266,7 @@
                                     <span class="benefit-text" data-translate="eyebrow_tattoo_benefit3">Đảm bảo dáng mày cân đối, không thô cứng.</span>
                                 </li>
                             </ul>
-                            <a class="btn btn-outline btn-outline-arrow" href="services/eyebrow-tattoo.html" data-open-zalo-modal>
+                            <a class="btn btn-outline btn-outline-arrow" href="#services">
                                 <span data-translate="discover_more">KHÁM PHÁ THÊM</span>
                                 <span class="btn-arrow" aria-hidden="true">→</span>
                             </a>
@@ -267,7 +303,7 @@
                                     <span class="benefit-text" data-translate="eyeliner_tattoo_benefit3">Phù hợp khách muốn làm đẹp nhưng giữ vẻ tự nhiên.</span>
                                 </li>
                             </ul>
-                            <a class="btn btn-outline btn-outline-arrow" href="services/eyeliner-tattoo.html" data-open-zalo-modal>
+                            <a class="btn btn-outline btn-outline-arrow" href="#services">
                                 <span data-translate="discover_more">KHÁM PHÁ THÊM</span>
                                 <span class="btn-arrow" aria-hidden="true">→</span>
                             </a>
@@ -304,7 +340,7 @@
                                     <span class="benefit-text" data-translate="lip_removal_benefit3">Giải pháp cho cả nam giới muốn cải thiện màu môi mà không bị đỏ giả.</span>
                                 </li>
                             </ul>
-                            <a class="btn btn-outline btn-outline-arrow" href="services/lip-brightening.html" data-open-zalo-modal>
+                            <a class="btn btn-outline btn-outline-arrow" href="#services">
                                 <span data-translate="discover_more">KHÁM PHÁ THÊM</span>
                                 <span class="btn-arrow" aria-hidden="true">→</span>
                             </a>
@@ -555,21 +591,21 @@
                     <ul>
                         <li>
                             <a href="services/phun-moi-collagen.html" data-translate="lip_service">
-                                Phun xăm môi
+                                Phun môi collagen
                             </a>
                         </li>
                         <li>
-                            <a href="services/eyebrow-tattoo.html" data-translate="eyebrow_service" data-open-zalo-modal>
-                                Phun xăm mày
+                            <a href="#services" data-translate="eyebrow_service">
+                                Phun mày shading
                             </a>
                         </li>
                         <li>
-                            <a href="services/lip-brightening.html" data-translate="lip_removal_service" data-open-zalo-modal>
-                                Khử thâm môi
+                            <a href="#services" data-translate="lip_removal_service">
+                                Khử thâm môi cho nam nữ
                             </a>
                         </li>
                         <li>
-                            <a href="services/eyeliner-tattoo.html" data-translate="eyeliner_service" data-open-zalo-modal>
+                            <a href="#services" data-translate="eyeliner_service">
                                 Phun mí mở tròng
                             </a>
                         </li>
@@ -577,6 +613,7 @@
                 </div>
                 <div class="footer-section">
                     <h4 data-translate="contact_title">Liên hệ</h4>
+                    <a class="footer-contact-link" href="#footer" title="Liên hệ Lumi Beauty">Liên hệ</a>
                     <a class="footer-contact-link" href="tel:0364759261">0364759261</a>
                     <a class="footer-contact-link" href="https://www.tiktok.com/@lumibeautyphunxam" target="_blank" rel="noreferrer" data-translate="footer_tiktok">TikTok: @lumibeautyphunxam</a>
                     <a class="footer-contact-link" href="https://www.facebook.com/lumibeautypmubrowlip" target="_blank" rel="noreferrer" data-translate="footer_facebook">Facebook: facebook.com/profile.php?id=61579821760714</a>
