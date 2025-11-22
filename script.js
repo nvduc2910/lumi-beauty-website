@@ -161,6 +161,21 @@ document.addEventListener("DOMContentLoaded", function () {
   initHeroVideo();
 });
 
+// Listen for components loaded event (for blog posts with dynamic header/footer)
+// This ensures translations are re-applied after components are loaded
+document.addEventListener('componentsLoaded', function() {
+  // Re-apply translations to newly loaded components
+  if (typeof setLanguage === 'function' && typeof currentLanguage !== 'undefined') {
+    setTimeout(() => {
+      setLanguage(currentLanguage);
+      // Re-initialize language switcher to update dropdown button
+      if (typeof initLanguageSwitcher === 'function') {
+        initLanguageSwitcher();
+      }
+    }, 100);
+  }
+});
+
 // Scroll-triggered animations
 function initScrollAnimations() {
   const observerOptions = {
@@ -2285,6 +2300,10 @@ const translations = {
 const DEFAULT_LANGUAGE = "vi";
 const PREVIEW_IMAGE_PATH = "images/lumi-preview-image.jpg";
 const FAVICON_PATH = "icons/fav_icon.png";
+
+// Expose translations globally for blog translation files to access
+window.translations = translations;
+
 let currentLanguage = (() => {
   try {
     const urlParams = new URL(window.location.href).searchParams;
@@ -2302,6 +2321,9 @@ let currentLanguage = (() => {
   }
   return DEFAULT_LANGUAGE;
 })();
+
+// Expose currentLanguage globally for blog translations
+window.currentLanguage = currentLanguage;
 
 function getDictionary(lang) {
   return translations[lang] || translations[DEFAULT_LANGUAGE] || {};
@@ -2536,6 +2558,7 @@ function setLanguage(lang) {
   const resolvedLang = translations[lang] ? lang : DEFAULT_LANGUAGE;
   const activeDict = translations[resolvedLang] || fallbackDict;
   currentLanguage = resolvedLang;
+  window.currentLanguage = resolvedLang; // Expose globally for blog translations
 
   const elements = document.querySelectorAll("[data-translate]");
 
@@ -2684,6 +2707,9 @@ function setLanguage(lang) {
     console.warn("Unable to persist language preference:", error);
   }
 }
+
+// Expose setLanguage globally for blog translation files
+window.setLanguage = setLanguage;
 
 function initBlogScroller() {
   const scrollContainer = document.querySelector("[data-blog-scroll]");
