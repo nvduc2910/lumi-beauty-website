@@ -163,13 +163,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Listen for components loaded event (for blog posts with dynamic header/footer)
 // This ensures translations are re-applied after components are loaded
-document.addEventListener('componentsLoaded', function() {
+document.addEventListener("componentsLoaded", function () {
   // Re-apply translations to newly loaded components
-  if (typeof setLanguage === 'function' && typeof currentLanguage !== 'undefined') {
+  if (
+    typeof setLanguage === "function" &&
+    typeof currentLanguage !== "undefined"
+  ) {
     setTimeout(() => {
       setLanguage(currentLanguage);
       // Re-initialize language switcher to update dropdown button
-      if (typeof initLanguageSwitcher === 'function') {
+      if (typeof initLanguageSwitcher === "function") {
         initLanguageSwitcher();
       }
     }, 100);
@@ -959,10 +962,10 @@ const translations = {
       "Lumi Beauty Đà Nẵng cung cấp phun xăm thẩm mỹ mày, môi, mí chuẩn y khoa, không đau rát và dịch vụ chăm sóc khách hàng tận tâm.",
 
     // Navigation
-    beauty_services: "Dịch vụ phun xăm",
-    beauty_guide: "Cẩm nang phun xăm",
+    beauty_services: "Phun xăm",
+    beauty_guide: "Cẩm nang",
     contact: "Liên hệ",
-    offers: "Cảm nhận khách hàng",
+    offers: "Feedback",
     book_now: "ĐẶT LỊCH NGAY",
 
     // Hero Section

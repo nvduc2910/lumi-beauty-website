@@ -1401,6 +1401,53 @@ p {
     z-index: 2;
 }
 
+.help-gallery-scroll {
+    margin-top: 2rem;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(143, 191, 193, 0.5) transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+.help-gallery-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.help-gallery-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.help-gallery-scroll::-webkit-scrollbar-thumb {
+    background: rgba(143, 191, 193, 0.5);
+    border-radius: 4px;
+}
+
+.help-gallery-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(143, 191, 193, 0.7);
+}
+
+.help-gallery-row {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.help-gallery-row img {
+    flex-shrink: 0;
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(17, 24, 39, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.help-gallery-row img:hover {
+    transform: scale(1.02);
+}
+
 @keyframes lightRun {
     0% {
         transform: rotate(0deg);
@@ -1427,6 +1474,18 @@ p {
 
     .help-media img {
         width: min(100%, 380px);
+    }
+
+    .help-gallery-scroll {
+        margin-top: 1.5rem;
+    }
+
+    .help-gallery-row {
+        gap: 0.75rem;
+    }
+
+    .help-gallery-row img {
+        height: 220px;
     }
 }
 
