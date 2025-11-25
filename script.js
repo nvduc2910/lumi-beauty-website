@@ -15,16 +15,19 @@ function initZaloContactModal() {
   const serviceMap = {
     vi: {
       "eyebrow-tattoo": "phun mày",
+      "phun-may-shading": "phun mày shading",
       "eyeliner-tattoo": "phun mí mở tròng",
       "lip-brightening": "khử thâm môi",
     },
     en: {
       "eyebrow-tattoo": "eyebrow PMU",
+      "phun-may-shading": "eyebrow shading PMU",
       "eyeliner-tattoo": "eyeliner PMU",
       "lip-brightening": "lip brightening",
     },
     ko: {
       "eyebrow-tattoo": "눈썹 반영구",
+      "phun-may-shading": "눈썹 쉐이딩 반영구",
       "eyeliner-tattoo": "아이라인 반영구",
       "lip-brightening": "입술 톤 브라이트닝",
     },
@@ -33,7 +36,9 @@ function initZaloContactModal() {
   const getServiceKey = (href) => {
     const url = href || "";
 
-    if (url.includes("eyebrow-tattoo")) {
+    if (url.includes("phun-may-shading")) {
+      return "phun-may-shading";
+    } else if (url.includes("eyebrow-tattoo")) {
       return "eyebrow-tattoo";
     } else if (url.includes("eyeliner-tattoo")) {
       return "eyeliner-tattoo";
@@ -1239,97 +1244,147 @@ const translations = {
 
     // Service Detail - Brow Tattoo
     brow_detail_page_title:
-      "Phun Mày Tơ Ombre Lumi Beauty - Tạo khung mày hài hòa chuẩn gương mặt",
+      "Phun Mày Shading Lumi Beauty - Mày mịn như tán bột, đẹp tự nhiên",
     brow_detail_meta_description:
-      "Phun mày tơ ombre tại Lumi Beauty định hình tỉ lệ vàng, đi sợi nano, không sưng đau, bảo hành 18 tháng và chăm sóc riêng từng kiểu mày.",
+      "Phun mày shading tại Lumi Beauty: mày mịn như tán bột, đẹp tự nhiên 18-36 tháng. Kỹ thuật shading giúp đầu mày mềm - thân mày mịn - đuôi mày sắc nét.",
     brow_detail_badge: "Định hình chân mày",
-    brow_detail_hero_heading: "Phun Mày Tơ Ombre Lumi Beauty",
+    brow_detail_hero_heading: "Phun Mày Shading Lumi Beauty",
     brow_detail_hero_subheading:
-      "Tạo khung mày hài hòa, nâng thần thái chuẩn tỉ lệ vàng",
+      "Phun Mày Shading – Mày mịn như tán bột, đẹp tự nhiên 18–36 tháng",
     brow_detail_hero_paragraph1:
-      "Dựa trên chuẩn vàng 1/3 khuôn mặt và cấu trúc xương hốc mắt, chúng tôi thiết kế dáng mày riêng cho từng khách. Kỹ thuật đi sợi nano kết hợp ombre giúp mày đậm ở đuôi, mềm ở đầu, hiệu ứng như kẻ chì hàng ngày.",
+      "Kỹ thuật shading giúp đầu mày mềm – thân mày mịn – đuôi mày sắc nét, tạo hiệu ứng makeup nhẹ mà vẫn giữ sự tự nhiên.",
     brow_detail_hero_paragraph2:
-      "Dụng cụ kim siêu mảnh 0.18mm, mực hữu cơ thuần châu Âu, an toàn với phụ nữ sau sinh từ 6 tháng. Bảo hành dáng và màu trong 18 tháng.",
+      "Shading phù hợp 98% gương mặt – dễ chịu, ít đau, lên màu đều. Mực hữu cơ thuần châu Âu, an toàn với phụ nữ sau sinh từ 6 tháng. Bảo hành dáng và màu trong 04 tháng.",
     brow_detail_hero_stat_label: "Khách không cần kẻ mày trong 18 tháng",
-    brow_detail_highlights_title: "Điểm khác biệt của phun mày Lumi Beauty",
-    brow_detail_highlight1_title: "Định hình tỉ lệ vàng 1/3",
-    brow_detail_highlight1_desc:
-      "Đo chiều cao trán, gò má, đuôi mắt để tạo form mày nâng thần sắc mà vẫn cân đối tự nhiên.",
-    brow_detail_highlight2_title: "Đi sợi nano vi điểm",
-    brow_detail_highlight2_desc:
-      "Phác thảo từng sợi theo chiều mọc thật, tạo hiệu ứng 3D đầy đặn mà không gây tổn thương chân mày cũ.",
-    brow_detail_highlight3_title: "Mực hữu cơ thuần lạnh",
-    brow_detail_highlight3_desc:
-      "Loại bỏ nguy cơ trổ đỏ - trổ xanh, màu ombre mịn chuyển sắc nhẹ nhàng, phù hợp cả da dầu.",
-    brow_detail_highlight4_title: "Chăm sóc trọn vòng đời",
-    brow_detail_highlight4_desc:
-      "Tặng gói điều chỉnh dáng sau 30 ngày và hỗ trợ dặm miễn phí nếu dáng lệch do phun cũ.",
-    brow_detail_process_title: "Quy trình thực hiện phun mày tơ ombre",
-    brow_detail_process_intro:
-      "Thời gian 75 phút, áp dụng chuẩn vô trùng quốc tế, phù hợp cả làn da nhạy cảm.",
-    brow_detail_process_step1_title: "Phân tích khuôn mặt",
+    brow_before_after_title: "Kết quả trước và sau",
+    brow_before_after_intro:
+      "Xem những kết quả tuyệt vời của khách hàng sau khi phun mày shading tại Lumi Beauty",
+    brow_before_after_image1_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image2_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image3_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image4_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image5_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image6_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image7_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image8_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image9_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image10_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image11_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_image12_alt: "Kết quả phun mày tại Lumi Beauty",
+    brow_before_after_cta_text: "Muốn biết gương mặt bạn hợp dáng nào?",
+    brow_before_after_cta_button: "Gửi ảnh để Chuyên Gia tư vấn miễn phí",
+    brow_who_suitable_title: "Phun Mày Shading Phù Hợp Với Ai?",
+    brow_who_suitable_intro: "Dịch vụ này dành cho bạn nếu:",
+    brow_who_suitable_image1_alt: "Lông mày quá ngắn",
+    brow_who_suitable_item1: "Lông mày quá ngắn",
+    brow_who_suitable_image2_alt: "Lông mày nhạt",
+    brow_who_suitable_item2: "Lông mày nhạt",
+    brow_who_suitable_image3_alt: "Lông mày ngắn, thưa và mỏng",
+    brow_who_suitable_item3: "Lông mày ngắn, thưa và mỏng",
+    brow_who_suitable_image4_alt: "Lông mày không hài hoà, không cân xứng",
+    brow_who_suitable_item4: "Lông mày không hài hoà, không cân xứng",
+    brow_who_suitable_note:
+      "👉 Shading phù hợp 98% gương mặt – dễ chịu, ít đau, lên màu đều.",
+    brow_standards_title: "Tiêu chuẩn một chân mày Shading đẹp",
+    brow_standards_intro: "Dành riêng cho shading",
+    brow_standard1_image_alt: "Tỉ lệ vừa phải – đầu mềm, đuôi rõ nét",
+    brow_standard1_title: "Tỉ lệ vừa phải – đầu mềm, đuôi rõ nét",
+    brow_standard1_desc:
+      "Shading không sắc đậm như xăm, không lộ sợi như hair-stroke. Tạo độ mờ tự nhiên ở đầu, chuyển mịn dần về đuôi.",
+    brow_standard2_image_alt: "Màu trong – không đậm cứng",
+    brow_standard2_title: "Màu trong – không đậm cứng",
+    brow_standard2_desc:
+      "Shading đẹp khi màu mịn, hài hòa, nhìn như đánh eyebrow powder hằng ngày.",
+    brow_standard3_image_alt: "Form mày phù hợp gương mặt",
+    brow_standard3_title: "Form mày phù hợp gương mặt",
+    brow_standard3_desc:
+      "Shading tôn kiểu mày ngang, cong nhẹ, hoặc classic arch tùy gương mặt.",
+    brow_shapes_title: "Gương mặt nào phù hợp với Shading?",
+    brow_shapes_intro:
+      "Mỗi khuôn mặt có dáng mày shading phù hợp riêng. Hãy để chuyên gia Lumi Beauty tư vấn cho bạn.",
+    brow_shape1_image_alt: "Mặt tròn - Shading có góc nhẹ",
+    brow_shape1_title: "Mặt tròn – Shading có góc nhẹ",
+    brow_shape1_desc: "Giúp gương mặt thon gọn hơn.",
+    brow_shape2_image_alt: "Mặt dài - Shading ngang tự nhiên",
+    brow_shape2_title: "Mặt dài – Shading ngang tự nhiên",
+    brow_shape2_desc: "Tạo sự cân bằng chiều dài mặt.",
+    brow_shape3_image_alt: "Mặt vuông - Shading cong mềm",
+    brow_shape3_title: "Mặt vuông – Shading cong mềm",
+    brow_shape3_desc: 'Giảm độ góc cạnh, "nữ tính hóa" đường nét.',
+    brow_shape4_image_alt: "Mặt trái xoan - Shading natural",
+    brow_shape4_title: "Mặt trái xoan – Shading natural",
+    brow_shape4_desc: "Giữ vẻ mềm mại tự nhiên cho gương mặt.",
+    brow_detail_process_title: "Quy trình phun mày Shading",
+    brow_detail_process_intro: "75 phút – chuẩn quốc tế",
+    brow_detail_process_step1_title: "Thăm khám và tư vấn",
     brow_detail_process_step1_desc:
-      "Đo góc mắt - cánh mũi - đỉnh mày, xác định dáng phù hợp với phong cách cá nhân.",
-    brow_detail_process_step2_title: "Vẽ phác thảo 3 lớp",
+      "Kỹ thuật viên kiểm tra tình trạng da, lắng nghe mong muốn và tư vấn dáng mày – màu mực phù hợp.",
+    brow_detail_process_step2_title: "Vệ sinh và sát khuẩn",
     brow_detail_process_step2_desc:
-      "Dùng bút chuyên dụng tạo form mày và cân chỉnh từng mm trước khi thực hiện.",
-    brow_detail_process_step3_title: "Ủ tê lạnh & khử trùng",
+      "Vùng chân mày được tẩy trang, làm sạch và sát khuẩn kỹ để tránh viêm nhiễm.",
+    brow_detail_process_step3_title: "Ủ tê và chuẩn bị mực",
     brow_detail_process_step3_desc:
-      "Ủ tê lạnh không gây bít lỗ chân lông, làm sạch vùng da mày bằng dung dịch dịu nhẹ.",
-    brow_detail_process_step4_title: "Đi sợi nano kết hợp ombre",
+      "Kỹ thuật viên ủ tê giúp bạn thoải mái trong suốt quá trình. Trong lúc chờ tê ngấm sẽ tiến hành pha mực phù hợp.",
+    brow_detail_process_step4_title: "Đo vẽ dáng mày",
     brow_detail_process_step4_desc:
-      "Đi vi kim từng sợi ở đầu mày, phủ ombre mịn ở thân và đuôi, đảm bảo mật độ tự nhiên.",
-    brow_detail_process_step5_title: "Khóa màu & hướng dẫn",
+      "Tiến hành đo tỉ lệ và phác thảo dáng mày sao cho hài hòa với khuôn mặt.",
+    brow_detail_process_step5_title: "Thực hiện phun mày Shading",
     brow_detail_process_step5_desc:
-      "Phủ serum khóa màu, hướng dẫn chăm sóc tại nhà và đặt lịch tái khám sau 30 ngày.",
-    brow_detail_results_outcome_title: "Kết quả đạt được",
-    brow_detail_results_outcome_item1:
-      "Form mày chuẩn nét, đuôi sắc nhưng không cứng.",
-    brow_detail_results_outcome_item2:
-      "Hiệu ứng sợi tơ đan xen, nhìn gần vẫn tự nhiên.",
-    brow_detail_results_outcome_item3:
-      "Giữ màu 18-24 tháng, không trổ xanh đỏ.",
-    brow_detail_results_aftercare_title: "Chăm sóc sau phun",
-    brow_detail_results_aftercare_item1:
-      "Giữ vùng mày khô trong 48 giờ, lau nhẹ bằng nước muối sinh lý.",
-    brow_detail_results_aftercare_item2:
-      "Không tự ý cậy mày bong, để bong tự nhiên sau 5-7 ngày.",
-    brow_detail_results_aftercare_item3:
-      "Tránh nắng gắt, xông hơi trong 10 ngày đầu.",
-    brow_detail_pricing_title: "Gói dịch vụ & ưu đãi",
+      "Sử dụng thiết bị phun xăm chuyên dụng với đầu kim siêu nhỏ để đưa mực vào da và tạo hiệu ứng rải hạt tự nhiên.",
+    brow_commitment_title: "Cam kết dịch vụ",
+    brow_commitment_intro: "Những cam kết của Lumi Beauty đối với khách hàng",
+    brow_commitment1_title: "Lên màu chuẩn trong 10–14 ngày",
+    brow_commitment2_title: "Không trổ xanh/đỏ",
+    brow_commitment3_title: "Giữ màu 18–36 tháng",
+    brow_commitment4_title: "Mực hữu cơ châu Âu",
+    brow_commitment5_title: "100% vật tư dùng 1 lần",
+    brow_commitment6_title: "Bảo hành 18 tháng – miễn phí dặm",
+    why_lumi_brow_title: "Lý do nên chọn Phun Mày Shading tại Lumi Beauty",
+    why_lumi_brow_intro: "Rút gọn nhưng mạnh",
+    why_lumi_brow0_title: "Phun mày 1-1 – Chuyên viên 7+ năm kinh nghiệm",
+    why_lumi_brow0_desc:
+      "Tại Lumi Beauty, mỗi khách hàng được chăm sóc riêng tư, 1-1 bởi chuyên viên phun mày với 7 năm kinh nghiệm, đảm bảo chân mày tinh tế, hài hòa và phù hợp từng gương mặt.",
+    why_lumi_brow1_title: "Màu shading được pha nhạt hơn 30%",
+    why_lumi_brow1_desc: "Đảm bảo tự nhiên sau bong",
+    why_lumi_brow2_title: "Kỹ thuật đi kim mịn",
+    why_lumi_brow2_desc: "Không đau, không sưng, hồi nhanh",
+    why_lumi_brow3_title: "Thiết kế dáng mày cá nhân hóa",
+    why_lumi_brow3_desc: "Không làm theo khuôn mẫu",
+    why_lumi_brow4_title: "An toàn cho phụ nữ sau sinh từ 6 tháng",
+    brow_detail_pricing_title: "Bảng giá – Phun Mày Shading",
     brow_detail_pricing_intro:
-      "Áp dụng giá niêm yết, tặng kèm cặp serum dưỡng mày và phiếu dặm miễn phí.",
-    brow_detail_pricing_option1_title: "Gói Phun Mày Ombre",
-    brow_detail_pricing_option1_item1:
-      "Tạo form mày cá nhân hóa, phủ ombre mềm mại.",
-    brow_detail_pricing_option1_item2: "Tặng serum dưỡng mày 7 ngày.",
-    brow_detail_pricing_option1_item3: "Bảo hành 12 tháng.",
-    brow_detail_pricing_option2_badge: "Được yêu thích",
-    brow_detail_pricing_option2_title: "Gói Đi Sợi Nano Mix Ombre",
-    brow_detail_pricing_option2_item1:
-      "Đi sợi nano đầu mày, ombre đuôi cho hiệu ứng makeup.",
-    brow_detail_pricing_option2_item2: "Theo dõi 2 lần trong 60 ngày.",
-    brow_detail_pricing_option2_item3: "Miễn phí dặm trong 18 tháng.",
-    brow_detail_pricing_option3_title: "Gói Tái Cấu Trúc Chân Mày",
-    brow_detail_pricing_option3_item1:
-      "Xử lý nền cũ trổ xanh đỏ, tạo dáng mới hoàn toàn.",
-    brow_detail_pricing_option3_item2: "Bao gồm 2 buổi chỉnh sửa chuyên sâu.",
-    brow_detail_pricing_option3_item3: "Hỗ trợ xóa laser nhẹ nếu cần.",
+      "Giá phụ thuộc vào tình trạng nền cũ và dáng mong muốn",
+    brow_detail_pricing_single_title: "Phun Mày Shading",
+    brow_detail_pricing_single_subtitle:
+      "Giá được xác định sau khi tư vấn và đánh giá tình trạng chân mày",
+    brow_detail_pricing_single_item1: "Thiết kế form mày cá nhân hóa",
+    brow_detail_pricing_single_item2: "Kỹ thuật shading mềm – mịn",
+    brow_detail_pricing_single_item3: "Serum dưỡng 7 ngày",
+    brow_detail_pricing_single_item4: "Bảo hành 04 tháng",
+    brow_detail_pricing_single_item5: "Miễn phí dặm",
     brow_detail_pricing_note:
       "Giá đã gồm vật tư dùng một lần và thuế VAT. Nhóm từ 2 người giảm thêm 5%.",
+    brow_reviews_title: "Review khách hàng",
+    brow_review1_name: "Lan Anh",
+    brow_review1_age: "28 tuổi",
+    brow_review1_text:
+      '"Mày cũ bị trổ xanh. Sau khi làm shading ở Lumi màu mịn đẹp, ai gặp cũng hỏi ở đâu làm."',
+    brow_review2_name: "Kim Ngân",
+    brow_review2_age: "31 tuổi",
+    brow_review2_text:
+      '"Không thích kiểu sợi nên chọn shading. Mịn, mềm, đúng kiểu mình thích."',
     brow_detail_faq_title: "Câu hỏi thường gặp",
-    brow_detail_faq_q1: "Sau phun mày có bị đậm quá không?",
+    brow_detail_faq_intro: "Rút gọn – đúng trọng tâm Shading",
+    brow_detail_faq_q1: "Có bị đậm sau làm không?",
     brow_detail_faq_a1:
-      "Lumi Beauty luôn pha màu nhạt hơn 30% so với yêu cầu ban đầu. Sau bong 5-7 ngày màu sẽ lên đúng tông, không bị đậm mất tự nhiên.",
-    brow_detail_faq_q2: "Bao lâu thì cần dặm lại?",
-    brow_detail_faq_a2:
-      "Thông thường 18-24 tháng mới cần dặm. Riêng da dầu hoặc khách thường xuyên tiếp xúc nắng có thể cần sớm hơn và đã bao gồm trong bảo hành.",
-    brow_detail_faq_q3: "Có phù hợp với dáng mày đã phun trước đó?",
+      "Không. Màu được pha nhạt hơn 30% để sau bong lên đúng tông.",
+    brow_detail_faq_q2: "Bao lâu lên màu đẹp?",
+    brow_detail_faq_a2: "Từ ngày 10–14 là đẹp tự nhiên.",
+    brow_detail_faq_q3: "Có đau không?",
     brow_detail_faq_a3:
-      "Chúng tôi đánh giá nền cũ trước khi thực hiện. Nếu mày trổ xanh đỏ sẽ xử lý nhẹ trước, sau đó tái cấu trúc để dáng mới mềm mại, không bị chồng chéo.",
-    brow_detail_cta_title: "Sẵn sàng nâng tầm thần thái?",
-    brow_detail_cta_desc:
-      "Đặt lịch ngay để được chuyên gia Lumi Beauty đo phác và tư vấn dáng mày hoàn hảo cho gương mặt bạn.",
+      "Không đau nhiều. Shading ít tổn thương, phù hợp cả người sợ đau.",
+    brow_detail_cta_title: "Muốn có đôi mày mềm – mịn – tự nhiên như tán bột?",
+    brow_detail_cta_desc: "Đặt lịch ngay để Lumi Beauty đo dáng mày miễn phí.",
 
     // Service Detail - Lip Brightening
     lip_removal_detail_page_title:
@@ -1573,8 +1628,8 @@ const translations = {
       "Lumi Beauty in Da Nang specializes in natural-looking lip, brow, and eyeliner tattoos using medical-standard techniques and attentive aftercare.",
 
     // Navigation
-    beauty_services: "Tattoo Services",
-    beauty_guide: "Tattoo Guide",
+    beauty_services: "PMU Services",
+    beauty_guide: "PMU Guide",
     contact: "Contact",
     offers: "Customer Reviews",
     book_now: "BOOK NOW",
@@ -1927,6 +1982,154 @@ const translations = {
     lip_detail_cta_title: "Ready to own fresh, youthful lips?",
     lip_detail_cta_desc:
       "Book today to have Lumi Beauty specialist measure your tone and create a personalized care plan for you.",
+
+    // Service Detail - Brow Tattoo
+    brow_detail_page_title:
+      "Eyebrow Shading PMU Lumi Beauty - Soft powder-like brows, naturally beautiful",
+    brow_detail_meta_description:
+      "Eyebrow shading PMU at Lumi Beauty: soft powder-like brows, naturally beautiful for 18-36 months. Shading technique creates soft front - smooth middle - sharp tail.",
+    brow_detail_badge: "Eyebrow shaping",
+    brow_detail_hero_heading: "Eyebrow Shading PMU Lumi Beauty",
+    brow_detail_hero_subheading:
+      "Eyebrow Shading – Soft powder-like brows, naturally beautiful for 18–36 months",
+    brow_detail_hero_paragraph1:
+      "Shading technique creates soft front – smooth middle – sharp tail, giving a light makeup effect while maintaining natural look.",
+    brow_detail_hero_paragraph2:
+      "Shading suits 98% of faces – comfortable, minimal pain, even color. Pure European organic ink, safe for women 6 months after childbirth. Shape and color warranty for 04 months.",
+    brow_detail_hero_stat_label:
+      "Clients don't need to draw brows for 18 months",
+    brow_before_after_title: "Before and after results",
+    brow_before_after_intro:
+      "See amazing results from customers after eyebrow shading PMU at Lumi Beauty",
+    brow_before_after_image1_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image2_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image3_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image4_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image5_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image6_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image7_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image8_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image9_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image10_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image11_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_image12_alt: "Eyebrow PMU results at Lumi Beauty",
+    brow_before_after_cta_text:
+      "Want to know which brow shape suits your face?",
+    brow_before_after_cta_button: "Send photos for free expert consultation",
+    brow_who_suitable_title: "Who is Eyebrow Shading Suitable For?",
+    brow_who_suitable_intro: "This service is for you if:",
+    brow_who_suitable_image1_alt: "Eyebrows too short",
+    brow_who_suitable_item1: "Eyebrows too short",
+    brow_who_suitable_image2_alt: "Light eyebrows",
+    brow_who_suitable_item2: "Light eyebrows",
+    brow_who_suitable_image3_alt: "Short, sparse and thin eyebrows",
+    brow_who_suitable_item3: "Short, sparse and thin eyebrows",
+    brow_who_suitable_image4_alt: "Unbalanced, asymmetrical eyebrows",
+    brow_who_suitable_item4: "Unbalanced, asymmetrical eyebrows",
+    brow_who_suitable_note:
+      "👉 Shading suits 98% of faces – comfortable, minimal pain, even color.",
+    brow_standards_title: "Standards for beautiful Shading eyebrows",
+    brow_standards_intro: "Specifically for shading",
+    brow_standard1_image_alt: "Moderate proportion – soft front, sharp tail",
+    brow_standard1_title: "Moderate proportion – soft front, sharp tail",
+    brow_standard1_desc:
+      "Shading is not as bold as traditional tattoo, not showing strokes like hair-stroke. Creates natural softness at front, gradually smooths toward tail.",
+    brow_standard2_image_alt: "Clear color – not dark and hard",
+    brow_standard2_title: "Clear color – not dark and hard",
+    brow_standard2_desc:
+      "Beautiful shading has smooth, harmonious color, looks like daily eyebrow powder application.",
+    brow_standard3_image_alt: "Brow shape suitable for face",
+    brow_standard3_title: "Brow shape suitable for face",
+    brow_standard3_desc:
+      "Shading enhances horizontal, slightly curved, or classic arch brows depending on face shape.",
+    brow_shapes_title: "Which face shapes suit Shading?",
+    brow_shapes_intro:
+      "Each face has its own suitable shading brow shape. Let Lumi Beauty experts consult for you.",
+    brow_shape1_image_alt: "Round face - Shading with light angle",
+    brow_shape1_title: "Round face – Shading with light angle",
+    brow_shape1_desc: "Helps face appear slimmer.",
+    brow_shape2_image_alt: "Long face - Natural horizontal Shading",
+    brow_shape2_title: "Long face – Natural horizontal Shading",
+    brow_shape2_desc: "Creates balance for face length.",
+    brow_shape3_image_alt: "Square face - Soft curved Shading",
+    brow_shape3_title: "Square face – Soft curved Shading",
+    brow_shape3_desc: "Reduces angularity, 'feminizes' the lines.",
+    brow_shape4_image_alt: "Oval face - Natural Shading",
+    brow_shape4_title: "Oval face – Natural Shading",
+    brow_shape4_desc: "Maintains natural softness for the face.",
+    brow_detail_process_title: "Eyebrow Shading PMU Process",
+    brow_detail_process_intro: "75 minutes – international standard",
+    brow_detail_process_step1_title: "Consultation and assessment",
+    brow_detail_process_step1_desc:
+      "Technician checks skin condition, listens to wishes and consults suitable brow shape – ink color.",
+    brow_detail_process_step2_title: "Cleansing and disinfection",
+    brow_detail_process_step2_desc:
+      "Brow area is cleansed, cleaned and thoroughly disinfected to prevent infection.",
+    brow_detail_process_step3_title: "Numbing and ink preparation",
+    brow_detail_process_step3_desc:
+      "Technician applies numbing for your comfort throughout the process. While waiting for numbing to take effect, suitable ink will be mixed.",
+    brow_detail_process_step4_title: "Measuring and drawing brow shape",
+    brow_detail_process_step4_desc:
+      "Proceed to measure proportions and sketch brow shape to harmonize with face.",
+    brow_detail_process_step5_title: "Performing eyebrow Shading PMU",
+    brow_detail_process_step5_desc:
+      "Using professional PMU equipment with ultra-fine needles to insert ink into skin and create natural powder-like effect.",
+    brow_commitment_title: "Service commitment",
+    brow_commitment_intro: "Lumi Beauty's commitments to customers",
+    brow_commitment1_title: "True color development in 10–14 days",
+    brow_commitment2_title: "No blue/red discoloration",
+    brow_commitment3_title: "Color lasts 18–36 months",
+    brow_commitment4_title: "European organic ink",
+    brow_commitment5_title: "100% single-use supplies",
+    brow_commitment6_title: "04 months warranty – free touch-up",
+    why_lumi_brow_title: "Why choose Shading at Lumi Beauty",
+    why_lumi_brow_intro: "Concise but powerful",
+    why_lumi_brow0_title:
+      "1-on-1 Eyebrow PMU – Specialist with 7+ years experience",
+    why_lumi_brow0_desc:
+      "At Lumi Beauty, each customer receives private, 1-on-1 care from an eyebrow PMU specialist with 7 years of experience, ensuring subtle, harmonious brows that suit each face.",
+    why_lumi_brow1_title: "Shading color mixed 30% lighter",
+    why_lumi_brow1_desc: "Ensures natural look after peeling",
+    why_lumi_brow2_title: "Fine needle technique",
+    why_lumi_brow2_desc: "No pain, no swelling, fast recovery",
+    why_lumi_brow3_title: "Personalized brow design",
+    why_lumi_brow3_desc: "Not following templates",
+    why_lumi_brow4_title: "Safe for women 6 months after childbirth",
+    brow_detail_pricing_title: "Pricing – Eyebrow Shading PMU",
+    brow_detail_pricing_intro:
+      "Price depends on existing condition and desired shape",
+    brow_detail_pricing_single_title: "Eyebrow Shading PMU",
+    brow_detail_pricing_single_subtitle:
+      "Price determined after consultation and brow condition assessment",
+    brow_detail_pricing_single_item1: "Personalized brow form design",
+    brow_detail_pricing_single_item2: "Soft – smooth shading technique",
+    brow_detail_pricing_single_item3: "7-day care serum",
+    brow_detail_pricing_single_item4: "04 months warranty",
+    brow_detail_pricing_single_item5: "Free touch-up",
+    brow_detail_pricing_note:
+      "Price includes single-use supplies and VAT. Groups of 2+ get additional 10% discount.",
+    brow_reviews_title: "Customer reviews",
+    brow_review1_name: "Lan Anh",
+    brow_review1_age: "28 years old",
+    brow_review1_text:
+      '"Old brows turned blue. After shading at Lumi, color is smooth and beautiful, everyone asks where I got it done."',
+    brow_review2_name: "Kim Ngan",
+    brow_review2_age: "31 years old",
+    brow_review2_text:
+      '"Don\'t like hair-stroke style so chose shading. Smooth, soft, exactly what I like."',
+    brow_detail_faq_title: "Frequently Asked Questions",
+    brow_detail_faq_intro: "Concise – focused on Shading",
+    brow_detail_faq_q1: "Will it be too dark after treatment?",
+    brow_detail_faq_a1:
+      "No. Color is mixed 30% lighter so after peeling it develops correct tone.",
+    brow_detail_faq_q2: "How long until color looks beautiful?",
+    brow_detail_faq_a2: "From day 10–14 it looks naturally beautiful.",
+    brow_detail_faq_q3: "Does it hurt?",
+    brow_detail_faq_a3:
+      "Not much pain. Shading causes minimal trauma, suitable even for those afraid of pain.",
+    brow_detail_cta_title: "Want soft – smooth – natural brows like powder?",
+    brow_detail_cta_desc:
+      "Book now for free brow shape measurement at Lumi Beauty.",
 
     copyright: "© 2023 Lumi Beauty. All rights reserved.",
   },
@@ -2296,6 +2499,151 @@ const translations = {
     lip_detail_cta_desc:
       "오늘 예약하여 루미 뷰티 전문가가 톤을 측정하고 개인 맞춤 케어 계획을 수립해 드립니다.",
 
+    // Service Detail - Brow Tattoo
+    brow_detail_page_title:
+      "눈썹 쉐이딩 반영구 루미 뷰티 - 파우더처럼 부드러운 자연스러운 눈썹",
+    brow_detail_meta_description:
+      "루미 뷰티 눈썹 쉐이딩 반영구: 파우더처럼 부드러운 자연스러운 눈썹, 18-36개월 지속. 쉐이딩 기법으로 앞부분은 부드럽게, 중간은 매끄럽게, 끝부분은 선명하게.",
+    brow_detail_badge: "눈썹 형성",
+    brow_detail_hero_heading: "눈썹 쉐이딩 반영구 루미 뷰티",
+    brow_detail_hero_subheading:
+      "눈썹 쉐이딩 – 파우더처럼 부드러운 자연스러운 눈썹 18–36개월",
+    brow_detail_hero_paragraph1:
+      "쉐이딩 기법으로 앞부분은 부드럽게, 중간은 매끄럽게, 끝부분은 선명하게 만들어 가벼운 메이크업 효과를 주면서도 자연스러움을 유지합니다.",
+    brow_detail_hero_paragraph2:
+      "쉐이딩은 98% 얼굴에 적합하며 편안하고 통증이 적으며 색상이 고르게 발색됩니다. 순수 유럽 유기농 잉크, 출산 후 6개월부터 안전합니다. 형태 및 색상 보증 04개월.",
+    brow_detail_hero_stat_label: "18개월 동안 눈썹 그리기 불필요",
+    brow_before_after_title: "시술 전후 결과",
+    brow_before_after_intro:
+      "루미 뷰티에서 눈썹 쉐이딩 반영구 후 고객들의 놀라운 결과를 확인하세요",
+    brow_before_after_image1_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image2_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image3_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image4_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image5_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image6_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image7_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image8_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image9_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image10_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image11_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_image12_alt: "루미 뷰티 눈썹 반영구 결과",
+    brow_before_after_cta_text:
+      "당신의 얼굴에 맞는 눈썹 모양을 알고 싶으신가요?",
+    brow_before_after_cta_button: "사진을 보내 전문가 무료 상담 받기",
+    brow_who_suitable_title: "눈썹 쉐이딩이 적합한 사람은?",
+    brow_who_suitable_intro: "이 서비스는 다음과 같은 경우에 적합합니다:",
+    brow_who_suitable_image1_alt: "눈썹이 너무 짧음",
+    brow_who_suitable_item1: "눈썹이 너무 짧음",
+    brow_who_suitable_image2_alt: "눈썹이 옅음",
+    brow_who_suitable_item2: "눈썹이 옅음",
+    brow_who_suitable_image3_alt: "짧고 성글고 얇은 눈썹",
+    brow_who_suitable_item3: "짧고 성글고 얇은 눈썹",
+    brow_who_suitable_image4_alt: "조화롭지 않고 균형 잡히지 않은 눈썹",
+    brow_who_suitable_item4: "조화롭지 않고 균형 잡히지 않은 눈썹",
+    brow_who_suitable_note:
+      "👉 쉐이딩은 98% 얼굴에 적합하며 편안하고 통증이 적으며 색상이 고르게 발색됩니다.",
+    brow_standards_title: "아름다운 쉐이딩 눈썹의 기준",
+    brow_standards_intro: "쉐이딩 전용",
+    brow_standard1_image_alt: "적절한 비율 – 앞부분 부드럽고 끝부분 선명",
+    brow_standard1_title: "적절한 비율 – 앞부분 부드럽고 끝부분 선명",
+    brow_standard1_desc:
+      "쉐이딩은 전통적인 타투처럼 진하지 않고 헤어 스트로크처럼 선이 드러나지 않습니다. 앞부분에 자연스러운 부드러움을 만들고 끝부분으로 갈수록 매끄럽게 전환됩니다.",
+    brow_standard2_image_alt: "맑은 색상 – 진하고 딱딱하지 않음",
+    brow_standard2_title: "맑은 색상 – 진하고 딱딱하지 않음",
+    brow_standard2_desc:
+      "아름다운 쉐이딩은 매끄럽고 조화로운 색상으로, 매일 아이브로우 파우더를 바른 것처럼 보입니다.",
+    brow_standard3_image_alt: "얼굴에 맞는 눈썹 형태",
+    brow_standard3_title: "얼굴에 맞는 눈썹 형태",
+    brow_standard3_desc:
+      "쉐이딩은 얼굴형에 따라 수평형, 약간 곡선형 또는 클래식 아치형 눈썹을 강조합니다.",
+    brow_shapes_title: "어떤 얼굴형이 쉐이딩에 적합한가요?",
+    brow_shapes_intro:
+      "각 얼굴에는 적합한 쉐이딩 눈썹 형태가 있습니다. 루미 뷰티 전문가에게 상담받으세요.",
+    brow_shape1_image_alt: "둥근 얼굴 - 가벼운 각도 쉐이딩",
+    brow_shape1_title: "둥근 얼굴 – 가벼운 각도 쉐이딩",
+    brow_shape1_desc: "얼굴을 더 슬림하게 보이게 합니다.",
+    brow_shape2_image_alt: "긴 얼굴 - 자연스러운 수평 쉐이딩",
+    brow_shape2_title: "긴 얼굴 – 자연스러운 수평 쉐이딩",
+    brow_shape2_desc: "얼굴 길이의 균형을 만듭니다.",
+    brow_shape3_image_alt: "각진 얼굴 - 부드러운 곡선 쉐이딩",
+    brow_shape3_title: "각진 얼굴 – 부드러운 곡선 쉐이딩",
+    brow_shape3_desc: "각진 느낌을 줄이고 '여성스럽게' 만듭니다.",
+    brow_shape4_image_alt: "계란형 얼굴 - 자연스러운 쉐이딩",
+    brow_shape4_title: "계란형 얼굴 – 자연스러운 쉐이딩",
+    brow_shape4_desc: "얼굴의 자연스러운 부드러움을 유지합니다.",
+    brow_detail_process_title: "눈썹 쉐이딩 반영구 과정",
+    brow_detail_process_intro: "75분 – 국제 표준",
+    brow_detail_process_step1_title: "상담 및 평가",
+    brow_detail_process_step1_desc:
+      "기술자가 피부 상태를 확인하고 희망사항을 듣고 적합한 눈썹 형태 – 잉크 색상을 상담합니다.",
+    brow_detail_process_step2_title: "청소 및 소독",
+    brow_detail_process_step2_desc:
+      "눈썹 부위를 세정하고 청소한 후 감염을 방지하기 위해 철저히 소독합니다.",
+    brow_detail_process_step3_title: "마취 및 잉크 준비",
+    brow_detail_process_step3_desc:
+      "기술자가 전 과정 동안 편안함을 위해 마취를 적용합니다. 마취가 효과를 발휘할 때까지 기다리는 동안 적합한 잉크를 혼합합니다.",
+    brow_detail_process_step4_title: "눈썹 형태 측정 및 그리기",
+    brow_detail_process_step4_desc:
+      "비율을 측정하고 얼굴과 조화를 이루도록 눈썹 형태를 스케치합니다.",
+    brow_detail_process_step5_title: "눈썹 쉐이딩 반영구 시행",
+    brow_detail_process_step5_desc:
+      "초미세 니들을 사용한 전문 반영구 장비로 잉크를 피부에 삽입하고 자연스러운 파우더 효과를 만듭니다.",
+    brow_commitment_title: "서비스 약속",
+    brow_commitment_intro: "루미 뷰티의 고객 약속",
+    brow_commitment1_title: "10–14일 내 정확한 색상 발색",
+    brow_commitment2_title: "파란색/빨간색 변색 없음",
+    brow_commitment3_title: "색상 18–36개월 지속",
+    brow_commitment4_title: "유럽 유기농 잉크",
+    brow_commitment5_title: "100% 일회용 소모품",
+    brow_commitment6_title: "04개월 보증 – 무료 보정",
+    why_lumi_brow_title: "루미 뷰티에서 쉐이딩을 선택하는 이유",
+    why_lumi_brow_intro: "간결하지만 강력함",
+    why_lumi_brow0_title: "1:1 눈썹 반영구 – 7년 이상 경력 전문가",
+    why_lumi_brow0_desc:
+      "루미 뷰티에서는 각 고객이 7년 경력의 눈썹 반영구 전문가로부터 프라이빗 1:1 케어를 받아, 각 얼굴에 맞는 섬세하고 조화로운 눈썹을 보장합니다.",
+    why_lumi_brow1_title: "쉐이딩 색상 30% 더 옅게 혼합",
+    why_lumi_brow1_desc: "벗겨진 후 자연스러운 모습 보장",
+    why_lumi_brow2_title: "미세 니들 기법",
+    why_lumi_brow2_desc: "통증 없음, 부종 없음, 빠른 회복",
+    why_lumi_brow3_title: "개인 맞춤 눈썹 디자인",
+    why_lumi_brow3_desc: "템플릿 따르지 않음",
+    why_lumi_brow4_title: "출산 후 6개월부터 안전",
+    brow_detail_pricing_title: "가격표 – 눈썹 쉐이딩 반영구",
+    brow_detail_pricing_intro: "가격은 기존 상태와 원하는 형태에 따라 다릅니다",
+    brow_detail_pricing_single_title: "눈썹 쉐이딩 반영구",
+    brow_detail_pricing_single_subtitle: "상담 및 눈썹 상태 평가 후 가격 결정",
+    brow_detail_pricing_single_item1: "개인 맞춤 눈썹 형태 디자인",
+    brow_detail_pricing_single_item2: "부드럽고 매끄러운 쉐이딩 기법",
+    brow_detail_pricing_single_item3: "7일 케어 세럼",
+    brow_detail_pricing_single_item4: "04개월 보증",
+    brow_detail_pricing_single_item5: "무료 보정",
+    brow_detail_pricing_note:
+      "가격에는 일회용 소모품 및 VAT가 포함됩니다. 2명 이상 그룹은 추가 10% 할인.",
+    brow_reviews_title: "고객 리뷰",
+    brow_review1_name: "란 안",
+    brow_review1_age: "28세",
+    brow_review1_text:
+      '"기존 눈썹이 파랗게 변색되었습니다. 루미에서 쉐이딩 후 색상이 매끄럽고 아름다워서 모두 어디서 했는지 물어봅니다."',
+    brow_review2_name: "김 응안",
+    brow_review2_age: "31세",
+    brow_review2_text:
+      '"헤어 스트로크 스타일을 좋아하지 않아 쉐이딩을 선택했습니다. 매끄럽고 부드러워서 정말 마음에 듭니다."',
+    brow_detail_faq_title: "자주 묻는 질문",
+    brow_detail_faq_intro: "간결함 – 쉐이딩 중심",
+    brow_detail_faq_q1: "시술 후 너무 진해지나요?",
+    brow_detail_faq_a1:
+      "아니요. 색상은 30% 더 옅게 혼합되어 벗겨진 후 정확한 톤으로 발색됩니다.",
+    brow_detail_faq_q2: "언제쯤 색상이 아름답게 발색되나요?",
+    brow_detail_faq_a2: "10–14일부터 자연스럽게 아름답게 보입니다.",
+    brow_detail_faq_q3: "아프나요?",
+    brow_detail_faq_a3:
+      "많이 아프지 않습니다. 쉐이딩은 최소한의 외상을 주며 통증을 두려워하는 사람에게도 적합합니다.",
+    brow_detail_cta_title:
+      "파우더처럼 부드럽고 매끄럽고 자연스러운 눈썹을 원하시나요?",
+    brow_detail_cta_desc:
+      "지금 예약하여 루미 뷰티에서 무료 눈썹 형태 측정을 받으세요.",
+
     copyright: "© 2023 루미 뷰티. 모든 권리 보유.",
   },
 };
@@ -2620,16 +2968,19 @@ function setLanguage(lang) {
           const serviceMap = {
             vi: {
               "eyebrow-tattoo": "phun mày",
+              "phun-may-shading": "phun mày shading",
               "eyeliner-tattoo": "phun mí mở tròng",
               "lip-brightening": "khử thâm môi",
             },
             en: {
               "eyebrow-tattoo": "eyebrow PMU",
+              "phun-may-shading": "eyebrow shading PMU",
               "eyeliner-tattoo": "eyeliner PMU",
               "lip-brightening": "lip brightening",
             },
             ko: {
               "eyebrow-tattoo": "눈썹 반영구",
+              "phun-may-shading": "눈썹 쉐이딩 반영구",
               "eyeliner-tattoo": "아이라인 반영구",
               "lip-brightening": "입술 톤 브라이트닝",
             },
