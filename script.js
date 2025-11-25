@@ -962,8 +962,8 @@ const translations = {
       "Lumi Beauty Đà Nẵng cung cấp phun xăm thẩm mỹ mày, môi, mí chuẩn y khoa, không đau rát và dịch vụ chăm sóc khách hàng tận tâm.",
 
     // Navigation
-    beauty_services: "Phun xăm",
-    beauty_guide: "Cẩm nang",
+    beauty_services: "Dịch vụ phun xăm",
+    beauty_guide: "Kiến thức",
     contact: "Liên hệ",
     offers: "Feedback",
     book_now: "ĐẶT LỊCH NGAY",
