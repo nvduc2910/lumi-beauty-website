@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://lumibeauty.studio/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/" />
@@ -15,28 +15,28 @@
   <!-- Services Pages -->
   <url>
     <loc>https://lumibeauty.studio/services/phun-moi-collagen.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://lumibeauty.studio/services/eyebrow-tattoo.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://lumibeauty.studio/services/eyeliner-tattoo.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://lumibeauty.studio/services/lip-brightening.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -44,35 +44,42 @@
   <!-- Blog Pages -->
   <url>
     <loc>https://lumibeauty.studio/blogs/blog-phun-moi-collagen-chuan-bi.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://lumibeauty.studio/blogs/blog-cham-soc-moi-7-ngay.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://lumibeauty.studio/blogs/blog-phun-mi-mo-trong.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://lumibeauty.studio/blogs/blog-phun-may-shading-tan-bot.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://lumibeauty.studio/blogs/blog-checklist-spa-phun-xam.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://lumibeauty.studio/blogs/blog-moi-bong-khong-deu-mau.html</loc>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -80,14 +87,14 @@
   <!-- Gallery and Feedback Pages -->
   <url>
     <loc>https://lumibeauty.studio/gallery.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://lumibeauty.studio/feedback.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -95,7 +102,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://lumibeauty.studio/contact.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
