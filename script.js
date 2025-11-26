@@ -977,6 +977,7 @@ const translations = {
     contact: "Liên hệ",
     offers: "Feedback",
     book_now: "ĐẶT LỊCH NGAY",
+    about_us_contact: "About us & Contact",
 
     // Hero Section
     main_title: "PHUN XĂM THẨM MỸ",
@@ -1784,6 +1785,8 @@ const translations = {
     blog3_title:
       "Phân biệt phun môi baby, collagen và ombre - nên chọn loại nào?",
     read_more: "Xem thêm",
+    view_more_gallery: "XEM THÊM HÌNH ẢNH",
+    view_more_feedback: "XEM THÊM FEEDBACK",
 
     // Footer
     footer_tagline: "Phun xăm đẹp tự nhiên - Tôn nét riêng của bạn",
@@ -1832,531 +1835,882 @@ const translations = {
 
   en: {
     // General
-    page_title: "Lumi Beauty - Natural Lip & Brow Tattoo",
+    page_title:
+      "Lumi Beauty - Natural Permanent Makeup in Da Nang - Expert Brows, Lips & Eyeliner",
+
     close_modal: "Close",
+
     floating_contact_zalo: "Chat on Zalo",
     floating_contact_facebook: "Chat on Facebook",
     floating_contact_tiktok: "TikTok",
+
     meta_description:
-      "Lumi Beauty in Da Nang delivers premium lip, brow, and eyeliner tattoo services with medical-grade processes, gentle techniques, and devoted care.",
+      "Lumi Beauty Da Nang specializes in natural permanent makeup for brows, lips, and eyeliner using modern, gentle techniques with medically safe procedures.",
+
     meta_keywords:
-      "lip tattoo da nang, eyebrow tattoo vietnam, permanent makeup, Lumi Beauty",
-    og_title: "Lumi Beauty - Natural Lip & Brow Tattoo in Da Nang",
+      "pmu da nang, natural ombre brows, lip blushing, lumi beauty da nang",
+
+    og_title: "Lumi Beauty - Natural Permanent Makeup in Da Nang",
+
     og_description:
-      "Discover Lumi Beauty's gentle lip, brow, and eyeliner tattoo services in Da Nang. Medical-standard procedures, long-lasting color, and caring experts.",
-    twitter_title: "Lumi Beauty - Natural Permanent Makeup in Da Nang",
+      "Experience natural, long-lasting brows, lips, and eyeliner at Lumi Beauty Da Nang – gentle technique, no swelling, no pain, beautifully healed results.",
+
+    twitter_title: "Lumi Beauty - Permanent Makeup Da Nang",
+
     twitter_description:
-      "Experience natural lip and brow tattoos with Lumi Beauty's skilled artists in Da Nang, Vietnam.",
+      "Lumi Beauty offers modern PMU treatments for brows, lips, and eyeliner with 1-on-1 service and soft, natural results.",
+
     business_name: "Lumi Beauty",
+
     business_description:
-      "Lumi Beauty in Da Nang specializes in natural-looking lip, brow, and eyeliner tattoos using medical-standard techniques and attentive aftercare.",
+      "Lumi Beauty Da Nang provides premium permanent makeup for brows, lips, and eyeliner with gentle techniques and dedicated client care.",
 
     // Navigation
     beauty_services: "PMU Services",
-    beauty_guide: "PMU Guide",
+    beauty_guide: "Beauty Knowledge",
     gallery: "Gallery",
-    feedback: "Feedback",
+    feedback: "Client Feedback",
     contact: "Contact",
-    offers: "Customer Reviews",
+    offers: "Feedback",
     book_now: "BOOK NOW",
+    about_us_contact: "About Us & Contact",
 
     // Hero Section
-    main_title: "LIP & EYEBROW TATTOO",
-    natural_beauty: "NATURAL BEAUTY",
-    enhance_features: "Enhance your unique features",
+    main_title: "PERMANENT MAKEUP",
+    natural_beauty: "Naturally Beautiful",
+    enhance_features: "Enhance Your Unique Features",
+
     hero_description:
-      "Lumi Beauty brings a <strong>specialized 1-on-1 tattooing experience</strong> for each face, helping you achieve rosy lips, elegant brows, and a natural look. Each customer receives personalized care from experienced tattoo specialists, ensuring the most refined and harmonious results.",
+      "Lumi Beauty offers a <strong>dedicated 1-on-1 PMU experience</strong> tailored to each face, helping you achieve soft pink lips, refined brows, and naturally bright eyes. Every client is treated with personalized care by experienced PMU artists, ensuring the most delicate and harmonious results.",
+
     contact_now: "CONTACT NOW",
 
     // Feature Tags
     no_pain: "NO PAIN",
     no_swelling: "NO SWELLING",
-    no_diet: "NO DIETARY RESTRICTIONS",
+    no_diet: "NO DIET NEEDED",
 
     // Stats
     years_experience: "years of experience",
     potential_customers: "potential customers",
-    five_star_reviews: "5-star reviews from customers",
+    five_star_reviews: "5-star client reviews",
     certifications: "professional certifications",
 
     // Help Section
     greeting: "Hello!",
     how_can_help: "Could Lumi Beauty introduce ourselves in just one minute?",
+
     help_intro:
-      "Lumi Beauty is a trusted cosmetic tattoo studio in Da Nang, known for private one-on-one sessions and heartfelt care.",
+      "Lumi Beauty is a trusted PMU studio in Da Nang, loved for its private 1-on-1 service and gentle, dedicated approach.",
+
     help_quote:
-      'We believe that "Every face is unique and deserves to be enhanced with subtle, natural detail."',
+      'We believe that: "Every face carries its own unique beauty that deserves to be enhanced in the most delicate and natural way."',
+
     help_commitment:
-      "That is why we devote our full time to listening, consulting, and designing lips, brows, and eyeliner that complement each client. With medical-grade protocols and safe organic pigments, Lumi Beauty delivers natural results with no swelling, minimal discomfort, and long-lasting color.",
+      "That’s why we take time to listen, consult, and design the most suitable brow, lip, and eyeliner shape for each individual. With medically safe procedures and organic pigments, Lumi Beauty is committed to delivering natural results with no swelling, no pain, and beautifully long-lasting color.",
+
     book_description:
-      "Book an appointment today to get consultation and receive attractive offers",
+      "Book your appointment today for consultation and special offers.",
+
     contact_description:
-      "Contact us immediately if you have feedback or any questions that need consultation",
-    book_appointment: "Book an appointment today",
-    want_to_book: "I WANT TO BOOK AN APPOINTMENT",
-    contact_us: "Contact",
+      "Contact us anytime if you have feedback or need personalized advice.",
+
+    book_appointment: "Book Your Appointment Today",
+    want_to_book: "I WANT TO BOOK",
+    contact_us: "Contact Us",
     need_consultation: "I NEED CONSULTATION",
 
     // Services
-    our_services: "Our Services",
-    lip_tattoo_title: "Collagen Baby Lip Tattoo",
-    lip_tattoo_benefit1: "Boosts rosy, plump, naturally radiant lips.",
+    our_services: "Lumi Beauty Services",
+
+    lip_tattoo_title: "Collagen Lip Blushing",
+    lip_tattoo_benefit1: "Creates soft, rosy, naturally plump-looking lips.",
     lip_tattoo_benefit2:
-      "One-on-one technique with ultra-fine needles for minimal discomfort and flawless color after healing.",
+      "1-on-1 technique with ultra-fine needles for minimal discomfort and beautifully even color after healing.",
     lip_tattoo_benefit3: "Ideal for dry, dark, or pale lips.",
-    eyebrow_tattoo_title: "Shading / Powder Brows",
+
+    eyebrow_tattoo_title: "Shading Ombre Brows",
     eyebrow_tattoo_benefit1:
-      "Creates soft, natural brows that lift and refine facial contours.",
+      "Shapes soft, natural-looking brows that enhance facial harmony.",
     eyebrow_tattoo_benefit2:
-      "Personalized one-on-one mapping to your facial proportions before tattooing.",
-    eyebrow_tattoo_benefit3: "Balanced brow structure—never harsh or blocky.",
-    eyeliner_tattoo_title: "Lash-Line Enhancement",
+      "Personalized 1-on-1 brow mapping with precise facial ratio measurements before the procedure.",
+    eyebrow_tattoo_benefit3:
+      "Ensures balanced brows without harsh or heavy strokes.",
+
+    eyeliner_tattoo_title: "Lashline Enhancement",
     eyeliner_tattoo_benefit1:
-      "Opens the eyes with subtle depth while keeping a natural look.",
+      "Creates bigger, brighter-looking eyes with a naturally defined lash line.",
     eyeliner_tattoo_benefit2:
-      "Gentle, surgery-free process with virtually no pain.",
+      "Gentle, painless procedure with no surgery involved.",
     eyeliner_tattoo_benefit3:
-      "Perfect for clients seeking definition but retaining a bare-faced feel.",
-    lip_removal_title: "Lip Brightening for Men & Women",
+      "Perfect for clients who want subtle enhancement while keeping a natural look.",
+
+    lip_removal_title: "Lip Neutralizing for Men & Women",
     lip_removal_benefit1:
-      "Restores an even, soft pink tone for smooth, hydrated lips.",
+      "Brightens dark lips and restores a naturally soft, even tone.",
     lip_removal_benefit2:
-      "One-on-one brightening protocol that delivers visible results in a single course.",
+      "Safe and effective 1-on-1 neutralizing technique with visible improvement after one session.",
     lip_removal_benefit3:
-      "Solutions tailored for men who want brighter lips without an artificial red tint.",
+      "A great solution for men who want healthier-looking lips without any artificial redness.",
+
     discover_more: "DISCOVER MORE",
 
+    // Service Detail - Brow Tattoo
+    brow_detail_page_title:
+      "Lumi Beauty Shading Brows – Soft Powdered Effect, Naturally Beautiful for 18–36 Months",
+
+    brow_detail_meta_description:
+      "Shading Brows at Lumi Beauty: soft powdered effect, natural finish lasting 18–36 months. Soft head, smooth body, defined tail for a gentle makeup look.",
+
+    brow_detail_badge: "Brow Design",
+
+    brow_detail_hero_heading: "Lumi Beauty Shading Brows",
+    brow_detail_hero_subheading:
+      "Shading Brows – Soft Powdered Effect, Naturally Beautiful for 18–36 Months",
+
+    brow_detail_hero_paragraph1:
+      "The shading technique creates a soft brow head, smooth brow body, and a naturally defined tail, giving a gentle makeup-like effect without looking harsh.",
+
+    brow_detail_hero_paragraph2:
+      "Shading suits 98% of face shapes – comfortable, minimal pain, and even color healing. European organic pigments are safe for moms 6+ months postpartum. Includes a 4-month shape & color warranty.",
+
+    brow_detail_hero_stat_label: "No need to draw your brows for 18 months",
+
+    brow_before_after_title: "Before & After Results",
+    brow_before_after_intro:
+      "See the beautiful transformations from clients who chose Shading Brows at Lumi Beauty",
+
+    brow_before_after_image1_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image2_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image3_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image4_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image5_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image6_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image7_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image8_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image9_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image10_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image11_alt: "Shading Brows result at Lumi Beauty",
+    brow_before_after_image12_alt: "Shading Brows result at Lumi Beauty",
+
+    brow_before_after_cta_text:
+      "Want to know which brow shape suits your face?",
+    brow_before_after_cta_button: "Get Free Consultation",
+
+    brow_who_suitable_title: "Who Is Shading Brows Suitable For?",
+    brow_who_suitable_intro: "This service is perfect if you have:",
+
+    brow_who_suitable_image1_alt: "Eyebrows too short",
+    brow_who_suitable_item1: "Eyebrows that are too short",
+
+    brow_who_suitable_image2_alt: "Light eyebrows",
+    brow_who_suitable_item2: "Light or barely visible eyebrows",
+
+    brow_who_suitable_image3_alt: "Sparse, thin eyebrows",
+    brow_who_suitable_item3: "Sparse, thin, or short brows",
+
+    brow_who_suitable_image4_alt: "Uneven or unbalanced brows",
+    brow_who_suitable_item4: "Uneven or unbalanced eyebrows",
+
+    brow_who_suitable_note:
+      "👉 Shading suits 98% of facial structures – gentle, minimal pain, even color healing.",
+
+    brow_standards_title: "Standards of a Beautiful Shading Brow",
+    brow_standards_intro: "For Shading Brows only",
+
+    brow_standard1_image_alt: "Balanced ratio – soft front, defined tail",
+    brow_standard1_title: "Balanced Ratio – Soft Front, Defined Tail",
+    brow_standard1_desc:
+      "Shading isn’t as bold as tattooing nor as visible as hair-strokes. It creates a soft gradient at the front, smoothly transitioning to a defined tail.",
+
+    brow_standard2_image_alt: "Soft color – no harsh tones",
+    brow_standard2_title: "Soft Color – No Harsh Darkness",
+    brow_standard2_desc:
+      "Shading looks best when the pigment is smooth and harmonious, like daily eyebrow powder.",
+
+    brow_standard3_image_alt: "Brow form based on face shape",
+    brow_standard3_title: "Brow Form Based on Face Shape",
+    brow_standard3_desc:
+      "Shading works beautifully for straight brows, soft arches, or classic arches depending on your features.",
+
+    brow_shapes_title: "Which Face Shape Suits Shading Brows?",
+    brow_shapes_intro:
+      "Each face shape pairs best with a specific shading style. Let Lumi Beauty guide you.",
+
+    brow_shape1_image_alt: "Round face – Shading with soft angles",
+    brow_shape1_title: "Round Face – Soft Angled Shading",
+    brow_shape1_desc: "Makes the face look slimmer.",
+
+    brow_shape2_image_alt: "Long face – Natural straight shading",
+    brow_shape2_title: "Long Face – Natural Straight Shading",
+    brow_shape2_desc: "Balances facial length.",
+
+    brow_shape3_image_alt: "Square face – Soft curved shading",
+    brow_shape3_title: "Square Face – Soft Curved Shading",
+    brow_shape3_desc: "Softens angles and adds a feminine touch.",
+
+    brow_shape4_image_alt: "Oval face – Natural shading",
+    brow_shape4_title: "Oval Face – Natural Shading",
+    brow_shape4_desc: "Maintains soft, natural harmony.",
+
+    brow_detail_process_title: "Shading Brows Procedure",
+    brow_detail_process_intro: "75 minutes – international standard",
+
+    brow_detail_process_step1_title: "Consultation & Assessment",
+    brow_detail_process_step1_desc:
+      "The artist checks skin condition, listens to your goals, and recommends the best brow shape and pigment.",
+
+    brow_detail_process_step2_title: "Cleansing & Sanitizing",
+    brow_detail_process_step2_desc:
+      "Brows are thoroughly cleansed and sanitized to prevent irritation or infection.",
+
+    brow_detail_process_step3_title: "Numbing & Pigment Preparation",
+    brow_detail_process_step3_desc:
+      "Topical numbing is applied for comfort. Meanwhile, the artist prepares the customized pigment shade.",
+
+    brow_detail_process_step4_title: "Brow Mapping",
+    brow_detail_process_step4_desc:
+      "Precise measurements and sketching ensure the brow form harmonizes with your facial proportions.",
+
+    brow_detail_process_step5_title: "Shading Brows Application",
+    brow_detail_process_step5_desc:
+      "Using specialized PMU equipment with ultra-fine needles, the artist deposits pigment into the skin to create a soft, pixelated shading effect.",
+
+    brow_commitment_title: "Service Commitment",
+    brow_commitment_intro: "What Lumi Beauty Promises You",
+
+    brow_commitment1_title: "Perfect Color in 10–14 Days",
+    brow_commitment2_title: "No Blue/Red Discoloration",
+    brow_commitment3_title: "Color Lasts 18–36 Months",
+    brow_commitment4_title: "European Organic Pigments",
+    brow_commitment5_title: "100% Single-Use Materials",
+    brow_commitment6_title: "4-Month Warranty – Free Touch-Up",
+
+    why_lumi_brow_title: "Why Choose Shading Brows at Lumi Beauty?",
+    why_lumi_brow_intro: "Short but powerful",
+
+    why_lumi_brow0_title: "1-on-1 Brows – Artist with 7+ Years of Experience",
+    why_lumi_brow0_desc:
+      "At Lumi Beauty, every client receives private 1-on-1 care from a brow specialist with over 7 years of experience, ensuring refined, harmonious brows tailored to your face.",
+
+    why_lumi_brow1_title: "Pigment Diluted 30% for Soft Healing",
+    why_lumi_brow1_desc: "Ensures a natural finish after healing",
+
+    why_lumi_brow2_title: "Ultra-Smooth Needle Technique",
+    why_lumi_brow2_desc: "No pain, no swelling, fast recovery",
+
+    why_lumi_brow3_title: "Personalized Brow Design",
+    why_lumi_brow3_desc: "No template-based shaping",
+
+    why_lumi_brow4_title: "Safe for Moms 6 Months Postpartum",
+
+    brow_detail_pricing_title: "Pricing – Shading Brows",
+    brow_detail_pricing_intro:
+      "Pricing depends on old brow condition and desired shape",
+
+    brow_detail_pricing_single_title: "Shading Brows",
+    brow_detail_pricing_single_subtitle:
+      "Final pricing is determined after consultation and assessment",
+
+    brow_detail_pricing_single_item1: "Personalized brow design",
+    brow_detail_pricing_single_item2: "Soft & smooth shading technique",
+    brow_detail_pricing_single_item3: "7-day aftercare serum",
+    brow_detail_pricing_single_item4: "4-month warranty",
+    brow_detail_pricing_single_item5: "Free touch-up",
+
+    brow_detail_pricing_note:
+      "Price includes single-use materials and VAT. Groups of 2+ receive an extra 5% discount.",
+
+    brow_reviews_title: "Client Reviews",
+
+    brow_review1_name: "Lan Anh",
+    brow_review1_age: "28 years old",
+    brow_review1_text:
+      '"My old brows turned blue. After doing shading at Lumi, the color healed soft and beautiful — everyone asks where I got them done."',
+
+    brow_review2_name: "Kim Ngan",
+    brow_review2_age: "31 years old",
+    brow_review2_text:
+      '"I don’t like hair-strokes so I chose shading. Soft, smooth, exactly the style I wanted."',
+
+    brow_detail_faq_title: "Frequently Asked Questions",
+    brow_detail_faq_intro: "Short, clear, and focused on Shading",
+
+    brow_detail_faq_q1: "Will the brows look too dark right after?",
+    brow_detail_faq_a1:
+      "No. Pigment is diluted by 30% to heal to the correct softness.",
+
+    brow_detail_faq_q2: "When will the brows look their best?",
+    brow_detail_faq_a2: "From day 10–14, the color becomes naturally perfect.",
+
+    brow_detail_faq_q3: "Does it hurt?",
+    brow_detail_faq_a3:
+      "Very minimal. Shading is gentle and suitable even for clients afraid of pain.",
+
+    brow_detail_cta_title: "Want soft, smooth, powder-like brows?",
+    brow_detail_cta_desc:
+      "Book now for a free brow mapping session at Lumi Beauty.",
+
+    // Service Detail - Lip Brightening (Neutralizing Pigment)
+    lip_removal_detail_page_title:
+      "Lumi Beauty Advanced Lip Brightening – Restore Natural Lip Color",
+
+    lip_removal_detail_meta_description:
+      "Lip brightening using Neutralizing Pigment at Lumi Beauty warms dark tones (blue–purple–grey), reduces 30–60% pigmentation after one session, painless and non-swelling, 6–12 month warranty.",
+
+    lip_removal_detail_badge: "Neutralizing Pigment",
+
+    lip_removal_detail_hero_heading:
+      "Neutralizing Lip Darkening – Brighter Lips in One Session",
+
+    lip_removal_detail_hero_subheading:
+      "Neutralizing technique uses warm pigments (orange/peach/coral) to neutralize cool tones without adding color — no pain, no swelling. Achieve 50–80% brightness with even, natural tone after 7–14 days.",
+
+    lip_removal_detail_hero_paragraph1:
+      "The treatment combines next-generation cold laser with concentrated vitamin C + B5 serum to break down dark pigments without peeling or burning. Suitable for lips darkened from genetics, old lipstick, or hormonal changes.",
+
+    lip_removal_detail_hero_paragraph2:
+      "Each client receives a personalized plan including 1–2 neutralizing sessions and a baby-lip session for natural, long-lasting pink lips.",
+
+    lip_removal_detail_hero_stat_label:
+      "Reduced pigmentation after the first session",
+
+    lip_removal_detail_highlights_title:
+      "Why Lumi Beauty’s Lip Brightening Works",
+
+    lip_removal_detail_highlight1_title: "650nm Cold Laser Technology",
+    lip_removal_detail_highlight1_desc:
+      "Targets dark pigments without thermal damage or thinning the lips.",
+
+    lip_removal_detail_highlight2_title: "Exclusive Vitamin Serum",
+    lip_removal_detail_highlight2_desc:
+      "Accelerates healing, deeply hydrates, and locks in moisture immediately.",
+
+    lip_removal_detail_highlight3_title: "Customized Treatment Plan",
+    lip_removal_detail_highlight3_desc:
+      "Energy level and number of sessions adjusted for congenital or lifestyle-related pigmentation.",
+
+    lip_removal_detail_highlight4_title: "Baby Lip Application Included",
+    lip_removal_detail_highlight4_desc:
+      "After neutralizing, a baby lip color layer helps maintain fresh pink lips for at least 18 months.",
+
+    lip_removal_detail_process_title: "Safe Lip Brightening Procedure",
+    lip_removal_detail_process_intro:
+      "A 60–75 minute session including neutralizing and intensive lip recovery.",
+
+    lip_removal_detail_process_step1_title: "Pigment Analysis",
+    lip_removal_detail_process_step1_desc:
+      "Evaluate dark tones and root causes using specialized lighting.",
+
+    lip_removal_detail_process_step2_title: "Enzyme Exfoliation",
+    lip_removal_detail_process_step2_desc:
+      "Gentle papain enzyme removes dead skin for clearer pigment assessment.",
+
+    lip_removal_detail_process_step3_title: "Cold Laser Neutralizing",
+    lip_removal_detail_process_step3_desc:
+      "650nm laser breaks down melanin without harming surrounding tissue.",
+
+    lip_removal_detail_process_step4_title: "Vitamin Infusion & Recovery Mask",
+    lip_removal_detail_process_step4_desc:
+      "Vitamin C, E, B5 serum + peptide mask for instant soothing and reduced dryness.",
+
+    lip_removal_detail_process_step5_title: "Baby Lip Color (Optional)",
+    lip_removal_detail_process_step5_desc:
+      "After 7–10 days, baby lip blushing is performed to complete the natural pink finish.",
+
+    lip_removal_detail_results_outcome_title: "Expected Results",
+    lip_removal_detail_results_outcome_item1:
+      "50–70% improvement after one session for pigmentation caused by lipstick.",
+
+    lip_removal_detail_results_outcome_item2:
+      "Congenital dark lips improve 30–40% after 2 sessions, continue brightening over 4 weeks.",
+
+    lip_removal_detail_results_outcome_item3:
+      "Baby-lip application provides lasting natural pink color for 18–24 months.",
+
+    lip_removal_detail_results_aftercare_title: "Aftercare Instructions",
+    lip_removal_detail_results_aftercare_item1:
+      "Apply Lumi Care lip balm 3 times daily for 7 days.",
+    lip_removal_detail_results_aftercare_item2:
+      "Drink 2L of water daily, limit coffee and strong tea for 5 days.",
+    lip_removal_detail_results_aftercare_item3:
+      "Avoid direct sunlight and lead-based lipstick for 14 days.",
+
+    lip_removal_detail_pricing_title: "Treatment Packages & Pricing",
+    lip_removal_detail_pricing_intro:
+      "All-inclusive packages with home-care products and follow-up checks.",
+
+    lip_removal_detail_pricing_option1_title: "Basic Brightening Package",
+    lip_removal_detail_pricing_option1_item1:
+      "1 cold laser session + home-care lip kit",
+    lip_removal_detail_pricing_option1_item2: "14-day follow-up",
+    lip_removal_detail_pricing_option1_item3:
+      "Ideal for mild dark lips caused by lipstick",
+
+    lip_removal_detail_pricing_option2_badge: "Most Popular",
+    lip_removal_detail_pricing_option2_title: "Brightening + Baby Lip Package",
+    lip_removal_detail_pricing_option2_item1:
+      "2 neutralizing sessions + 1 baby lip session",
+    lip_removal_detail_pricing_option2_item2:
+      "14-day home-care kit & color-locking serum",
+    lip_removal_detail_pricing_option2_item3: "12-month color warranty",
+
+    lip_removal_detail_pricing_option3_title: "Severe Pigmentation Package",
+    lip_removal_detail_pricing_option3_item1:
+      "3 cold laser sessions + intensive care",
+    lip_removal_detail_pricing_option3_item2:
+      "Nutritional and vitamin guidance to support pigment recovery",
+    lip_removal_detail_pricing_option3_item3: "Free baby lip session included",
+
+    lip_removal_detail_pricing_note:
+      "Free Lumi Care lip treatment worth 390,000₫ with any package. Returning clients receive 10% off.",
+
+    lip_removal_detail_faq_title: "Frequently Asked Questions",
+
+    lip_removal_detail_faq_q1: "Does lip brightening hurt?",
+    lip_removal_detail_faq_a1:
+      "No. Cold laser with low energy + medical numbing ensures comfort — only slight warmth in the first 2–3 minutes.",
+
+    lip_removal_detail_faq_q2: "When can I apply lip color?",
+    lip_removal_detail_faq_a2:
+      "After 7–10 days once the lips fully recover and pigmentation is reduced, a baby lip session can be performed.",
+
+    lip_removal_detail_faq_q3: "Does it make lips dry?",
+    lip_removal_detail_faq_a3:
+      "No. Vitamins and peptide masks deeply hydrate the lips. Just follow the aftercare routine.",
+
+    lip_removal_detail_cta_title:
+      "Ready to Reveal Naturally Pink, Brighter Lips?",
+    lip_removal_detail_cta_desc:
+      "Book your appointment today for a personalized pigmentation-brightening plan.",
+
+    // Lip Brightening - Neutralizing Pigment
+    lip_brightening_intro_title: "What Is Lip Neutralizing?",
+    lip_brightening_intro_what:
+      "Lip neutralizing uses warm corrector pigments (orange/peach/coral) placed very shallowly to warm up cool tones like blue–purple–grey. It does NOT add new lip color, does NOT change lip structure, and is NOT lip blushing. After neutralizing, lips brighten 50–80%, tone becomes more even, and appear naturally pink.",
+
+    lip_brightening_intro_who_title:
+      "Who Is It Suitable For? (Neutralizing Standard)",
+    lip_brightening_intro_who1: "Blue / purple / grey cool-tone lips",
+    lip_brightening_intro_who2: "Congenitally dark lips",
+    lip_brightening_intro_who3: "Dark lips from long-term lipstick use",
+    lip_brightening_intro_who4: "Darkening caused by hormones",
+    lip_brightening_intro_who5:
+      "Lips that do not retain color when tattooed — need warming first",
+
+    lip_brightening_intro_benefits_title: "Main Benefits",
+    lip_brightening_benefit1_title: "Warm Up Cool Tones",
+    lip_brightening_benefit1_desc:
+      "Neutralizing pigments soften cool undertones for brighter, softer lips.",
+
+    lip_brightening_benefit2_title: "30–60% Brightening After One Session",
+    lip_brightening_benefit2_desc:
+      "Improvement depends on initial pigmentation.",
+
+    lip_brightening_benefit3_title: "No Pain – No Swelling",
+    lip_brightening_benefit3_desc:
+      "Very shallow technique, unlike lip blushing.",
+
+    lip_brightening_benefit4_title: "Visible Brightening in 7–14 Days",
+    lip_brightening_benefit4_desc: "No peeling; recovery is fast and gentle.",
+
+    lip_brightening_benefit5_title: "Perfect Base for Baby Lip Blushing",
+    lip_brightening_benefit5_desc:
+      "Once the base is warm, baby lip color appears more vibrant and long-lasting.",
+
+    lip_brightening_commitment_title: "Our Commitment",
+    lip_brightening_commitment1:
+      "No added lip color — only pigment neutralization",
+    lip_brightening_commitment2: "Safe technique suitable for sensitive lips",
+    lip_brightening_commitment3:
+      "Personalized plan based on pigmentation level",
+    lip_brightening_commitment4: "Daily follow-up for 7–14 days",
+    lip_brightening_commitment5: "6–12 month result warranty",
+
+    lip_brightening_results_title: "After Treatment Results",
+    lip_brightening_results_intro:
+      "After neutralizing, lips brighten 50–80%, blue–purple–grey tones reduce significantly, lips become softer, more even, and naturally pink. Severe pigmentation may require 2–3 sessions. After brightening, baby lip blushing will give a lasting pink tone.",
+
+    lip_brightening_process_title: "Neutralizing Pigment Procedure",
+    lip_brightening_process_intro:
+      "A 40–60 minute session using international sterile standards for absolute safety.",
+
+    lip_brightening_process_step1_title: "Lip Pigment Analysis",
+    lip_brightening_process_step1_desc:
+      "Assess cool tones, undertone base, and skin type.",
+
+    lip_brightening_process_step2_title: "Choosing the Correct Neutralizer",
+    lip_brightening_process_step2_desc:
+      "Orange, peach, or coral depending on blue-purple-grey undertone.",
+
+    lip_brightening_process_step3_title: "Medical Numbing",
+    lip_brightening_process_step3_desc:
+      "Provides full comfort during treatment.",
+
+    lip_brightening_process_step4_title: "Neutralizing Pigment Application",
+    lip_brightening_process_step4_desc:
+      "Ultra-shallow needle technique distributes warm pigment evenly WITHOUT adding new lip color.",
+
+    lip_brightening_process_step5_title: "Check & Aftercare Guidance",
+    lip_brightening_process_step5_desc:
+      "Mild dryness for 1–2 days, brightening gradually within 7–14 days.",
+
+    lip_brightening_advantages_title: "Why This Technique Works",
+    lip_brightening_advantages_intro:
+      "The strengths behind Lumi Beauty’s high-quality lip neutralizing service",
+
+    lip_brightening_advantage1_title: "50–80% Brightening After One Session",
+    lip_brightening_advantage1_desc:
+      "Improvement varies by initial pigmentation but visible from session one.",
+
+    lip_brightening_advantage2_title: "Minimal Peeling",
+    lip_brightening_advantage2_desc: "Only mild dryness; no heavy flaking.",
+
+    lip_brightening_advantage3_title: "Does Not Thin the Lips",
+    lip_brightening_advantage3_desc:
+      "Very shallow depth — does not affect natural lip texture.",
+
+    lip_brightening_advantage4_title: "No Lip Line Marks",
+    lip_brightening_advantage4_desc:
+      "Neutralizing only — no added lip color, no outlines.",
+
+    lip_brightening_advantage5_title: "No Color Patching",
+    lip_brightening_advantage5_desc:
+      "Professional technique ensures even color warming.",
+
+    lip_brightening_advantage6_title:
+      "Creates the Perfect Base for Lip Blushing",
+    lip_brightening_advantage6_desc:
+      "Warm base allows baby lip color to attach better and last longer.",
+
+    lip_brightening_advantage7_title: "Suitable for Men & Women",
+    lip_brightening_advantage7_desc:
+      "Technique tailored to gender preference and natural look.",
+
+    lip_brightening_advantage8_title: "Effective for Severe Cool-Tone Lips",
+    lip_brightening_advantage8_desc:
+      "Blue–purple–grey lips may require 2–3 sessions for optimal results.",
+
+    lip_brightening_pricing_title: "Service Pricing",
+    lip_brightening_pricing_intro:
+      "All-inclusive packages with home care and follow-up.",
+
+    lip_brightening_pricing_main_title: "Lip Neutralizing – Pigment Correction",
+    lip_brightening_pricing_subtitle:
+      "Pricing varies depending on cool-tone severity (blue/purple/grey) & required sessions",
+
+    lip_brightening_pricing_item1: "Professional neutralizing pigments",
+    lip_brightening_pricing_item2: "Medical numbing",
+    lip_brightening_pricing_item3: "Single-use sterile tools",
+    lip_brightening_pricing_item4: "24/7 support",
+    lip_brightening_pricing_item5:
+      "4-month warranty – free second neutralizing session",
+
+    lip_brightening_pricing_note:
+      "Price includes VAT and sterile tools. Cost varies depending on severity and number of sessions.",
+
+    lip_brightening_warranty_title: "Warranty Policy",
+    lip_brightening_warranty_intro: "Lumi Beauty’s commitment to your results",
+
+    lip_brightening_warranty1_title:
+      "4-Month Warranty – Free Second Neutralizing Session",
+    lip_brightening_warranty1_desc:
+      "Covers results for 4 months from treatment completion, depending on initial pigmentation.",
+
+    lip_brightening_warranty2_title: "Free Second Session",
+    lip_brightening_warranty2_desc:
+      "Free correction if color is insufficient within warranty period.",
+
+    lip_brightening_warranty3_title: "Close Monitoring",
+    lip_brightening_warranty3_desc:
+      "Follow-up checks after 14–30 days with personalized care guidance.",
+
+    lip_brightening_warranty4_title: "24/7 Support",
+    lip_brightening_warranty4_desc:
+      "Available via phone, Zalo, or Facebook anytime.",
+
+    lip_brightening_precautions_title: "Pre-Treatment Notes",
+    lip_brightening_precautions_intro:
+      "Important guidelines to ensure a safe and effective procedure",
+
+    lip_brightening_precaution1_title: "Avoid Coffee for 6 Hours",
+    lip_brightening_precaution1_desc:
+      "No coffee, strong tea, alcohol for 6 hours before treatment to optimize numbing.",
+
+    lip_brightening_precaution2_title: "Avoid Aspirin",
+    lip_brightening_precaution2_desc:
+      "No aspirin or blood thinners for 7 days prior.",
+
+    lip_brightening_precaution3_title: "Do Not Treat When Sick",
+    lip_brightening_precaution3_desc:
+      "Postpone if you have fever, flu, lip infection, or acute illness.",
+
+    lip_brightening_precaution4_title: "Inform Medical History",
+    lip_brightening_precaution4_desc:
+      "Notify Lumi Beauty of allergies, skin conditions, pregnancy or breastfeeding.",
+
+    lip_brightening_precaution5_title: "Avoid Lip Procedures for 7 Days",
+    lip_brightening_precaution5_desc:
+      "No lip tattooing, bleaching, or lip peeling for at least 7 days prior.",
+
+    lip_brightening_precaution6_title: "Hydrate Well",
+    lip_brightening_precaution6_desc:
+      "Drink 2L water daily for 3 days before treatment.",
+
+    lip_brightening_aftercare_title:
+      "Aftercare Instructions (Neutralizing Pigment)",
+    lip_brightening_aftercare_intro:
+      "Detailed aftercare guide following Neutralizing Pigment treatment",
+
+    // Day 1
+    lip_brightening_aftercare_day1_title: "Most Important Phase",
+    lip_brightening_aftercare_day1_item1:
+      "Do not wash your face with water; gently wipe with wet wipes only",
+    lip_brightening_aftercare_day1_item2:
+      "Apply Lumi Care lip balm every 2–3 hours",
+    lip_brightening_aftercare_day1_item3:
+      "Avoid excessive talking and touching the lips",
+    lip_brightening_aftercare_day1_item4:
+      "Drink water using a straw; avoid spicy or hot foods",
+
+    // Day 3–6
+    lip_brightening_aftercare_day3_title: "Continue Care",
+    lip_brightening_aftercare_day3_item1:
+      "Apply lip balm 3–4 times per day to maintain moisture",
+    lip_brightening_aftercare_day3_item2: "Avoid fluoride toothpaste",
+    lip_brightening_aftercare_day3_item3:
+      "Avoid direct sunlight; protect lips outdoors",
+    lip_brightening_aftercare_day3_item4:
+      "Do not pick or peel — allow natural shedding",
+
+    // Day 7–14
+    lip_brightening_aftercare_day7_title: "Maintain Care",
+    lip_brightening_aftercare_day7_item1: "Apply lip balm 2–3 times per day",
+    lip_brightening_aftercare_day7_item2:
+      "You may use clear lip balm after 7 days",
+    lip_brightening_aftercare_day7_item3:
+      "Avoid lead-based or long-lasting lipsticks for 14 days",
+    lip_brightening_aftercare_day7_item4:
+      "Stay hydrated and eat fruits & vegetables",
+
+    lip_brightening_aftercare_day14_title: "Color Stabilization",
+    lip_brightening_aftercare_day14_item1:
+      "Color begins to reappear and stabilize",
+    lip_brightening_aftercare_day14_item2: "Continue daily lip care",
+    lip_brightening_aftercare_day14_item3: "Use lip sunscreen if needed",
+    lip_brightening_aftercare_day14_item4: "Follow-up check after 30 days",
+
+    lip_brightening_aftercare_note_title: "What to Avoid",
+    lip_brightening_aftercare_avoid1:
+      "Avoid spicy, hot, and sour foods for 7 days",
+    lip_brightening_aftercare_avoid2: "Avoid kissing or sharing utensils",
+    lip_brightening_aftercare_avoid3: "Avoid hot showers or steam for 7 days",
+    lip_brightening_aftercare_avoid4: "Do not rub or peel the lips",
+
+    lip_brightening_faq_title: "Frequently Asked Questions",
+
+    lip_brightening_faq_q1: "Is this lip tattooing?",
+    lip_brightening_faq_a1:
+      "No. This is a pigment-neutralizing technique, not lip tattooing. We only use warm corrective pigments to neutralize cool tones — not add new color.",
+
+    lip_brightening_faq_q2: "How much improvement after one session?",
+    lip_brightening_faq_a2:
+      "30–60% depending on initial pigmentation. Mild dark lips improve 50–60% in one session. Severe cool-tone lips need 2–3 sessions.",
+
+    lip_brightening_faq_q3: "Does it hurt or swell?",
+    lip_brightening_faq_a3:
+      "No. The technique is very shallow and numbing is used, so the session is comfortable.",
+
+    lip_brightening_faq_q4: "Will it peel?",
+    lip_brightening_faq_a4:
+      "No heavy peeling. Only mild dryness for 1–2 days and gradual brightening in 7–14 days.",
+
+    lip_brightening_faq_q5: "When can I get lip blushing?",
+    lip_brightening_faq_a5:
+      "After 7–14 days when the base has brightened and warmed. Baby lip color will heal better, more vibrant, and longer-lasting.",
+
+    lip_brightening_faq_q6: "Do I need to avoid water?",
+    lip_brightening_faq_a6:
+      "Avoid water for the first 24 hours. After that you can wash normally but avoid scrubbing. Avoid hot showers/saunas for 7 days.",
+
+    lip_brightening_faq_q7: "Any food restrictions?",
+    lip_brightening_faq_a7:
+      "Avoid spicy, hot, sour, and salty foods for 7 days. Drink with a straw. Stay hydrated and limit coffee/tea for 5 days.",
+
+    lip_brightening_faq_q8: "Is it suitable for men?",
+    lip_brightening_faq_a8:
+      "Yes. Neutralizing Pigment works for both men and women. Pigments are adjusted to suit each client naturally.",
+
+    lip_brightening_faq_q9: "Can severe cool-tone lips improve?",
+    lip_brightening_faq_a9:
+      "Yes. Severe blue–purple–grey lips need 2–3 sessions for optimal results. After warming, lips brighten 30–60%. Baby lip can then enhance the final color.",
+
+    lip_brightening_faq_q10: "Can I wear makeup afterward?",
+    lip_brightening_faq_a10:
+      "Clear lip balm after 7 days is fine. Avoid lead-based or long-wear lipsticks for 14 days.",
+
+    lip_brightening_expert_title: "Lumi Beauty’s Expert Advice",
+
+    lip_brightening_expert_advice1:
+      "Neutralizing Pigment is essential before lip blushing for cool-tone lips. Skipping this step leads to incorrect healed colors.",
+
+    lip_brightening_expert_advice2:
+      "With shallow technique and professional pigments, lips brighten clearly without pain or swelling. This is not lip tattooing — only pigment warming.",
+
+    lip_brightening_expert_advice3:
+      "Once the base is warm, baby lip blushing will appear vibrant and long-lasting. Each client receives a customized treatment plan.",
+
+    lip_brightening_expert_signature: "— Lumi Beauty",
+
+    lip_brightening_cta_title: "Ready to Reveal Naturally Pink, Brighter Lips?",
+    lip_brightening_cta_desc:
+      "Book your 1-on-1 consultation today for a personalized neutralizing plan.",
     // Why Choose Us
-    why_choose_title: "Why Do Thousands of Customers Trust Lumi Beauty?",
-    feature_personalized_title: "Private 1-on-1 Sessions",
+    why_choose_title: "Why Do So Many Clients Trust Lumi Beauty?",
+
+    feature_personalized_title: "Private 1-on-1 PMU Service",
     feature_personalized_desc:
-      "Every guest receives a dedicated artist who follows the entire process.",
-    feature_expert_title: "Expert, Well-Trained Artists",
-    feature_expert_desc:
-      "Formally trained professionals with years of experience.",
+      "Every client receives exclusive care with the artist following the entire process.",
+
+    feature_expert_title: "Highly Skilled Artists",
+    feature_expert_desc: "Professionally trained with years of experience.",
+
     feature_organic_title: "Safe Organic Pigments",
     feature_organic_desc:
-      "No swelling, no discomfort, and no color shifting over time.",
+      "No swelling, no discomfort, no color shifting over time.",
+
     feature_space_title: "Clean & Private Studio",
     feature_space_desc:
-      "A relaxing, comfortable space from consultation to finish.",
+      "A relaxing, comfortable environment throughout your beauty session.",
+
     feature_feedback_title: "Hundreds of Happy Clients",
-    feature_feedback_desc: "Authentic feedback and proven results.",
+    feature_feedback_desc: "Real feedback – real results.",
 
     // Contact Methods
     contact_intro:
-      "✨ Want a refined, natural look that still feels like you? Let Lumi Beauty guide you through a personalized 1-on-1 permanent makeup experience.",
+      "✨ Want to enhance your natural beauty while keeping your unique features? Let Lumi Beauty accompany you on your personalized 1-on-1 PMU journey.",
+
     contact_methods_title:
-      "Don't hesitate – choose the contact option that fits you best.",
-    contact_call_title: "Call us directly",
-    contact_call_description:
-      "Tap to connect instantly with a Lumi Beauty specialist",
+      "Don't hesitate – choose the contact method that suits you best.",
+
+    contact_call_title: "Call Directly",
+    contact_call_description: "Tap to connect with Lumi Beauty immediately",
     contact_call_button: "CALL NOW",
-    contact_facebook_title: "Chat on Facebook",
-    contact_facebook_description: "Get quick advice via Lumi Beauty Messenger",
+
+    contact_facebook_title: "Facebook Chat",
+    contact_facebook_description:
+      "Get instant consultation via Lumi Beauty’s Messenger",
     contact_facebook_button: "OPEN MESSENGER",
-    contact_zalo_title: "Chat on Zalo",
+
+    contact_zalo_title: "Zalo Chat",
     contact_zalo_description:
-      "Connect on Zalo for support and exclusive offers",
+      "Connect via Zalo for support and exclusive offers",
     contact_zalo_button: "OPEN ZALO",
-    contact_email_title: "Send an email",
+
+    contact_email_title: "Send Email",
     contact_email_description:
-      "Leave a detailed message and we'll reply within 24 hours",
+      "Leave a detailed message — we will respond within 24 hours",
     contact_email_button: "SEND EMAIL",
 
+    contact_free_button: "Free Consultation",
+
     // Zalo Contact Modal
-    zalo_contact_modal_title: "Contact us directly",
+    zalo_contact_modal_title: "Contact Us Directly",
     zalo_contact_modal_desc:
-      "You are interested in {service} service. Please contact us via Zalo for detailed consultation.",
+      "You are interested in {service}. Please contact us via Zalo for detailed consultation.",
     zalo_contact_phone_label: "Zalo Phone Number:",
     zalo_contact_open_button: "OPEN ZALO NOW",
 
     // Contact Form
     contact_form_title:
-      "Don't hesitate - leave your phone number, we will help you choose the most suitable service for your face.",
+      "Leave your phone number — we’ll help you choose the service that best suits your face.",
     phone_placeholder: "Enter your phone number",
     send: "SEND",
-    contact_form_success:
-      "Thank you! We'll get back to you as soon as possible.",
-    contact_form_error: "Something went wrong. Please try again.",
+
+    contact_form_success: "Thank you! We will contact you as soon as possible.",
+    contact_form_error: "An error occurred. Please try again.",
     contact_form_phone_required: "Please enter your phone number.",
 
     // Gallery
-    real_images: "Real Images",
-    lip_tattoo_label: "Lip Tattoo",
-    eyebrow_tattoo_label: "Eyebrow Tattoo",
+    real_images: "Real Results",
+    lip_tattoo_label: "Lip PMU",
+    eyebrow_tattoo_label: "Brow PMU",
 
     // Testimonials
-    customer_reviews: "Customer Reviews",
+    customer_reviews: "Client Reviews",
     scroll_hint: "Swipe to see more",
+
     testimonial1:
-      "Excellent service! My lips look natural and much more beautiful. The staff is very professional and dedicated.",
+      "Amazing service! My lips look so natural and beautiful. The staff was very professional and caring.",
     testimonial2:
-      "Very satisfied with the eyebrow tattoo results. The eyebrow shape was designed to suit my face, with natural colors.",
+      "Very satisfied with my brows. The shape was designed to match my face and the color looks natural.",
     testimonial3:
-      "The process was not painful as expected. After lip tattooing, the color came up evenly and naturally. Will come back next time!",
+      "The process was painless as promised. After lip blushing, the color healed evenly and beautifully. I will definitely return!",
 
     // Blog
-    learn_more_title: "Learn more about beauty - tattooing",
-    blog1_title: "How long does it take for lip tattoo to show natural color?",
-    blog2_title:
-      "What to avoid after eyebrow tattoo for good shape and even color?",
+    learn_more_title: "Learn More About PMU & Beauty",
+    blog1_title: "How Long Until Lip Blushing Heals Beautifully?",
+    blog2_title: "What Should You Avoid After Getting Brows Done?",
     blog3_title:
-      "Distinguish between baby lip tattoo, collagen, and ombre - which one to choose?",
-    read_more: "Read more",
+      "Baby Lip vs. Collagen Lip vs. Ombre — Which One Should You Choose?",
+    read_more: "Read More",
+    view_more_gallery: "VIEW MORE IMAGES",
+    view_more_feedback: "VIEW MORE FEEDBACK",
 
     // Footer
-    footer_tagline: "Natural permanent makeup - Enhance your unique features",
-    footer_address: "151 Tran Duy Hung, Cau Giay, Hanoi",
+    footer_tagline: "Natural PMU – Enhance Your Unique Beauty",
+    footer_address: "151 Tran Duy Hung, Cau Giay, Ha Noi",
+
     services_title: "Services",
-    lip_service: "Lip Tattoo",
-    eyebrow_service: "Eyebrow Tattoo",
-    lip_removal_service: "Lip Dark Spot Removal",
+    lip_service: "Lip PMU",
+    eyebrow_service: "Brow PMU",
+    lip_removal_service: "Lip Brightening",
+
     contact_title: "Contact",
-    about_us_contact: "About us & Contact",
+    about_us_contact: "About Us & Contact",
+
     consultation_title: "Consultation",
-    connect_with_us: "Connect with us",
-    footer_line1: "💋 Natural lip, brow, and eyeliner tattoo specialists",
-    footer_line2: "💋 Dedicated consultation and care",
+    connect_with_us: "Connect With Us",
+
+    footer_line1: "💋 Experts in Natural Brows – Lips – Eyeliner PMU",
+    footer_line2: "💋 Dedicated consultation & aftercare",
     footer_address_detail: "Vo Quy Huan, FPT City Urban Area, Da Nang, Vietnam",
+
     footer_tiktok: "TikTok: @lumibeautyphunxam",
     footer_facebook: "Facebook: facebook.com/lumibeautypmubrowlip",
+
     facebook_iframe_title: "Lumi Beauty Facebook Page",
+
     footer_copyright: "© 2025 Lumi Beauty. All rights reserved.",
 
     // Booking Modal
-    booking_title: "Book an appointment now",
+    booking_title: "Book an Appointment",
     booking_description:
-      "Fill in your details so Lumi Beauty can contact you promptly.",
-    booking_name_label: "Full name",
-    booking_name_placeholder: "Anna Nguyen",
-    booking_phone_label: "Phone number",
+      "Fill in your information and Lumi Beauty will contact you shortly.",
+
+    booking_name_label: "Full Name",
+    booking_name_placeholder: "Nguyen Thi Anh",
+
+    booking_phone_label: "Phone Number",
     booking_phone_placeholder: "0900 067 832",
-    booking_service_label: "Service of interest",
-    booking_service_option_lip: "Lip Tattoo",
-    booking_service_option_eyebrow: "Eyebrow Tattoo",
-    booking_service_option_lip_removal: "Lip Dark Spot Removal",
+
+    booking_service_label: "Interested Service",
+    booking_service_option_lip: "Lip PMU",
+    booking_service_option_eyebrow: "Brow PMU",
+    booking_service_option_lip_removal: "Lip Brightening",
     booking_service_option_other: "Other",
-    booking_time_label: "Preferred time",
-    booking_notes_label: "Additional notes",
+
+    booking_time_label: "Preferred Time",
+    booking_notes_label: "Additional Notes",
     booking_notes_placeholder: "Share your needs or questions",
-    booking_submit: "SEND REQUEST",
-    booking_sending: "Sending your information...",
-    booking_success: "Thank you! Lumi Beauty will contact you shortly.",
+
+    booking_submit: "SUBMIT REQUEST",
+    booking_sending: "Sending...",
+
+    booking_success:
+      "Thank you! Lumi Beauty will contact you as soon as possible.",
     booking_error:
       "Submission failed. Please try again or contact us directly.",
-    contact_free_button: "Contact for free consultation",
-
-    // Service Detail - Lip Tattoo
-    lip_detail_page_title:
-      "Collagen Lip PMU Da Nang - Lumi Beauty | Medical-Grade Technique",
-    lip_detail_meta_description:
-      "Collagen lip PMU at Lumi Beauty Da Nang: medical-grade technique, 1-on-1 with 7+ years experienced specialist, color lasts 18-36 months, fast recovery 1-2 days. Imported organic ink, 4-month warranty.",
-    lip_detail_hero_heading: "Collagen Lip PMU Lumi Beauty",
-    lip_detail_hero_subheading: "Rosy, plump lips in just 48 hours",
-    lip_detail_hero_highlight1:
-      "Visible dark spot reduction and lip tone improvement after one session",
-    lip_detail_hero_highlight2:
-      "Clear, soft lip color, no harsh edges – no darkening or smudging",
-    lip_detail_hero_highlight3:
-      "Gentle experience, virtually painless – quick recovery in 1–2 days",
-    lip_detail_hero_highlight4:
-      "Color lasts 18–36 months, true tone development without fading",
-    lip_problems_title: "Common Lip Issues",
-    lip_problems_intro: "Common lip problems we can solve",
-    lip_problem1_title: "Dark, dull lips",
-    lip_problem1_desc:
-      "Dark lips make the face lack vitality and you always need lipstick to cover imperfections.",
-    lip_problem1_alt: "Dark, dull lips",
-    lip_problem2_title: "Uneven lip color",
-    lip_problem2_desc:
-      "Some areas are dark, some are light, making makeup difficult and lip color lack harmony.",
-    lip_problem2_alt: "Uneven lip color",
-    lip_problem4_title: "Asymmetric lips, uneven lip line",
-    lip_problem4_alt: "Asymmetric lips, uneven lip line",
-    lip_problem4_desc:
-      "Uneven lips on both sides make the smile lack harmony and reduce confidence in communication.",
-    lip_problem5_title: "Lip color fades over time",
-    lip_problem5_desc:
-      "Despite careful care, lip color still fades and loses vitality over time, requiring a long-term solution.",
-    lip_problem5_alt: "Lip color fades over time",
-    why_choose_title: "Why many customers choose lip PMU at Lumi Beauty",
-    why_choose_item1_title:
-      "1-on-1 Lip PMU – Specialist with 7+ years experience",
-    why_choose_item1_desc:
-      "At Lumi Beauty, each customer receives private, 1-on-1 care from a lip PMU specialist with 7 years of experience, ensuring lips develop subtle, harmonious color that suits each face.",
-    why_choose_item2_title: "Collagen Technology",
-    why_choose_item2_desc:
-      "Advanced technique helps lips develop natural color, soft and plump, effectively reducing dark spots.",
-    why_choose_item3_title: "Imported organic ink, absolutely safe",
-    why_choose_item3_desc:
-      "100% lead-free organic ink, non-irritating, suitable for all skin types and sensitive lips.",
-    why_choose_item4_title: "Gentle process, no pain, fast recovery",
-    why_choose_item4_desc:
-      "PMU machine lip tattooing, maximum pain and swelling reduction, recovery in just 1–2 days.",
-    why_choose_item5_title: "Long-lasting color results",
-    why_choose_item5_desc:
-      "Lip color stable for 18–36 months, develops correct tone and maintains natural effect over time.",
-    why_choose_item6_title: "Caring service, post-treatment warranty",
-    why_choose_item6_desc:
-      "Detailed care instructions, free color touch-up support so you always have perfect lips.",
-    why_choose_image_alt: "Collagen Lip PMU at Lumi Beauty",
-    service_commitment_title: "Service Commitment",
-    service_commitment_intro:
-      "Lumi Beauty commits to bringing you the best service with clear guarantees",
-    commitment1_title: "Absolute safety",
-    commitment1_desc:
-      "Medical-grade process, sterile tools, imported organic ink, protecting your lip health.",
-    commitment2_title: "Natural results – long-lasting color",
-    commitment2_desc:
-      "Lip PMU develops true color, soft and smooth, lasts 18–36 months, harmonizes with the face.",
-    commitment3_title: "Caring service, 1-on-1",
-    commitment3_desc:
-      "Each customer receives private consultation and care, detailed post-treatment guidance so lips always look beautiful.",
-    commitment4_title: "Warranty & color touch-up support",
-    commitment4_desc:
-      "Free 1-time color touch-up if needed, ensuring perfect lips as initially promised.",
-    lip_detail_process_title: "Medical-grade process in 90 minutes",
-    lip_detail_process_intro:
-      "Each step follows sterile control, ensuring gentle experience and accurate results.",
-    lip_detail_process_step1_title: "Consultation & personal assessment",
-    lip_detail_process_step1_desc:
-      "Specialist evaluates lip condition, skin tone and client's wishes to select suitable color tone and technique.",
-    lip_detail_process_step2_title: "Cleansing & safe numbing",
-    lip_detail_process_step2_desc:
-      "Clean lips and surrounding area, apply professional numbing to ensure gentle, painless lip PMU process.",
-    lip_detail_process_step3_title: "Color mixing & tool preparation",
-    lip_detail_process_step3_desc:
-      "Organic ink mixed to personal tone, sterile medical-grade tools, ensuring absolute safety.",
-    lip_detail_process_step4_title: "Lip PMU with professional PMU machine",
-    lip_detail_process_step4_desc:
-      "Collagen technique helps lips develop true color, soft and smooth, no edges and naturally plump.",
-    lip_detail_process_step5_title: "Lip care & completion",
-    lip_detail_process_step5_desc:
-      "Apply collagen essence, check results, guide home care for even and long-lasting color.",
-    lip_detail_process_step6_title: "Care & post-treatment support",
-    lip_detail_process_step6_desc:
-      "Detailed lip care instructions, color touch-up support if needed, ensuring long-term results and always soft lips.",
-    process_step1_alt: "Consultation & personal assessment",
-    process_step2_alt: "Cleansing & safe numbing",
-    process_step3_alt: "Color mixing & tool preparation",
-    process_step4_alt: "Lip PMU with professional PMU machine",
-    process_step5_alt: "Lip care & completion",
-    process_step6_alt: "Care & post-treatment support",
-    color_development_title: "Color development process",
-    color_development_intro: "Recovery and color development after lip PMU",
-    timeline_day1_title: "Just after lip PMU",
-    timeline_day1_desc:
-      "Lips slightly tight due to trauma and numbing, mild burning sensation is normal.",
-    timeline_day2_title: "Lips dry and preparing to peel",
-    timeline_day2_desc:
-      "Lips begin to dry, need to use restorative care to support natural peeling process.",
-    timeline_day3_title: "Lips peel lightly, color not even",
-    timeline_day3_desc:
-      "Peeling layer completely, light color, dark edges, light inner lips. During this time, need regular care and careful restrictions.",
-    timeline_day10_title: "Lip color gradually stabilizes",
-    timeline_day10_desc:
-      "Color may be darker or lighter depending on body type and care method. This is a normal stage, no need to worry. Apply care regularly.",
-    timeline_day30_title: "Fresh, smooth lips",
-    timeline_day30_desc:
-      "Lip color begins to even out, lips become smoother. Continue to apply care regularly.",
-    timeline_day50_title: "Color completely stable",
-    timeline_day50_desc:
-      "Lip color is stable, customers can get touch-up if color hasn't reached desired level.",
-    before_after_title: "Before and after images",
-    before_after_intro: "Real results from Lumi Beauty customers",
-    before_after_alt1: "Lip PMU results before and after",
-    before_after_alt2: "Lip PMU results before and after",
-    before_after_alt3: "Lip PMU results before and after",
-    before_after_alt4: "Lip PMU results before and after",
-    before_after_alt5: "Lip PMU results before and after",
-    before_after_alt6: "Lip PMU results before and after",
-    lip_detail_pricing_title:
-      "Pricing & Promotional Packages - Collagen Lip PMU",
-    lip_detail_pricing_intro:
-      "Price from 2,000,000đ – 3,000,000đ, depending on lip type and your specific condition.",
-    lip_detail_pricing_title_main: "Collagen Lip PMU",
-    lip_detail_pricing_subtitle:
-      "Price depends on lip condition and color choice",
-    lip_detail_pricing_item1:
-      "Medical-grade Collagen technique – natural color development, soft and smooth",
-    lip_detail_pricing_item2:
-      "Each client receives 1-on-1 care in private space",
-    lip_detail_pricing_item3: "Free 1-time color touch-up within 04 months",
-    lip_detail_pricing_item5:
-      "100% imported organic ink, lead-free, safe for all lip types",
-    lip_detail_pricing_note:
-      "Price includes one-time sterile tool kit and VAT. Specific price depends on lip condition and color choice. Contact for group offers or current promotions.",
-    lip_detail_faq_title: "Frequently Asked Questions",
-    lip_detail_faq_q1: "Does collagen lip PMU hurt?",
-    lip_detail_faq_a1:
-      "Process uses professional numbing, gentle technique, virtually painless and minimal swelling.",
-    lip_detail_faq_q2: "How long will lip color last?",
-    lip_detail_faq_a2:
-      "Color develops true and lasts 18–36 months depending on body type, you'll have naturally rosy lips long-term.",
-    lip_detail_faq_q3: "How long until lips fully recover?",
-    lip_detail_faq_a3:
-      "Usually 1–2 days initially lips slightly swollen, after 5–7 days color stabilizes, lips soft and natural.",
-    lip_detail_faq_q4: "Do I need rest after treatment?",
-    lip_detail_faq_a4:
-      "No rest needed, you can live normally. Just follow lip care instructions for best color development.",
-    lip_detail_faq_q5: "Can I choose my own color tone?",
-    lip_detail_faq_a5:
-      "Absolutely, specialist will consult tone suitable for skin tone and wishes, ensuring natural color development.",
-    lip_detail_faq_q6: "What if lip color fades or needs adjustment?",
-    lip_detail_faq_a6:
-      "You get free 1-time color touch-up within 04 months, ensuring lips always look beautiful and even.",
-    lip_detail_cta_title: "Ready to own fresh, youthful lips?",
-    lip_detail_cta_desc:
-      "Book today to have Lumi Beauty specialist measure your tone and create a personalized care plan for you.",
-
-    // Service Detail - Brow Tattoo
-    brow_detail_page_title:
-      "Eyebrow Shading PMU Lumi Beauty - Soft powder-like brows, naturally beautiful",
-    brow_detail_meta_description:
-      "Eyebrow shading PMU at Lumi Beauty: soft powder-like brows, naturally beautiful for 18-36 months. Shading technique creates soft front - smooth middle - sharp tail.",
-    brow_detail_badge: "Eyebrow shaping",
-    brow_detail_hero_heading: "Eyebrow Shading PMU Lumi Beauty",
-    brow_detail_hero_subheading:
-      "Eyebrow Shading – Soft powder-like brows, naturally beautiful for 18–36 months",
-    brow_detail_hero_paragraph1:
-      "Shading technique creates soft front – smooth middle – sharp tail, giving a light makeup effect while maintaining natural look.",
-    brow_detail_hero_paragraph2:
-      "Shading suits 98% of faces – comfortable, minimal pain, even color. Pure European organic ink, safe for women 6 months after childbirth. Shape and color warranty for 04 months.",
-    brow_detail_hero_stat_label:
-      "Clients don't need to draw brows for 18 months",
-    brow_before_after_title: "Before and after results",
-    brow_before_after_intro:
-      "See amazing results from customers after eyebrow shading PMU at Lumi Beauty",
-    brow_before_after_image1_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image2_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image3_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image4_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image5_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image6_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image7_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image8_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image9_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image10_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image11_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_image12_alt: "Eyebrow PMU results at Lumi Beauty",
-    brow_before_after_cta_text:
-      "Want to know which brow shape suits your face?",
-    brow_before_after_cta_button: "Send photos for free expert consultation",
-    brow_who_suitable_title: "Who is Eyebrow Shading Suitable For?",
-    brow_who_suitable_intro: "This service is for you if:",
-    brow_who_suitable_image1_alt: "Eyebrows too short",
-    brow_who_suitable_item1: "Eyebrows too short",
-    brow_who_suitable_image2_alt: "Light eyebrows",
-    brow_who_suitable_item2: "Light eyebrows",
-    brow_who_suitable_image3_alt: "Short, sparse and thin eyebrows",
-    brow_who_suitable_item3: "Short, sparse and thin eyebrows",
-    brow_who_suitable_image4_alt: "Unbalanced, asymmetrical eyebrows",
-    brow_who_suitable_item4: "Unbalanced, asymmetrical eyebrows",
-    brow_who_suitable_note:
-      "👉 Shading suits 98% of faces – comfortable, minimal pain, even color.",
-    brow_standards_title: "Standards for beautiful Shading eyebrows",
-    brow_standards_intro: "Specifically for shading",
-    brow_standard1_image_alt: "Moderate proportion – soft front, sharp tail",
-    brow_standard1_title: "Moderate proportion – soft front, sharp tail",
-    brow_standard1_desc:
-      "Shading is not as bold as traditional tattoo, not showing strokes like hair-stroke. Creates natural softness at front, gradually smooths toward tail.",
-    brow_standard2_image_alt: "Clear color – not dark and hard",
-    brow_standard2_title: "Clear color – not dark and hard",
-    brow_standard2_desc:
-      "Beautiful shading has smooth, harmonious color, looks like daily eyebrow powder application.",
-    brow_standard3_image_alt: "Brow shape suitable for face",
-    brow_standard3_title: "Brow shape suitable for face",
-    brow_standard3_desc:
-      "Shading enhances horizontal, slightly curved, or classic arch brows depending on face shape.",
-    brow_shapes_title: "Which face shapes suit Shading?",
-    brow_shapes_intro:
-      "Each face has its own suitable shading brow shape. Let Lumi Beauty experts consult for you.",
-    brow_shape1_image_alt: "Round face - Shading with light angle",
-    brow_shape1_title: "Round face – Shading with light angle",
-    brow_shape1_desc: "Helps face appear slimmer.",
-    brow_shape2_image_alt: "Long face - Natural horizontal Shading",
-    brow_shape2_title: "Long face – Natural horizontal Shading",
-    brow_shape2_desc: "Creates balance for face length.",
-    brow_shape3_image_alt: "Square face - Soft curved Shading",
-    brow_shape3_title: "Square face – Soft curved Shading",
-    brow_shape3_desc: "Reduces angularity, 'feminizes' the lines.",
-    brow_shape4_image_alt: "Oval face - Natural Shading",
-    brow_shape4_title: "Oval face – Natural Shading",
-    brow_shape4_desc: "Maintains natural softness for the face.",
-    brow_detail_process_title: "Eyebrow Shading PMU Process",
-    brow_detail_process_intro: "75 minutes – international standard",
-    brow_detail_process_step1_title: "Consultation and assessment",
-    brow_detail_process_step1_desc:
-      "Technician checks skin condition, listens to wishes and consults suitable brow shape – ink color.",
-    brow_detail_process_step2_title: "Cleansing and disinfection",
-    brow_detail_process_step2_desc:
-      "Brow area is cleansed, cleaned and thoroughly disinfected to prevent infection.",
-    brow_detail_process_step3_title: "Numbing and ink preparation",
-    brow_detail_process_step3_desc:
-      "Technician applies numbing for your comfort throughout the process. While waiting for numbing to take effect, suitable ink will be mixed.",
-    brow_detail_process_step4_title: "Measuring and drawing brow shape",
-    brow_detail_process_step4_desc:
-      "Proceed to measure proportions and sketch brow shape to harmonize with face.",
-    brow_detail_process_step5_title: "Performing eyebrow Shading PMU",
-    brow_detail_process_step5_desc:
-      "Using professional PMU equipment with ultra-fine needles to insert ink into skin and create natural powder-like effect.",
-    brow_commitment_title: "Service commitment",
-    brow_commitment_intro: "Lumi Beauty's commitments to customers",
-    brow_commitment1_title: "True color development in 10–14 days",
-    brow_commitment2_title: "No blue/red discoloration",
-    brow_commitment3_title: "Color lasts 18–36 months",
-    brow_commitment4_title: "European organic ink",
-    brow_commitment5_title: "100% single-use supplies",
-    brow_commitment6_title: "04 months warranty – free touch-up",
-    why_lumi_brow_title: "Why choose Shading at Lumi Beauty",
-    why_lumi_brow_intro: "Concise but powerful",
-    why_lumi_brow0_title:
-      "1-on-1 Eyebrow PMU – Specialist with 7+ years experience",
-    why_lumi_brow0_desc:
-      "At Lumi Beauty, each customer receives private, 1-on-1 care from an eyebrow PMU specialist with 7 years of experience, ensuring subtle, harmonious brows that suit each face.",
-    why_lumi_brow1_title: "Shading color mixed 30% lighter",
-    why_lumi_brow1_desc: "Ensures natural look after peeling",
-    why_lumi_brow2_title: "Fine needle technique",
-    why_lumi_brow2_desc: "No pain, no swelling, fast recovery",
-    why_lumi_brow3_title: "Personalized brow design",
-    why_lumi_brow3_desc: "Not following templates",
-    why_lumi_brow4_title: "Safe for women 6 months after childbirth",
-    brow_detail_pricing_title: "Pricing – Eyebrow Shading PMU",
-    brow_detail_pricing_intro:
-      "Price depends on existing condition and desired shape",
-    brow_detail_pricing_single_title: "Eyebrow Shading PMU",
-    brow_detail_pricing_single_subtitle:
-      "Price determined after consultation and brow condition assessment",
-    brow_detail_pricing_single_item1: "Personalized brow form design",
-    brow_detail_pricing_single_item2: "Soft – smooth shading technique",
-    brow_detail_pricing_single_item3: "7-day care serum",
-    brow_detail_pricing_single_item4: "04 months warranty",
-    brow_detail_pricing_single_item5: "Free touch-up",
-    brow_detail_pricing_note:
-      "Price includes single-use supplies and VAT. Groups of 2+ get additional 10% discount.",
-    brow_reviews_title: "Customer reviews",
-    brow_review1_name: "Lan Anh",
-    brow_review1_age: "28 years old",
-    brow_review1_text:
-      '"Old brows turned blue. After shading at Lumi, color is smooth and beautiful, everyone asks where I got it done."',
-    brow_review2_name: "Kim Ngan",
-    brow_review2_age: "31 years old",
-    brow_review2_text:
-      '"Don\'t like hair-stroke style so chose shading. Smooth, soft, exactly what I like."',
-    brow_detail_faq_title: "Frequently Asked Questions",
-    brow_detail_faq_intro: "Concise – focused on Shading",
-    brow_detail_faq_q1: "Will it be too dark after treatment?",
-    brow_detail_faq_a1:
-      "No. Color is mixed 30% lighter so after peeling it develops correct tone.",
-    brow_detail_faq_q2: "How long until color looks beautiful?",
-    brow_detail_faq_a2: "From day 10–14 it looks naturally beautiful.",
-    brow_detail_faq_q3: "Does it hurt?",
-    brow_detail_faq_a3:
-      "Not much pain. Shading causes minimal trauma, suitable even for those afraid of pain.",
-    brow_detail_cta_title: "Want soft – smooth – natural brows like powder?",
-    brow_detail_cta_desc:
-      "Book now for free brow shape measurement at Lumi Beauty.",
 
     copyright: "© 2023 Lumi Beauty. All rights reserved.",
   },
@@ -2529,6 +2883,8 @@ const translations = {
     blog3_title:
       "베이비 입술 타투, 콜라겐, 옴브레를 구분하는 방법 - 어떤 것을 선택해야 할까요?",
     read_more: "더 보기",
+    view_more_gallery: "더 많은 이미지 보기",
+    view_more_feedback: "더 많은 피드백 보기",
 
     // Footer
     footer_tagline: "자연스러운 반영구 메이크업 - 당신만의 매력을 강조하세요",
