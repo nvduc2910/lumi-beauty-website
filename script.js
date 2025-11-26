@@ -972,6 +972,8 @@ const translations = {
     // Navigation
     beauty_services: "Dịch vụ phun xăm",
     beauty_guide: "Kiến thức",
+    gallery: "Thư viện ảnh",
+    feedback: "Feedback",
     contact: "Liên hệ",
     offers: "Feedback",
     book_now: "ĐẶT LỊCH NGAY",
@@ -981,7 +983,7 @@ const translations = {
     natural_beauty: "Đẹp TỰ NHIÊN",
     enhance_features: "Tôn nét riêng của bạn",
     hero_description:
-      "Lumi Beauty mang đến trải nghiệm phun xăm 1-1 chuyên biệt cho từng gương mặt, giúp bạn sở hữu đôi môi hồng hào, cặp mày thanh thoát và ánh nhìn tự nhiên. Mỗi khách hàng được chăm sóc riêng biệt bởi chuyên viên phun xăm có kinh nghiệm, đảm bảo kết quả tinh tế và hài hòa nhất.",
+      "Lumi Beauty mang đến trải nghiệm <strong>phun xăm 1-1 chuyên biệt</strong> cho từng gương mặt, giúp bạn sở hữu đôi môi hồng hào, cặp mày thanh thoát và ánh nhìn tự nhiên. Mỗi khách hàng được chăm sóc riêng biệt bởi chuyên viên phun xăm có kinh nghiệm, đảm bảo kết quả tinh tế và hài hòa nhất.",
     contact_now: "LIÊN HỆ NGAY",
 
     // Feature Tags
@@ -1791,6 +1793,7 @@ const translations = {
     eyebrow_service: "Phun xăm mày",
     lip_removal_service: "Khử thâm môi",
     contact_title: "Liên hệ",
+    about_us_contact: "About us & Contact",
     consultation_title: "Tư vấn",
     connect_with_us: "Kết nối với chúng tôi",
     footer_line1: "💋 Chuyên phun xăm thẩm mỹ Mày - Môi - Mí tự nhiên",
@@ -1851,6 +1854,8 @@ const translations = {
     // Navigation
     beauty_services: "PMU Services",
     beauty_guide: "PMU Guide",
+    gallery: "Gallery",
+    feedback: "Feedback",
     contact: "Contact",
     offers: "Customer Reviews",
     book_now: "BOOK NOW",
@@ -1860,7 +1865,7 @@ const translations = {
     natural_beauty: "NATURAL BEAUTY",
     enhance_features: "Enhance your unique features",
     hero_description:
-      "Lumi Beauty specializes in lip and eyebrow tattooing with modern technology, ensuring natural and long-lasting results. We are committed to bringing you perfect beauty with medical standard procedures.",
+      "Lumi Beauty brings a <strong>specialized 1-on-1 tattooing experience</strong> for each face, helping you achieve rosy lips, elegant brows, and a natural look. Each customer receives personalized care from experienced tattoo specialists, ensuring the most refined and harmonious results.",
     contact_now: "CONTACT NOW",
 
     // Feature Tags
@@ -2008,6 +2013,7 @@ const translations = {
     eyebrow_service: "Eyebrow Tattoo",
     lip_removal_service: "Lip Dark Spot Removal",
     contact_title: "Contact",
+    about_us_contact: "About us & Contact",
     consultation_title: "Consultation",
     connect_with_us: "Connect with us",
     footer_line1: "💋 Natural lip, brow, and eyeliner tattoo specialists",
@@ -2378,6 +2384,8 @@ const translations = {
     // Navigation
     beauty_services: "타투 서비스",
     beauty_guide: "타투 가이드",
+    gallery: "갤러리",
+    feedback: "피드백",
     contact: "연락처",
     offers: "고객 리뷰",
     book_now: "예약하기",
@@ -2387,7 +2395,7 @@ const translations = {
     natural_beauty: "자연스러운 아름다움",
     enhance_features: "당신만의 매력을 강조하세요",
     hero_description:
-      "루미 뷰티는 현대 기술을 사용한 입술과 눈썹 타투 전문으로, 자연스럽고 오래 지속되는 결과를 보장합니다. 의료 표준 절차로 완벽한 아름다움을 선사하겠습니다.",
+      "루미 뷰티는 각 얼굴에 맞춘 <strong>1:1 전문 타투 경험</strong>을 제공하여 생기 있는 입술, 세련된 눈썹, 자연스러운 눈매를 선사합니다. 각 고객은 경험이 풍부한 타투 전문가의 개인 맞춤 케어를 받아 가장 섬세하고 조화로운 결과를 보장받습니다.",
     contact_now: "지금 연락하기",
 
     // Feature Tags
@@ -2530,6 +2538,7 @@ const translations = {
     eyebrow_service: "눈썹 타투",
     lip_removal_service: "입술 어두운 반점 제거",
     contact_title: "연락처",
+    about_us_contact: "About us & Contact",
     consultation_title: "상담",
     connect_with_us: "우리와 연결하세요",
     footer_line1: "💋 자연스러운 입술·눈썹·아이라인 타투 전문",
