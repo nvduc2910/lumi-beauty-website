@@ -3,35 +3,40 @@
     <div class="container">
         <div class="header-content">
             <div class="logo">
-                <a href="{BASE_PATH}index.html">
-                    <img src="{BASE_PATH}icons/logo.svg" alt="Lumi Beauty" class="logo-img">
+                <a aria-label="Lumi Beauty Homepage" href="index.html">
+                    <img alt="Lumi Beauty" class="logo-img" src="../icons/logo.svg" data-icon-path="logo.svg" />
                 </a>
             </div>
             <nav class="nav">
                 <ul class="nav-list">
                     <li class="nav-item-dropdown">
-                        <a href="{BASE_PATH}index.html#services" class="nav-link-with-dropdown" data-translate="beauty_services">
-                            <span>Dịch vụ phun xăm</span>
-                            <img src="{BASE_PATH}icons/arrow-down.svg" alt="Dropdown" class="nav-dropdown-arrow">
+                        <a class="nav-link-with-dropdown" href="#services">
+                            <span>PMU Services</span>
+                            <img alt="Dropdown" class="nav-dropdown-arrow" src="../icons/arrow-down.svg"
+                                data-icon-path="arrow-down.svg" />
                         </a>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="{BASE_PATH}services/phun-moi-collagen.html">Phun môi collagen</a></li>
-                            <li><a href="{BASE_PATH}services/phun-may-shading.html">Phun mày shading</a></li>
-                            <li><a href="{BASE_PATH}services/eyeliner-tattoo.html" data-open-zalo-modal>Phun mí mở tròng</a></li>
-                            <li><a href="{BASE_PATH}services/khu-tham-moi-nam-nu.html">Khử thâm môi cho nam nữ</a></li>
+                            <li><a href="services/phun-moi-collagen.html">Collagen Lip Blushing</a></li>
+                            <li><a href="services/phun-may-shading.html">Shading Ombre Brows</a></li>
+                            <li><a data-open-zalo-modal="" href="services/eyeliner-tattoo.html">Lashline Enhancement</a>
+                            </li>
+                            <li><a href="services/khu-tham-moi-nam-nu.html">Lip Neutralizing for Men &amp; Women</a>
+                            </li>
                         </ul>
                     </li>
-                    <li><a href="{BASE_PATH}index.html#blog" data-translate="beauty_guide">Cẩm nang phun xăm</a></li>
-                    <li><a href="{BASE_PATH}index.html#testimonials" data-translate="offers">Cảm nhận khách hàng</a></li>
-                    <li><a href="{BASE_PATH}index.html#footer" data-translate="contact" title="Liên hệ Lumi Beauty">Liên hệ</a></li>
+                    <li><a href="blogs.html">Beauty Knowledge</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="feedback.html">Client Feedback</a></li>
+                    <li><a href="contact.html" title="Contact Lumi Beauty">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                <button class="btn btn-primary" data-translate="book_now" data-action="open-booking">ĐẶT LỊCH NGAY</button>
+                <button class="btn btn-primary" data-action="open-booking">BOOK NOW</button>
                 <div class="language-dropdown">
                     <button class="lang-dropdown-btn" id="langDropdownBtn">
                         <span class="lang-code">VN</span>
-                        <img src="{BASE_PATH}icons/arrow-down.svg" alt="Dropdown" class="dropdown-arrow">
+                        <img alt="Dropdown" class="dropdown-arrow" src="../icons/arrow-down.svg"
+                            data-icon-path="arrow-down.svg" />
                     </button>
                     <div class="lang-dropdown-menu" id="langDropdownMenu">
                         <button class="lang-option active" data-lang="vi">
@@ -54,4 +59,3 @@
         </div>
     </div>
 </header>
-
