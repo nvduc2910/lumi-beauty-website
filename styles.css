@@ -2614,7 +2614,7 @@ body.service-detail--lip-removal {
 }
 
 .service-detail-hero {
-    padding: 20px 0;
+    padding-top: 120px;
     background: linear-gradient(135deg, var(--service-accent-soft) 0%, #ffffff 55%, #ffffff 100%);
 }
 
@@ -2674,7 +2674,7 @@ body.service-detail--lip-removal {
 }
 
 .service-hero-image {
-    margin-top: 80px;
+
     border-radius: 36px;
     overflow: hidden;
     box-shadow: 0 30px 60px rgba(17, 24, 39, 0.12);
@@ -3078,7 +3078,7 @@ body.service-detail--lip-removal {
 .service-hero-highlights {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
+    margin: 0px 0;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -3119,7 +3119,7 @@ body.service-detail--lip-removal {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .problem-card {
@@ -3671,7 +3671,7 @@ body.service-detail--lip-removal {
 
 @media (max-width: 768px) {
     .service-detail-hero {
-        padding: 20px 0;
+        padding-top: 60px;
     }
 
     .service-highlights,

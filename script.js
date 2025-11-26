@@ -1338,7 +1338,7 @@ const translations = {
     brow_commitment3_title: "Giữ màu 18–36 tháng",
     brow_commitment4_title: "Mực hữu cơ châu Âu",
     brow_commitment5_title: "100% vật tư dùng 1 lần",
-    brow_commitment6_title: "Bảo hành 18 tháng – miễn phí dặm",
+    brow_commitment6_title: "Bảo hành 04 tháng – miễn phí dặm",
     why_lumi_brow_title: "Lý do nên chọn Phun Mày Shading tại Lumi Beauty",
     why_lumi_brow_intro: "Rút gọn nhưng mạnh",
     why_lumi_brow0_title: "Phun mày 1-1 – Chuyên viên 7+ năm kinh nghiệm",
