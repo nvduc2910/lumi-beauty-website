@@ -2606,11 +2606,11 @@ body.service-detail--brow {
 }
 
 body.service-detail--lip-removal {
-    --service-accent: #f5c38a;
-    --service-accent-soft: #fff4e5;
-    --service-accent-dark: #d38c3c;
-    --service-accent-text: #c27322;
-    --service-card-border: rgba(211, 140, 60, 0.12);
+    --service-accent: #8FBFC1;
+    --service-accent-soft: #e8f4f5;
+    --service-accent-dark: #6fa3a6;
+    --service-accent-text: #5a8a8d;
+    --service-card-border: rgba(143, 191, 193, 0.15);
 }
 
 .service-detail-hero {
@@ -2657,7 +2657,7 @@ body.service-detail--lip-removal {
 .service-hero-subtitle {
     font-size: clamp(18px, 2.8vw, 22px);
     line-height: 1.5;
-    color: var(--service-accent-text);
+    color: #176968;
     font-weight: 600;
 }
 

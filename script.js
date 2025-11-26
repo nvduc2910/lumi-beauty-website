@@ -42,7 +42,10 @@ function initZaloContactModal() {
       return "eyebrow-tattoo";
     } else if (url.includes("eyeliner-tattoo")) {
       return "eyeliner-tattoo";
-    } else if (url.includes("lip-brightening")) {
+    } else if (
+      url.includes("khu-tham-moi-nam-nu") ||
+      url.includes("lip-brightening")
+    ) {
       return "lip-brightening";
     }
 
@@ -1220,7 +1223,7 @@ const translations = {
       "Hỗ trợ dặm màu 1 lần miễn phí nếu cần, đảm bảo đôi môi hoàn hảo như cam kết ban đầu.",
     lip_detail_cta_title: "Sẵn sàng sở hữu sắc môi tươi trẻ?",
     lip_detail_cta_desc:
-      "Đặt lịch ngay hôm nay để được chuyên gia Lumi Beauty đo tông màu và lên phác đồ chăm sóc riêng cho bạn.",
+      "Đặt lịch ngay hôm nay để được Lumi Beauty đo tông màu và lên phác đồ chăm sóc riêng cho bạn.",
     color_development_title: "Quy trình lên màu",
     color_development_intro: "Quá trình phục hồi và lên màu sau khi phun môi",
     timeline_day1_title: "Môi vừa phun xong",
@@ -1272,7 +1275,7 @@ const translations = {
     brow_before_after_image11_alt: "Kết quả phun mày tại Lumi Beauty",
     brow_before_after_image12_alt: "Kết quả phun mày tại Lumi Beauty",
     brow_before_after_cta_text: "Muốn biết gương mặt bạn hợp dáng nào?",
-    brow_before_after_cta_button: "Gửi ảnh để Chuyên Gia tư vấn miễn phí",
+    brow_before_after_cta_button: "Cần tư vấn miễn phí",
     brow_who_suitable_title: "Phun Mày Shading Phù Hợp Với Ai?",
     brow_who_suitable_intro: "Dịch vụ này dành cho bạn nếu:",
     brow_who_suitable_image1_alt: "Lông mày quá ngắn",
@@ -1301,7 +1304,7 @@ const translations = {
       "Shading tôn kiểu mày ngang, cong nhẹ, hoặc classic arch tùy gương mặt.",
     brow_shapes_title: "Gương mặt nào phù hợp với Shading?",
     brow_shapes_intro:
-      "Mỗi khuôn mặt có dáng mày shading phù hợp riêng. Hãy để chuyên gia Lumi Beauty tư vấn cho bạn.",
+      "Mỗi khuôn mặt có dáng mày shading phù hợp riêng. Hãy để Lumi Beauty tư vấn cho bạn.",
     brow_shape1_image_alt: "Mặt tròn - Shading có góc nhẹ",
     brow_shape1_title: "Mặt tròn – Shading có góc nhẹ",
     brow_shape1_desc: "Giúp gương mặt thon gọn hơn.",
@@ -1386,15 +1389,16 @@ const translations = {
     brow_detail_cta_title: "Muốn có đôi mày mềm – mịn – tự nhiên như tán bột?",
     brow_detail_cta_desc: "Đặt lịch ngay để Lumi Beauty đo dáng mày miễn phí.",
 
-    // Service Detail - Lip Brightening
+    // Service Detail - Lip Brightening (Neutralizing Pigment)
     lip_removal_detail_page_title:
       "Khử Thâm Môi Chuyên Sâu Lumi Beauty - Trả lại sắc môi tươi sáng",
     lip_removal_detail_meta_description:
-      "Liệu trình khử thâm môi Lumi Beauty kết hợp laser lạnh và serum vitamin, cải thiện thâm bẩm sinh 70%, an toàn cho da nhạy cảm, bảo hành màu 12 tháng.",
-    lip_removal_detail_badge: "Xử lý thâm môi",
-    lip_removal_detail_hero_heading: "Khử Thâm Môi Chuyên Sâu Lumi Beauty",
+      "Khử thâm môi bằng kỹ thuật Neutralizing Pigment tại Lumi Beauty, làm ấm nền thâm xanh-tím-xám, giảm 30-60% sau 1 buổi, không đau không sưng, bảo hành 6-12 tháng.",
+    lip_removal_detail_badge: "Neutralizing Pigment",
+    lip_removal_detail_hero_heading:
+      "Khử Thâm Môi Neutralizing – Sáng Màu Chỉ Sau 1 Buổi",
     lip_removal_detail_hero_subheading:
-      "Trả lại sắc môi tươi sáng, mềm mịn sau 14 ngày",
+      "Kỹ thuật trung hòa sắc tố thâm bằng pigment cam/đào/coral, không phun màu – không đau – không sưng. Giúp môi sáng hơn 50–80% và đều màu tự nhiên chỉ sau 7–14 ngày.",
     lip_removal_detail_hero_paragraph1:
       "Liệu trình kết hợp laser lạnh thế hệ mới và serum vitamin C + B5 đậm đặc, phá hủy sắc tố thâm mà không gây bong tróc hay bỏng rát. Phù hợp với môi thâm do bẩm sinh, thâm do dùng son chì hoặc do nội tiết.",
     lip_removal_detail_hero_paragraph2:
@@ -1410,7 +1414,7 @@ const translations = {
       "Phục hồi biểu bì nhanh, cấp ẩm sâu và khóa ẩm giúp môi mềm mượt ngay sau liệu trình.",
     lip_removal_detail_highlight3_title: "Phác đồ riêng từng mức độ",
     lip_removal_detail_highlight3_desc:
-      "Tùy tình trạng bẩm sinh hay do thói quen, chuyên gia điều chỉnh năng lượng và số buổi phù hợp.",
+      "Tùy tình trạng bẩm sinh hay do thói quen, Lumi Beauty điều chỉnh năng lượng và số buổi phù hợp.",
     lip_removal_detail_highlight4_title: "Kết hợp phun baby lip hoàn thiện",
     lip_removal_detail_highlight4_desc:
       "Sau khi khử thâm, môi được phủ màu baby lip giúp duy trì sắc hồng tươi ít nhất 18 tháng.",
@@ -1481,9 +1485,226 @@ const translations = {
     lip_removal_detail_faq_q3: "Khử thâm có làm môi bị khô không?",
     lip_removal_detail_faq_a3:
       "Sau liệu trình, môi được cấp ẩm sâu bằng serum và mặt nạ peptide nên không khô. Bạn chỉ cần dưỡng đều theo hướng dẫn.",
-    lip_removal_detail_cta_title: "Đánh thức sắc môi hồng tự nhiên",
+    lip_removal_detail_cta_title: "Sẵn sàng đánh thức sắc môi hồng tự nhiên?",
     lip_removal_detail_cta_desc:
-      "Đăng ký lịch ngay để được chuyên gia Lumi Beauty thăm khám và xây dựng phác đồ khử thâm dành riêng cho bạn.",
+      "Đặt lịch ngay hôm nay để được Lumi Beauty thăm khám và xây dựng phác đồ khử thâm dành riêng cho bạn.",
+
+    // Lip Brightening - Neutralizing Pigment specific translations
+    lip_brightening_intro_title: "Dịch vụ khử thâm môi là gì?",
+    lip_brightening_intro_what:
+      "Khử thâm môi bằng kỹ thuật Neutralizing Pigment là phương pháp sử dụng sắc tố trung hòa (cam/đào/coral) đưa rất nông vào bề mặt môi để làm ấm nền thâm, giảm sắc tố lạnh như xanh – tím – xám. Kỹ thuật này không phải phun môi, không tạo màu mới và không thay đổi cấu trúc môi. Sau khi trung hòa, môi sẽ sáng hơn 50–80%, đều màu hơn và tự nhiên hồng hào hơn.",
+    lip_brightening_intro_who_title: "Phù hợp với ai? (Chuẩn Neutralizing)",
+    lip_brightening_intro_who1: "Môi thâm xanh / tím / xám (thâm lạnh)",
+    lip_brightening_intro_who2: "Môi thâm bẩm sinh",
+    lip_brightening_intro_who3: "Môi thâm do son lâu năm",
+    lip_brightening_intro_who4: "Môi thâm do nội tiết",
+    lip_brightening_intro_who5:
+      "Môi khó lên màu khi phun môi, cần làm ấm nền trước",
+    lip_brightening_intro_benefits_title: "Lợi ích chính của dịch vụ",
+    lip_brightening_benefit1_title: "Làm ấm nền thâm",
+    lip_brightening_benefit1_desc:
+      "Trung hòa sắc tố lạnh giúp môi sáng, mềm và tự nhiên hơn.",
+    lip_brightening_benefit2_title: "Giảm thâm 30–60% sau buổi đầu",
+    lip_brightening_benefit2_desc:
+      "Mức độ cải thiện tùy theo nền thâm ban đầu.",
+    lip_brightening_benefit3_title: "Không đau – không sưng",
+    lip_brightening_benefit3_desc: "Đi nông, không tác động sâu như phun môi.",
+    lip_brightening_benefit4_title: "Màu sáng dần trong 7–14 ngày",
+    lip_brightening_benefit4_desc: "Môi không bị bong mảng lớn, hồi nhanh.",
+    lip_brightening_benefit5_title: "Tạo nền đẹp để phun baby lip sau đó",
+    lip_brightening_benefit5_desc:
+      "Khi nền đã được làm ấm, màu phun lên chuẩn và bền.",
+    lip_brightening_commitment_title: "Cam kết tại Lumi Beauty",
+    lip_brightening_commitment1:
+      "Không phun màu, không tạo viền môi – chỉ trung hòa sắc tố thâm",
+    lip_brightening_commitment2: "Kỹ thuật an toàn, phù hợp cả môi nhạy cảm",
+    lip_brightening_commitment3: "Phác đồ tùy theo mức độ thâm lạnh",
+    lip_brightening_commitment4: "Theo dõi sát sao 7–14 ngày",
+    lip_brightening_commitment5: "Bảo hành kết quả trong 6–12 tháng",
+    lip_brightening_results_title: "Kết quả sau thực hiện",
+    lip_brightening_results_intro:
+      "Sau buổi trung hòa sắc tố, môi sẽ sáng hơn 50–80%, giảm rõ nền thâm xanh – tím – xám. Môi lên sắc hồng nhẹ, đều màu và mềm mịn hơn. Với nền thâm nặng, cần 2–3 buổi để đạt hiệu quả tối ưu. Sau khi nền đã sáng, bạn có thể phun baby lip để lên màu tươi và bền hơn.",
+    lip_brightening_process_title: "Quy trình thực hiện khử thâm môi",
+    lip_brightening_process_intro:
+      "Thời gian 40-60 phút/buổi, áp dụng chuẩn vô trùng quốc tế, đảm bảo an toàn tuyệt đối.",
+    lip_brightening_process_step1_title: "Phân tích sắc tố môi",
+    lip_brightening_process_step1_desc:
+      "Đánh giá mức thâm lạnh, base màu, nền da.",
+    lip_brightening_process_step2_title: "Xác định pigment trung hòa",
+    lip_brightening_process_step2_desc:
+      "Cam – đào – coral tùy vào tone thâm: xanh, tím, xám.",
+    lip_brightening_process_step3_title: "Ủ tê y khoa",
+    lip_brightening_process_step3_desc: "Giúp khách thoải mái, không đau.",
+    lip_brightening_process_step4_title: "Thực hiện Neutralizing Pigment",
+    lip_brightening_process_step4_desc:
+      "Đi kim cực nông, đều, trải pigment trung hòa giúp làm ấm nền mà KHÔNG tạo màu.",
+    lip_brightening_process_step5_title: "Kiểm tra & hướng dẫn chăm sóc",
+    lip_brightening_process_step5_desc:
+      "Môi hơi khô nhẹ 1–2 ngày đầu, sáng dần trong 7–14 ngày.",
+    lip_brightening_advantages_title: "Ưu điểm nổi bật của kỹ thuật",
+    lip_brightening_advantages_intro:
+      "Những điểm mạnh làm nên chất lượng dịch vụ khử thâm môi tại Lumi Beauty",
+    lip_brightening_advantage1_title: "Hiệu quả nhanh 50–80% sau 1 buổi",
+    lip_brightening_advantage1_desc:
+      "Mức độ cải thiện tùy theo nền thâm ban đầu, có thể thấy rõ sự khác biệt ngay sau buổi đầu.",
+    lip_brightening_advantage2_title: "Không bong nhiều",
+    lip_brightening_advantage2_desc:
+      "Môi không bị bong mảng lớn, chỉ khô nhẹ 1–2 ngày đầu, hồi phục nhanh chóng.",
+    lip_brightening_advantage3_title: "Không làm mỏng môi",
+    lip_brightening_advantage3_desc:
+      "Kỹ thuật đi nông, không ảnh hưởng đến cấu trúc tự nhiên của môi.",
+    lip_brightening_advantage4_title: "Không để lại viền",
+    lip_brightening_advantage4_desc:
+      "Chỉ trung hòa sắc tố thâm, không phun màu nên không tạo viền môi.",
+    lip_brightening_advantage5_title: "Không bị loang màu",
+    lip_brightening_advantage5_desc:
+      "Kỹ thuật trung hòa chuyên nghiệp đảm bảo màu đều, không loang.",
+    lip_brightening_advantage6_title: "Làm nền cực đẹp để phun môi",
+    lip_brightening_advantage6_desc:
+      "Sau khi nền được làm ấm, phun baby lip sẽ lên màu chuẩn và bền hơn.",
+    lip_brightening_advantage7_title: "Phù hợp cho cả nam & nữ",
+    lip_brightening_advantage7_desc:
+      "Kỹ thuật phù hợp với mọi giới tính, điều chỉnh màu phù hợp với từng khách hàng.",
+    lip_brightening_advantage8_title: "Thích hợp cho môi thâm lạnh nặng",
+    lip_brightening_advantage8_desc:
+      "Đặc biệt hiệu quả với môi thâm xanh – tím – xám, cần 2–3 buổi cho nền nặng.",
+    lip_brightening_pricing_title: "Bảng giá dịch vụ",
+    lip_brightening_pricing_intro:
+      "Giá trọn gói, đã bao gồm sản phẩm chăm sóc tại nhà và theo dõi định kỳ.",
+    lip_brightening_pricing_main_title: "Khử Thâm Môi – Neutralizing Pigment",
+    lip_brightening_pricing_subtitle:
+      "Tùy mức độ thâm lạnh (xanh/tím/xám) và số buổi cần làm",
+    lip_brightening_pricing_item1: "Neutralizing pigment chuyên dụng",
+    lip_brightening_pricing_item2: "Ủ tê y khoa",
+    lip_brightening_pricing_item3: "Dụng cụ dùng 1 lần",
+    lip_brightening_pricing_item4: "Theo dõi & hỗ trợ 24/7",
+    lip_brightening_pricing_item5: "Bảo hành 04 tháng - khử lại lần 2 miễn phí",
+    lip_brightening_pricing_note:
+      "Giá đã bao gồm thuế VAT và dụng cụ vô trùng. Tùy mức độ thâm lạnh và số buổi điều trị, giá có thể điều chỉnh.",
+    lip_brightening_warranty_title: "Chế độ bảo hành",
+    lip_brightening_warranty_intro:
+      "Cam kết của Lumi Beauty đối với khách hàng",
+    lip_brightening_warranty1_title:
+      "Bảo hành 04 tháng - khử lại lần 2 miễn phí",
+    lip_brightening_warranty1_desc:
+      "Bảo hành kết quả trong 04 tháng kể từ ngày hoàn thành liệu trình, tùy mức độ thâm ban đầu.",
+    lip_brightening_warranty2_title: "Khử lại lần 2 miễn phí",
+    lip_brightening_warranty2_desc:
+      "Miễn phí 1 lần dặm lại nếu màu chưa đạt chuẩn hoặc cần điều chỉnh trong thời gian bảo hành.",
+    lip_brightening_warranty3_title: "Theo dõi sát sao",
+    lip_brightening_warranty3_desc:
+      "Theo dõi tình trạng sau liệu trình, tư vấn chăm sóc và đặt lịch tái khám miễn phí sau 14-30 ngày.",
+    lip_brightening_warranty4_title: "Hỗ trợ 24/7",
+    lip_brightening_warranty4_desc:
+      "Luôn sẵn sàng hỗ trợ và tư vấn khách hàng qua điện thoại, Zalo, Facebook mọi lúc mọi nơi.",
+    lip_brightening_precautions_title: "Lưu ý trước khi làm",
+    lip_brightening_precautions_intro:
+      "Những điều cần lưu ý để đảm bảo quy trình diễn ra an toàn và hiệu quả",
+    lip_brightening_precaution1_title: "Tránh uống cà phê 6 tiếng",
+    lip_brightening_precaution1_desc:
+      "Không uống cà phê, trà đậm, rượu bia trong vòng 6 tiếng trước khi thực hiện để tránh ảnh hưởng đến quá trình tê.",
+    lip_brightening_precaution2_title: "Tránh dùng thuốc Aspirin",
+    lip_brightening_precaution2_desc:
+      "Không dùng Aspirin, thuốc chống đông máu trong 7 ngày trước khi thực hiện để tránh chảy máu nhiều.",
+    lip_brightening_precaution3_title: "Không làm khi đang sốt/cảm",
+    lip_brightening_precaution3_desc:
+      "Hoãn lịch hẹn nếu đang sốt, cảm cúm, nhiễm trùng vùng môi hoặc đang điều trị bệnh cấp tính.",
+    lip_brightening_precaution4_title: "Thông báo tiền sử bệnh",
+    lip_brightening_precaution4_desc:
+      "Thông báo cho Lumi Beauty nếu có tiền sử dị ứng, bệnh ngoài da, đang mang thai hoặc cho con bú.",
+    lip_brightening_precaution5_title: "Không làm đẹp môi 7 ngày",
+    lip_brightening_precaution5_desc:
+      "Không xăm môi, phun môi, tẩy trắng môi trong ít nhất 7 ngày trước khi khử thâm.",
+    lip_brightening_precaution6_title: "Uống đủ nước",
+    lip_brightening_precaution6_desc:
+      "Uống đủ 2 lít nước mỗi ngày trong 3 ngày trước khi thực hiện để môi được cấp ẩm tốt nhất.",
+    lip_brightening_aftercare_title:
+      "Chăm sóc sau trung hòa sắc tố (Aftercare)",
+    lip_brightening_aftercare_intro:
+      "Hướng dẫn chi tiết cách chăm sóc môi sau liệu trình Neutralizing Pigment",
+    lip_brightening_aftercare_day1_title: "Giai đoạn quan trọng nhất",
+    lip_brightening_aftercare_day1_item1:
+      "Không rửa mặt bằng nước, chỉ lau nhẹ bằng khăn ướt",
+    lip_brightening_aftercare_day1_item2:
+      "Bôi dưỡng môi Lumi Care mỗi 2-3 giờ/lần",
+    lip_brightening_aftercare_day1_item3:
+      "Tránh nói chuyện nhiều, không chạm tay vào môi",
+    lip_brightening_aftercare_day1_item4:
+      "Uống nước bằng ống hút, tránh thức ăn cay nóng",
+    lip_brightening_aftercare_day3_title: "Duy trì chăm sóc",
+    lip_brightening_aftercare_day3_item1:
+      "Bôi dưỡng môi 3-4 lần/ngày, giữ môi luôn ẩm",
+    lip_brightening_aftercare_day3_item2:
+      "Không đánh răng bằng kem đánh răng có flouride",
+    lip_brightening_aftercare_day3_item3:
+      "Tránh nắng trực tiếp, che chắn khi ra ngoài",
+    lip_brightening_aftercare_day3_item4:
+      "Không bóc vảy nếu có, để tự nhiên bong",
+    lip_brightening_aftercare_day7_title: "Tiếp tục chăm sóc",
+    lip_brightening_aftercare_day7_item1: "Bôi dưỡng môi 2-3 lần/ngày",
+    lip_brightening_aftercare_day7_item2:
+      "Có thể dùng son dưỡng không màu sau 7 ngày",
+    lip_brightening_aftercare_day7_item3:
+      "Tránh son có chì, son lâu trôi trong 14 ngày",
+    lip_brightening_aftercare_day7_item4: "Uống đủ nước, ăn nhiều rau củ quả",
+    lip_brightening_aftercare_day14_title: "Lên màu ổn định",
+    lip_brightening_aftercare_day14_item1: "Màu bắt đầu lên lại và ổn định dần",
+    lip_brightening_aftercare_day14_item2:
+      "Tiếp tục dưỡng môi hàng ngày để duy trì độ ẩm",
+    lip_brightening_aftercare_day14_item3:
+      "Tránh nắng, bôi kem chống nắng môi nếu cần",
+    lip_brightening_aftercare_day14_item4:
+      "Tái khám sau 30 ngày để đánh giá kết quả",
+    lip_brightening_aftercare_note_title: "Những điều cần kiêng",
+    lip_brightening_aftercare_avoid1:
+      "Không ăn đồ cay nóng, chua trong 7 ngày đầu",
+    lip_brightening_aftercare_avoid2:
+      "Không hôn, không dùng chung dụng cụ ăn uống",
+    lip_brightening_aftercare_avoid3:
+      "Không tắm nước nóng, xông hơi trong 7 ngày",
+    lip_brightening_aftercare_avoid4: "Không bóc vảy, không chà xát môi",
+    lip_brightening_faq_title: "Câu hỏi thường gặp",
+    lip_brightening_faq_q1: "Có phải phun môi không?",
+    lip_brightening_faq_a1:
+      "Không. Đây là kỹ thuật trung hòa sắc tố, không tạo màu môi. Chúng tôi chỉ sử dụng sắc tố trung hòa (cam/đào/coral) để làm ấm nền thâm xanh – tím – xám, không phải phun màu môi.",
+    lip_brightening_faq_q2: "Một buổi cải thiện được bao nhiêu?",
+    lip_brightening_faq_a2:
+      "30–60% tùy nền thâm. Môi thâm nhẹ có thể cải thiện 50–60% sau 1 buổi. Môi thâm nặng (xanh – tím – xám) cần 2–3 buổi để đạt hiệu quả tối ưu.",
+    lip_brightening_faq_q3: "Có đau hoặc sưng không?",
+    lip_brightening_faq_a3:
+      "Hầu như không. Kỹ thuật đi nông nên rất nhẹ nhàng. Chúng tôi sử dụng tê y khoa để đảm bảo khách thoải mái trong suốt quy trình.",
+    lip_brightening_faq_q4: "Có bong không?",
+    lip_brightening_faq_a4:
+      "Không bong mảng. Chỉ khô nhẹ 1–2 ngày đầu, môi sẽ sáng dần trong 7–14 ngày. Quy trình nhẹ nhàng hơn nhiều so với phun môi.",
+    lip_brightening_faq_q5: "Bao lâu được phun môi?",
+    lip_brightening_faq_a5:
+      "Sau 7–14 ngày khi nền sáng và đều. Sau khi trung hòa sắc tố, nền môi đã được làm ấm, lúc này phun baby lip sẽ lên màu chuẩn và bền hơn.",
+    lip_brightening_faq_q6: "Có cần kiêng nước không?",
+    lip_brightening_faq_a6:
+      "Trong 24h đầu không rửa mặt bằng nước, chỉ lau nhẹ bằng khăn ướt. Sau 24h có thể rửa mặt bình thường nhưng tránh chà xát vùng môi. Tránh tắm nước nóng, xông hơi trong 7 ngày đầu.",
+    lip_brightening_faq_q7: "Có cần kiêng ăn gì không?",
+    lip_brightening_faq_a7:
+      "Trong 7 ngày đầu, tránh ăn đồ cay nóng, chua, mặn. Uống nước bằng ống hút, tránh thức ăn quá nóng. Uống đủ 2 lít nước mỗi ngày, hạn chế cà phê, trà đậm trong 5 ngày đầu.",
+    lip_brightening_faq_q8: "Nam làm có hợp không?",
+    lip_brightening_faq_a8:
+      "Có, dịch vụ khử thâm môi bằng kỹ thuật Neutralizing Pigment phù hợp với cả nam và nữ. Chúng tôi sẽ điều chỉnh màu trung hòa phù hợp với giới tính và nhu cầu của từng khách hàng.",
+    lip_brightening_faq_q9: "Thâm lạnh nặng có cải thiện được không?",
+    lip_brightening_faq_a9:
+      "Có. Với môi thâm lạnh nặng (xanh – tím – xám), cần 2–3 buổi để đạt hiệu quả tối ưu. Sau khi nền được làm ấm, môi sẽ sáng hơn 30–60% và có thể phun baby lip để hoàn thiện.",
+    lip_brightening_faq_q10: "Có thể makeup ngay sau khử thâm không?",
+    lip_brightening_faq_a10:
+      "Sau 7 ngày có thể dùng son dưỡng không màu. Tránh son có chì, son lâu trôi trong 14 ngày đầu. Sau 14 ngày có thể makeup bình thường nhưng nên chọn son không có chì.",
+    lip_brightening_expert_title: "Lời khuyên của Lumi Beauty",
+    lip_brightening_expert_advice1:
+      "Trung hòa sắc tố (Neutralizing Pigment) là bước bắt buộc trước khi phun môi đối với nền môi thâm lạnh. Nếu bỏ qua bước này, môi phun sẽ dễ bị lên sai màu – loang màu – không ăn màu.",
+    lip_brightening_expert_advice2:
+      "Với kỹ thuật đi nông & pigment chuyên dụng, khách sẽ nhận thấy môi sáng hơn rõ rệt mà không đau và không sưng. Kỹ thuật này không phải phun môi, không tạo màu mới mà chỉ làm ấm nền thâm xanh – tím – xám.",
+    lip_brightening_expert_advice3:
+      "Sau khi nền được làm ấm, bạn có thể phun baby lip để lên màu tươi và bền hơn. Mỗi khách hàng có tình trạng môi khác nhau, vì vậy chúng tôi sẽ xây dựng phác đồ riêng cho từng người.",
+    lip_brightening_expert_signature: "— Lumi Beauty",
+    lip_brightening_cta_title: "Sẵn sàng đánh thức sắc môi hồng tự nhiên?",
+    lip_brightening_cta_desc:
+      "Đặt lịch ngay hôm nay để được Lumi Beauty thăm khám 1-1 và xây dựng phác đồ khử thâm dành riêng cho bạn.",
 
     // Why Choose Us
     why_choose_title: "Vì Sao Nhiều Khách Hàng Tin Chọn Lumi Beauty?",
@@ -1506,7 +1727,7 @@ const translations = {
     contact_methods_title:
       "Đừng ngần ngại - chọn cách liên lạc phù hợp nhất với bạn.",
     contact_call_title: "Gọi điện trực tiếp",
-    contact_call_description: "Nhấn để kết nối ngay với chuyên gia Lumi Beauty",
+    contact_call_description: "Nhấn để kết nối ngay với Lumi Beauty",
     contact_call_button: "GỌI NGAY",
     contact_facebook_title: "Chat Facebook",
     contact_facebook_description:
