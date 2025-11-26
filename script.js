@@ -1142,8 +1142,17 @@ function getRelativePath(targetPath) {
     return targetPath;
   }
 
-  // If target path starts with /, make it relative to language folder
+  // If target path starts with /, check if it already has a language prefix
   if (targetPath.startsWith("/")) {
+    // Check if path already starts with a language prefix (/vi/, /en/, /ko/)
+    if (
+      targetPath.startsWith("/vi/") ||
+      targetPath.startsWith("/en/") ||
+      targetPath.startsWith("/ko/")
+    ) {
+      // Already has language prefix, return as is
+      return targetPath;
+    }
     // Remove leading slash and add language prefix
     const relativePath = targetPath.substring(1);
     return `/${lang}/${relativePath}`;
@@ -1285,6 +1294,17 @@ function initNavigationLinks() {
       return;
     }
 
+    // Skip links that already have the correct language prefix
+    if (
+      href &&
+      (href.startsWith(`/${lang}/`) ||
+        href.startsWith("/vi/") ||
+        href.startsWith("/en/") ||
+        href.startsWith("/ko/"))
+    ) {
+      return;
+    }
+
     // Fix relative links
     if (href && !href.startsWith("http") && !href.startsWith("#")) {
       link.setAttribute("href", getRelativePath(href));
@@ -1305,6 +1325,17 @@ function initNavigationLinks() {
       href.startsWith("#") ||
       href.startsWith("tel:") ||
       href.startsWith("mailto:")
+    ) {
+      return;
+    }
+
+    // Skip links that already have the correct language prefix
+    if (
+      href &&
+      (href.startsWith(`/${lang}/`) ||
+        href.startsWith("/vi/") ||
+        href.startsWith("/en/") ||
+        href.startsWith("/ko/"))
     ) {
       return;
     }
