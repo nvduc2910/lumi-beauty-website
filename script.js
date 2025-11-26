@@ -178,7 +178,8 @@ document.addEventListener("componentsLoaded", function () {
     typeof currentLanguage !== "undefined"
   ) {
     setTimeout(() => {
-      setLanguage(currentLanguage);
+      // Initialize language without redirecting (skipRedirect = true)
+      setLanguage(currentLanguage, true);
       // Re-initialize language switcher to update dropdown button
       if (typeof initLanguageSwitcher === "function") {
         initLanguageSwitcher();
@@ -851,19 +852,113 @@ function showNotification(message, type = "info") {
   }, 3000);
 }
 
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+// Get current language from URL path (/vi, /en, /ko)
+function getCurrentLanguageFromPath() {
+  const path = window.location.pathname;
+  if (path.startsWith("/vi/") || path === "/vi" || path.endsWith("/vi")) {
+    return "vi";
+  } else if (
+    path.startsWith("/en/") ||
+    path === "/en" ||
+    path.endsWith("/en")
+  ) {
+    return "en";
+  } else if (
+    path.startsWith("/ko/") ||
+    path === "/ko" ||
+    path.endsWith("/ko")
+  ) {
+    return "ko";
+  }
+  // Default to vi if no language in path
+  return "vi";
+}
+
+// Get base path for current language
+function getLanguageBasePath() {
+  const lang = getCurrentLanguageFromPath();
+  return `/${lang}/`;
+}
+
+// Fix navigation links to work with /vi, /en, /ko structure
+function initNavigationLinks() {
+  const lang = getCurrentLanguageFromPath();
+  const basePath = getLanguageBasePath();
+
+  // Fix logo link - if it's "/" or absolute root, make it relative to current language
+  const logoLink = document.querySelector(".logo a");
+  if (logoLink) {
+    const logoHref = logoLink.getAttribute("href");
+    if (logoHref === "/" || logoHref === "") {
+      logoLink.setAttribute("href", `${basePath}index.html`);
+    } else if (logoHref.startsWith("/") && !logoHref.startsWith(`/${lang}/`)) {
+      // If it's absolute but not with language prefix, fix it
+      const relativePath = logoHref.substring(1);
+      logoLink.setAttribute("href", `${basePath}${relativePath}`);
     }
+  }
+
+  // Smooth scroll for anchor links on the same page
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        // Update URL hash without scrolling
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, null, href);
+        }
+      }
+    });
   });
-});
+
+  // Fix relative links in navigation to ensure they work correctly
+  const navLinks = document.querySelectorAll(".nav a[href]");
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+
+    // Skip anchor links (already handled above)
+    if (href && href.startsWith("#")) {
+      return;
+    }
+
+    // Skip external links
+    if (
+      href &&
+      (href.startsWith("http://") ||
+        href.startsWith("https://") ||
+        href.startsWith("//"))
+    ) {
+      return;
+    }
+
+    // If link is absolute path starting with / but not with language prefix, fix it
+    if (
+      href &&
+      href.startsWith("/") &&
+      !href.startsWith("/vi/") &&
+      !href.startsWith("/en/") &&
+      !href.startsWith("/ko/")
+    ) {
+      // Remove leading slash and add language prefix
+      const relativePath = href.substring(1);
+      link.setAttribute("href", `${basePath}${relativePath}`);
+    }
+    // Relative links (like "gallery.html" or "../../index.html") should work as is
+  });
+}
+
+// Initialize navigation links on page load
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initNavigationLinks);
+} else {
+  initNavigationLinks();
+}
 
 // Header scroll effect
 window.addEventListener("scroll", () => {
@@ -2731,529 +2826,1050 @@ const translations = {
 
   ko: {
     // General
-    page_title: "루미 뷰티 - 자연스러운 입술 & 눈썹 타투",
+    page_title:
+      "루미 뷰티 - 다낭 자연스러운 반영구 시술 - 전문가 브로우, 입술 & 아이라인",
+
     close_modal: "닫기",
-    floating_contact_zalo: "자লো 채팅",
-    floating_contact_facebook: "페이스북 채팅",
-    floating_contact_tiktok: "틱톡",
+
+    floating_contact_zalo: "Zalo로 채팅하기",
+    floating_contact_facebook: "Facebook으로 채팅하기",
+    floating_contact_tiktok: "TikTok",
+
     meta_description:
-      "루미 뷰티 다낭은 의료 표준 절차로 입술, 눈썹, 아이라인 타투를 제공하며 통증과 붓기 없이 자연스러운 결과를 선사합니다.",
-    meta_keywords: "입술 타투 다낭, 눈썹 타투 베트남, 반영구 화장, 루미 뷰티",
-    og_title: "루미 뷰티 - 다낭 자연스러운 반영구 메이크업",
+      "루미 뷰티 다낭은 최신 부드러운 기법과 의료적으로 안전한 절차를 사용하여 브로우, 입술, 아이라인의 자연스러운 반영구 시술을 제공합니다.",
+
+    meta_keywords: "다낭 pmu, 자연 옴브레 브로우, 립 블러싱, 루미 뷰티 다낭",
+
+    og_title: "루미 뷰티 - 다낭 자연스러운 반영구 시술",
+
     og_description:
-      "루미 뷰티에서 의료 표준 절차와 섬세한 케어로 자연스러운 입술·눈썹 타투를 경험하세요.",
-    twitter_title: "루미 뷰티 - 다낭 반영구 메이크업",
+      "루미 뷰티 다낭에서 자연스럽고 오래 지속되는 브로우, 입술, 아이라인을 경험하세요 – 부드러운 기법, 붓기 없음, 통증 없음, 아름다운 힐링 결과.",
+
+    twitter_title: "루미 뷰티 - 다낭 반영구 시술",
+
     twitter_description:
-      "루미 뷰티 다낭은 통증 없이 오래 지속되는 입술, 눈썹 타투 서비스를 제공합니다.",
+      "루미 뷰티는 1:1 맞춤 서비스와 자연스럽고 부드러운 결과를 제공하는 최신 PMU 브로우, 입술, 아이라인 시술을 제공합니다.",
+
     business_name: "루미 뷰티",
+
     business_description:
-      "루미 뷰티 다낭은 의료 표준 절차와 세심한 케어로 자연스럽고 오래 지속되는 입술·눈썹 타투 서비스를 제공합니다.",
+      "루미 뷰티 다낭은 부드러운 기법과 세심한 고객 케어를 기반으로 브로우, 입술, 아이라인의 프리미엄 반영구 시술을 제공합니다.",
 
     // Navigation
-    beauty_services: "타투 서비스",
-    beauty_guide: "타투 가이드",
+    beauty_services: "PMU 서비스",
+    beauty_guide: "뷰티 지식",
     gallery: "갤러리",
-    feedback: "피드백",
-    contact: "연락처",
-    offers: "고객 리뷰",
+    feedback: "고객 후기",
+    contact: "문의하기",
+    offers: "후기",
     book_now: "예약하기",
+    about_us_contact: "소개 & 문의",
 
     // Hero Section
-    main_title: "입술 & 눈썹 타투",
-    natural_beauty: "자연스러운 아름다움",
-    enhance_features: "당신만의 매력을 강조하세요",
+    main_title: "반영구 시술",
+    natural_beauty: "자연스럽게 아름답게",
+    enhance_features: "당신의 개성을 더욱 돋보이게",
+
     hero_description:
-      "루미 뷰티는 각 얼굴에 맞춘 <strong>1:1 전문 타투 경험</strong>을 제공하여 생기 있는 입술, 세련된 눈썹, 자연스러운 눈매를 선사합니다. 각 고객은 경험이 풍부한 타투 전문가의 개인 맞춤 케어를 받아 가장 섬세하고 조화로운 결과를 보장받습니다.",
-    contact_now: "지금 연락하기",
+      "루미 뷰티는 <strong>1:1 맞춤 PMU 시술</strong>을 통해 얼굴에 가장 조화로운 디자인을 제공합니다. 자연스러운 핑크립, 세련된 브로우, 맑고 또렷한 아이라인을 경험해보세요. 모든 고객은 숙련된 아티스트의 섬세한 케어를 통해 가장 자연스럽고 조화로운 결과를 얻을 수 있습니다.",
+
+    contact_now: "지금 문의하기",
 
     // Feature Tags
-    no_pain: "통증 없음",
-    no_swelling: "부종 없음",
-    no_diet: "식이 제한 없음",
+    no_pain: "무통증",
+    no_swelling: "붓기 없음",
+    no_diet: "금기 없음",
 
     // Stats
-    years_experience: "년 경험",
+    years_experience: "년 경력",
     potential_customers: "잠재 고객",
-    five_star_reviews: "고객 5성 리뷰",
-    certifications: "전문 자격증",
+    five_star_reviews: "5성급 고객 후기",
+    certifications: "전문 자격증 보유",
 
     // Help Section
     greeting: "안녕하세요!",
-    how_can_help: "루미 뷰티가 1분 안에 자신을 소개해도 될까요?",
+    how_can_help: "루미 뷰티를 1분 안에 소개해드릴까요?",
+
     help_intro:
-      "루미 뷰티는 다낭에서 1:1 프라이빗 상담과 세심한 케어로 사랑받는 반영구 전문 숍입니다.",
+      "루미 뷰티는 다낭에서 신뢰받는 PMU 스튜디오로, 프라이빗 1:1 서비스와 부드럽고 세심한 접근 방식으로 사랑받고 있습니다.",
+
     help_quote:
-      '우리는 "모든 얼굴은 고유한 아름다움을 지니며, 섬세하고 자연스럽게 살려야 한다"고 믿습니다.',
+      '우리는 이렇게 믿습니다: "모든 얼굴에는 고유한 아름다움이 있으며, 그것은 가장 섬세하고 자연스럽게 돋보여야 합니다."',
+
     help_commitment:
-      "그래서 고객 한 분 한 분의 이야기를 듣고 가장 잘 어울리는 입술·눈썹·아이라인을 설계합니다. 의료 표준 프로세스와 안전한 유기농 색소로 붓거나 아프지 않으며 오래 지속되는 자연스러운 결과를 약속드립니다.",
-    book_description: "오늘 예약하여 상담을 받고 매력적인 혜택을 받으세요",
+      "그래서 루미 뷰티는 고객 한 분 한 분의 이야기를 듣고, 상담하고, 가장 잘 맞는 브로우·립·아이라인 디자인을 만들어드립니다. 의료적으로 안전한 절차와 유기농 색소를 사용하여 붓기 없음, 통증 없음, 자연스럽고 오래가는 색감을 약속드립니다.",
+
+    book_description: "지금 바로 상담 및 특별 혜택 예약이 가능합니다.",
+
     contact_description:
-      "피드백이나 상담이 필요한 질문이 있으시면 즉시 연락해 주세요",
-    book_appointment: "오늘 예약하기",
-    want_to_book: "예약하고 싶습니다",
-    contact_us: "연락처",
-    need_consultation: "상담이 필요합니다",
+      "피드백 또는 맞춤 상담이 필요하시면 언제든지 문의해주세요.",
+
+    book_appointment: "지금 예약하기",
+    want_to_book: "예약하고 싶어요",
+    contact_us: "문의하기",
+    need_consultation: "상담이 필요해요",
 
     // Services
-    our_services: "우리 서비스",
-    lip_tattoo_title: "콜라겐 / 베이비 립 타투",
-    lip_tattoo_benefit1: "입술을 자연스럽고 생기 있게, 촉촉하게 연출합니다.",
+    our_services: "루미 뷰티 서비스",
+
+    lip_tattoo_title: "콜라겐 립 블러싱",
+    lip_tattoo_benefit1:
+      "부드럽고 장밋빛, 자연스럽게 도톰해 보이는 입술을 만들어줍니다.",
     lip_tattoo_benefit2:
-      "초미세 니들을 사용하는 1:1 맞춤 시술로 통증을 최소화하고, 벗겨진 후에도 선명한 컬러를 유지합니다.",
-    lip_tattoo_benefit3: "건조하거나 어둡고 옅은 입술에 적합한 솔루션입니다.",
-    eyebrow_tattoo_title: "쉐이딩 / 파우더 브로우",
+      "초미세 니들을 사용한 1:1 테크닉으로 거의 통증 없이 치유 후에도 고르게 예쁜 색감을 구현합니다.",
+    lip_tattoo_benefit3:
+      "건조하거나 어두운 톤, 혹은 혈색이 옅은 입술에 적합합니다.",
+
+    eyebrow_tattoo_title: "쉐이딩 옴브레 브로우",
     eyebrow_tattoo_benefit1:
-      "부드럽고 자연스러운 눈썹 라인으로 얼굴을 더 세련되게 보완합니다.",
+      "얼굴의 조화를 살려주는 부드럽고 자연스러운 브로우를 디자인합니다.",
     eyebrow_tattoo_benefit2:
-      "시술 전 얼굴 비율을 정밀 측정하여 1:1 맞춤으로 디자인합니다.",
+      "시술 전 정밀한 얼굴 비율 측정과 함께 1:1 맞춤 브로우 매핑을 진행합니다.",
     eyebrow_tattoo_benefit3:
-      "자연스러운 균형감을 유지하며, 각지고 딱딱해 보이지 않습니다.",
-    eyeliner_tattoo_title: "미 오픈 아이라인",
+      "진하거나 인위적인 선 없이 균형 잡힌 브로우를 완성합니다.",
+
+    eyeliner_tattoo_title: "래쉬라인 인핸스먼트",
     eyeliner_tattoo_benefit1:
-      "눈을 또렷하고 깊이감 있게 만들어 주면서 자연스러운 분위기를 유지합니다.",
+      "자연스럽게 또렷한 속눈썹 라인으로 더 크고 밝아 보이는 눈을 만들어줍니다.",
     eyeliner_tattoo_benefit2:
-      "부드럽고 편안한 시술로, 통증과 수술적 개입 없이 진행됩니다.",
+      "수술 없이 진행되는 부드럽고 무통증의 시술입니다.",
     eyeliner_tattoo_benefit3:
-      "자연스러운 인상을 유지하면서 눈매를 또렷하게 하고 싶은 분들에게 추천합니다.",
-    lip_removal_title: "남녀 입술 톤 브라이트닝",
+      "자연스러움을 유지하면서 은은한 눈매 보정을 원하는 분들에게 적합합니다.",
+
+    lip_removal_title: "남녀 립 뉴트럴라이징",
     lip_removal_benefit1:
-      "밝고 균일한 핑크빛 입술로 회복시키고 촉촉한 질감을 유지합니다.",
+      "어두운 입술 톤을 밝게 개선하여 자연스럽고 균일한 색으로 되돌립니다.",
     lip_removal_benefit2:
-      "1:1 맞춤 기법으로 한 번의 코스 후에도 즉각적인 변화를 느낄 수 있습니다.",
+      "1:1 맞춤 뉴트럴라이징 기법으로 안전하고 효과적이며 한 번의 시술 후에도 눈에 띄는 개선을 제공합니다.",
     lip_removal_benefit3:
-      "남성 고객도 자연스럽게 입술 톤을 개선할 수 있도록 설계된 솔루션입니다.",
+      "인위적인 붉은색 없이 건강해 보이는 입술을 원하는 남성에게도 좋은 솔루션입니다.",
+
     discover_more: "더 알아보기",
 
-    // Why Choose Us
-    why_choose_title: "수천 명의 고객이 루미 뷰티를 신뢰하는 이유는?",
-    feature_personalized_title: "1:1 프라이빗 시술",
-    feature_personalized_desc:
-      "모든 고객을 전담 전문가가 처음부터 끝까지 케어합니다.",
-    feature_expert_title: "고숙련 전문 아티스트",
-    feature_expert_desc: "체계적인 교육과 다년간의 노하우를 보유한 팀.",
-    feature_organic_title: "안전한 유기농 색소",
-    feature_organic_desc:
-      "붓기와 통증을 줄이고, 시간이 지나도 색이 변하지 않습니다.",
-    feature_space_title: "청결하고 프라이빗한 공간",
-    feature_space_desc:
-      "상담부터 시술까지 편안하고 휴식 같은 경험을 제공합니다.",
-    feature_feedback_title: "수백 건의 만족 후기",
-    feature_feedback_desc: "실제 고객의 피드백과 눈에 보이는 결과.",
-
-    // Contact Methods
-    contact_intro:
-      "✨ 자연스럽고 섬세한 아름다움과 당신만의 개성을 지키고 싶으신가요? 루미 뷰티와 함께 1:1 맞춤 반영구 여정을 시작해 보세요.",
-    contact_methods_title:
-      "망설이지 마세요 - 가장 편한 연락 방법을 선택하세요.",
-    contact_call_title: "전화 상담",
-    contact_call_description: "루미 뷰티 전문가와 바로 연결하세요",
-    contact_call_button: "바로 전화하기",
-    contact_facebook_title: "페이스북 채팅",
-    contact_facebook_description: "루미 뷰티 메신저에서 빠르게 상담받으세요",
-    contact_facebook_button: "메신저 열기",
-    contact_zalo_title: "자লো 채팅",
-    contact_zalo_description: "자লো로 연결하여 지원과 특별 혜택을 받으세요",
-    contact_zalo_button: "자লো 열기",
-    contact_email_title: "이메일 보내기",
-    contact_email_description:
-      "상세한 메시지를 남겨주시면 24시간 이내에 답변드릴게요",
-    contact_email_button: "이메일 보내기",
-
-    // Zalo Contact Modal
-    zalo_contact_modal_title: "직접 연락하기",
-    zalo_contact_modal_desc:
-      "{service} 서비스에 관심이 있으시군요. 자세한 상담을 위해 자로로 연락해 주세요.",
-    zalo_contact_phone_label: "자로 전화번호:",
-    zalo_contact_open_button: "지금 자로 열기",
-
-    // Contact Form
-    contact_form_title:
-      "주저하지 마세요 - 전화번호를 남겨주시면 얼굴에 가장 적합한 서비스를 선택하는 데 도움을 드리겠습니다.",
-    phone_placeholder: "전화번호를 입력하세요",
-    send: "보내기",
-    contact_form_success: "감사합니다! 최대한 빠르게 연락드리겠습니다.",
-    contact_form_error: "오류가 발생했습니다. 다시 시도해 주세요.",
-    contact_form_phone_required: "전화번호를 입력해 주세요.",
-
-    // Gallery
-    real_images: "실제 이미지",
-    lip_tattoo_label: "입술 타투",
-    eyebrow_tattoo_label: "눈썹 타투",
-
-    // Testimonials
-    customer_reviews: "고객 리뷰",
-    scroll_hint: "옆으로 밀어 더 보기",
-    testimonial1:
-      "훌륭한 서비스! 제 입술이 자연스럽고 훨씬 더 아름다워 보입니다. 직원들이 매우 전문적이고 헌신적입니다.",
-    testimonial2:
-      "눈썹 타투 결과에 매우 만족합니다. 눈썹 모양이 제 얼굴에 맞게 디자인되었고 자연스러운 색상입니다.",
-    testimonial3:
-      "예상했던 것보다 통증이 없었습니다. 입술 타투 후 색상이 고르고 자연스럽게 나타났습니다. 다음에도 다시 올 예정입니다!",
-
-    // Blog
-    learn_more_title: "뷰티 - 타투에 대해 더 알아보기",
-    blog1_title: "입술 타투가 자연스러운 색상을 보이기까지 얼마나 걸리나요?",
-    blog2_title: "좋은 모양과 고른 색상을 위해 눈썹 타투 후 피해야 할 것들은?",
-    blog3_title:
-      "베이비 입술 타투, 콜라겐, 옴브레를 구분하는 방법 - 어떤 것을 선택해야 할까요?",
-    read_more: "더 보기",
-    view_more_gallery: "더 많은 이미지 보기",
-    view_more_feedback: "더 많은 피드백 보기",
-
-    // Footer
-    footer_tagline: "자연스러운 반영구 메이크업 - 당신만의 매력을 강조하세요",
-    footer_address: "하노이 카우자이 트란 두이 흥 151",
-    services_title: "서비스",
-    lip_service: "입술 타투",
-    eyebrow_service: "눈썹 타투",
-    lip_removal_service: "입술 어두운 반점 제거",
-    contact_title: "연락처",
-    about_us_contact: "About us & Contact",
-    consultation_title: "상담",
-    connect_with_us: "우리와 연결하세요",
-    footer_line1: "💋 자연스러운 입술·눈썹·아이라인 타투 전문",
-    footer_line2: "💋 정성 어린 상담과 케어",
-    footer_address_detail: "다낭 FPT 시티 도시 지역 보 꾸이 후안",
-    footer_tiktok: "틱톡: @lumibeautyphunxam",
-    footer_facebook: "페이스북: facebook.com/lumibeautypmubrowlip",
-    facebook_iframe_title: "루미 뷰티 페이스북 페이지",
-    footer_copyright: "© 2025 루미 뷰티. 모든 권리 보유.",
-
-    // Booking Modal
-    booking_title: "지금 예약하세요",
-    booking_description:
-      "정보를 입력해 주시면 루미 뷰티가 신속하게 연락드립니다.",
-    booking_name_label: "이름",
-    booking_name_placeholder: "김하늘",
-    booking_phone_label: "전화번호",
-    booking_phone_placeholder: "0900 067 832",
-    booking_service_label: "관심 있는 서비스",
-    booking_service_option_lip: "입술 타투",
-    booking_service_option_eyebrow: "눈썹 타투",
-    booking_service_option_lip_removal: "입술 어두운 반점 제거",
-    booking_service_option_other: "기타",
-    booking_time_label: "희망 시간",
-    booking_notes_label: "추가 메모",
-    booking_notes_placeholder: "필요 사항이나 질문을 공유해 주세요",
-    booking_submit: "요청 보내기",
-    booking_sending: "정보를 전송하고 있습니다...",
-    booking_success: "감사합니다! 곧 루미 뷰티에서 연락드리겠습니다.",
-    booking_error: "전송에 실패했습니다. 다시 시도하시거나 직접 연락해 주세요.",
-    contact_free_button: "무료 상담 문의",
-
     // Service Detail - Lip Tattoo
-    lip_detail_page_title: "콜라겐 립 반영구 다낭 - 루미 뷰티 | 의료 표준 기법",
+    lip_detail_page_title: "루미 뷰티 콜라겐 립 블러싱 – 다낭 의료 표준 기법",
     lip_detail_meta_description:
-      "루미 뷰티 다낭 콜라겐 립 반영구: 의료 표준 기법, 7년 이상 경력 전문가 1:1 시술, 색상 지속 18-36개월, 빠른 회복 1-2일. 수입 유기농 잉크, 4개월 보증.",
-    lip_detail_hero_heading: "콜라겐 립 반영구 루미 뷰티",
-    lip_detail_hero_subheading: "48시간 만에 생기 있는 촉촉한 입술",
+      "루미 뷰티 다낭 콜라겐 립 블러싱: 의료 표준 기법, 1:1 전문가 7년 이상 경력, 색상 18-36개월 지속, 빠른 회복 1-2일. 유기농 색소 수입, 4개월 보증.",
+    lip_detail_badge: "인기 서비스",
+    lip_detail_hero_heading: "루미 뷰티 콜라겐 립 블러싱",
+    lip_detail_hero_subheading: "48시간 후 핑크빛, 볼륨감 있는 입술",
     lip_detail_hero_highlight1:
-      "한 번의 시술 후 어두운 반점 감소 및 입술 톤 개선 효과",
+      "한 번의 시술로 어두운 톤과 입술 색상이 눈에 띄게 개선됩니다",
     lip_detail_hero_highlight2:
-      "맑고 부드러운 입술 색상, 거친 가장자리 없음 – 어둡거나 번지지 않음",
+      "투명하고 부드러운 입술 색상, 테두리 없음 – 진하거나 얼룩 없음",
     lip_detail_hero_highlight3:
-      "부드러운 경험, 거의 통증 없음 – 1–2일 내 빠른 회복",
+      "부드러운 느낌, 거의 통증 없음 – 1–2일 후 빠른 회복",
     lip_detail_hero_highlight4:
-      "색상 지속 18–36개월, 정확한 톤 발색 및 퇴색 없음",
-    lip_problems_title: "입술의 문제점",
-    lip_problems_intro: "우리가 해결할 수 있는 일반적인 입술 문제",
-    lip_problem1_title: "어둡고 칙칙한 입술",
-    lip_problem1_desc:
-      "어두운 입술은 얼굴에 생기를 없게 만들고 항상 립스틱으로 결점을 가려야 합니다.",
-    lip_problem1_alt: "어둡고 칙칙한 입술",
-    lip_problem2_title: "고르지 않은 입술 색상",
-    lip_problem2_desc:
-      "일부 영역은 어둡고 일부는 밝아서 메이크업이 어렵고 입술 색상이 조화롭지 않습니다.",
-    lip_problem2_alt: "고르지 않은 입술 색상",
-    lip_problem4_title: "비대칭 입술, 고르지 않은 입술 라인",
-    lip_problem4_alt: "비대칭 입술, 고르지 않은 입술 라인",
-    lip_problem4_desc:
-      "양쪽이 고르지 않은 입술은 미소를 조화롭지 않게 만들고 소통 시 자신감을 떨어뜨립니다.",
-    lip_problem5_title: "시간이 지나면서 입술 색상 퇴색",
-    lip_problem5_desc:
-      "신중하게 관리해도 입술 색상은 시간이 지나면서 퇴색하고 생기를 잃어 장기적인 해결책이 필요합니다.",
-    lip_problem5_alt: "시간이 지나면서 입술 색상 퇴색",
-    why_choose_title: "많은 고객이 루미 뷰티에서 립 반영구를 선택하는 이유",
-    why_choose_item1_title: "1:1 립 반영구 – 7년 이상 경력 전문가",
-    why_choose_item1_desc:
-      "루미 뷰티에서는 각 고객이 7년 경력의 립 반영구 전문가로부터 프라이빗 1:1 케어를 받아, 각 얼굴에 맞는 섬세하고 조화로운 색상 발색을 보장합니다.",
-    why_choose_item2_title: "콜라겐 기술",
-    why_choose_item2_desc:
-      "첨단 기법으로 입술이 자연스러운 색상을 발색하고 부드럽고 촉촉하며 어두운 반점을 효과적으로 감소시킵니다.",
-    why_choose_item3_title: "수입 유기농 잉크, 절대 안전",
-    why_choose_item3_desc:
-      "100% 무연 유기농 잉크, 자극 없음, 모든 피부 타입과 민감한 입술에 적합합니다.",
-    why_choose_item4_title: "부드러운 과정, 통증 없음, 빠른 회복",
-    why_choose_item4_desc:
-      "반영구 기계 립 타투, 통증 및 붓기 최대 감소, 단 1–2일 내 회복.",
-    why_choose_item5_title: "오래 지속되는 색상 결과",
-    why_choose_item5_desc:
-      "입술 색상 18–36개월 안정, 정확한 톤 발색 및 시간이 지나도 자연스러운 효과 유지.",
-    why_choose_item6_title: "정성스러운 서비스, 시술 후 보증",
-    why_choose_item6_desc:
-      "상세한 케어 지침, 무료 색상 보정 지원으로 항상 완벽한 입술을 유지할 수 있습니다.",
-    why_choose_image_alt: "루미 뷰티 콜라겐 립 반영구",
-    service_commitment_title: "서비스 약속",
-    service_commitment_intro:
-      "루미 뷰티는 명확한 보장과 함께 최고의 서비스를 제공하겠다고 약속합니다",
-    commitment1_title: "절대 안전",
-    commitment1_desc:
-      "의료 표준 프로세스, 멸균 도구, 수입 유기농 잉크, 입술 건강 보호.",
-    commitment2_title: "자연스러운 결과 – 오래 지속되는 색상",
-    commitment2_desc:
-      "립 반영구는 정확한 색상 발색, 부드럽고 매끄러움, 18–36개월 지속, 얼굴과 조화.",
-    commitment3_title: "정성스러운 서비스, 1:1",
-    commitment3_desc:
-      "각 고객은 프라이빗 상담 및 케어를 받으며, 시술 후 상세한 지침으로 입술이 항상 아름답게 유지됩니다.",
-    commitment4_title: "보증 및 색상 보정 지원",
-    commitment4_desc:
-      "필요 시 무료 1회 색상 보정, 처음 약속한 대로 완벽한 입술 보장.",
+      "색상 18–36개월 지속, 정확한 색상 발현 및 번짐 없음",
+    lip_detail_hero_paragraph1:
+      "우리는 각 고객에게 맞춤 색소 측정 프로토콜과 함께 콜라겐 베이비립 블러싱 기술을 결합합니다. 100% 유기농 수입 색소, 납 없음, 건조나 갈라짐 없음, 18-36개월 동안 정확한 색상 유지.",
+    lip_detail_hero_paragraph2:
+      "의료 자격증을 가진 전문가가 시술하며, 표준 무균 프로세스, 통증 없음, 붓기 없음, 빠른 회복을 약속합니다.",
+    lip_detail_hero_stat_label: "첫 터치업 후 만족한 고객",
+    lip_detail_highlights_title: "왜 루미 뷰티의 립 블러싱이 다른가요?",
+    lip_detail_highlight1_title: "콜라겐 베이비립 기술",
+    lip_detail_highlight1_desc:
+      "초미세 색소 입자와 내인성 콜라겐 세럼이 결합되어 빠른 회복, 부드럽고 윤기 있는 자연스러운 입술을 만듭니다.",
+    lip_detail_highlight2_title: "개인 맞춤 색소 프로토콜",
+    lip_detail_highlight2_desc:
+      "분석 기계로 피부와 입술 색소를 측정하여 정확한 색상을 혼합하고, 톤 불일치나 각질 탈락 후 재착색을 방지합니다.",
+    lip_detail_highlight3_title: "무통증 - 무붓기",
+    lip_detail_highlight3_desc:
+      "2단계 의료 마취와 표면에 밀착되는 나노 니들 기술로 고객이 시술 내내 편안하게 쉴 수 있고, 입술에 멍이 생기지 않습니다.",
+    lip_detail_highlight4_title: "12개월 보증",
+    lip_detail_highlight4_desc:
+      "시술 후 밀착 모니터링, 무료 1회 터치업 및 12개월간 홈케어 세트 제공.",
     lip_detail_process_title: "90분 내 의료 표준 프로세스",
     lip_detail_process_intro:
-      "각 단계는 멸균 관리 준수, 부드러운 경험과 정확한 결과 보장.",
-    lip_detail_process_step1_title: "상담 및 개인 평가",
+      "모든 단계는 무균 관리 준수, 부드러운 경험과 정확한 결과 보장.",
+    lip_detail_process_step1_title: "상담 & 개인 평가",
     lip_detail_process_step1_desc:
-      "전문가가 입술 상태, 피부 톤 및 고객의 희망을 평가하여 적합한 색상 톤과 기법을 선택합니다.",
-    lip_detail_process_step2_title: "청소 및 안전한 마취",
+      "전문가가 입술 상태, 피부 색소 및 고객의 요구사항을 평가하여 적합한 톤과 기법을 선택합니다.",
+    lip_detail_process_step2_title: "클렌징 & 안전 마취",
     lip_detail_process_step2_desc:
-      "입술 및 주변 영역 청소, 전문 마취 적용으로 부드럽고 통증 없는 립 반영구 과정 보장.",
-    lip_detail_process_step3_title: "색상 혼합 및 도구 준비",
+      "입술과 주변 부위를 깨끗이 하고, 전문 마취를 적용하여 부드럽고 통증 없는 립 블러싱 과정을 보장합니다.",
+    lip_detail_process_step3_title: "색소 혼합 및 도구 준비",
     lip_detail_process_step3_desc:
-      "개인 톤에 맞춘 유기농 잉크, 멸균 의료 표준 도구, 절대 안전 보장.",
-    lip_detail_process_step4_title: "전문 반영구 기계로 립 반영구",
+      "유기농 색소를 개인 톤에 맞게 혼합하고, 의료 표준 무균 도구로 절대 안전을 보장합니다.",
+    lip_detail_process_step4_title: "전문 PMU 기기로 립 블러싱",
     lip_detail_process_step4_desc:
-      "콜라겐 기법으로 입술이 정확한 색상을 발색하고 부드럽고 매끄러우며 가장자리 없이 자연스럽게 촉촉합니다.",
-    lip_detail_process_step5_title: "입술 케어 및 완료",
+      "콜라겐 기술로 입술이 정확한 색상으로 발현되고, 부드럽고 테두리 없이 자연스럽게 볼륨감 있게 됩니다.",
+    lip_detail_process_step5_title: "립 케어 및 완료",
     lip_detail_process_step5_desc:
-      "콜라겐 에센스 적용, 결과 확인, 고르고 오래 지속되는 색상을 위한 홈 케어 안내.",
-    lip_detail_process_step6_title: "케어 및 시술 후 지원",
+      "콜라겐 에센스로 케어하고, 결과를 다시 확인하며, 색상이 고르고 오래 지속되도록 홈케어 가이드를 제공합니다.",
+    lip_detail_process_step6_title: "시술 후 케어 & 지원",
     lip_detail_process_step6_desc:
-      "상세한 입술 케어 지침, 필요 시 색상 보정 지원, 장기적인 결과 및 항상 부드러운 입술 보장.",
-    process_step1_alt: "상담 및 개인 평가",
-    process_step2_alt: "청소 및 안전한 마취",
-    process_step3_alt: "색상 혼합 및 도구 준비",
-    process_step4_alt: "전문 반영구 기계로 립 반영구",
-    process_step5_alt: "입술 케어 및 완료",
-    process_step6_alt: "케어 및 시술 후 지원",
-    color_development_title: "색상 발색 과정",
-    color_development_intro: "립 반영구 후 회복 및 색상 발색",
-    timeline_day1_title: "립 반영구 직후",
-    timeline_day1_desc:
-      "외상 및 마취로 인해 입술이 약간 당기고 가벼운 작열감은 정상입니다.",
-    timeline_day2_title: "입술 건조 및 벗겨짐 준비",
-    timeline_day2_desc:
-      "입술이 건조하기 시작하며, 자연스러운 벗겨짐 과정을 지원하기 위해 재생 케어를 사용해야 합니다.",
-    timeline_day3_title: "입술 가볍게 벗겨짐, 색상 고르지 않음",
-    timeline_day3_desc:
-      "벗겨짐 층 완전히, 밝은 색상, 어두운 가장자리, 밝은 내부 입술. 이 기간 동안 정기적인 케어와 신중한 제한이 필요합니다.",
-    timeline_day10_title: "입술 색상 점진적으로 안정화",
-    timeline_day10_desc:
-      "색상은 체질과 케어 방법에 따라 더 어둡거나 밝을 수 있습니다. 이것은 정상적인 단계이므로 걱정할 필요가 없습니다. 정기적으로 케어를 적용하세요.",
-    timeline_day30_title: "신선하고 매끄러운 입술",
-    timeline_day30_desc:
-      "입술 색상이 고르게 되기 시작하고 입술이 더 매끄러워집니다. 정기적으로 케어를 계속 적용하세요.",
-    timeline_day50_title: "색상 완전히 안정화",
-    timeline_day50_desc:
-      "입술 색상이 안정적이며, 색상이 원하는 수준에 도달하지 않은 경우 고객은 보정을 받을 수 있습니다.",
-    before_after_title: "시술 전후 이미지",
-    before_after_intro: "루미 뷰티 고객의 실제 결과",
-    before_after_alt1: "립 반영구 결과 시술 전후",
-    before_after_alt2: "립 반영구 결과 시술 전후",
-    before_after_alt3: "립 반영구 결과 시술 전후",
-    before_after_alt4: "립 반영구 결과 시술 전후",
-    before_after_alt5: "립 반영구 결과 시술 전후",
-    before_after_alt6: "립 반영구 결과 시술 전후",
-    lip_detail_pricing_title: "가격 및 프로모션 패키지 - 콜라겐 립 반영구",
+      "입술 케어 방법을 자세히 안내하고, 필요시 색상 터치업을 지원하여 장기적인 결과와 항상 부드러운 입술을 보장합니다.",
+    process_step1_alt: "상담 & 개인 평가",
+    process_step2_alt: "클렌징 & 안전 마취",
+    process_step3_alt: "색소 혼합 및 도구 준비",
+    process_step4_alt: "전문 PMU 기기로 립 블러싱",
+    process_step5_alt: "립 케어 및 완료",
+    process_step6_alt: "시술 후 케어 & 지원",
+    why_choose_image_alt: "루미 뷰티 콜라겐 립 블러싱",
+    lip_detail_results_outcome_title: "받게 되는 결과",
+    lip_detail_results_outcome_item1:
+      "48시간 후 핑크빛 입술, 7일 후 정확한 색상 발현.",
+    lip_detail_results_outcome_item2:
+      "선천적 어두운 입술이 시술 직후 60-80% 개선됩니다.",
+    lip_detail_results_outcome_item3:
+      "립스틱 없이도 볼륨감 있고 생기 있는 입술 모서리.",
+    lip_detail_results_aftercare_title: "간단한 홈케어",
+    lip_detail_results_aftercare_item1:
+      "첫 7일 동안 독점 립 케어를 아침-저녁으로 도포.",
+    lip_detail_results_aftercare_item2:
+      "3일간 뜨거운 물, 매우 매운 음식 또는 진한 색 음식 피하기.",
+    lip_detail_results_aftercare_item3:
+      "30일 후 색상 지속성을 확인하기 위한 무료 재방문.",
+    lip_detail_pricing_title: "콜라겐 립 블러싱 가격 & 패키지",
     lip_detail_pricing_intro:
-      "입술 타입 및 특정 상태에 따라 2,000,000đ – 3,000,000đ부터.",
-    lip_detail_pricing_title_main: "콜라겐 립 반영구",
-    lip_detail_pricing_subtitle: "가격은 입술 상태 및 색상 선택에 따라 다름",
+      "입술 유형과 개별 상태에 따라 2,000,000₫ – 3,000,000₫",
+    lip_detail_pricing_title_main: "콜라겐 립 블러싱",
+    lip_detail_pricing_subtitle:
+      "가격은 입술 상태와 선택한 색상에 따라 달라집니다",
     lip_detail_pricing_item1:
-      "의료 표준 콜라겐 기법 – 자연스러운 색상 발색, 부드럽고 매끄러움",
+      "의료 표준 콜라겐 기법 – 자연스러운 색상 발현, 부드러움",
     lip_detail_pricing_item2: "각 고객은 프라이빗 공간에서 1:1 케어를 받습니다",
-    lip_detail_pricing_item3: "04개월 내 무료 1회 색상 보정",
+    lip_detail_pricing_item3: "4개월 내 무료 1회 터치업",
     lip_detail_pricing_item5:
-      "100% 수입 유기농 잉크, 무연, 모든 입술 타입에 안전",
+      "100% 유기농 수입 색소, 납 없음, 모든 유형의 입술에 안전",
+    lip_detail_pricing_option1_title: "베이비립 블러싱 패키지",
+    lip_detail_pricing_option1_item1: "의료 표준 콜라겐 베이비립 블러싱.",
+    lip_detail_pricing_option1_item2: "7일 보습 세럼 제공.",
+    lip_detail_pricing_option1_item3: "6개월 보증.",
+    lip_detail_pricing_option2_badge: "가장 인기",
+    lip_detail_pricing_option2_title: "콜라겐 럭셔리 패키지",
+    lip_detail_pricing_option2_item1: "피부 톤에 맞춘 브로우 & 립 블러싱.",
+    lip_detail_pricing_option2_item2: "14일 케어 세트 & 색상 고정 세럼 제공.",
+    lip_detail_pricing_option2_item3: "12개월 내 무료 1회 터치업.",
+    lip_detail_pricing_option3_title: "심한 어두운 입술 처리 패키지",
+    lip_detail_pricing_option3_item1:
+      "어두운 입술 중화와 베이비립 블러싱 2회 세션 결합.",
+    lip_detail_pricing_option3_item2: "3개월마다 정기 모니터링.",
+    lip_detail_pricing_option3_item3: "색소 개선을 위한 영양 상담.",
     lip_detail_pricing_note:
-      "가격에는 일회용 멸균 도구 키트 및 VAT가 포함됩니다. 구체적인 가격은 입술 상태 및 색상 선택에 따라 다릅니다. 그룹 혜택 또는 현재 프로모션은 문의하세요.",
+      "가격에는 1회용 무균 도구 세트 및 VAT 포함. 구체적인 가격은 입술 상태와 선택한 색상에 따라 달라집니다. 그룹 할인 또는 현재 프로모션을 받으려면 문의하세요.",
     lip_detail_faq_title: "자주 묻는 질문",
-    lip_detail_faq_q1: "콜라겐 립 반영구는 아픈가요?",
+    lip_detail_faq_q1: "콜라겐 립 블러싱이 아픈가요?",
     lip_detail_faq_a1:
-      "프로세스는 전문 마취 사용, 부드러운 기법, 거의 통증 없음 및 최소 붓기.",
-    lip_detail_faq_q2: "입술 색상은 얼마나 지속되나요?",
+      "프로세스는 전문 마취를 사용하며, 부드러운 기법으로 거의 통증이 없고 붓기가 적습니다.",
+    lip_detail_faq_q2: "입술 색상이 얼마나 오래 지속되나요?",
     lip_detail_faq_a2:
-      "색상은 체질에 따라 정확하게 발색되고 18–36개월 지속되며, 장기적으로 자연스럽게 장밋빛 입술을 갖게 됩니다.",
-    lip_detail_faq_q3: "입술이 완전히 회복되기까지 얼마나 걸리나요?",
+      "색상은 체질에 따라 18–36개월 동안 정확하게 발현되고 지속되어 자연스러운 핑크 입술을 오래 유지할 수 있습니다.",
+    lip_detail_faq_q3: "입술이 완전히 회복되는 데 얼마나 걸리나요?",
     lip_detail_faq_a3:
-      "일반적으로 처음 1–2일 동안 입술이 약간 부어오르고, 5–7일 후 색상이 안정화되고 입술이 부드럽고 자연스러워집니다.",
+      "일반적으로 처음 1–2일 동안 입술이 약간 부어오르고, 5–7일 후 색상이 안정되고 입술이 부드럽고 자연스러워집니다.",
     lip_detail_faq_q4: "시술 후 휴식이 필요한가요?",
     lip_detail_faq_a4:
-      "휴식이 필요 없으며 정상적으로 생활할 수 있습니다. 최고의 색상 발색을 위해 입술 케어 지침을 따르기만 하면 됩니다.",
-    lip_detail_faq_q5: "자신만의 색상 톤을 선택할 수 있나요?",
+      "휴식이 필요 없습니다. 평소대로 생활하시면 됩니다. 색상이 가장 예쁘게 발현되도록 입술 케어 가이드를 따르시면 됩니다.",
+    lip_detail_faq_q5: "개인 톤 색상을 선택할 수 있나요?",
     lip_detail_faq_a5:
-      "물론입니다, 전문가가 피부 톤과 희망에 맞는 톤을 상담하여 자연스러운 색상 발색을 보장합니다.",
-    lip_detail_faq_q6: "입술 색상이 퇴색하거나 조정이 필요한 경우는?",
+      "물론입니다. 전문가가 피부 톤과 요구사항에 맞는 톤을 상담하여 자연스러운 색상 발현을 보장합니다.",
+    lip_detail_faq_q6: "입술 색상이 바래거나 수정이 필요하면 어떻게 하나요?",
     lip_detail_faq_a6:
-      "04개월 내 무료 1회 색상 보정을 받을 수 있어 입술이 항상 아름답고 고르게 유지됩니다.",
-    lip_detail_cta_title: "신선하고 젊은 입술을 갖고 싶으신가요?",
+      "4개월 내 무료 1회 터치업을 받으실 수 있어 입술이 항상 아름답고 고른 색상을 유지합니다.",
+    lip_problems_title: "입술 문제",
+    lip_problems_intro: "우리가 해결할 수 있는 일반적인 입술 문제들",
+    lip_problem1_title: "어두운, 칙칙한 입술",
+    lip_problem1_desc:
+      "어두운 입술 색상으로 얼굴이 생기 없어 보이고 항상 립스틱으로 결점을 가려야 합니다.",
+    lip_problem1_alt: "어두운, 칙칙한 입술",
+    lip_problem2_title: "불균일한 입술 색상",
+    lip_problem2_desc:
+      "일부 입술 부위는 진하고 일부는 옅어서 메이크업이 어렵고 입술 색상이 조화롭지 않습니다.",
+    lip_problem2_alt: "불균일한 입술 색상",
+    lip_problem4_title: "비대칭 입술, 불균형 립 라인",
+    lip_problem4_desc:
+      "양쪽이 고르지 않은 입술로 미소가 조화롭지 않고 대화 시 자신감이 떨어집니다.",
+    lip_problem4_alt: "비대칭 입술, 불균형 립 라인",
+    lip_problem5_title: "시간이 지나면서 톤이 어두워지는 입술",
+    lip_problem5_desc:
+      "케어를 잘 해도 입술 색상이 시간이 지나면서 바래고 생기를 잃어 장기적인 해결책이 필요합니다.",
+    lip_problem5_alt: "시간이 지나면서 톤이 어두워지는 입술",
+    why_choose_title: "왜 많은 고객이 루미 뷰티에서 립 블러싱을 선택할까요?",
+    why_choose_item1_title: "1:1 립 블러싱 – 7년 이상 경력 전문가",
+    why_choose_item1_desc:
+      "루미 뷰티에서는 7년 경력을 가진 립 블러싱 전문가가 각 고객에게 프라이빗 1:1 케어를 제공하여 섬세하고 조화로운 입술 색상을 보장하며 각 얼굴에 맞게 디자인합니다.",
+    why_choose_item2_title: "콜라겐 기술",
+    why_choose_item2_desc:
+      "고급 기법으로 입술이 자연스럽고 부드럽고 볼륨감 있게 색상이 발현되며 어두운 톤을 효과적으로 감소시킵니다.",
+    why_choose_item3_title: "수입 유기농 색소, 절대 안전",
+    why_choose_item3_desc:
+      "100% 납 없는 유기농 색소, 자극 없음, 모든 피부 유형과 민감한 입술에 적합합니다.",
+    why_choose_item4_title: "부드러운 프로세스, 무통증, 빠른 회복",
+    why_choose_item4_desc:
+      "전문 PMU 기기로 립 블러싱, 최대한의 붓기와 통증 감소, 1–2일 후 회복.",
+    why_choose_item5_title: "장기 지속 색상 결과",
+    why_choose_item5_desc:
+      "입술 색상이 18–36개월 동안 안정적으로 유지되며, 정확한 톤으로 발현되고 시간이 지나도 자연스러운 효과를 유지합니다.",
+    why_choose_item6_title: "세심한 케어, 시술 후 보증",
+    why_choose_item6_desc:
+      "자세한 케어 가이드, 무료 색상 터치업 지원으로 항상 완벽한 입술을 유지합니다.",
+    service_commitment_title: "서비스 약속",
+    service_commitment_intro:
+      "루미 뷰티는 명확한 보장과 함께 최고의 서비스를 제공하기로 약속합니다",
+    commitment1_title: "절대 안전",
+    commitment1_desc:
+      "의료 표준 프로세스, 무균 도구, 수입 유기농 색소로 입술 건강을 보호합니다.",
+    commitment2_title: "자연스러운 결과 – 지속 색상",
+    commitment2_desc:
+      "립 블러싱이 정확한 색상으로 발현되고, 부드럽게, 18–36개월 동안 유지되며, 얼굴과 조화롭습니다.",
+    commitment3_title: "세심한 케어, 1:1",
+    commitment3_desc:
+      "각 고객은 개별 상담과 케어를 받으며, 시술 후 자세한 가이드를 제공하여 입술이 항상 아름답게 유지됩니다.",
+    commitment4_title: "보증 & 색상 터치업 지원",
+    commitment4_desc:
+      "필요시 무료 1회 색상 터치업 지원으로 초기 약속대로 완벽한 입술을 보장합니다.",
+    lip_detail_cta_title: "생기 있는 입술 색상을 갖고 싶으신가요?",
     lip_detail_cta_desc:
-      "오늘 예약하여 루미 뷰티 전문가가 톤을 측정하고 개인 맞춤 케어 계획을 수립해 드립니다.",
+      "오늘 바로 예약하고 루미 뷰티에서 색상 톤 측정 및 개인 맞춤 케어 프로토콜을 받아보세요.",
+    color_development_title: "색상 발현 과정",
+    color_development_intro: "립 블러싱 후 회복 및 색상 발현 과정",
+    timeline_day1_title: "방금 블러싱한 입술",
+    timeline_day1_desc:
+      "손상과 마취로 인해 입술이 약간 당기고, 가벼운 따가움은 정상입니다.",
+    timeline_day2_title: "입술이 건조하고 각질 준비 중",
+    timeline_day2_desc:
+      "입술이 건조해지기 시작하며, 자연스러운 각질 탈락 과정을 지원하기 위해 재생 케어가 필요합니다.",
+    timeline_day3_title: "가벼운 각질, 색상이 아직 고르지 않음",
+    timeline_day3_desc:
+      "각질이 완전히 탈락하고, 색상이 옅고, 테두리가 진하며, 입술 안쪽이 옅습니다. 이 기간 동안 정기적인 케어와 신중한 주의가 필요합니다.",
+    timeline_day10_title: "입술 색상이 점차 안정화",
+    timeline_day10_desc:
+      "색상은 체질과 케어 방법에 따라 진하거나 옅을 수 있습니다. 이것은 정상적인 단계이며 걱정할 필요가 없습니다. 규칙적으로 케어를 도포하세요.",
+    timeline_day30_title: "생기 있고 부드러운 입술",
+    timeline_day30_desc:
+      "입술 색상이 고르게 시작되고, 입술이 더 부드러워집니다. 계속 규칙적으로 케어를 도포하세요.",
+    timeline_day50_title: "완전히 안정화된 색상",
+    timeline_day50_desc:
+      "입술 색상이 안정화되며, 색상이 원하는 대로 나오지 않으면 고객이 다시 터치업할 수 있습니다.",
+    before_after_title: "시술 전후 사진",
+    before_after_intro: "루미 뷰티 고객들의 실제 결과",
+    before_after_alt1: "립 블러싱 시술 전후 결과",
+    before_after_alt2: "립 블러싱 시술 전후 결과",
+    before_after_alt3: "립 블러싱 시술 전후 결과",
+    before_after_alt4: "립 블러싱 시술 전후 결과",
+    before_after_alt5: "립 블러싱 시술 전후 결과",
+    before_after_alt6: "립 블러싱 시술 전후 결과",
 
     // Service Detail - Brow Tattoo
     brow_detail_page_title:
-      "눈썹 쉐이딩 반영구 루미 뷰티 - 파우더처럼 부드러운 자연스러운 눈썹",
+      "루미 뷰티 쉐이딩 브로우 – 부드러운 파우더 효과, 18–36개월 동안 자연스럽게 유지",
+
     brow_detail_meta_description:
-      "루미 뷰티 눈썹 쉐이딩 반영구: 파우더처럼 부드러운 자연스러운 눈썹, 18-36개월 지속. 쉐이딩 기법으로 앞부분은 부드럽게, 중간은 매끄럽게, 끝부분은 선명하게.",
-    brow_detail_badge: "눈썹 형성",
-    brow_detail_hero_heading: "눈썹 쉐이딩 반영구 루미 뷰티",
+      "루미 뷰티 쉐이딩 브로우: 부드러운 파우더 효과, 18–36개월 지속되는 자연스러운 마무리. 자연스러운 앞머리, 매끄러운 바디, 선명한 꼬리로 은은한 메이크업 느낌 구현.",
+
+    brow_detail_badge: "브로우 디자인",
+
+    brow_detail_hero_heading: "루미 뷰티 쉐이딩 브로우",
     brow_detail_hero_subheading:
-      "눈썹 쉐이딩 – 파우더처럼 부드러운 자연스러운 눈썹 18–36개월",
+      "쉐이딩 브로우 – 부드러운 파우더 효과, 18–36개월 자연 유지",
+
     brow_detail_hero_paragraph1:
-      "쉐이딩 기법으로 앞부분은 부드럽게, 중간은 매끄럽게, 끝부분은 선명하게 만들어 가벼운 메이크업 효과를 주면서도 자연스러움을 유지합니다.",
+      "쉐이딩 기술은 부드러운 앞머리, 매끄러운 브로우 바디, 자연스럽게 정돈된 꼬리를 만들어주며, 과하지 않은 은은한 메이크업 효과를 제공합니다.",
+
     brow_detail_hero_paragraph2:
-      "쉐이딩은 98% 얼굴에 적합하며 편안하고 통증이 적으며 색상이 고르게 발색됩니다. 순수 유럽 유기농 잉크, 출산 후 6개월부터 안전합니다. 형태 및 색상 보증 04개월.",
-    brow_detail_hero_stat_label: "18개월 동안 눈썹 그리기 불필요",
-    brow_before_after_title: "시술 전후 결과",
+      "쉐이딩은 얼굴형의 98%에 잘 어울리며, 편안하고 통증이 거의 없고 색감도 균일하게 유지됩니다. 유럽 유기농 색소는 출산 6개월 이후의 엄마들도 안전하게 시술할 수 있습니다. 4개월간의 모양 & 색상 보증 포함.",
+
+    brow_detail_hero_stat_label: "18개월 동안 눈썹을 그릴 필요가 없어요",
+
+    brow_before_after_title: "시술 전후 비교",
     brow_before_after_intro:
-      "루미 뷰티에서 눈썹 쉐이딩 반영구 후 고객들의 놀라운 결과를 확인하세요",
-    brow_before_after_image1_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image2_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image3_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image4_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image5_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image6_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image7_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image8_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image9_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image10_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image11_alt: "루미 뷰티 눈썹 반영구 결과",
-    brow_before_after_image12_alt: "루미 뷰티 눈썹 반영구 결과",
+      "루미 뷰티에서 쉐이딩 브로우를 선택한 고객들의 아름다운 변화를 확인하세요",
+
+    brow_before_after_image1_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image2_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image3_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image4_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image5_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image6_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image7_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image8_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image9_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image10_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image11_alt: "루미 뷰티 쉐이딩 브로우 결과",
+    brow_before_after_image12_alt: "루미 뷰티 쉐이딩 브로우 결과",
+
     brow_before_after_cta_text:
-      "당신의 얼굴에 맞는 눈썹 모양을 알고 싶으신가요?",
-    brow_before_after_cta_button: "사진을 보내 전문가 무료 상담 받기",
-    brow_who_suitable_title: "눈썹 쉐이딩이 적합한 사람은?",
-    brow_who_suitable_intro: "이 서비스는 다음과 같은 경우에 적합합니다:",
-    brow_who_suitable_image1_alt: "눈썹이 너무 짧음",
-    brow_who_suitable_item1: "눈썹이 너무 짧음",
-    brow_who_suitable_image2_alt: "눈썹이 옅음",
-    brow_who_suitable_item2: "눈썹이 옅음",
-    brow_who_suitable_image3_alt: "짧고 성글고 얇은 눈썹",
-    brow_who_suitable_item3: "짧고 성글고 얇은 눈썹",
-    brow_who_suitable_image4_alt: "조화롭지 않고 균형 잡히지 않은 눈썹",
-    brow_who_suitable_item4: "조화롭지 않고 균형 잡히지 않은 눈썹",
+      "내 얼굴에 어떤 브로우 디자인이 맞는지 알고 싶나요?",
+    brow_before_after_cta_button: "무료 상담 받기",
+
+    brow_who_suitable_title: "쉐이딩 브로우가 잘 맞는 사람",
+    brow_who_suitable_intro: "다음과 같은 경우에 적합합니다:",
+
+    brow_who_suitable_image1_alt: "짧은 눈썹",
+    brow_who_suitable_item1: "눈썹이 너무 짧은 경우",
+
+    brow_who_suitable_image2_alt: "옅은 눈썹",
+    brow_who_suitable_item2: "눈썹이 옅거나 거의 보이지 않는 경우",
+
+    brow_who_suitable_image3_alt: "성근 눈썹",
+    brow_who_suitable_item3: "성근·얇은·짧은 눈썹",
+
+    brow_who_suitable_image4_alt: "비대칭 눈썹",
+    brow_who_suitable_item4: "눈썹이 비대칭이거나 균형이 맞지 않는 경우",
+
     brow_who_suitable_note:
-      "👉 쉐이딩은 98% 얼굴에 적합하며 편안하고 통증이 적으며 색상이 고르게 발색됩니다.",
-    brow_standards_title: "아름다운 쉐이딩 눈썹의 기준",
-    brow_standards_intro: "쉐이딩 전용",
-    brow_standard1_image_alt: "적절한 비율 – 앞부분 부드럽고 끝부분 선명",
-    brow_standard1_title: "적절한 비율 – 앞부분 부드럽고 끝부분 선명",
+      "👉 쉐이딩은 얼굴형의 98%에 잘 어울리며, 부드럽고 통증이 거의 없으며 색감도 고르게 유지됩니다.",
+
+    brow_standards_title: "아름다운 쉐이딩 브로우 기준",
+    brow_standards_intro: "쉐이딩 브로우 전용 기준",
+
+    brow_standard1_image_alt: "균형 잡힌 비율 – 부드러운 앞머리, 선명한 꼬리",
+    brow_standard1_title: "균형 잡힌 비율 – 부드러운 앞머리, 정돈된 꼬리",
     brow_standard1_desc:
-      "쉐이딩은 전통적인 타투처럼 진하지 않고 헤어 스트로크처럼 선이 드러나지 않습니다. 앞부분에 자연스러운 부드러움을 만들고 끝부분으로 갈수록 매끄럽게 전환됩니다.",
-    brow_standard2_image_alt: "맑은 색상 – 진하고 딱딱하지 않음",
-    brow_standard2_title: "맑은 색상 – 진하고 딱딱하지 않음",
+      "쉐이딩은 타투처럼 진하지도, 헤어스트로크처럼 선이 뚜렷하지도 않습니다. 앞머리는 그라데이션처럼 부드럽게, 꼬리는 선명하고 정돈되게 표현합니다.",
+
+    brow_standard2_image_alt: "부드러운 컬러 – 진한 어둠 없음",
+    brow_standard2_title: "부드러운 컬러 – 과한 톤 없이 자연스럽게",
     brow_standard2_desc:
-      "아름다운 쉐이딩은 매끄럽고 조화로운 색상으로, 매일 아이브로우 파우더를 바른 것처럼 보입니다.",
-    brow_standard3_image_alt: "얼굴에 맞는 눈썹 형태",
-    brow_standard3_title: "얼굴에 맞는 눈썹 형태",
+      "쉐이딩은 일상적인 아이브로우 파우더처럼 부드럽고 조화로운 색감일 때 가장 아름답습니다.",
+
+    brow_standard3_image_alt: "얼굴형 기반 브로우 디자인",
+    brow_standard3_title: "얼굴형에 맞춘 브로우 형태",
     brow_standard3_desc:
-      "쉐이딩은 얼굴형에 따라 수평형, 약간 곡선형 또는 클래식 아치형 눈썹을 강조합니다.",
-    brow_shapes_title: "어떤 얼굴형이 쉐이딩에 적합한가요?",
+      "직선형, 소프트 아치형, 클래식 아치형 등 얼굴형에 따라 가장 조화로운 쉐이딩 스타일을 적용합니다.",
+
+    brow_shapes_title: "쉐이딩 브로우가 잘 어울리는 얼굴형",
     brow_shapes_intro:
-      "각 얼굴에는 적합한 쉐이딩 눈썹 형태가 있습니다. 루미 뷰티 전문가에게 상담받으세요.",
-    brow_shape1_image_alt: "둥근 얼굴 - 가벼운 각도 쉐이딩",
-    brow_shape1_title: "둥근 얼굴 – 가벼운 각도 쉐이딩",
-    brow_shape1_desc: "얼굴을 더 슬림하게 보이게 합니다.",
-    brow_shape2_image_alt: "긴 얼굴 - 자연스러운 수평 쉐이딩",
-    brow_shape2_title: "긴 얼굴 – 자연스러운 수평 쉐이딩",
-    brow_shape2_desc: "얼굴 길이의 균형을 만듭니다.",
-    brow_shape3_image_alt: "각진 얼굴 - 부드러운 곡선 쉐이딩",
+      "각 얼굴형에 가장 잘 맞는 쉐이딩 스타일이 있습니다. 루미 뷰티가 안내해드립니다.",
+
+    brow_shape1_image_alt: "둥근 얼굴 – 소프트 앵글 쉐이딩",
+    brow_shape1_title: "둥근 얼굴 – 부드러운 각도의 쉐이딩",
+    brow_shape1_desc: "얼굴이 더 슬림해 보이도록 도움을 줍니다.",
+
+    brow_shape2_image_alt: "긴 얼굴 – 자연스러운 직선 쉐이딩",
+    brow_shape2_title: "긴 얼굴 – 내추럴 스트레이트 쉐이딩",
+    brow_shape2_desc: "얼굴 길이를 균형 있게 보이도록 합니다.",
+
+    brow_shape3_image_alt: "각진 얼굴 – 소프트 곡선 쉐이딩",
     brow_shape3_title: "각진 얼굴 – 부드러운 곡선 쉐이딩",
-    brow_shape3_desc: "각진 느낌을 줄이고 '여성스럽게' 만듭니다.",
-    brow_shape4_image_alt: "계란형 얼굴 - 자연스러운 쉐이딩",
-    brow_shape4_title: "계란형 얼굴 – 자연스러운 쉐이딩",
-    brow_shape4_desc: "얼굴의 자연스러운 부드러움을 유지합니다.",
-    brow_detail_process_title: "눈썹 쉐이딩 반영구 과정",
-    brow_detail_process_intro: "75분 – 국제 표준",
-    brow_detail_process_step1_title: "상담 및 평가",
+    brow_shape3_desc: "각진 느낌을 완화하고 여성스러움을 더해줍니다.",
+
+    brow_shape4_image_alt: "타원형 얼굴 – 자연 쉐이딩",
+    brow_shape4_title: "타원형 얼굴 – 내추럴 쉐이딩",
+    brow_shape4_desc: "원래의 조화를 자연스럽게 유지합니다.",
+
+    brow_detail_process_title: "쉐이딩 브로우 시술 과정",
+    brow_detail_process_intro: "75분 – 국제 표준 프로세스",
+
+    brow_detail_process_step1_title: "상담 & 평가",
     brow_detail_process_step1_desc:
-      "기술자가 피부 상태를 확인하고 희망사항을 듣고 적합한 눈썹 형태 – 잉크 색상을 상담합니다.",
-    brow_detail_process_step2_title: "청소 및 소독",
+      "아티스트가 피부 상태를 확인하고, 원하는 스타일을 듣고, 가장 잘 어울리는 모양과 색소를 추천합니다.",
+
+    brow_detail_process_step2_title: "클렌징 & 살균",
     brow_detail_process_step2_desc:
-      "눈썹 부위를 세정하고 청소한 후 감염을 방지하기 위해 철저히 소독합니다.",
-    brow_detail_process_step3_title: "마취 및 잉크 준비",
+      "자극이나 감염을 방지하기 위해 눈썹을 꼼꼼하게 세척하고 살균합니다.",
+
+    brow_detail_process_step3_title: "마취 & 색소 준비",
     brow_detail_process_step3_desc:
-      "기술자가 전 과정 동안 편안함을 위해 마취를 적용합니다. 마취가 효과를 발휘할 때까지 기다리는 동안 적합한 잉크를 혼합합니다.",
-    brow_detail_process_step4_title: "눈썹 형태 측정 및 그리기",
+      "편안함을 위해 연고 마취를 적용하며, 동시에 맞춤 색소를 준비합니다.",
+
+    brow_detail_process_step4_title: "브로우 매핑",
     brow_detail_process_step4_desc:
-      "비율을 측정하고 얼굴과 조화를 이루도록 눈썹 형태를 스케치합니다.",
-    brow_detail_process_step5_title: "눈썹 쉐이딩 반영구 시행",
+      "정확한 측정과 스케치를 통해 얼굴 비율에 완벽히 맞는 눈썹 모양을 설계합니다.",
+
+    brow_detail_process_step5_title: "쉐이딩 시술",
     brow_detail_process_step5_desc:
-      "초미세 니들을 사용한 전문 반영구 장비로 잉크를 피부에 삽입하고 자연스러운 파우더 효과를 만듭니다.",
+      "초미세 니들을 사용하는 PMU 기기로 피부에 색소를 픽셀처럼 부드럽게 쌓아 자연스러운 쉐이딩 효과를 만듭니다.",
+
     brow_commitment_title: "서비스 약속",
-    brow_commitment_intro: "루미 뷰티의 고객 약속",
-    brow_commitment1_title: "10–14일 내 정확한 색상 발색",
-    brow_commitment2_title: "파란색/빨간색 변색 없음",
-    brow_commitment3_title: "색상 18–36개월 지속",
-    brow_commitment4_title: "유럽 유기농 잉크",
-    brow_commitment5_title: "100% 일회용 소모품",
-    brow_commitment6_title: "04개월 보증 – 무료 보정",
-    why_lumi_brow_title: "루미 뷰티에서 쉐이딩을 선택하는 이유",
-    why_lumi_brow_intro: "간결하지만 강력함",
-    why_lumi_brow0_title: "1:1 눈썹 반영구 – 7년 이상 경력 전문가",
+    brow_commitment_intro: "루미 뷰티가 드리는 보장",
+
+    brow_commitment1_title: "10–14일 내 자연색 완성",
+    brow_commitment2_title: "푸르거나 붉게 변색 없음",
+    brow_commitment3_title: "18–36개월 유지",
+    brow_commitment4_title: "유럽산 유기농 색소 사용",
+    brow_commitment5_title: "100% 1회용 도구 사용",
+    brow_commitment6_title: "4개월 보증 – 무료 리터치 포함",
+
+    why_lumi_brow_title: "왜 루미 뷰티의 쉐이딩 브로우인가?",
+    why_lumi_brow_intro: "짧지만 강력한 이유",
+
+    why_lumi_brow0_title: "1:1 프라이빗 케어 – 7년 이상 경력 아티스트",
     why_lumi_brow0_desc:
-      "루미 뷰티에서는 각 고객이 7년 경력의 눈썹 반영구 전문가로부터 프라이빗 1:1 케어를 받아, 각 얼굴에 맞는 섬세하고 조화로운 눈썹을 보장합니다.",
-    why_lumi_brow1_title: "쉐이딩 색상 30% 더 옅게 혼합",
-    why_lumi_brow1_desc: "벗겨진 후 자연스러운 모습 보장",
-    why_lumi_brow2_title: "미세 니들 기법",
-    why_lumi_brow2_desc: "통증 없음, 부종 없음, 빠른 회복",
-    why_lumi_brow3_title: "개인 맞춤 눈썹 디자인",
-    why_lumi_brow3_desc: "템플릿 따르지 않음",
-    why_lumi_brow4_title: "출산 후 6개월부터 안전",
-    brow_detail_pricing_title: "가격표 – 눈썹 쉐이딩 반영구",
-    brow_detail_pricing_intro: "가격은 기존 상태와 원하는 형태에 따라 다릅니다",
-    brow_detail_pricing_single_title: "눈썹 쉐이딩 반영구",
-    brow_detail_pricing_single_subtitle: "상담 및 눈썹 상태 평가 후 가격 결정",
-    brow_detail_pricing_single_item1: "개인 맞춤 눈썹 형태 디자인",
-    brow_detail_pricing_single_item2: "부드럽고 매끄러운 쉐이딩 기법",
-    brow_detail_pricing_single_item3: "7일 케어 세럼",
-    brow_detail_pricing_single_item4: "04개월 보증",
-    brow_detail_pricing_single_item5: "무료 보정",
+      "루미 뷰티에서는 7년 이상 경력을 가진 브로우 전문가가 고객 한 분마다 1:1 맞춤 케어를 제공하여 얼굴형에 가장 조화로운 브로우를 디자인합니다.",
+
+    why_lumi_brow1_title: "30% 희석 색소 – 자연 치유",
+    why_lumi_brow1_desc: "치유 후 자연스럽고 부드러운 색감 유지",
+
+    why_lumi_brow2_title: "초부드러운 니들 기술",
+    why_lumi_brow2_desc: "무통증, 붓기 없음, 빠른 회복",
+
+    why_lumi_brow3_title: "개인 맞춤 브로우 디자인",
+    why_lumi_brow3_desc: "템플릿 사용 없이 100% 맞춤 설계",
+
+    why_lumi_brow4_title: "출산 6개월 이후 엄마도 안전",
+
+    brow_detail_pricing_title: "쉐이딩 브로우 가격",
+    brow_detail_pricing_intro:
+      "가격은 기존 눈썹 상태와 원하는 디자인에 따라 달라집니다",
+
+    brow_detail_pricing_single_title: "쉐이딩 브로우",
+    brow_detail_pricing_single_subtitle:
+      "상담 및 평가 이후 최종 비용이 결정됩니다",
+
+    brow_detail_pricing_single_item1: "맞춤 브로우 디자인",
+    brow_detail_pricing_single_item2: "부드럽고 매끄러운 쉐이딩 기술",
+    brow_detail_pricing_single_item3: "7일 관리용 세럼 제공",
+    brow_detail_pricing_single_item4: "4개월 보증",
+    brow_detail_pricing_single_item5: "무료 리터치 포함",
+
     brow_detail_pricing_note:
-      "가격에는 일회용 소모품 및 VAT가 포함됩니다. 2명 이상 그룹은 추가 10% 할인.",
-    brow_reviews_title: "고객 리뷰",
-    brow_review1_name: "란 안",
+      "가격에는 1회용 도구 및 VAT 포함. 2인 이상 방문 시 5% 추가 할인.",
+
+    brow_reviews_title: "고객 후기",
+
+    brow_review1_name: "Lan Anh",
     brow_review1_age: "28세",
     brow_review1_text:
-      '"기존 눈썹이 파랗게 변색되었습니다. 루미에서 쉐이딩 후 색상이 매끄럽고 아름다워서 모두 어디서 했는지 물어봅니다."',
-    brow_review2_name: "김 응안",
+      '"예전 눈썹이 파랗게 변색됐어요. 루미에서 쉐이딩한 후 색이 너무 부드럽고 예쁘게 자리 잡아서 모두가 어디서 했냐고 물어봐요."',
+
+    brow_review2_name: "Kim Ngan",
     brow_review2_age: "31세",
     brow_review2_text:
-      '"헤어 스트로크 스타일을 좋아하지 않아 쉐이딩을 선택했습니다. 매끄럽고 부드러워서 정말 마음에 듭니다."',
+      '"헤어스트로크 스타일을 좋아하지 않아서 쉐이딩을 선택했어요. 부드럽고 매끄럽고, 제가 원하던 스타일 그대로예요."',
+
     brow_detail_faq_title: "자주 묻는 질문",
-    brow_detail_faq_intro: "간결함 – 쉐이딩 중심",
-    brow_detail_faq_q1: "시술 후 너무 진해지나요?",
-    brow_detail_faq_a1:
-      "아니요. 색상은 30% 더 옅게 혼합되어 벗겨진 후 정확한 톤으로 발색됩니다.",
-    brow_detail_faq_q2: "언제쯤 색상이 아름답게 발색되나요?",
-    brow_detail_faq_a2: "10–14일부터 자연스럽게 아름답게 보입니다.",
-    brow_detail_faq_q3: "아프나요?",
+    brow_detail_faq_intro: "쉐이딩 중심의 간단하고 명확한 안내",
+
+    brow_detail_faq_q1: "시술 직후 눈썹이 너무 진해 보이나요?",
+    brow_detail_faq_a1: "아니요. 색소는 30% 희석되어 자연스럽게 치유됩니다.",
+
+    brow_detail_faq_q2: "언제 가장 예쁘게 자리 잡나요?",
+    brow_detail_faq_a2: "10–14일 후 자연스럽고 완성된 색감이 됩니다.",
+
+    brow_detail_faq_q3: "아픈가요?",
     brow_detail_faq_a3:
-      "많이 아프지 않습니다. 쉐이딩은 최소한의 외상을 주며 통증을 두려워하는 사람에게도 적합합니다.",
-    brow_detail_cta_title:
-      "파우더처럼 부드럽고 매끄럽고 자연스러운 눈썹을 원하시나요?",
+      "거의 없습니다. 쉐이딩은 매우 부드러운 기법으로 통증이 두려운 분들도 편하게 받을 수 있습니다.",
+
+    brow_detail_cta_title: "부드럽고 파우더 같은 눈썹 원하시나요?",
     brow_detail_cta_desc:
-      "지금 예약하여 루미 뷰티에서 무료 눈썹 형태 측정을 받으세요.",
+      "지금 예약하고 루미 뷰티에서 무료 브로우 매핑을 받아보세요.",
 
     // Service Detail - Lip Brightening (Neutralizing Pigment)
-    lip_removal_detail_hero_benefit1: "청색 – 보라색 – 회색 색소 감소",
-    lip_removal_detail_hero_benefit2: "벗겨짐 없음 – 초고속 회복",
-    lip_removal_detail_hero_benefit3: "남녀 모두 적합",
-    lip_removal_detail_why_choose_title:
-      "1:1 입술 톤 브라이트닝 – 7년 이상 전문가 경력",
-    lip_removal_detail_why_choose_desc:
-      "루미 뷰티에서는 반영구 메이크업 분야에서 7년 이상의 경력을 가진 전문가가 1:1 모델로 각 고객을 서비스합니다. 우리는 가장 전문적이고 안전하며 효과적인 서비스를 제공하기 위해 최선을 다합니다.",
+    lip_removal_detail_page_title:
+      "루미 뷰티 고급 립 브라이트닝 – 자연스러운 입술 색 되찾기",
 
-    copyright: "© 2023 루미 뷰티. 모든 권리 보유.",
+    lip_removal_detail_meta_description:
+      "루미 뷰티의 뉴트럴라이징 색소를 이용한 립 브라이트닝: 어두운 톤(블루·퍼플·그레이)을 따뜻하게 중화, 1회 시술로 30–60% 개선, 무통증·무붓기, 6–12개월 보증 포함.",
+
+    lip_removal_detail_badge: "뉴트럴라이징 색소",
+
+    lip_removal_detail_hero_heading:
+      "입술 어둡기 중화 – 한 번의 시술로 더 밝아진 입술",
+
+    lip_removal_detail_hero_subheading:
+      "뉴트럴라이징 기법은 따뜻한 색소(오렌지/피치/코랄)를 사용해 차가운 톤을 중화하며, 색을 과하게 추가하지 않습니다 — 통증 없음, 붓기 없음. 7–14일 후 50–80% 밝아지고 자연스러운 균일 톤 완성.",
+
+    lip_removal_detail_hero_paragraph1:
+      "다음 세대 콜드 레이저와 고농축 비타민 C + B5 세럼을 결합하여 벗겨짐이나 화상 없이 어두운 색소를 분해합니다. 유전적 요인, 오래된 립스틱, 호르몬 변화로 인한 입술 어둡기에 적합합니다.",
+
+    lip_removal_detail_hero_paragraph2:
+      "모든 고객에게 1–2회의 뉴트럴라이징과 자연스럽고 오래가는 분홍빛을 위한 베이비립 세션을 포함한 개인 맞춤 플랜을 제공합니다.",
+
+    lip_removal_detail_hero_stat_label: "첫 세션 후 색소 침착 감소",
+    lip_removal_detail_hero_benefit1: "푸른빛·보라빛·회색빛 입술 톤 완화",
+    lip_removal_detail_hero_benefit2: "각질 벗겨짐 없음 – 초고속 회복",
+    lip_removal_detail_hero_benefit3: "남녀 모두 가능",
+    lip_removal_detail_why_choose_title:
+      "1:1 립 브라이트닝 – 7년 이상 전문가 케어",
+    lip_removal_detail_why_choose_desc:
+      "루미 뷰티에서는 모든 고객이 7년 이상의 경험을 가진 전문가와 1:1 프라이빗 케어를 받습니다. 가장 전문적이고 안전하며 효과적인 서비스를 약속드립니다.",
+
+    lip_removal_detail_highlights_title:
+      "루미 뷰티 립 브라이트닝이 효과적인 이유",
+
+    lip_removal_detail_highlight1_title: "650nm 콜드 레이저 기술",
+    lip_removal_detail_highlight1_desc:
+      "열 손상 없이 어두운 색소만 정확히 타깃팅합니다.",
+
+    lip_removal_detail_highlight2_title: "독점 비타민 세럼",
+    lip_removal_detail_highlight2_desc:
+      "치유 속도를 높이고 깊은 보습과 즉각적인 수분 잠금을 제공합니다.",
+
+    lip_removal_detail_highlight3_title: "맞춤 시술 플랜",
+    lip_removal_detail_highlight3_desc:
+      "선천적/생활습관에 따른 색소 침착 정도에 맞게 에너지·세션 수를 조절합니다.",
+
+    lip_removal_detail_highlight4_title: "베이비립 시술 포함",
+    lip_removal_detail_highlight4_desc:
+      "뉴트럴라이징 후 베이비립을 적용하면 최소 18개월 동안 생기 있는 분홍빛 유지.",
+
+    lip_removal_detail_process_title: "안전한 립 브라이트닝 과정",
+    lip_removal_detail_process_intro:
+      "60–75분 소요 – 뉴트럴라이징 + 집중 회복 포함.",
+
+    lip_removal_detail_process_step1_title: "색소 분석",
+    lip_removal_detail_process_step1_desc:
+      "전문 조명을 이용해 어두운 톤과 원인을 평가합니다.",
+
+    lip_removal_detail_process_step2_title: "효소 각질 제거",
+    lip_removal_detail_process_step2_desc:
+      "부드러운 파파인 효소로 각질을 제거하여 색소 평가를 더 정확하게 합니다.",
+
+    lip_removal_detail_process_step3_title: "콜드 레이저 뉴트럴라이징",
+    lip_removal_detail_process_step3_desc:
+      "650nm 레이저가 주변 조직 손상 없이 멜라닌을 분해합니다.",
+
+    lip_removal_detail_process_step4_title: "비타민 주입 & 회복 마스크",
+    lip_removal_detail_process_step4_desc:
+      "비타민 C·E·B5 세럼 + 펩타이드 마스크로 즉각 진정 및 건조 완화.",
+
+    lip_removal_detail_process_step5_title: "베이비립 컬러 (옵션)",
+    lip_removal_detail_process_step5_desc:
+      "7–10일 후 회복이 완료되면 자연 핑크빛을 위한 베이비립 시술 진행.",
+
+    lip_removal_detail_results_outcome_title: "기대되는 결과",
+    lip_removal_detail_results_outcome_item1:
+      "립스틱 착색으로 인한 어두운 입술은 1회 시술 후 50–70% 개선.",
+
+    lip_removal_detail_results_outcome_item2:
+      "선천적 어두운 입술은 2회 시술 후 30–40% 개선, 이후 4주간 점진적 밝아짐.",
+
+    lip_removal_detail_results_outcome_item3:
+      "베이비립 적용 시 18–24개월 동안 자연스러운 분홍빛 유지.",
+
+    lip_removal_detail_results_aftercare_title: "사후 관리 방법",
+    lip_removal_detail_results_aftercare_item1:
+      "루미 케어 립밤을 하루 3회, 7일간 바르기.",
+    lip_removal_detail_results_aftercare_item2:
+      "매일 물 2L 마시기, 5일간 커피·진한 차 줄이기.",
+    lip_removal_detail_results_aftercare_item3:
+      "14일간 직사광선 및 납 성분 립스틱 피하기.",
+
+    lip_removal_detail_pricing_title: "시술 패키지 & 가격",
+    lip_removal_detail_pricing_intro:
+      "홈케어 제품 및 사후 체크 포함 올인원 패키지.",
+
+    lip_removal_detail_pricing_option1_title: "베이직 브라이트닝 패키지",
+    lip_removal_detail_pricing_option1_item1:
+      "콜드 레이저 1회 + 홈케어 립 키트",
+    lip_removal_detail_pricing_option1_item2: "14일 사후 체크",
+    lip_removal_detail_pricing_option1_item3:
+      "립스틱 착색으로 인한 가벼운 어두운 입술에 적합",
+
+    lip_removal_detail_pricing_option2_badge: "가장 인기",
+    lip_removal_detail_pricing_option2_title: "브라이트닝 + 베이비립 패키지",
+    lip_removal_detail_pricing_option2_item1: "뉴트럴라이징 2회 + 베이비립 1회",
+    lip_removal_detail_pricing_option2_item2:
+      "14일 홈케어 키트 & 컬러 고정 세럼",
+    lip_removal_detail_pricing_option2_item3: "12개월 색상 보증",
+
+    lip_removal_detail_pricing_option3_title: "심한 색소 침착 패키지",
+    lip_removal_detail_pricing_option3_item1: "콜드 레이저 3회 + 집중 케어",
+    lip_removal_detail_pricing_option3_item2:
+      "색소 회복을 돕는 영양·비타민 가이드 포함",
+    lip_removal_detail_pricing_option3_item3: "베이비립 무료 포함",
+
+    lip_removal_detail_pricing_note:
+      "모든 패키지 이용 시 390,000₫ 상당 루미 케어 립 트리트먼트 무료 제공. 재방문 고객 10% 할인.",
+
+    lip_removal_detail_faq_title: "자주 묻는 질문",
+
+    lip_removal_detail_faq_q1: "립 브라이트닝이 아픈가요?",
+    lip_removal_detail_faq_a1:
+      "전혀 아닙니다. 저에너지 콜드 레이저 + 의료용 마취로 편안하며, 처음 2–3분 동안 약한 따뜻함만 느껴집니다.",
+
+    lip_removal_detail_faq_q2: "언제 립 컬러를 할 수 있나요?",
+    lip_removal_detail_faq_a2:
+      "7–10일 후 입술이 회복되고 어두운 색이 줄어들면 베이비립 시술이 가능합니다.",
+
+    lip_removal_detail_faq_q3: "입술이 건조해지지 않나요?",
+    lip_removal_detail_faq_a3:
+      "아니요. 비타민과 펩타이드 마스크가 깊이 보습해주며, 사후 관리만 잘 지키면 됩니다.",
+
+    lip_removal_detail_cta_title:
+      "자연스럽고 밝은 핑크빛 입술을 되찾을 준비 되셨나요?",
+    lip_removal_detail_cta_desc:
+      "지금 예약하고 개인 맞춤 색소 중화 플랜을 받아보세요.",
+
+    // Lip Brightening - Neutralizing Pigment
+    lip_brightening_intro_title: "립 뉴트럴라이징이란?",
+    lip_brightening_intro_what:
+      "립 뉴트럴라이징은 오렌지/피치/코랄 같은 따뜻한 보정 색소를 아주 얕게 도포하여 파란·보라·회색 등의 차가운 톤을 따뜻하게 중화하는 방식입니다. 새로운 입술 색을 추가하지 않으며, 입술 구조를 바꾸지 않고, 립 블러싱과는 다릅니다. 뉴트럴라이징 후에는 50–80% 밝아지고 톤이 균일해지며 자연스러운 핑크빛으로 보입니다.",
+
+    lip_brightening_intro_who_title: "누구에게 적합한가요? (뉴트럴라이징 기준)",
+    lip_brightening_intro_who1: "파란/보라/회색의 쿨톤 입술",
+    lip_brightening_intro_who2: "선천적으로 어두운 입술",
+    lip_brightening_intro_who3: "장기간 립스틱 사용으로 어두워진 입술",
+    lip_brightening_intro_who4: "호르몬 변화로 인한 입술 착색",
+    lip_brightening_intro_who5:
+      "타투 시술 시 색이 잘 붙지 않는 입술 — 먼저 워밍업이 필요",
+
+    lip_brightening_intro_benefits_title: "주요 장점",
+    lip_brightening_benefit1_title: "쿨톤을 따뜻하게 워밍",
+    lip_brightening_benefit1_desc:
+      "뉴트럴라이징 색소가 쿨 언더톤을 부드럽게 중화해 더 밝고 부드러운 입술로.",
+    lip_brightening_benefit2_title: "1회 시술 후 30–60% 밝아짐",
+    lip_brightening_benefit2_desc:
+      "개선 폭은 초기 착색 정도에 따라 달라집니다.",
+    lip_brightening_benefit3_title: "무통증 – 무붓기",
+    lip_brightening_benefit3_desc:
+      "립 블러싱과 달리 매우 얕은 테크닉을 사용합니다.",
+    lip_brightening_benefit4_title: "7–14일 내 가시적인 밝아짐",
+    lip_brightening_benefit4_desc: "각질 벗겨짐 없이 빠르고 부드럽게 회복.",
+    lip_brightening_benefit5_title: "베이비립 블러싱의 완벽한 베이스",
+    lip_brightening_benefit5_desc:
+      "베이스가 따뜻해지면 베이비립 컬러가 더 선명하고 오래갑니다.",
+
+    lip_brightening_commitment_title: "우리의 약속",
+    lip_brightening_commitment1: "입술 색을 추가하지 않음 — 오직 색소 중화만",
+    lip_brightening_commitment2: "민감한 입술에도 적합한 안전한 기법",
+    lip_brightening_commitment3: "착색 정도에 따른 개인 맞춤 플랜",
+    lip_brightening_commitment4: "7–14일간 일일 팔로업",
+    lip_brightening_commitment5: "6–12개월 결과 보증",
+
+    lip_brightening_results_title: "시술 후 결과",
+    lip_brightening_results_intro:
+      "뉴트럴라이징 후에는 50–80% 밝아지고, 파란·보라·회색 톤이 크게 감소하며, 입술이 더 부드럽고 균일해져 자연스러운 핑크빛을 띱니다. 착색이 심한 경우 2–3회가 필요할 수 있습니다. 밝아진 후 베이비립 블러싱을 적용하면 오래가는 핑크 톤을 얻을 수 있습니다.",
+
+    lip_brightening_process_title: "뉴트럴라이징 색소 시술 과정",
+    lip_brightening_process_intro:
+      "절대 안전을 위한 국제 멸균 기준을 적용한 40–60분 세션.",
+
+    lip_brightening_process_step1_title: "입술 색소 분석",
+    lip_brightening_process_step1_desc:
+      "쿨톤, 기본 언더톤, 피부 타입을 평가합니다.",
+    lip_brightening_process_step2_title: "적합한 뉴트럴라이저 선택",
+    lip_brightening_process_step2_desc:
+      "파란·보라·회색 언더톤에 따라 오렌지/피치/코랄을 선택.",
+    lip_brightening_process_step3_title: "메디컬 마취",
+    lip_brightening_process_step3_desc: "시술 중 편안함을 제공합니다.",
+    lip_brightening_process_step4_title: "뉴트럴라이징 색소 도포",
+    lip_brightening_process_step4_desc:
+      "초얕은 니들 테크닉으로 따뜻한 색소를 균일하게 분산하되, 새로운 입술 색을 추가하지 않습니다.",
+    lip_brightening_process_step5_title: "체크 & 사후 관리 안내",
+    lip_brightening_process_step5_desc:
+      "1–2일 가벼운 건조감, 7–14일에 걸쳐 점진적 밝아짐.",
+
+    lip_brightening_advantages_title: "이 기법이 효과적인 이유",
+    lip_brightening_advantages_intro:
+      "루미 뷰티의 고품질 립 뉴트럴라이징이 사랑받는 강점",
+
+    lip_brightening_advantage1_title: "1회 시술 후 50–80% 밝아짐",
+    lip_brightening_advantage1_desc:
+      "개선 폭은 초기 착색에 따라 다르지만 1회차부터 눈에 띕니다.",
+    lip_brightening_advantage2_title: "최소 각질",
+    lip_brightening_advantage2_desc: "가벼운 건조만 있고 심한 각질 탈락 없음.",
+    lip_brightening_advantage3_title: "입술을 얇게 만들지 않음",
+    lip_brightening_advantage3_desc:
+      "매우 얕은 깊이로 자연스러운 입술 결을 해치지 않습니다.",
+    lip_brightening_advantage4_title: "립 라인 자국 없음",
+    lip_brightening_advantage4_desc:
+      "뉴트럴라이징만 진행 — 색 추가·외곽 라인 작업 없음.",
+    lip_brightening_advantage5_title: "얼룩 없이 균일한 워밍",
+    lip_brightening_advantage5_desc:
+      "전문 테크닉으로 고르게 톤을 따뜻하게 합니다.",
+    lip_brightening_advantage6_title: "립 블러싱을 위한 최적의 베이스 형성",
+    lip_brightening_advantage6_desc:
+      "따뜻해진 베이스로 색이 더 잘 붙고 더 오래 지속됩니다.",
+    lip_brightening_advantage7_title: "남녀 모두 가능",
+    lip_brightening_advantage7_desc:
+      "성별 취향과 자연스러움에 맞춘 테크닉 적용.",
+    lip_brightening_advantage8_title: "심한 쿨톤에도 효과적",
+    lip_brightening_advantage8_desc:
+      "파란·보라·회색 톤은 최적 결과를 위해 2–3회가 필요할 수 있습니다.",
+
+    lip_brightening_pricing_title: "서비스 가격",
+    lip_brightening_pricing_intro: "홈케어와 사후 체크가 포함된 올인원 패키지.",
+
+    lip_brightening_pricing_main_title: "립 뉴트럴라이징 – 색소 교정",
+    lip_brightening_pricing_subtitle:
+      "가격은 쿨톤 강도(파랑/보라/회색)와 필요한 세션 수에 따라 달라집니다",
+
+    lip_brightening_pricing_item1: "프로페셔널 뉴트럴라이징 색소",
+    lip_brightening_pricing_item2: "메디컬 마취",
+    lip_brightening_pricing_item3: "1회용 멸균 도구",
+    lip_brightening_pricing_item4: "24/7 지원",
+    lip_brightening_pricing_item5: "4개월 보증 – 2차 뉴트럴라이징 무료",
+
+    lip_brightening_pricing_note:
+      "가격에는 VAT와 멸균 도구가 포함됩니다. 비용은 착색 정도와 세션 수에 따라 변동됩니다.",
+
+    lip_brightening_warranty_title: "보증 정책",
+    lip_brightening_warranty_intro: "루미 뷰티의 결과 보장",
+
+    lip_brightening_warranty1_title: "4개월 보증 – 2차 뉴트럴라이징 무료",
+    lip_brightening_warranty1_desc:
+      "초기 착색 상태에 따라 시술 완료일로부터 4개월간 결과를 보증합니다.",
+    lip_brightening_warranty2_title: "두 번째 세션 무료",
+    lip_brightening_warranty2_desc: "보증 기간 내 색이 부족한 경우 무료 보정.",
+    lip_brightening_warranty3_title: "밀착 모니터링",
+    lip_brightening_warranty3_desc:
+      "14–30일 후 사후 점검 및 맞춤 관리 가이드 제공.",
+    lip_brightening_warranty4_title: "24/7 지원",
+    lip_brightening_warranty4_desc:
+      "전화, Zalo, Facebook으로 언제든지 문의 가능.",
+
+    lip_brightening_precautions_title: "시술 전 유의사항",
+    lip_brightening_precautions_intro:
+      "안전하고 효과적인 시술을 위한 중요 안내",
+
+    lip_brightening_precaution1_title: "카페인 6시간 금지",
+    lip_brightening_precaution1_desc:
+      "시술 6시간 전 커피·진한 차·알코올 금지(마취 효과 최적화).",
+    lip_brightening_precaution2_title: "아스피린 금지",
+    lip_brightening_precaution2_desc:
+      "7일 전부터 아스피린 및 항응고제 복용 금지.",
+    lip_brightening_precaution3_title: "몸이 아프면 시술 금지",
+    lip_brightening_precaution3_desc:
+      "발열, 독감, 입술 감염, 급성 질환 시 연기하세요.",
+    lip_brightening_precaution4_title: "의료 이력 알리기",
+    lip_brightening_precaution4_desc:
+      "알레르기, 피부질환, 임신/수유 여부를 루미 뷰티에 알려주세요.",
+    lip_brightening_precaution5_title: "7일간 입술 시술 피하기",
+    lip_brightening_precaution5_desc: "시술 7일 전 립 타투, 표백, 필링 금지.",
+    lip_brightening_precaution6_title: "수분 충분히 섭취",
+    lip_brightening_precaution6_desc: "시술 전 3일간 하루 2L 수분 섭취.",
+
+    lip_brightening_aftercare_title: "사후 관리 안내 (뉴트럴라이징 색소)",
+    lip_brightening_aftercare_intro:
+      "뉴트럴라이징 색소 시술 후 상세 관리 가이드",
+
+    // Day 1
+    lip_brightening_aftercare_day1_title: "가장 중요한 단계",
+    lip_brightening_aftercare_day1_item1:
+      "세안 시 물 사용 금지; 물티슈로 부드럽게 닦기",
+    lip_brightening_aftercare_day1_item2: "루미 케어 립밤을 2–3시간마다 도포",
+    lip_brightening_aftercare_day1_item3:
+      "말을 과하게 하지 말고 입술을 만지지 않기",
+    lip_brightening_aftercare_day1_item4:
+      "빨대를 사용해 물 마시기; 매운/뜨거운 음식 피하기",
+
+    // Day 3–6
+    lip_brightening_aftercare_day3_title: "관리 지속",
+    lip_brightening_aftercare_day3_item1: "하루 3–4회 립밤 도포로 보습 유지",
+    lip_brightening_aftercare_day3_item2: "불소 치약 사용 피하기",
+    lip_brightening_aftercare_day3_item3: "직사광선 피하고 외출 시 입술 보호",
+    lip_brightening_aftercare_day3_item4: "각질을 떼지 말고 자연스럽게 두기",
+
+    // Day 7–14
+    lip_brightening_aftercare_day7_title: "관리 유지",
+    lip_brightening_aftercare_day7_item1: "하루 2–3회 립밤 도포",
+    lip_brightening_aftercare_day7_item2: "7일 후 투명 립밤 사용 가능",
+    lip_brightening_aftercare_day7_item3:
+      "14일간 납 성분 또는 지속형 립스틱 금지",
+    lip_brightening_aftercare_day7_item4: "수분 섭취와 과일·채소 섭취 유지",
+
+    lip_brightening_aftercare_day14_title: "색 안정화",
+    lip_brightening_aftercare_day14_item1: "색이 다시 나타나며 안정화되기 시작",
+    lip_brightening_aftercare_day14_item2: "일상적인 립 케어 지속",
+    lip_brightening_aftercare_day14_item3: "필요 시 립 전용 자외선 차단 사용",
+    lip_brightening_aftercare_day14_item4: "30일 후 팔로업 체크",
+
+    lip_brightening_aftercare_note_title: "피해야 할 것",
+    lip_brightening_aftercare_avoid1: "7일간 매운·뜨거운·신 음식 피하기",
+    lip_brightening_aftercare_avoid2: "키스 또는 식기 공유 금지",
+    lip_brightening_aftercare_avoid3: "7일간 뜨거운 샤워/스팀 금지",
+    lip_brightening_aftercare_avoid4: "입술 문지르거나 벗기지 않기",
+
+    lip_brightening_faq_title: "자주 묻는 질문",
+
+    lip_brightening_faq_q1: "이건 립 타투인가요?",
+    lip_brightening_faq_a1:
+      "아닙니다. 이 시술은 색소 중화 기법이며 립 타투가 아닙니다. 따뜻한 보정 색소로 쿨톤을 중화할 뿐, 새로운 색을 추가하지 않습니다.",
+
+    lip_brightening_faq_q2: "1회 시술 후 얼마나 개선되나요?",
+    lip_brightening_faq_a2:
+      "초기 착색에 따라 30–60% 개선됩니다. 가벼운 어두움은 1회에 50–60% 개선되며, 심한 쿨톤은 2–3회가 필요합니다.",
+
+    lip_brightening_faq_q3: "아프거나 붓나요?",
+    lip_brightening_faq_a3:
+      "아닙니다. 매우 얕은 테크닉과 마취를 사용하여 편안합니다.",
+    lip_brightening_faq_q4: "각질이 벗겨지나요?",
+    lip_brightening_faq_a4:
+      "심한 각질 탈락은 없습니다. 1–2일 가벼운 건조 후 7–14일에 걸쳐 서서히 밝아집니다.",
+    lip_brightening_faq_q5: "언제 립 블러싱을 받을 수 있나요?",
+    lip_brightening_faq_a5:
+      "베이스가 밝아지고 따뜻해지는 7–14일 후 가능합니다. 베이비립은 더 잘 치유되고 선명하며 오래갑니다.",
+    lip_brightening_faq_q6: "물은 피해야 하나요?",
+    lip_brightening_faq_a6:
+      "첫 24시간은 물을 피하세요. 이후에는 평소대로 세안 가능하나 문지르지 마세요. 7일간 뜨거운 샤워/사우나는 피하세요.",
+    lip_brightening_faq_q7: "음식 제한이 있나요?",
+    lip_brightening_faq_a7:
+      "7일간 매운/뜨거운/신/짠 음식은 피하고, 빨대로 마시며, 수분을 유지하세요. 커피/차는 5일간 줄이세요.",
+    lip_brightening_faq_q8: "남성도 받을 수 있나요?",
+    lip_brightening_faq_a8:
+      "네. 뉴트럴라이징 색소는 남녀 모두에게 적용되며, 각 고객의 자연스러움에 맞춰 색소를 조정합니다.",
+    lip_brightening_faq_q9: "심한 쿨톤도 개선되나요?",
+    lip_brightening_faq_a9:
+      "네. 파란·보라·회색이 심한 경우 2–3회가 필요할 수 있습니다. 워밍 후 30–60% 밝아지고, 베이비립으로 최종 컬러를 강화할 수 있습니다.",
+    lip_brightening_faq_q10: "시술 후 메이크업이 가능한가요?",
+    lip_brightening_faq_a10:
+      "7일 후 투명 립밤은 가능합니다. 14일간 납 성분 또는 지속형 립스틱은 피하세요.",
+
+    lip_brightening_expert_title: "루미 뷰티 전문가의 조언",
+
+    lip_brightening_expert_advice1:
+      "쿨톤 입술은 립 블러싱 전 뉴트럴라이징이 필수입니다. 이 단계를 생략하면 치유 후 색이 정확하지 않을 수 있습니다.",
+    lip_brightening_expert_advice2:
+      "얕은 테크닉과 전문 색소로 통증과 붓기 없이 확실한 밝아짐을 얻을 수 있습니다. 이는 립 타투가 아니라 오직 색소 워밍입니다.",
+    lip_brightening_expert_advice3:
+      "베이스가 따뜻해지면 베이비립 블러싱이 더 선명하고 오래가며, 모든 고객에게 맞춤 플랜을 제공합니다.",
+    lip_brightening_expert_signature: "— 루미 뷰티",
+
+    lip_brightening_cta_title:
+      "자연스러운 핑크빛, 더 밝은 입술을 준비되셨나요?",
+    lip_brightening_cta_desc:
+      "오늘 1:1 상담을 예약하고 개인 맞춤 뉴트럴라이징 플랜을 받아보세요.",
+
+    // Why Choose Us
+    why_choose_title: "왜 많은 고객이 루미 뷰티를 신뢰할까요?",
+
+    feature_personalized_title: "프라이빗 1:1 PMU 서비스",
+    feature_personalized_desc:
+      "아티스트가 전 과정을 동행하며 각 고객에게 전담 케어를 제공합니다.",
+    feature_expert_title: "숙련된 아티스트",
+    feature_expert_desc: "전문 교육을 받은 다년간의 경력을 보유.",
+    feature_organic_title: "안전한 유기농 색소",
+    feature_organic_desc:
+      "붓기 없음, 불편함 없음, 시간 경과에 따른 색 변형 없음.",
+    feature_space_title: "청결하고 프라이빗한 스튜디오",
+    feature_space_desc: "시술 내내 편안하고 휴식 같은 환경을 제공합니다.",
+    feature_feedback_title: "수백 건의 만족 후기",
+    feature_feedback_desc: "리얼 피드백 – 리얼 결과.",
+
+    // Contact Methods
+    contact_intro:
+      "✨ 고유한 개성을 살리면서 자연스러운 아름다움을 더하고 싶으신가요? 루미 뷰티가 1:1 맞춤 PMU 여정을 함께합니다.",
+
+    contact_methods_title: "망설이지 말고 가장 편한 연락 방법을 선택하세요.",
+
+    contact_call_title: "전화하기",
+    contact_call_description: "탭하여 루미 뷰티와 즉시 연결",
+    contact_call_button: "지금 전화하기",
+
+    contact_facebook_title: "페이스북 채팅",
+    contact_facebook_description: "루미 뷰티 메신저로 즉시 상담 받기",
+    contact_facebook_button: "메신저 열기",
+
+    contact_zalo_title: "Zalo 채팅",
+    contact_zalo_description: "Zalo로 연결하여 지원 및 단독 혜택 받기",
+    contact_zalo_button: "Zalo 열기",
+
+    contact_email_title: "이메일 보내기",
+    contact_email_description:
+      "자세한 메시지를 남겨주세요 — 24시간 내에 답변드립니다",
+    contact_email_button: "이메일 보내기",
+
+    contact_free_button: "무료 상담",
+
+    // Zalo Contact Modal
+    zalo_contact_modal_title: "직접 문의하기",
+    zalo_contact_modal_desc:
+      "{service}에 관심이 있으시군요. 자세한 상담을 위해 Zalo로 문의해주세요.",
+    zalo_contact_phone_label: "Zalo 전화번호:",
+    zalo_contact_open_button: "지금 Zalo 열기",
+
+    // Contact Form
+    contact_form_title:
+      "전화번호를 남겨주세요 — 얼굴에 가장 잘 맞는 서비스를 함께 선택해드립니다.",
+    phone_placeholder: "전화번호를 입력하세요",
+    send: "전송",
+
+    contact_form_success: "감사합니다! 최대한 빨리 연락드리겠습니다.",
+    contact_form_error: "오류가 발생했습니다. 다시 시도해주세요.",
+    contact_form_phone_required: "전화번호를 입력해주세요.",
+
+    // Gallery
+    real_images: "실제 결과",
+    lip_tattoo_label: "립 PMU",
+    eyebrow_tattoo_label: "브로우 PMU",
+
+    // Testimonials
+    customer_reviews: "고객 후기",
+    scroll_hint: "스와이프하여 더 보기",
+
+    testimonial1:
+      "서비스가 정말 훌륭해요! 입술이 자연스럽고 예뻐졌습니다. 스태프도 매우 전문적이고 세심했어요.",
+    testimonial2:
+      "눈썹에 매우 만족합니다. 얼굴형에 맞춰 디자인해 주셔서 색도 자연스러워요.",
+    testimonial3:
+      "약속대로 무통증이었어요. 립 블러싱 후 색이 고르게 예쁘게 자리 잡았습니다. 꼭 다시 방문할게요!",
+
+    // Blog
+    learn_more_title: "PMU & 뷰티 더 알아보기",
+    blog1_title: "립 블러싱 후 예쁘게 자리 잡는 데 얼마나 걸릴까요?",
+    blog2_title: "브로우 시술 후 피해야 할 것들은?",
+    blog3_title: "베이비립 vs 콜라겐 립 vs 옴브레 — 나는 무엇을 선택해야 할까?",
+    read_more: "더 읽기",
+    view_more_gallery: "이미지 더 보기",
+    view_more_feedback: "후기 더 보기",
+
+    // Footer
+    footer_tagline: "내추럴 PMU – 당신의 고유한 아름다움을 돋보이게",
+    footer_address: "151 Tran Duy Hung, Cau Giay, Ha Noi",
+
+    services_title: "서비스",
+    lip_service: "립 PMU",
+    eyebrow_service: "브로우 PMU",
+    lip_removal_service: "립 브라이트닝",
+
+    contact_title: "문의",
+    about_us_contact: "소개 & 문의",
+
+    consultation_title: "상담",
+    connect_with_us: "함께 연결해요",
+
+    footer_line1: "💋 내추럴 브로우·립·아이라인 PMU 전문가",
+    footer_line2: "💋 꼼꼼한 상담 & 사후 관리",
+    footer_address_detail: "Vo Quy Huan, FPT City Urban Area, Da Nang, Vietnam",
+
+    footer_tiktok: "TikTok: @lumibeautyphunxam",
+    footer_facebook: "Facebook: facebook.com/lumibeautypmubrowlip",
+
+    facebook_iframe_title: "루미 뷰티 페이스북 페이지",
+
+    footer_copyright: "© 2025 루미 뷰티. All rights reserved.",
+
+    // Booking Modal
+    booking_title: "예약하기",
+    booking_description: "정보를 입력해 주세요. 곧 루미 뷰티에서 연락드립니다.",
+
+    booking_name_label: "성함",
+    booking_name_placeholder: "Nguyen Thi Anh",
+
+    booking_phone_label: "전화번호",
+    booking_phone_placeholder: "0900 067 832",
+
+    booking_service_label: "관심 서비스",
+    booking_service_option_lip: "립 PMU",
+    booking_service_option_eyebrow: "브로우 PMU",
+    booking_service_option_lip_removal: "립 브라이트닝",
+    booking_service_option_other: "기타",
+
+    booking_time_label: "희망 시간",
+    booking_notes_label: "추가 메모",
+    booking_notes_placeholder: "필요 사항이나 질문을 작성해주세요",
+
+    booking_submit: "요청 제출",
+    booking_sending: "전송 중...",
+
+    booking_success: "감사합니다! 최대한 빠르게 연락드리겠습니다.",
+    booking_error: "전송에 실패했습니다. 다시 시도하시거나 직접 문의해주세요.",
+
+    copyright: "© 2023 루미 뷰티. All rights reserved.",
+
+    // Contact Page
+    contact_page_title: "문의하기 - 루미 뷰티 | 다낭 반영구 시술",
+    contact_page_description:
+      "루미 뷰티 다낭 문의 - 브로우, 입술, 아이라인 반영구 시술 전문. 전화: 0364759261. 주소: Vo Quy Huan, FPT City Urban Area, Da Nang.",
+    contact_page_keywords:
+      "루미 뷰티 문의, 다낭 반영구, 루미 뷰티 다낭, 반영구 주소, 다낭 반영구 스튜디오",
+    contact_address_title: "루미 뷰티 주소",
+    contact_info_title: "연락처 정보",
+    contact_address_label: "주소:",
+    contact_phone_label: "전화번호:",
+    contact_social_label: "소셜 미디어:",
+    contact_hours_label: "운영 시간:",
+    contact_hours_value: "월요일 - 일요일: 9:00 - 18:00",
+    contact_map_title: "지도",
+
+    // Gallery & Feedback Pages
+    gallery_page_title: "갤러리 - 루미 뷰티",
+    feedback_page_title: "고객 후기 - 루미 뷰티",
+    gallery_back_link: "⟵ 홈으로 돌아가기",
   },
 };
 
@@ -3266,12 +3882,25 @@ window.translations = translations;
 
 let currentLanguage = (() => {
   try {
-    const urlParams = new URL(window.location.href).searchParams;
-    const queryLang = urlParams.get("lang");
-    if (queryLang && queryLang in translations) {
-      return queryLang;
+    // Get language from path (/vi, /en, /ko)
+    const path = window.location.pathname;
+    if (path.startsWith("/vi/") || path === "/vi" || path.endsWith("/vi")) {
+      return "vi";
+    } else if (
+      path.startsWith("/en/") ||
+      path === "/en" ||
+      path.endsWith("/en")
+    ) {
+      return "en";
+    } else if (
+      path.startsWith("/ko/") ||
+      path === "/ko" ||
+      path.endsWith("/ko")
+    ) {
+      return "ko";
     }
 
+    // Fallback to stored preference or default
     const stored = localStorage.getItem("selectedLanguage");
     if (stored && stored in translations) {
       return stored;
@@ -3316,13 +3945,79 @@ function getAbsoluteUrl(path) {
 
 function buildLanguageUrl(lang) {
   try {
-    const url = new URL(window.location.href);
-    if (lang === DEFAULT_LANGUAGE) {
-      url.searchParams.delete("lang");
-    } else {
-      url.searchParams.set("lang", lang);
+    const currentUrl = window.location.href;
+    const url = new URL(currentUrl);
+    const currentPath = url.pathname;
+
+    // For file:// protocol, handle absolute paths differently
+    if (url.protocol === "file:") {
+      // file:// URLs have absolute paths like: /Users/duckie2910/Documents/lumi-beauty-website/vi/index.html
+      // Split path into parts
+      const pathParts = currentPath.split("/").filter((p) => p);
+
+      // Find the language folder (vi, en, or ko) and replace it
+      let langIndex = -1;
+      for (let i = 0; i < pathParts.length; i++) {
+        if (
+          pathParts[i] === "vi" ||
+          pathParts[i] === "en" ||
+          pathParts[i] === "ko"
+        ) {
+          langIndex = i;
+          break;
+        }
+      }
+
+      if (langIndex >= 0) {
+        // Replace the language folder
+        pathParts[langIndex] = lang;
+      } else {
+        // If no language folder found, try to insert it before the last part (filename)
+        // This handles edge cases where path doesn't have language folder yet
+        const lastIndex = pathParts.length - 1;
+        if (lastIndex >= 0 && pathParts[lastIndex].endsWith(".html")) {
+          pathParts.splice(lastIndex, 0, lang);
+        } else {
+          pathParts.push(lang);
+        }
+      }
+
+      // Reconstruct the file:// URL
+      const newPath = "/" + pathParts.join("/");
+      return `file://${newPath}`;
     }
+
+    // For http/https protocols, handle relative paths
+    let filePath = currentPath;
+
+    // Remove current language prefix if exists
+    if (currentPath.startsWith("/vi/")) {
+      filePath = currentPath.substring(3); // Remove /vi
+    } else if (currentPath.startsWith("/en/")) {
+      filePath = currentPath.substring(3); // Remove /en
+    } else if (currentPath.startsWith("/ko/")) {
+      filePath = currentPath.substring(3); // Remove /ko
+    } else if (
+      currentPath === "/vi" ||
+      currentPath === "/en" ||
+      currentPath === "/ko"
+    ) {
+      filePath = "/index.html";
+    } else if (currentPath === "/" || currentPath === "") {
+      filePath = "/index.html";
+    }
+
+    // Ensure filePath starts with /
+    if (!filePath.startsWith("/")) {
+      filePath = "/" + filePath;
+    }
+
+    // Build new path with target language
+    const newPath = `/${lang}${filePath}`;
+    url.pathname = newPath;
+    url.search = ""; // Remove query params
     url.hash = "";
+
     return url.toString();
   } catch (error) {
     console.warn("Unable to build language url:", error);
@@ -3448,7 +4143,8 @@ function initLanguageSwitcher() {
   const dropdownMenu = document.getElementById("langDropdownMenu");
   const langOptions = document.querySelectorAll(".lang-option");
 
-  setLanguage(currentLanguage);
+  // Initialize language without redirecting (skipRedirect = true)
+  setLanguage(currentLanguage, true);
 
   if (!dropdownBtn || !dropdownMenu) {
     return;
@@ -3513,7 +4209,7 @@ function updateDropdownButton(lang) {
   }
 }
 
-function setLanguage(lang) {
+function setLanguage(lang, skipRedirect = false) {
   const fallbackDict = translations[DEFAULT_LANGUAGE] || {};
   const resolvedLang = translations[lang] ? lang : DEFAULT_LANGUAGE;
   const activeDict = translations[resolvedLang] || fallbackDict;
@@ -3652,13 +4348,19 @@ function setLanguage(lang) {
     document.title = translations[resolvedLang].page_title;
   }
 
-  try {
-    const langUrl = buildLanguageUrl(resolvedLang);
-    if (window.history && window.history.replaceState) {
-      window.history.replaceState({}, "", langUrl);
+  // Update URL to reflect language change (redirect to correct path)
+  // Only redirect if skipRedirect is false (i.e., user explicitly changed language)
+  if (!skipRedirect) {
+    try {
+      const langUrl = buildLanguageUrl(resolvedLang);
+      // Only redirect if the URL actually changed
+      if (langUrl !== window.location.href) {
+        window.location.href = langUrl;
+        return; // Exit early since we're redirecting
+      }
+    } catch (error) {
+      console.warn("Unable to update URL for language change:", error);
     }
-  } catch (error) {
-    console.warn("Unable to update URL for language change:", error);
   }
 
   updateSeoLinks(resolvedLang);
