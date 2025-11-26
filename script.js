@@ -1407,6 +1407,13 @@ const translations = {
     lip_removal_detail_hero_paragraph2:
       "Mỗi khách hàng được xây dựng phác đồ riêng gồm 1-2 buổi khử thâm và 1 buổi phun baby lip hoàn thiện, đảm bảo lên màu tự nhiên, lâu bền.",
     lip_removal_detail_hero_stat_label: "Giảm sắc tố thâm sau buổi đầu tiên",
+    lip_removal_detail_hero_benefit1: "Giảm thâm xanh – tím – xám",
+    lip_removal_detail_hero_benefit2: "Không bong mảng – hồi siêu nhanh",
+    lip_removal_detail_hero_benefit3: "Phù hợp cả nam & nữ",
+    lip_removal_detail_why_choose_title:
+      "Khử thâm môi 1-1 – Chuyên viên 7+ năm kinh nghiệm",
+    lip_removal_detail_why_choose_desc:
+      "Tại Lumi Beauty, mỗi khách hàng đều được phục vụ theo mô hình 1-1 với chuyên viên có hơn 7 năm kinh nghiệm trong lĩnh vực phun xăm thẩm mỹ. Chúng tôi cam kết mang đến dịch vụ chuyên nghiệp, an toàn và hiệu quả cao nhất.",
     lip_removal_detail_highlights_title:
       "Ưu điểm của liệu trình khử thâm Lumi Beauty",
     lip_removal_detail_highlight1_title: "Công nghệ laser lạnh 650nm",
@@ -2174,7 +2181,14 @@ const translations = {
 
     lip_removal_detail_hero_stat_label:
       "Reduced pigmentation after the first session",
-
+    lip_removal_detail_hero_benefit1:
+      "Reduces blue – purple – gray pigmentation",
+    lip_removal_detail_hero_benefit2: "No peeling – super fast recovery",
+    lip_removal_detail_hero_benefit3: "Suitable for both men & women",
+    lip_removal_detail_why_choose_title:
+      "1-on-1 Lip Brightening – 7+ Years Expert Experience",
+    lip_removal_detail_why_choose_desc:
+      "At Lumi Beauty, every client is served in a 1-on-1 model with an expert with over 7 years of experience in cosmetic tattooing. We are committed to providing the most professional, safe, and effective service.",
     lip_removal_detail_highlights_title:
       "Why Lumi Beauty’s Lip Brightening Works",
 
@@ -3229,6 +3243,15 @@ const translations = {
       "파우더처럼 부드럽고 매끄럽고 자연스러운 눈썹을 원하시나요?",
     brow_detail_cta_desc:
       "지금 예약하여 루미 뷰티에서 무료 눈썹 형태 측정을 받으세요.",
+
+    // Service Detail - Lip Brightening (Neutralizing Pigment)
+    lip_removal_detail_hero_benefit1: "청색 – 보라색 – 회색 색소 감소",
+    lip_removal_detail_hero_benefit2: "벗겨짐 없음 – 초고속 회복",
+    lip_removal_detail_hero_benefit3: "남녀 모두 적합",
+    lip_removal_detail_why_choose_title:
+      "1:1 입술 톤 브라이트닝 – 7년 이상 전문가 경력",
+    lip_removal_detail_why_choose_desc:
+      "루미 뷰티에서는 반영구 메이크업 분야에서 7년 이상의 경력을 가진 전문가가 1:1 모델로 각 고객을 서비스합니다. 우리는 가장 전문적이고 안전하며 효과적인 서비스를 제공하기 위해 최선을 다합니다.",
 
     copyright: "© 2023 루미 뷰티. 모든 권리 보유.",
   },
