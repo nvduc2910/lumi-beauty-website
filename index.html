@@ -3,17 +3,150 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="refresh" content="0; url=/vi/" />
+    <title>Lumi Beauty - Phun Xăm Thẩm Mỹ Đẹp Tự Nhiên Tại Đà Nẵng</title>
+    <meta name="description"
+        content="Lumi Beauty Da Nang chuyên phun xăm thẩm mỹ mày, môi, mí chuẩn y khoa, không đau rát và hỗ trợ chăm sóc tận tâm.">
+    <meta name="keywords" content="phun xăm thẩm mỹ Đà Nẵng, phun môi, phun mày, Lumi Beauty">
+    <meta name="theme-color" content="#88c0c4">
     <link rel="canonical" href="https://lumibeauty.studio/vi/" />
-    <title>Redirecting...</title>
+    <link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/" />
+    <link rel="alternate" hreflang="en" href="https://lumibeauty.studio/en/" />
+    <link rel="alternate" hreflang="ko" href="https://lumibeauty.studio/ko/" />
+    <link rel="alternate" hreflang="x-default" href="https://lumibeauty.studio/vi/" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Bai Jamjuree', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #1c1c1e;
+            overflow: hidden;
+        }
+
+        .redirect-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 500px;
+        }
+
+        .logo-animation {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .spinner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(136, 192, 196, 0.2);
+            border-top-color: #88c0c4;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #88c0c4;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #1c1c1e;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .redirect-link {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: linear-gradient(135deg, #88c0c4, #8FBFC1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(136, 192, 196, 0.3);
+        }
+
+        .redirect-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(136, 192, 196, 0.4);
+        }
+
+        .redirect-link:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 480px) {
+            .redirect-container {
+                padding: 1.5rem;
+            }
+
+            .logo-animation {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1.5rem;
+            }
+
+            .logo-text {
+                font-size: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <p>Nếu bạn không được chuyển trang, hãy nhấn vào đây:
-        <a href="/vi/">Đi tới trang chủ</a>.
-    </p>
+    <div class="redirect-container">
+        <div class="logo-animation">
+            <div class="spinner"></div>
+            <div class="logo-text">Lumi</div>
+        </div>
+        <h1>Đang chuyển hướng...</h1>
+        <p>Chúng tôi đang đưa bạn đến trang chủ của Lumi Beauty.</p>
+        <a href="/vi/" class="redirect-link">Đi tới trang chủ</a>
+    </div>
 
     <script>
+        // Immediate redirect for better UX
         window.location.href = "/vi/";
     </script>
 </body>

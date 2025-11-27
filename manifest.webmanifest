@@ -1,0 +1,29 @@
+{
+  "name": "Lumi Beauty - Phun Xăm Thẩm Mỹ Đà Nẵng",
+  "short_name": "Lumi Beauty",
+  "description": "Lumi Beauty Da Nang chuyên phun xăm thẩm mỹ mày, môi, mí chuẩn y khoa, không đau rát và hỗ trợ chăm sóc tận tâm.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#88c0c4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["beauty", "health", "lifestyle"],
+  "lang": "vi",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}
