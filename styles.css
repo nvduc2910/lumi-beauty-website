@@ -69,6 +69,7 @@
 }
 
 .article-main {
+    margin-top: 80px;
     padding: 24px 0 40px;
 }
 
@@ -275,10 +276,11 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
-    margin: 1rem 0;
+    margin: 0;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .article-cta .btn-booking:hover {
@@ -710,6 +712,77 @@ p {
 .btn-outline:hover {
     background-color: var(--primary-pink);
     color: var(--white);
+}
+
+.btn-zalo {
+    display: inline-block;
+    background: #0068ff;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-primary);
+}
+
+.btn-zalo:hover {
+    background: #0052cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 104, 255, 0.3);
+}
+
+.article-cta .btn-zalo {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.article-cta .btn-phone {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.article-cta a.btn-zalo {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.article-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5em;
+}
+
+.article-cta-buttons > * {
+    margin: 0 !important;
+}
+
+.btn-phone {
+    display: inline-block;
+    background: var(--primary-pink);
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-primary);
+    margin-left: 1em;
+}
+
+.btn-phone:hover {
+    background: #b83d5a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(143, 191, 193, 0.3);
 }
 
 .btn-large {

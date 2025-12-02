@@ -5,7 +5,7 @@ function initZaloContactModal() {
   const modal = document.getElementById("zaloContactModal");
   if (!modal) return;
 
-  const openLinks = document.querySelectorAll("[data-open-zalo-modal]");
+  const openLinks = document.querySelectorAll("[data-open-zalo-modal], [data-action='open-zalo']");
   const closeTriggers = modal.querySelectorAll("[data-modal-close]");
   const body = document.body;
   const descElement = modal.querySelector("[data-zalo-service-desc]");
@@ -82,15 +82,32 @@ function initZaloContactModal() {
       event.stopPropagation();
     }
 
-    // Detect service name from the link
+    // Detect service name from the link or page context
     const href = linkElement
       ? linkElement.getAttribute("href") || linkElement.textContent.trim()
       : null;
-    const serviceKey = getServiceKey(href);
+    
+    // Also check current page URL for service context
+    const currentUrl = window.location.pathname;
+    let serviceKey = getServiceKey(href || currentUrl);
+    
+    // If no service key found, try to detect from page context (for blog pages)
+    if (!serviceKey && currentUrl.includes("khu-tham-moi")) {
+      serviceKey = "lip-brightening";
+    }
 
     // Update modal description with service name
     if (serviceKey) {
       updateModalDescription(serviceKey);
+    } else if (descElement) {
+      // Default description if no service detected
+      const currentLang = getCurrentLanguage();
+      const descriptions = {
+        vi: "Bạn đang quan tâm tới dịch vụ Khử thâm môi cho nam. Vui lòng liên hệ với chúng tôi qua Zalo để được tư vấn chi tiết.",
+        en: "You are interested in Lip Brightening for Men service. Please contact us via Zalo for detailed consultation.",
+        ko: "남성 입술 색소 제거 서비스에 관심이 있으시군요. 자세한 상담을 위해 Zalo로 연락해 주세요.",
+      };
+      descElement.textContent = descriptions[currentLang] || descriptions.vi;
     }
 
     if (modal.classList.contains("is-open")) return;
