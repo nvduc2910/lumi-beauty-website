@@ -2315,6 +2315,29 @@ p {
         padding: 30px 0;
     }
 
+    .blog-scroll--single {
+        overflow-x: auto;
+        overflow-y: visible;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(143, 191, 193, 0.5) transparent;
+        scroll-snap-type: x mandatory;
+    }
+
+    .blog-scroll--single::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .blog-scroll--single::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .blog-scroll--single::-webkit-scrollbar-thumb {
+        background: rgba(143, 191, 193, 0.5);
+        border-radius: 3px;
+    }
+
     .blog-card {
         flex: 0 0 260px;
     }
