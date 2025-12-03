@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://lumibeauty.studio/vi/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/" />
@@ -15,7 +15,7 @@
   
   <url>
     <loc>https://lumibeauty.studio/en/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/" />
@@ -26,7 +26,7 @@
   
   <url>
     <loc>https://lumibeauty.studio/ko/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/" />
@@ -38,7 +38,7 @@
   <!-- Service Pages -->
   <url>
     <loc>https://lumibeauty.studio/vi/services/phun-moi-collagen.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/services/phun-moi-collagen.html" />
@@ -49,7 +49,7 @@
   
   <url>
     <loc>https://lumibeauty.studio/vi/services/phun-may-shading.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/services/phun-may-shading.html" />
@@ -60,7 +60,7 @@
   
   <url>
     <loc>https://lumibeauty.studio/vi/services/khu-tham-moi-nam-nu.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/services/khu-tham-moi-nam-nu.html" />
@@ -71,8 +71,19 @@
   
   <!-- Blog Pages -->
   <url>
+    <loc>https://lumibeauty.studio/vi/blogs/blog-khu-tham-moi-cho-nam.html</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/blogs/blog-khu-tham-moi-cho-nam.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://lumibeauty.studio/en/blogs/blog-khu-tham-moi-cho-nam.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://lumibeauty.studio/ko/blogs/blog-khu-tham-moi-cho-nam.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lumibeauty.studio/vi/blogs/blog-khu-tham-moi-cho-nam.html" />
+  </url>
+  
+  <url>
     <loc>https://lumibeauty.studio/vi/blogs/blog-moi-bong-khong-deu-mau.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/blogs/blog-moi-bong-khong-deu-mau.html" />
@@ -84,7 +95,7 @@
   <!-- Gallery and Feedback Pages -->
   <url>
     <loc>https://lumibeauty.studio/vi/gallery.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/gallery.html" />
@@ -95,7 +106,7 @@
   
   <url>
     <loc>https://lumibeauty.studio/vi/feedback.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/feedback.html" />
@@ -107,7 +118,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://lumibeauty.studio/vi/contact.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/contact.html" />
@@ -119,7 +130,7 @@
   <!-- Blogs Page -->
   <url>
     <loc>https://lumibeauty.studio/vi/blogs.html</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="vi" href="https://lumibeauty.studio/vi/blogs.html" />
