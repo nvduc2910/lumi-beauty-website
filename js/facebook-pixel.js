@@ -233,14 +233,34 @@
 
     if (percent >= 50 && !state.scrollDepth[50]) {
       state.scrollDepth[50] = true;
-      sendToCAPI("scroll_depth", { custom_data: { depth: 50 } });
-      sendToDataset("scroll_depth", { depth: 50 });
+      const eid = generateEventId();
+      fbq("trackCustom", "scroll_depth", { depth: 50 }, { eventID: eid });
+      sendToCAPI(
+        "CustomEvent",
+        {
+          custom_data: {
+            custom_event_type: "scroll_depth",
+            depth: 50,
+          },
+        },
+        eid
+      );
     }
 
     if (percent >= 70 && !state.scrollDepth[70]) {
       state.scrollDepth[70] = true;
-      sendToCAPI("scroll_depth", { custom_data: { depth: 70 } });
-      sendToDataset("scroll_depth", { depth: 70 });
+      const eid = generateEventId();
+      fbq("trackCustom", "scroll_depth", { depth: 70 }, { eventID: eid });
+      sendToCAPI(
+        "CustomEvent",
+        {
+          custom_data: {
+            custom_event_type: "scroll_depth",
+            depth: 70,
+          },
+        },
+        eid
+      );
     }
   }
 
@@ -254,10 +274,23 @@
     if (t >= 20000) {
       state.engagedSent = true;
       if (engagedInterval) clearInterval(engagedInterval);
-      sendToCAPI("engaged_view", {
-        custom_data: { duration: Math.floor(t / 1000) },
-      });
-      sendToDataset("engaged_view", { duration: Math.floor(t / 1000) });
+      const eid = generateEventId();
+      fbq(
+        "trackCustom",
+        "engaged_view",
+        { duration: Math.floor(t / 1000) },
+        { eventID: eid }
+      );
+      sendToCAPI(
+        "CustomEvent",
+        {
+          custom_data: {
+            custom_event_type: "engaged_view",
+            duration: Math.floor(t / 1000),
+          },
+        },
+        eid
+      );
     }
   }, 3000);
 
@@ -271,16 +304,27 @@
         state.readTime += 1;
 
         if (state.readTime % 30 === 0) {
-          sendToCAPI("read_blog", {
-            custom_data: {
+          const eid = generateEventId();
+          fbq(
+            "trackCustom",
+            "read_blog",
+            {
               blog_title: getBlogTitle(),
               read_time: state.readTime,
             },
-          });
-          sendToDataset("read_blog", {
-            blog_title: getBlogTitle(),
-            read_time: state.readTime,
-          });
+            { eventID: eid }
+          );
+          sendToCAPI(
+            "CustomEvent",
+            {
+              custom_data: {
+                custom_event_type: "read_blog",
+                blog_title: getBlogTitle(),
+                read_time: state.readTime,
+              },
+            },
+            eid
+          );
         }
       }
     }, 1000);
@@ -299,32 +343,64 @@
           'a[href^="tel:"], [data-track="hotline"]'
         );
         if (hotline) {
-          sendToCAPI("click_hotline");
-          sendToDataset("click_hotline", {});
+          // Use Contact event (mapped from click_hotline)
+          const eid = generateEventId();
+          fbq("track", "Contact", {}, { eventID: eid });
+          sendToCAPI(
+            "Contact",
+            {
+              custom_data: { contact_type: "hotline" },
+            },
+            eid
+          );
         }
 
         const zalo = e.target.closest(
           '[data-track="zalo"], a[href*="zalo"], [data-open-zalo-modal], .btn-zalo, .floating-contact__item[href*="zalo"]'
         );
         if (zalo) {
-          sendToCAPI("click_zalo");
-          sendToDataset("click_zalo", {});
+          // Use Contact event (mapped from click_zalo)
+          const eid = generateEventId();
+          fbq("track", "Contact", {}, { eventID: eid });
+          sendToCAPI(
+            "Contact",
+            {
+              custom_data: { contact_type: "zalo" },
+            },
+            eid
+          );
         }
 
         const ms = e.target.closest(
           'a[href*="m.me"], [data-track="messenger"]'
         );
         if (ms) {
-          sendToCAPI("click_messenger");
-          sendToDataset("click_messenger", {});
+          // Use Contact event (mapped from click_messenger)
+          const eid = generateEventId();
+          fbq("track", "Contact", {}, { eventID: eid });
+          sendToCAPI(
+            "Contact",
+            {
+              custom_data: { contact_type: "messenger" },
+            },
+            eid
+          );
         }
 
         const booking = e.target.closest(
           '[data-track="booking"], [data-action="open-booking"]'
         );
         if (booking) {
-          sendToCAPI("click_booking");
-          sendToDataset("click_booking", {});
+          // Use Lead event (mapped from click_booking)
+          const eid = generateEventId();
+          fbq("track", "Lead", {}, { eventID: eid });
+          sendToCAPI(
+            "Lead",
+            {
+              custom_data: { lead_type: "booking_click" },
+            },
+            eid
+          );
         }
       },
       true
@@ -360,10 +436,6 @@
       },
       eid
     );
-
-    sendToDataset("service_view", {
-      service_name: serviceName,
-    });
   }
 
   function init() {
@@ -408,8 +480,16 @@
       const eid = generateEventId();
       // Use correct format: fbq("track", eventName, data, options)
       fbq("track", "Lead", data, { eventID: eid });
-      sendToCAPI("Lead", data, eid);
-      sendToDataset("lead_submit", data);
+      sendToCAPI(
+        "Lead",
+        {
+          custom_data: {
+            lead_type: "form_submit",
+            ...data,
+          },
+        },
+        eid
+      );
     };
   }
 
