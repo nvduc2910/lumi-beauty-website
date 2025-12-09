@@ -1,0 +1,67 @@
+<!-- 
+    VÍ DỤ TÍCH HỢP FACEBOOK PIXEL VÀO HTML
+    
+    Copy đoạn code này vào <head> của tất cả các trang HTML
+    hoặc vào file header component (components/header-vi.html, etc.)
+-->
+
+<!-- Facebook Pixel Configuration -->
+<!-- Option 1: Sử dụng file config riêng (khuyến nghị) -->
+<script src="/fb-pixel-config.js"></script>
+
+<!-- Option 2: Hoặc khai báo trực tiếp qua data attributes -->
+<script src="/js/facebook-pixel.js" data-fb-pixel data-pixel-id="YOUR_PIXEL_ID"
+    data-capi-endpoint="https://your-worker.your-subdomain.workers.dev/api/capi"
+    data-dataset-endpoint="https://your-worker.your-subdomain.workers.dev/api/dataset"
+    data-access-token="YOUR_ACCESS_TOKEN" data-dataset-id="YOUR_DATASET_ID" data-test-event-code=""></script>
+
+<!-- 
+    LƯU Ý:
+    1. Thay YOUR_PIXEL_ID bằng Pixel ID thực tế của bạn
+    2. Thay your-worker.your-subdomain.workers.dev bằng URL Cloudflare Worker của bạn
+    3. Nếu dùng Option 1 (file config), không cần data attributes
+    4. Access Token nên được lưu trong Cloudflare Worker Environment Variables
+       thay vì gửi từ client-side (bảo mật hơn)
+-->
+
+<!-- 
+    VÍ DỤ TÍCH HỢP VÀO FORM SUBMIT:
+    
+    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+        <!-- form fields -->
+</form>
+
+<script>
+    function handleFormSubmit(event) {
+        event.preventDefault();
+
+        // Xử lý form submit...
+
+        // Track lead submit
+        if (window.trackFBLeadSubmit) {
+            window.trackFBLeadSubmit({
+                form_type: 'contact',
+                service_interest: 'khử thâm môi',
+            });
+        }
+
+        // Submit form thực tế...
+    }
+</script>
+-->
+
+<!-- 
+    VÍ DỤ TRACK CUSTOM EVENT THỦ CÔNG:
+    
+    <button onclick="trackCustomEvent()">Click Me</button>
+    
+    <script>
+        function trackCustomEvent() {
+            if (window.trackFBPixelEvent) {
+                window.trackFBPixelEvent('custom_event_name', {
+                    custom_property: 'value',
+                });
+            }
+        }
+    </script>
+-->

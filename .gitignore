@@ -1,0 +1,18 @@
+# Facebook Pixel Configuration (chứa sensitive data)
+fb-pixel-config.js
+fb-pixel-config.local.js
+
+# Environment files
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
