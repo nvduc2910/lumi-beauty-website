@@ -307,7 +307,9 @@
           sendToDataset("click_messenger", {});
         }
 
-        const booking = e.target.closest('[data-track="booking"]');
+        const booking = e.target.closest(
+          '[data-track="booking"], [data-action="open-booking"]'
+        );
         if (booking) {
           sendToCAPI("click_booking");
           sendToDataset("click_booking", {});
