@@ -113,7 +113,9 @@
     fbq("init", CONFIG.pixelId);
 
     const eid = generateEventId();
-    fbq("track", "PageView", { eventID: eid });
+    // Use correct format: fbq("track", eventName, data, options)
+    // eventID must be in options object (3rd parameter)
+    fbq("track", "PageView", {}, { eventID: eid });
     sendToCAPI("PageView", {}, eid);
 
     state.pixelLoaded = true;
@@ -202,6 +204,14 @@
       returning_user: "CustomEvent",
       pre_lead_intent: "Lead",
       lead_submit: "Lead",
+      scroll_depth: "CustomEvent",
+      engaged_view: "CustomEvent",
+      read_blog: "CustomEvent",
+      click_hotline: "Contact",
+      click_zalo: "Contact",
+      click_messenger: "Contact",
+      click_booking: "Lead",
+      service_view: "ViewContent",
     };
 
     const capiEventName = eventMapping[eventName] || "CustomEvent";
@@ -293,7 +303,9 @@
           sendToDataset("click_hotline", {});
         }
 
-        const zalo = e.target.closest('[data-track="zalo"], a[href*="zalo"]');
+        const zalo = e.target.closest(
+          '[data-track="zalo"], a[href*="zalo"], [data-open-zalo-modal], .btn-zalo, .floating-contact__item[href*="zalo"]'
+        );
         if (zalo) {
           sendToCAPI("click_zalo");
           sendToDataset("click_zalo", {});
@@ -325,11 +337,18 @@
     const serviceName = document.querySelector("h1")?.textContent?.trim() || "";
     const eid = generateEventId();
 
-    fbq("track", "ViewContent", {
-      eventID: eid,
-      content_name: serviceName,
-      content_type: "service",
-    });
+    // Use correct format: fbq("track", eventName, data, options)
+    fbq(
+      "track",
+      "ViewContent",
+      {
+        content_name: serviceName,
+        content_type: "service",
+      },
+      {
+        eventID: eid,
+      }
+    );
 
     sendToCAPI(
       "ViewContent",
@@ -380,13 +399,15 @@
 
     window.trackFBPixelEvent = function (name, data = {}) {
       const eid = generateEventId();
-      fbq("trackCustom", name, { ...data, eventID: eid });
+      // Use correct format: fbq("trackCustom", eventName, data, options)
+      fbq("trackCustom", name, data, { eventID: eid });
       sendToCAPI(name, data, eid);
     };
 
     window.trackFBLeadSubmit = function (data = {}) {
       const eid = generateEventId();
-      fbq("track", "Lead", { eventID: eid });
+      // Use correct format: fbq("track", eventName, data, options)
+      fbq("track", "Lead", data, { eventID: eid });
       sendToCAPI("Lead", data, eid);
       sendToDataset("lead_submit", data);
     };
