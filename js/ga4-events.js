@@ -6,6 +6,19 @@
 (function () {
   "use strict";
 
+  // Check if running on localhost to disable tracking
+  function isLocalhost() {
+    const hostname = window.location.hostname;
+    return (
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "0.0.0.0" ||
+      hostname.startsWith("192.168.") ||
+      hostname.startsWith("10.") ||
+      hostname.endsWith(".local")
+    );
+  }
+
   // Check if gtag is available
   if (typeof gtag === "undefined") {
     console.warn("[GA4 Events] gtag not found. Make sure GA4 is loaded.");
@@ -14,6 +27,12 @@
 
   // Helper function to send GA4 events
   function trackEvent(eventName, eventParams = {}) {
+    // Skip tracking on localhost
+    if (isLocalhost()) {
+      console.log("[GA4 Event] Skipping on localhost:", eventName, eventParams);
+      return;
+    }
+
     if (typeof gtag !== "undefined") {
       gtag("event", eventName, eventParams);
       console.log("[GA4 Event]", eventName, eventParams);

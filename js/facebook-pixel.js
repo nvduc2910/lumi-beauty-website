@@ -5,6 +5,19 @@
 (function () {
   "use strict";
 
+  // Check if running on localhost to disable tracking
+  function isLocalhost() {
+    const hostname = window.location.hostname;
+    return (
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "0.0.0.0" ||
+      hostname.startsWith("192.168.") ||
+      hostname.startsWith("10.") ||
+      hostname.endsWith(".local")
+    );
+  }
+
   const CONFIG = {
     pixelId: "1826377334661720",
     capiEndpoint: "https://lumibeauty.studio/api/capi",
@@ -86,6 +99,13 @@
   function initPixel() {
     if (state.pixelLoaded) return;
 
+    // Skip initialization on localhost
+    if (isLocalhost()) {
+      console.log("[FB Pixel] Skipping initialization on localhost");
+      state.pixelLoaded = true;
+      return;
+    }
+
     !(function (f, b, e, v, n, t, s) {
       if (f.fbq) return;
       n = f.fbq = function () {
@@ -122,6 +142,12 @@
   }
 
   function sendToCAPI(eventName, custom = {}, eventId = null) {
+    // Skip sending on localhost
+    if (isLocalhost()) {
+      console.log("[FB Pixel] Skipping CAPI event on localhost:", eventName);
+      return;
+    }
+
     const eid = eventId || generateEventId();
 
     // Facebook CAPI only accepts custom_data (not custom_properties)
@@ -233,34 +259,38 @@
 
     if (percent >= 50 && !state.scrollDepth[50]) {
       state.scrollDepth[50] = true;
-      const eid = generateEventId();
-      fbq("trackCustom", "scroll_depth", { depth: 50 }, { eventID: eid });
-      sendToCAPI(
-        "CustomEvent",
-        {
-          custom_data: {
-            custom_event_type: "scroll_depth",
-            depth: 50,
+      if (!isLocalhost()) {
+        const eid = generateEventId();
+        fbq("trackCustom", "scroll_depth", { depth: 50 }, { eventID: eid });
+        sendToCAPI(
+          "CustomEvent",
+          {
+            custom_data: {
+              custom_event_type: "scroll_depth",
+              depth: 50,
+            },
           },
-        },
-        eid
-      );
+          eid
+        );
+      }
     }
 
     if (percent >= 70 && !state.scrollDepth[70]) {
       state.scrollDepth[70] = true;
-      const eid = generateEventId();
-      fbq("trackCustom", "scroll_depth", { depth: 70 }, { eventID: eid });
-      sendToCAPI(
-        "CustomEvent",
-        {
-          custom_data: {
-            custom_event_type: "scroll_depth",
-            depth: 70,
+      if (!isLocalhost()) {
+        const eid = generateEventId();
+        fbq("trackCustom", "scroll_depth", { depth: 70 }, { eventID: eid });
+        sendToCAPI(
+          "CustomEvent",
+          {
+            custom_data: {
+              custom_event_type: "scroll_depth",
+              depth: 70,
+            },
           },
-        },
-        eid
-      );
+          eid
+        );
+      }
     }
   }
 
@@ -274,23 +304,25 @@
     if (t >= 20000) {
       state.engagedSent = true;
       if (engagedInterval) clearInterval(engagedInterval);
-      const eid = generateEventId();
-      fbq(
-        "trackCustom",
-        "engaged_view",
-        { duration: Math.floor(t / 1000) },
-        { eventID: eid }
-      );
-      sendToCAPI(
-        "CustomEvent",
-        {
-          custom_data: {
-            custom_event_type: "engaged_view",
-            duration: Math.floor(t / 1000),
+      if (!isLocalhost()) {
+        const eid = generateEventId();
+        fbq(
+          "trackCustom",
+          "engaged_view",
+          { duration: Math.floor(t / 1000) },
+          { eventID: eid }
+        );
+        sendToCAPI(
+          "CustomEvent",
+          {
+            custom_data: {
+              custom_event_type: "engaged_view",
+              duration: Math.floor(t / 1000),
+            },
           },
-        },
-        eid
-      );
+          eid
+        );
+      }
     }
   }, 3000);
 
@@ -303,7 +335,7 @@
       if (document.visibilityState === "visible") {
         state.readTime += 1;
 
-        if (state.readTime % 30 === 0) {
+        if (state.readTime % 30 === 0 && !isLocalhost()) {
           const eid = generateEventId();
           fbq(
             "trackCustom",
@@ -342,7 +374,7 @@
         const hotline = e.target.closest(
           'a[href^="tel:"], [data-track="hotline"]'
         );
-        if (hotline) {
+        if (hotline && !isLocalhost()) {
           // Use Contact event (mapped from click_hotline)
           const eid = generateEventId();
           fbq("track", "Contact", {}, { eventID: eid });
@@ -358,7 +390,7 @@
         const zalo = e.target.closest(
           '[data-track="zalo"], a[href*="zalo"], [data-open-zalo-modal], .btn-zalo, .floating-contact__item[href*="zalo"]'
         );
-        if (zalo) {
+        if (zalo && !isLocalhost()) {
           // Use Contact event (mapped from click_zalo)
           const eid = generateEventId();
           fbq("track", "Contact", {}, { eventID: eid });
@@ -374,7 +406,7 @@
         const ms = e.target.closest(
           'a[href*="m.me"], [data-track="messenger"]'
         );
-        if (ms) {
+        if (ms && !isLocalhost()) {
           // Use Contact event (mapped from click_messenger)
           const eid = generateEventId();
           fbq("track", "Contact", {}, { eventID: eid });
@@ -390,7 +422,7 @@
         const booking = e.target.closest(
           '[data-track="booking"], [data-action="open-booking"]'
         );
-        if (booking) {
+        if (booking && !isLocalhost()) {
           // Use Lead event (mapped from click_booking)
           const eid = generateEventId();
           fbq("track", "Lead", {}, { eventID: eid });
@@ -409,6 +441,7 @@
 
   function autoViewContent() {
     if (getPageType() !== "service") return;
+    if (isLocalhost()) return;
 
     const serviceName = document.querySelector("h1")?.textContent?.trim() || "";
     const eid = generateEventId();
@@ -470,6 +503,13 @@
     );
 
     window.trackFBPixelEvent = function (name, data = {}) {
+      if (isLocalhost()) {
+        console.log(
+          "[FB Pixel] Skipping trackFBPixelEvent on localhost:",
+          name
+        );
+        return;
+      }
       const eid = generateEventId();
       // Use correct format: fbq("trackCustom", eventName, data, options)
       fbq("trackCustom", name, data, { eventID: eid });
@@ -477,6 +517,10 @@
     };
 
     window.trackFBLeadSubmit = function (data = {}) {
+      if (isLocalhost()) {
+        console.log("[FB Pixel] Skipping trackFBLeadSubmit on localhost");
+        return;
+      }
       const eid = generateEventId();
       // Use correct format: fbq("track", eventName, data, options)
       fbq("track", "Lead", data, { eventID: eid });
