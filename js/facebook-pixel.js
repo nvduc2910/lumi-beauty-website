@@ -20,7 +20,7 @@
 
   const CONFIG = {
     pixelId: "1826377334661720",
-    capiEndpoint: "https://lumibeauty.studio/api/capi",
+    capiEndpoint: "https://lumi-capi.nvduc2910.workers.dev/api/capi",
   };
 
   const state = {
